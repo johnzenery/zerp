@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports DevExpress.XtraReports.UI
+Imports MySql.Data.MySqlClient
 Imports Newtonsoft.Json
 
 Public Class frm_sales_return_new
@@ -118,7 +119,7 @@ Public Class frm_sales_return_new
                 conn.Open()
                 Dim status = String.Empty, orders = String.Empty
 
-                Using rdr = New MySqlCommand("SELECT ims_customers.first_name AS customer, units, store_id, status  
+                Using rdr = New MySqlCommand("SELECT ims_customers.first_name AS customer, units, store_id, status 
                             FROM ims_sales_returns 
                             LEFT JOIN ims_customers ON ims_customers.customer_id=ims_sales_returns.customer_id
                             WHERE sales_return_id=" & id, conn).ExecuteReader
@@ -134,24 +135,7 @@ Public Class frm_sales_return_new
                 'Set Items to Grid
                 Dim itemsObject = JsonConvert.DeserializeObject(Of List(Of SalesReturnClass))(orders)
                 For Each item In itemsObject
-
                     grid_return.Rows.Add(item.qty, item.model, item.description, item.unit_price, item.total_amount, item.pid, item.purchase_date, item.last_qty)
-
-                    'Using cmd = New MySqlCommand("SELECT purchase_date FROM ims_sales " &
-                    '                             "WHERE item=@item AND customer=@customer
-                    '                             ORDER BY purchase_date DESC
-                    '                             LIMIT 1", conn)
-                    '    cmd.Parameters.AddWithValue("@item", item.pid)
-                    '    cmd.Parameters.AddWithValue("@customer", txt_customer_id.Text)
-                    '    Using rdr = cmd.ExecuteReader
-                    '        If rdr.HasRows Then
-                    '            rdr.Read()
-                    '            grid_return.Rows.Add(item.qty, item.model, item.description, item.unit_price, item.total_amount, item.pid, rdr("purchase_date"))
-                    '        Else
-                    '            grid_return.Rows.Add(item.qty, item.model, item.description, item.unit_price, item.total_amount, item.pid, "-- NOT FOUND --")
-                    '        End If
-                    '    End Using
-                    'End Using
                 Next
 
                 'Get Total
@@ -169,9 +153,8 @@ Public Class frm_sales_return_new
                 btn_delete.Location = btn_clear.Location
                 cbb_customer.ReadOnly = True
 
-                If status.Equals("Approved") Then
-                    grid_return.ReadOnly = True
-                    grid_return.AllowUserToAddRows = False
+                If status.Equals("Received") Then
+                    btn_print.Enabled = True
                 End If
 
             End Using
@@ -262,7 +245,7 @@ Public Class frm_sales_return_new
                 Using conn = New MySqlConnection(str)
                     conn.Open()
 
-                    Dim cmd = New MySqlCommand("SELECT qty, item, inv.winmodel, inv.description, purchase_date, ims_sales.cost" & 'inv." & GetAccountTypeTable() &
+                    Dim cmd = New MySqlCommand("SELECT qty, item, inv.winmodel, inv.description, purchase_date, (ims_sales.price / ims_sales.qty) price" & 'inv." & GetAccountTypeTable() &
                                                " FROM ims_sales
                                                 LEFT JOIN ims_inventory inv ON inv.pid=ims_sales.item
                                                 WHERE inv.winmodel=@winmodel AND customer=@customer_id
@@ -276,7 +259,7 @@ Public Class frm_sales_return_new
                         While rdr.Read
                             grid_return.Rows(e.RowIndex).Cells(1).Value = rdr("winmodel").ToString.ToUpper
                             grid_return.Rows(e.RowIndex).Cells(2).Value = rdr("description")
-                            Dim cost As Decimal = rdr("cost") 'rdr(GetAccountTypeTable())
+                            Dim cost As Decimal = rdr("price") 'rdr(GetAccountTypeTable())
                             grid_return.Rows(e.RowIndex).Cells(3).Value = cost.ToString("n2")
                             grid_return.Rows(e.RowIndex).Cells(5).Value = rdr("item")
                             grid_return.Rows(e.RowIndex).Cells(6).Value = rdr("purchase_date")
@@ -362,7 +345,7 @@ Public Class frm_sales_return_new
         End If
 
         If MsgBox("Press 'YES' to confirm.", vbYesNo + vbInformation, "Confirmation") = vbYes Then
-                    Dim ListOfUnits = New List(Of SalesReturnClass)
+            Dim ListOfUnits = New List(Of SalesReturnClass)
             For i = 0 To grid_return.RowCount - 2
                 ListOfUnits.Add(New SalesReturnClass With {
                 .qty = grid_return.Rows(i).Cells(0).Value,
@@ -431,11 +414,13 @@ Public Class frm_sales_return_new
             Try
                 Using connection = New MySqlConnection(str)
                     connection.Open()
-                    Using cmd = New MySqlCommand("UPDATE ims_sales_returns SET units=@units, amount=@amount WHERE sales_return_id=" & txt_srid.Text, connection)
+                    Using cmd = New MySqlCommand("UPDATE ims_sales_returns SET units=@units, amount=@amount, status='Pending' WHERE sales_return_id=" & txt_srid.Text, connection)
                         cmd.Parameters.AddWithValue("@units", JsonConvert.SerializeObject(ListOfUnits))
                         cmd.Parameters.AddWithValue("@amount", CDec(lbl_total.Text))
                         If cmd.ExecuteNonQuery() = 1 Then
                             MsgBox("Saved!", vbInformation, "Information")
+                            Me.Close()
+                            frm_main.LoadFrm(New frm_sales_return_list)
                         End If
                     End Using
                 End Using
@@ -448,7 +433,7 @@ Public Class frm_sales_return_new
 
     'Link to Sales Return List
     Private Sub link_sales_return_Click(sender As Object, e As EventArgs) Handles link_sales_return.Click
-        frm_main.LoadFrm(New frm_sales_return)
+        frm_main.LoadFrm(New frm_sales_return_list)
     End Sub
 
     'Delete Button
@@ -460,7 +445,7 @@ Public Class frm_sales_return_new
                     Using cmd = New MySqlCommand("UPDATE ims_sales_returns SET is_deleted=1 WHERE sales_return_id=" & txt_srid.Text, connection)
                         If cmd.ExecuteNonQuery() = 1 Then
                             MsgBox("Deleted!", vbInformation, "Information")
-                            frm_main.LoadFrm(New frm_sales_return)
+                            frm_main.LoadFrm(New frm_sales_return_list)
                             Me.Close()
                         End If
                     End Using
@@ -510,27 +495,9 @@ Public Class frm_sales_return_new
         Try
             Using conn = New MySqlConnection(str)
                 conn.Open()
-                Using cmd = New MySqlCommand("UPDATE ims_sales_returns SET status='Approved' WHERE sales_return_id=" & txt_srid.Text, conn)
-                    If cmd.ExecuteNonQuery = 1 Then
-
-                        'INSERT TO ims_sales_approved_returns
-                        Using cmd_returns = New MySqlCommand("INSERT ims_sales_approved_returns (pid, qty, store_id, sr_id, status) 
-                                                VALUES (@pid, @qty, @store_id, @sr_id, 'Pending')", conn)
-                            cmd_returns.Parameters.AddWithValue("@pid", Nothing)
-                            cmd_returns.Parameters.AddWithValue("@qty", Nothing)
-                            cmd_returns.Parameters.AddWithValue("@store_id", Nothing)
-                            cmd_returns.Parameters.AddWithValue("@sr_id", Nothing)
-                            cmd_returns.Prepare()
-
-                            For i = 0 To grid_return.Rows.Count - 2
-                                cmd_returns.Parameters(0).Value = grid_return.Rows(i).Cells(5).Value
-                                cmd_returns.Parameters(1).Value = grid_return.Rows(i).Cells(0).Value
-                                cmd_returns.Parameters(2).Value = lbl_store_id.Text
-                                cmd_returns.Parameters(3).Value = txt_srid.Text
-                                cmd_returns.ExecuteNonQuery()
-                            Next
-
-                        End Using
+                Using cmd = New MySqlCommand("UPDATE ims_sales_returns SET status='Approved', approved_by=@user WHERE sales_return_id=" & txt_srid.Text, conn)
+                    cmd.Parameters.AddWithValue("@user", frm_main.user_id.Text)
+                    If cmd.ExecuteNonQuery > 0 Then
 
                         MsgBox("Approved!", vbInformation, "Information")
                         Me.Close()
@@ -543,4 +510,59 @@ Public Class frm_sales_return_new
             MsgBox(ex.Message, vbCritical, "Error")
         End Try
     End Sub
+
+    Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
+        Try
+            Dim report = New doc_sales_return()
+            Dim printTool = New ReportPrintTool(report)
+            Dim table = New PrintData
+
+            Using connection = New MySqlConnection(str)
+                connection.Open()
+                Using cmd = New MySqlCommand("SELECT sales_return_id, company.first_name company_name, customer.contact_person, units, amount, created_at,
+                                    entered.first_name entered_by, approved.first_name approved_by, received.first_name received_by, 
+                                    (SELECT VALUE FROM ims_settings WHERE NAME='store_name') AS store_name,
+                                    (SELECT value FROM ims_settings WHERE name='store_info') AS store_info 
+                                    FROM ims_sales_returns
+
+                                    INNER JOIN ims_customers AS company ON company.customer_id=ims_sales_returns.customer_id
+                                    INNER JOIN ims_customers AS customer ON customer.customer_id=ims_sales_returns.customer_id
+                                    LEFT  JOIN ims_users AS entered ON entered.usr_id=ims_sales_returns.created_by
+                                    LEFT  JOIN ims_users AS approved ON approved.usr_id=ims_sales_returns.approved_by
+                                    LEFT  JOIN ims_users AS received ON received.usr_id=ims_sales_returns.received_by
+                                    WHERE sales_return_id=" & txt_srid.Text, connection)
+
+                    Using rdr = cmd.ExecuteReader
+                        While rdr.Read
+                            report.Parameters("store_name").Value = rdr("store_name")
+                            report.Parameters("store_info").Value = rdr("store_info")
+                            report.Parameters("srid").Value = String.Concat("SR", rdr("sales_return_id").ToString.PadLeft(5, "0"c))
+                            report.Parameters("company_name").Value = rdr("company_name")
+                            report.Parameters("contact_person").Value = rdr("contact_person")
+                            report.Parameters("total_amount_due").Value = rdr("amount")
+                            report.Parameters("entered_by").Value = rdr("entered_by")
+                            report.Parameters("approved_by").Value = rdr("approved_by")
+                            report.Parameters("received_by").Value = rdr("received_by")
+                            report.Parameters("created_at").Value = rdr("created_at")
+
+                            Dim itemsObject = JsonConvert.DeserializeObject(Of List(Of SalesReturnClass))(rdr("units"))
+                            For Each item In itemsObject
+                                table.sales_returns.Rows.Add(item.qty, item.model, item.description, item.unit_price, item.purchase_date, "", item.total_amount)
+                            Next
+
+                        End While
+
+                        report.RequestParameters = False
+                        report.DataSource = table
+                        report.ShowRibbonPreviewDialog()
+
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical, "Error")
+        End Try
+    End Sub
+
+
 End Class

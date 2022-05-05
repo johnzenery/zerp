@@ -19,7 +19,7 @@ Public Class frm_warehouse_stock_inventory
         Try
             conn.Open()
             Dim my_store = "ims_" & frm_main.user_store.Text.Trim.Replace(" ", "_").ToLower
-            Dim query = "SELECT ims_inventory.pid, winmodel, description, " & my_store & ".qty, " & my_store & ".on_hold, " & my_store & ".location FROM ims_inventory INNER JOIN " & my_store & " ON ims_inventory.pid=" & my_store & ".pid"
+            Dim query = "SELECT ims_inventory.pid, winmodel, brand, main_category, sub_category, description, " & my_store & ".qty, " & my_store & ".on_hold, " & my_store & ".location FROM ims_inventory INNER JOIN " & my_store & " ON ims_inventory.pid=" & my_store & ".pid"
 
             Dim cmd_grid = New MySqlCommand(query, conn)
             cmd_grid.ExecuteNonQuery()
@@ -64,7 +64,8 @@ Public Class frm_warehouse_stock_inventory
                 End Using
 
                 'GET DATA FROM ALL STORES
-                Dim query = "SELECT ims_inventory.pid AS 'PID', winmodel AS Model, description as Description, (" & total_qty & ") AS 'Total', (" & stores_onhold & ") AS 'On-Hold'" & stores_qty & " FROM ims_inventory" & left_join
+                Dim query = "SELECT ims_inventory.pid AS 'PID', winmodel AS Model, brand as Brand, main_category AS 'Category', sub_category as 'Sub Cateogy',
+                        description as Description, (" & total_qty & ") AS 'Total', (" & stores_onhold & ") AS 'On-Hold'" & stores_qty & " FROM ims_inventory" & left_join
                 Using cmd_grid = New MySqlCommand(query, connection)
                     Dim dt = New DataTable
                     Dim da = New MySqlDataAdapter(cmd_grid)

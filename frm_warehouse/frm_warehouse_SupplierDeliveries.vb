@@ -47,21 +47,43 @@ Public Class frm_warehouse_SupplierDeliveries
                 Exit Sub
             End Try
 
-            Dim result As Boolean = False
+            Dim res As Boolean = False
+            Dim is_payment_first As Boolean = False
             Using conn
                 conn.Open()
                 Using cmd = New MySqlCommand("SELECT * FROM ims_purchase WHERE purchase_id=@id", conn)
                     cmd.Parameters.AddWithValue("@id", CInt(txt_poid.Text.Replace("PO", "")))
                     Dim rdr = cmd.ExecuteReader()
                     rdr.Read()
-                    result = CBool(rdr("is_payment_first"))
+                    is_payment_first = CBool(rdr("is_payment_first"))
                 End Using
             End Using
-            If Not result Then
-                not_payment_first()
+
+            If Not is_payment_first Then
+                res = not_payment_first()
             Else
-                payment_first()
+                res = payment_first()
             End If
+
+            'Show Print Barcode dialog
+            If res = True Then
+                If MsgBox("Show Barcode Generator?", vbYesNo + vbQuestion, "Confirmation") = vbYes Then
+                    Dim frm = New frm_warehouse_barcode_generator
+                    frm.rb_per_receipt.Checked = True
+                    frm.txt_po_no.Text = txt_poid.Text
+                    frm.cbb_type.Text = cbb_receipt.Text
+                    frm.txt_receipt_ref.Text = txt_ref.Text
+                    frm.ShowDialog()
+                End If
+            End If
+
+            cbb_receipt.SelectedIndex = -1
+            txt_ref.Text = String.Empty
+            txt_amount.Text = String.Empty
+            txt_count_by.Text = String.Empty
+            txt_discount.Text = String.Empty
+            txt_return_credit.Text = String.Empty
+            cbb_discount.SelectedIndex = -1
 
         Else
             MsgBox("Can't saved! No receipt info detected.", vbCritical, "Error")
@@ -109,8 +131,9 @@ Public Class frm_warehouse_SupplierDeliveries
 
         Try
             conn.Open()
-            Dim cmd = New MySqlCommand("SELECT orders, ims_purchase.supplier as supid, ims_suppliers.supplier, (SELECT store_name FROM ims_stores WHERE store_id=deliver_to) as deliver_to, 
-                                        is_withholding_tax_applied, withholding_tax_amount, withholding_tax_percentage, ims_purchase.status, qty_received, is_payment_first, ims_delivery_receipts.receipt_type FROM `ims_purchase`
+            Dim cmd = New MySqlCommand("SELECT orders, ims_purchase.supplier as supid, ims_suppliers.supplier, (SELECT store_name FROM ims_stores WHERE store_id=deliver_to) as deliver_to, date_sent,
+                                        is_withholding_tax_applied, withholding_tax_amount, withholding_tax_percentage, ims_purchase.status, is_payment_first, ims_delivery_receipts.receipt_type 
+                                        FROM `ims_purchase`
                                         LEFT JOIN ims_delivery_receipts ON ims_delivery_receipts.receipt_ref=CONCAT('PO',LPAD(ims_purchase.purchase_id, 5, '0'))                        
                                         LEFT JOIN ims_suppliers ON ims_purchase.supplier=ims_suppliers.id WHERE ims_purchase.purchase_id='" & poid & "'", conn)
             Dim rdr As MySqlDataReader = cmd.ExecuteReader
@@ -121,10 +144,11 @@ Public Class frm_warehouse_SupplierDeliveries
                     txt_ref.Text = String.Concat("PO", poid.ToString().PadLeft(5, "0"c))
                     txt_ref.Enabled = False
                 End If
+                txt_date_sent.Text = Date.Parse(rdr("date_sent")).ToString("MM-dd-yyyy")
                 cbb_supplier.Text = rdr("supplier")
                 cbb_deliver.Text = rdr("deliver_to")
                 txt_supid.Text = rdr("supid")
-                set_PurchaseOrder_DataTable(rdr("orders"), rdr("status"), rdr("qty_received"))
+                set_PurchaseOrder_DataTable(rdr("orders"), rdr("status"))
                 is_withholding_tax_applied.Checked = rdr("is_withholding_tax_applied")
                 withholding_tax_amount.Text = rdr("withholding_tax_amount")
                 withholding_tax_percentage.Text = rdr("withholding_tax_percentage")
@@ -145,7 +169,7 @@ Public Class frm_warehouse_SupplierDeliveries
     End Sub
 
     'Set Units to Grid
-    Sub set_PurchaseOrder_DataTable(units As String, status As String, received As String)
+    Private Sub set_PurchaseOrder_DataTable(units As String, status As String)
         Dim no = 0
         Try
             Dim colonseparator As New Regex("\b;\b")
@@ -225,22 +249,23 @@ Public Class frm_warehouse_SupplierDeliveries
     End Sub
 
     'Not Payment First
-    Private Sub not_payment_first()
+    Private Function not_payment_first()
 
-        Dim received = 0
+        Dim result As Boolean = False
+        Dim received As Decimal = 0.00
         Dim TotalAmount As Decimal = 0.00
 
         'Validate Receive Counts
         For Each row As DataRow In DirectCast(grid_order.DataSource, DataTable).Rows
             received += row.Item(7) + row.Item(8)
-            If CInt(row.Item(8)) > 0 Then
-                TotalAmount += CInt(row.Item(8)) * CDec(row.Item(5))    'QTY Received * cost
+            If CDec(row.Item(8)) > 0.00 Then
+                TotalAmount += CDec(row.Item(8)) * CDec(row.Item(5))    'QTY Received * cost
             End If
         Next
 
         If received = 0 Then
             MsgBox("Can't saved! No values detected.", vbCritical, "Error")
-            Exit Sub
+            Return False
         End If
 
 
@@ -272,12 +297,12 @@ Public Class frm_warehouse_SupplierDeliveries
             Dim input_total = Math.Round(CDec(txt_amount.Text.Trim) - less_wt, 2)
             If Math.Abs(input_total) < Math.Abs(system_total - 1) Or Math.Abs(input_total) > Math.Abs(system_total + 1) Then
                 MsgBox("Receipt amount value is doesn't match!", vbCritical, "Invalid Amount")
-                Exit Sub
+                Return False
             End If
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical, "Number Format Exception")
-            Exit Sub
+            Return False
         End Try
 
 
@@ -294,7 +319,7 @@ Public Class frm_warehouse_SupplierDeliveries
             Dim date_receieved = CDate(String.Concat(CDate(dt_receipt.EditValue).ToString("dd/MM/yyyy"), Date.Now.ToString(" HH:mm")))
 
             Dim qty_remaining = 0, qty_receieved = 0
-            Dim product_ID(1000) As Integer, qty_received(1000) As Integer
+            Dim product_ID(1000) As Integer, qty_received(1000) As Decimal
             Dim discount As String
 
             'Get Discount
@@ -304,22 +329,11 @@ Public Class frm_warehouse_SupplierDeliveries
                 Case Else : discount = ""
             End Select
 
-
-            'For i = 0 To TryCast(grid_order.DataSource, DataTable).Rows.Count - 1
-            '    product_ID(i) = CInt(datatable.Rows(i).Item(0)) 'SKU FOR INSERT TO STORE'S INVENTORY
-            '    qty_received(i) = CInt(datatable.Rows(i).Item(5)) 'RECEIVED FOR INSERT TO STORE'S INVENTORY
-
-            '    qty_remaining += datatable.Rows(i).Item(6) 'REMAINING COUNTS
-            '    qty_receieved += datatable.Rows(i).Item(5) 'RECEIVED COUNTS
-
-            '    str_qtyReceived += CInt(datatable.Rows(i).Item(4)) + qty_received(i) & ";" 'TOTAL RECEIVED to be inserted to IMS_PURCHASE
-            'Next
-
             'Get Values From Grid 
             Dim datatable = TryCast(grid_order.DataSource, DataTable)
             Dim ListOfOrders = New List(Of PurchaseOrderClass)
             Dim row_count = 0
-            For Each row As DataRow In DirectCast(grid_order.DataSource, DataTable).Rows
+            For Each row As DataRow In datatable.Rows
 
                 product_ID(row_count) = row.Item(0)     'Get PID
                 qty_received(row_count) = row.Item(8)   'Get QTY 
@@ -345,29 +359,13 @@ Public Class frm_warehouse_SupplierDeliveries
             Try
                 conn.Open()
 
-                'Insert to Store's Inventory    
+                'Insert to Store's Inventory  
                 For i = 0 To datatable.Rows.Count - 1
-
-                    Dim count_cmd = New MySqlCommand("SELECT COUNT(*) FROM " & store & " WHERE pid='" & product_ID(i) & "'", conn)
-                    Dim rdr As MySqlDataReader = count_cmd.ExecuteReader
-                    Dim result = 0
-
-                    While rdr.Read
-                        result = rdr("COUNT(*)")
-                    End While
-                    rdr.Close()
-
-                    If result = 0 Then
-                        Dim new_cmd = New MySqlCommand("INSERT INTO " & store & " (pid, qty) VALUES (@pid, @qty) ", conn)
-                        new_cmd.Parameters.AddWithValue("@pid", product_ID(i))
-                        new_cmd.Parameters.AddWithValue("@qty", qty_received(i))
-                        new_cmd.ExecuteNonQuery()
-                    Else
-                        Dim update_cmd = New MySqlCommand("UPDATE " & store & " SET qty=qty+@qty WHERE pid=@pid", conn)
-                        update_cmd.Parameters.AddWithValue("@qty", qty_received(i))
-                        update_cmd.Parameters.AddWithValue("@pid", product_ID(i))
-                        update_cmd.ExecuteNonQuery()
-                    End If
+                    Using add_qty_cmd = New MySqlCommand("INSERT INTO " & store & " (pid, qty) VALUES (@pid, @qty) ON DUPLICATE KEY UPDATE qty=qty+@qty", conn)
+                        add_qty_cmd.Parameters.AddWithValue("@pid", datatable.Rows(i).Item(0))
+                        add_qty_cmd.Parameters.AddWithValue("@qty", datatable.Rows(i).Item(8))
+                        add_qty_cmd.ExecuteNonQuery()
+                    End Using
                 Next
 
                 'Insert to ims_delivery_receipts
@@ -394,8 +392,8 @@ Public Class frm_warehouse_SupplierDeliveries
                 'Insert to ims_deliveries
                 Using deliveries_cmd = New MySqlCommand("INSERT INTO ims_deliveries (item, qty, date_received, purchase_id, receiver, store_id, receipt_id, cost) 
                         VALUES (@item, @qty, @date_received, @purchase_id, @userid, (SELECT store_id FROM ims_stores WHERE store_name=@store), @receipt_id, @cost)", conn)
-                    deliveries_cmd.Parameters.AddWithValue("@item", 1)
-                    deliveries_cmd.Parameters.AddWithValue("@qty", 1)
+                    deliveries_cmd.Parameters.AddWithValue("@item", 0)
+                    deliveries_cmd.Parameters.AddWithValue("@qty", 0.00)
                     deliveries_cmd.Parameters.AddWithValue("@purchase_id", purchaseID)
                     deliveries_cmd.Parameters.AddWithValue("@userid", frm_main.user_id.Text)
                     deliveries_cmd.Parameters.AddWithValue("@date_received", date_receieved)
@@ -406,8 +404,8 @@ Public Class frm_warehouse_SupplierDeliveries
 
                     For i = 0 To datatable.Rows.Count - 1
                         If datatable.Rows(i).Item(8) > 0 Then
-                            deliveries_cmd.Parameters(0).Value = product_ID(i)
-                            deliveries_cmd.Parameters(1).Value = qty_received(i)
+                            deliveries_cmd.Parameters(0).Value = datatable.Rows(i).Item(0)
+                            deliveries_cmd.Parameters(1).Value = datatable.Rows(i).Item(8)
                             deliveries_cmd.Parameters(7).Value = datatable.Rows(i).Item(5)
                             deliveries_cmd.ExecuteNonQuery()
                         Else
@@ -419,7 +417,6 @@ Public Class frm_warehouse_SupplierDeliveries
 
 
                 'Update ims_purchase
-                'Dim cmd = New MySqlCommand("UPDATE ims_purchase SET qty_received=@qty_received, date_completed=@date_completed, status=@status WHERE purchase_id=@purchase_id", conn)
                 Using cmd = New MySqlCommand("UPDATE ims_purchase SET orders=@orders, date_completed=@date_completed, status=@status WHERE purchase_id=@purchase_id", conn)
                     cmd.Parameters.AddWithValue("@orders", JsonConvert.SerializeObject(ListOfOrders))
                     cmd.Parameters.AddWithValue("@purchase_id", purchaseID)
@@ -448,13 +445,7 @@ Public Class frm_warehouse_SupplierDeliveries
 
                 End Using
 
-                cbb_receipt.SelectedIndex = -1
-                txt_ref.Text = String.Empty
-                txt_amount.Text = String.Empty
-                txt_count_by.Text = String.Empty
-                txt_discount.Text = String.Empty
-                txt_return_credit.Text = String.Empty
-                cbb_discount.SelectedIndex = -1
+                result = True
 
             Catch ex As Exception
                 MsgBox(ex.Message, vbCritical, "Error")
@@ -464,25 +455,28 @@ Public Class frm_warehouse_SupplierDeliveries
 
         End If
 
-    End Sub
+        Return result
+
+    End Function
 
     'Payment First
-    Private Sub payment_first()
+    Private Function payment_first()
 
-        Dim received = 0
+        Dim result As Boolean = False
+        Dim received As Decimal = 0.00
         Dim TotalAmount As Decimal = 0.00
 
         'Validate Receive Counts
         For Each row As DataRow In DirectCast(grid_order.DataSource, DataTable).Rows
             received += row.Item(7) + row.Item(8)
-            If CInt(row.Item(8)) > 0 Then
-                TotalAmount += CInt(row.Item(8)) * CDec(row.Item(5))    'QTY Received * cost
+            If CDec(row.Item(8)) > 0 Then
+                TotalAmount += CDec(row.Item(8)) * CDec(row.Item(5))    'QTY Received * cost
             End If
         Next
 
         If received = 0 Then
             MsgBox("Can't saved! No values detected.", vbCritical, "Error")
-            Exit Sub
+            Return False
         End If
 
         Try
@@ -513,15 +507,13 @@ Public Class frm_warehouse_SupplierDeliveries
             Dim input_total = Math.Round(CDec(txt_amount.Text.Trim) - less_wt, 2)
             If Math.Abs(input_total) < Math.Abs(system_total - 1) Or Math.Abs(input_total) > Math.Abs(system_total + 1) Then
                 MsgBox("Receipt amount value is doesn't match!", vbCritical, "Invalid Amount")
-                Exit Sub
+                Return False
             End If
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical, "Number Format Exception")
-            Exit Sub
+            Return False
         End Try
-
-
 
 
         If MsgBox("Press 'YES' to Continue.", vbQuestion + vbYesNo, "Submit") = vbYes Then
@@ -537,7 +529,7 @@ Public Class frm_warehouse_SupplierDeliveries
             Dim date_receieved = CDate(String.Concat(CDate(dt_receipt.EditValue).ToString("dd/MM/yyyy"), Date.Now.ToString(" HH:mm")))
 
             Dim qty_remaining = 0, qty_receieved = 0
-            Dim product_ID(1000) As Integer, qty_received(1000) As Integer
+            Dim product_ID(1000) As Integer, qty_received(1000) As Decimal
             Dim discount As String
 
             Select Case cbb_discount.SelectedIndex
@@ -578,29 +570,13 @@ Public Class frm_warehouse_SupplierDeliveries
             Try
                 conn.Open()
 
-                'Insert to Store's Inventory    
+                'Insert to Store's Inventory  
                 For i = 0 To datatable.Rows.Count - 1
-
-                    Dim count_cmd = New MySqlCommand("SELECT COUNT(*) FROM " & store & " WHERE pid='" & product_ID(i) & "'", conn)
-                    Dim rdr As MySqlDataReader = count_cmd.ExecuteReader
-                    Dim result = 0
-
-                    While rdr.Read
-                        result = rdr("COUNT(*)")
-                    End While
-                    rdr.Close()
-
-                    If result = 0 Then
-                        Dim new_cmd = New MySqlCommand("INSERT INTO " & store & " (pid, qty) VALUES (@pid, @qty) ", conn)
-                        new_cmd.Parameters.AddWithValue("@pid", product_ID(i))
-                        new_cmd.Parameters.AddWithValue("@qty", qty_received(i))
-                        new_cmd.ExecuteNonQuery()
-                    Else
-                        Dim update_cmd = New MySqlCommand("UPDATE " & store & " SET qty=qty+@qty WHERE pid=@pid", conn)
-                        update_cmd.Parameters.AddWithValue("@qty", qty_received(i))
-                        update_cmd.Parameters.AddWithValue("@pid", product_ID(i))
-                        update_cmd.ExecuteNonQuery()
-                    End If
+                    Using add_qty_cmd = New MySqlCommand("INSERT INTO " & store & " (pid, qty) VALUES (@pid, @qty) ON DUPLICATE KEY UPDATE qty=qty+@qty", conn)
+                        add_qty_cmd.Parameters.AddWithValue("@pid", datatable.Rows(i).Item(0))
+                        add_qty_cmd.Parameters.AddWithValue("@qty", datatable.Rows(i).Item(8))
+                        add_qty_cmd.ExecuteNonQuery()
+                    End Using
                 Next
 
                 'Get Payable ID
@@ -611,8 +587,8 @@ Public Class frm_warehouse_SupplierDeliveries
                 'Insert to Deliveries Table
                 Dim deliveries_cmd = New MySqlCommand("INSERT INTO ims_deliveries (item, qty, date_received, purchase_id, receiver, store_id, receipt_id, cost) 
                         VALUES (@item, @qty, @date_received, @purchase_id, @userid, (SELECT store_id FROM ims_stores WHERE store_name=@store), @receipt_id, @cost)", conn)
-                deliveries_cmd.Parameters.AddWithValue("@item", 1)
-                deliveries_cmd.Parameters.AddWithValue("@qty", 1)
+                deliveries_cmd.Parameters.AddWithValue("@item", 0)
+                deliveries_cmd.Parameters.AddWithValue("@qty", 0.00)
                 deliveries_cmd.Parameters.AddWithValue("@purchase_id", purchaseID)
                 deliveries_cmd.Parameters.AddWithValue("@userid", frm_main.user_id.Text)
                 deliveries_cmd.Parameters.AddWithValue("@date_received", date_receieved)
@@ -622,10 +598,10 @@ Public Class frm_warehouse_SupplierDeliveries
                 deliveries_cmd.Prepare()
 
                 For i = 0 To datatable.Rows.Count - 1
-                    If Not datatable.Rows(i).Item(8) > 0 Then
-                        deliveries_cmd.Parameters(0).Value = product_ID(i)
-                        deliveries_cmd.Parameters(1).Value = qty_received(i)
-                        deliveries_cmd.Parameters(7).Value = CDec(datatable.Rows(i).Item(5))
+                    If datatable.Rows(i).Item(8) > 0 Then
+                        deliveries_cmd.Parameters(0).Value = datatable.Rows(i).Item(0)
+                        deliveries_cmd.Parameters(1).Value = datatable.Rows(i).Item(8)
+                        deliveries_cmd.Parameters(7).Value = datatable.Rows(i).Item(5)
                         deliveries_cmd.ExecuteNonQuery()
                     Else
                         Continue For
@@ -661,14 +637,8 @@ Public Class frm_warehouse_SupplierDeliveries
 
                 End If
 
+                result = True
 
-                cbb_receipt.SelectedIndex = -1
-                txt_ref.Text = String.Empty
-                txt_amount.Text = String.Empty
-                txt_count_by.Text = String.Empty
-                txt_discount.Text = String.Empty
-                txt_return_credit.Text = String.Empty
-                cbb_discount.SelectedIndex = -1
             Catch ex As Exception
                 MsgBox(ex.Message, vbCritical, "Error")
             Finally
@@ -677,7 +647,9 @@ Public Class frm_warehouse_SupplierDeliveries
 
         End If
 
-    End Sub
+        Return result
+
+    End Function
 
     'Color Indicator
     Private Sub ColorIndicator()
@@ -702,7 +674,7 @@ Public Class frm_warehouse_SupplierDeliveries
     End Sub
 
     'Restriction on Cell Edit
-    Private Sub grid_order_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub grid_order_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles grid_order.CellEndEdit
 
         If Not IsNumeric(grid_order.CurrentCell.Value) Then
             grid_order.CurrentCell.Value = 0
@@ -710,7 +682,7 @@ Public Class frm_warehouse_SupplierDeliveries
             Exit Sub
         End If
 
-        If CInt(grid_order.CurrentCell.Value) > CInt(grid_order.CurrentRow.Cells(6).Value) Then
+        If CInt(grid_order.CurrentCell.Value) > CInt(grid_order.CurrentRow.Cells(9).Value) Then
             grid_order.CurrentCell.Value = 0
             MsgBox("Value is greater than of the remaining.", vbCritical, "Forbidden")
         ElseIf grid_order.CurrentCell.Value < 0 Then

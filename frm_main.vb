@@ -10,14 +10,20 @@ Public Class frm_main
 
     ReadOnly conn As New MySqlConnection(str)
 
-    'On Load
+    '--- On Load ---
     Private Sub frm_main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Initialize_zerp()
         Dim version As Version = Assembly.GetExecutingAssembly().GetName().Version
         Dim lbl_version = " " & version.Major.ToString & "." & version.Minor.ToString & "." & version.Build.ToString
         Me.Text = "ZERP Business Solution" & lbl_version
+
     End Sub
 
+    '--- ON CLOSED ---
+    Private Sub frm_main_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Application.Exit()
+    End Sub
 
 
     '--- FUNCTIONS ----
@@ -30,83 +36,214 @@ Public Class frm_main
             'Show SplashScreen
             SplashScreenManager.ShowForm(Me, GetType(frm_splash_screen), True, True, False)
 
-            'Display 'Connecting to server...'
-            SplashScreenManager.Default.SendCommand(frm_splash_screen.SplashScreenCommand.set_status, "Connecting to server...")
+            'Display 'Logging in...'
+            SplashScreenManager.Default.SendCommand(frm_splash_screen.SplashScreenCommand.set_status, "Logging in...")
+            LogIn(frm_login.global_user_id)
 
-            'Testing Server Connection
-            If TestConnection() Then Exit Sub
+            'Display 'Setting access roles...'
+            SplashScreenManager.Default.SendCommand(frm_splash_screen.SplashScreenCommand.set_status, "Setting access roles...")
+            role_access(frm_login.global_user_id)
 
-            'Display 'Retreiving data...'
-            SplashScreenManager.Default.SendCommand(frm_splash_screen.SplashScreenCommand.set_status, "Retreiving data...")
+            'Display 'Loading...'
+            SplashScreenManager.Default.SendCommand(frm_splash_screen.SplashScreenCommand.set_status, "Loading...")
+            LoadFrm(New frm_homepage)
 
-            Select Case My.Settings.login
-
-
-            'If NOT login, Show Login form
-                Case False
-
-                    'Close SplashScreen
-                    SplashScreenManager.CloseForm()
-
-                    'Me.Hide()
-                    frm_login.ShowDialog()
-
-
-              'If login, load details
-                Case True
-
-                    'Display 'Logging in...'
-                    SplashScreenManager.Default.SendCommand(frm_splash_screen.SplashScreenCommand.set_status, "Logging in...")
-                    LogIn(My.Settings.login_user)
-
-                    'Show Dialog
-                    Me.Show()
-
-                    'Display 'Setting access roles...'
-                    SplashScreenManager.Default.SendCommand(frm_splash_screen.SplashScreenCommand.set_status, "Setting access roles...")
-                    role_access(user_id.Text)
-
-                    'Display 'Loading...'
-                    SplashScreenManager.Default.SendCommand(frm_splash_screen.SplashScreenCommand.set_status, "Loading...")
-                    LoadFrm(New frm_homepage)
-
-                    'Close SplashScreen
-                    SplashScreenManager.CloseForm()
-
-            End Select
+            SplashScreenManager.CloseForm()
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical, "Error")
-        Finally
-            conn.Close()
         End Try
 
     End Sub
 
     'Log In
-    Public Sub LogIn(username As String)
+    Public Sub LogIn(usr_id As Integer)
 
         Try
-            conn.Open()
-            Dim cmd = New MySqlCommand("SELECT first_name, role, ims_users.role_id, store_name, usr_id, usr_photo FROM ims_users
+            Using connection = New MySqlConnection(str)
+                connection.Open()
+                Dim cmd = New MySqlCommand("SELECT first_name, role, ims_users.role_id, store_name, usr_id, usr_photo FROM ims_users
                                     LEFT JOIN ims_stores ON ims_users.assigned_loc=ims_stores.store_id
                                     INNER JOIN ims_user_acc_types ON ims_users.role_id=ims_user_acc_types.role_id 
-                                    WHERE username='" & username & "'", conn)
-            Dim rdr As MySqlDataReader = cmd.ExecuteReader
+                                    WHERE usr_id='" & usr_id & "'", connection)
+                Dim rdr As MySqlDataReader = cmd.ExecuteReader
 
-            While rdr.Read
-                user_name.Text = rdr("first_name")
-                user_role.Text = rdr("role")
-                user_role_id.Text = rdr("role_id")
-                user_store.Text = rdr("store_name")
-                user_id.Text = rdr("usr_id")
-                setUserPhoto(rdr("usr_photo"))
-            End While
+                While rdr.Read
+                    user_name.Text = rdr("first_name")
+                    user_role.Text = rdr("role")
+                    user_role_id.Text = rdr("role_id")
+                    user_store.Text = rdr("store_name")
+                    user_id.Text = rdr("usr_id")
+                    setUserPhoto(rdr("usr_photo"))
+                End While
+            End Using
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical, "Error")
-        Finally
-            conn.Close()
+        End Try
+
+    End Sub
+
+    'Role Access
+    Private Sub role_access(user_id As Integer)
+
+        Try
+            Dim result = New StringBuilder
+
+            Using conn = New MySqlConnection(str)
+                conn.Open()
+                Dim cmd = New MySqlCommand("SELECT access FROM ims_users WHERE usr_id=@user_id", conn)
+                cmd.Parameters.AddWithValue("@user_id", user_id)
+                Dim var As String = cmd.ExecuteScalar
+
+                result.Append(var)
+            End Using
+            'Hide All Menu
+            With Me
+                .menu_product.Visible = False
+                .menu_sales.Visible = False
+                .menu_warehouse.Visible = False
+                .menu_collections.Visible = False
+                .menu_logistics.Visible = False
+                .menu_purchasing.Visible = False
+                .menu_accounting.Visible = False
+                .menu_administration.Visible = False
+
+                If String.IsNullOrEmpty(result.ToString) Then Exit Sub
+                Dim access = result.Replace(";", "", result.Length - 1, 1).ToString.Split(";")
+
+                For i = 0 To access.Count - 1
+
+                    Select Case access(i)
+
+                        'Product
+                        Case "catalogue"
+                            .menu_product.Visible = True
+                            .submenu_catalogue.Visible = True
+                        Case "new_item"
+                            .menu_product.Visible = True
+                            .submenu_new_item.Visible = True
+                        Case "import_catalogue"
+                            .menu_product.Visible = True
+                            .submenu_import_catalogue.Visible = True
+                        Case "export_catalogue"
+                            .menu_product.Visible = True
+                            .submenu_export_catalogue.Visible = True
+
+                        'Sales
+                        Case "orders"
+                            .menu_sales.Visible = True
+                            .submenu_orders.Visible = True
+                        Case "quotations"
+                            .menu_sales.Visible = True
+                            .submenu_quotations.Visible = True
+                        Case "create_order"
+                            .menu_sales.Visible = True
+                            .submenu_create_order.Visible = True
+                        Case "customers"
+                            .menu_sales.Visible = True
+                            .submenu_customers.Visible = True
+                        Case "transaction_invoice"
+                            .menu_sales.Visible = True
+                            .submenu_invoices.Visible = True
+                        Case "logistics"
+                            .menu_sales.Visible = True
+                            .submenu_logistics.Visible = True
+
+                        'Warehouse
+                        Case "daily_delivery"
+                            .menu_warehouse.Visible = True
+                            .submenu_ReceivingManagement.Visible = True
+                        Case "delivery_logs"
+                            .menu_warehouse.Visible = True
+                            .submenu_delivery_logs.Visible = True
+                        Case "stock_management"
+                            .menu_warehouse.Visible = True
+                            .submenu_stock_management.Visible = True
+                        Case "stock_inventory"
+                            .menu_warehouse.Visible = True
+                            .submenu_product_inventory.Visible = True
+                        Case "packing_list"
+                            .menu_warehouse.Visible = True
+                            .submenu_packageManagement.Visible = True
+                        Case "for_selluseller"
+                            .menu_warehouse.Visible = True
+                            .submenu_selluseller.Visible = True
+
+                        'Collections
+                        Case "order_payments"
+                            .menu_collections.Visible = True
+                            .submenu_payments.Visible = True
+                        Case "new_cheque_payment"
+                            .menu_collections.Visible = True
+                            .submenu_payment_new.Visible = True
+                        Case "cheque_book"
+                            .menu_collections.Visible = True
+                            .submenu_cheque_book.Visible = True
+                        Case "statement_of_account"
+                            .menu_collections.Visible = True
+                            .submenu_soa.Visible = True
+
+                        'Logistics
+                        Case "pickup_deliveries"
+                            .menu_logistics.Visible = True
+                            .submenu_order_management.Visible = True
+                        Case "st_dispatching"
+                            .menu_logistics.Visible = True
+                            .submenu_StockTransferDispatching.Visible = True
+
+                        'Purchasing
+                        Case "new_purchase"
+                            .menu_purchasing.Visible = True
+                            .submenu_purchasing_new.Visible = True
+                        Case "purchase_orders"
+                            .menu_purchasing.Visible = True
+                            .submenu_purchasing_orders.Visible = True
+
+                        'Accounting
+                        Case "account_payables"
+                            .menu_accounting.Visible = True
+                            .submenu_account_payables.Visible = True
+                        Case "generate"
+                            .menu_accounting.Visible = True
+                            .submenu_generate.Visible = True
+                        Case "payment_vouchers"
+                            .menu_accounting.Visible = True
+                            .submenu_payment_vouchers.Visible = True
+                        Case "payment_cheques"
+                            .menu_accounting.Visible = True
+                            .submenu_payment_cheques.Visible = True
+
+                        'Administration
+                        Case "user_accounts"
+                            .menu_administration.Visible = True
+                            .submenu_user_accounts.Visible = True
+                        Case "approvals"
+                            .menu_administration.Visible = True
+                            .submenu_approvals.Visible = True
+                        Case "price_book"
+                            .menu_administration.Visible = True
+                            .submenu_price_books.Visible = True
+                        Case "reports"
+                            .menu_administration.Visible = True
+                            .submenu_reports.Visible = True
+                        Case "stores"
+                            .menu_administration.Visible = True
+                            .submenu_warehouse.Visible = True
+                        Case "suppliers"
+                            .menu_administration.Visible = True
+                            .submenu_suppliers.Visible = True
+                        Case "settings"
+                            .menu_administration.Visible = True
+                            .submenu_settings.Visible = True
+
+                    End Select
+                Next
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical, "Error Encountered")
         End Try
 
     End Sub
@@ -129,11 +266,11 @@ Public Class frm_main
     'Set User Photo on Login
     Private Sub setUserPhoto(FileName As String)
 
-        Using client As New SftpClient(My.Settings.FTPserver, My.Settings.FTPusername, My.Settings.FTPpass)
+        Using client As New SftpClient(server, ftp_username, ftp_password)
             Try
                 client.Connect()
                 Dim ms As New MemoryStream
-                client.DownloadFile("./" & My.Settings.UserFolder & "/" & FileName, ms)
+                client.DownloadFile("./" & ftp_userFolder & "/" & FileName, ms)
 
                 If Not ms.Length = 0 Then
                     user_photo.Image = Image.FromStream(ms)
@@ -142,26 +279,6 @@ Public Class frm_main
             End Try
         End Using
 
-    End Sub
-
-    'Set User Photo on Login (Depreciated)
-    Private Sub ssetUserPhoto(FileName As String)
-        Dim DownloadURi = "ftp://" & My.Settings.FTPserver & ":" & My.Settings.FTPport & "/" & My.Settings.UserFolder & "/" & FileName
-
-        'Creating Client request to download
-        Dim DLReq As New WebClient With {
-            .Credentials = New NetworkCredential(My.Settings.FTPusername, My.Settings.FTPpass)
-        }
-
-        Dim imgbytes() As Byte = DLReq.DownloadData(DownloadURi)
-
-        'Setting Image bytes to PictureBox
-        Dim ms As New MemoryStream(imgbytes)
-        user_photo.Image = Image.FromStream(ms)
-
-        'Memory cleaning
-        DLReq.Dispose()
-        'ms.Dispose()
     End Sub
 
     'Export Datbase
@@ -254,8 +371,6 @@ Public Class frm_main
 
     'Log Out
     Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
-        My.Settings.login = False
-        My.Settings.login_user = ""
         frm_login.Show()
         Me.Hide()
     End Sub
@@ -288,7 +403,7 @@ Public Class frm_main
 
     'Sales Returns
     Private Sub submenu_returns_Click(sender As Object, e As EventArgs) Handles submenu_returns.Click
-        LoadFrm(New frm_sales_return)
+        LoadFrm(New frm_sales_return_list)
     End Sub
 
     'New Customer
@@ -428,8 +543,8 @@ Public Class frm_main
     End Sub
 
     'Returned Units
-    Private Sub submenu_returned_units_Click(sender As Object, e As EventArgs) 
-        LoadFrm(New frm_warehouse_returns_list)
+    Private Sub submenu_returned_units_Click(sender As Object, e As EventArgs)
+        LoadFrm(New frm_warehouse_returns_receive)
     End Sub
 
     'SelluSeller
@@ -540,5 +655,6 @@ Public Class frm_main
     Private Sub submenu_packageManagement_Click(sender As Object, e As EventArgs) Handles submenu_packageManagement.Click
         LoadFrm(New frm_warehouse_PackageManagement)
     End Sub
+
 
 End Class

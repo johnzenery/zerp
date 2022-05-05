@@ -64,7 +64,7 @@ Public Class frm_admin_store_add
     'Check IF IMS_purchase EXIST
     Private Sub CheckToCreateTable(storeName As String)
 
-        Dim checktable As New MySqlCommand("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '" & My.Settings.database & "' AND table_name = '" & storeName & "'", conn)
+        Dim checktable As New MySqlCommand("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '" & db & "' AND table_name = '" & storeName & "'", conn)
 
         Dim rdr As MySqlDataReader = checktable.ExecuteReader
         rdr.Read()
@@ -72,7 +72,7 @@ Public Class frm_admin_store_add
         rdr.Close()
 
         If count = 0 Then
-            Dim createTable As New MySqlCommand("CREATE TABLE `" & storeName & "` ( `pid` varchar(6) NOT NULL PRIMARY KEY, `qty` INT NULL, `on_hold` INT NULL, location VARCHAR(40))", conn)
+            Dim createTable As New MySqlCommand("CREATE TABLE `" & storeName & "` ( `pid` varchar(6) NOT NULL PRIMARY KEY, `qty` DECIMAL(10,2) NULL, `on_hold` DECIMAL(10,2) NULL, location VARCHAR(6))", conn)
             createTable.ExecuteNonQuery()
         End If
 

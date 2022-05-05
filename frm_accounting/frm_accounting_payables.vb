@@ -19,12 +19,14 @@ Public Class frm_accounting_payables
 
         Try
             conn.Open()
-            Dim query = "SELECT payable_id, ims_suppliers.supplier, ims_suppliers.terms, receipt_ref, receipt_type, amount, status, received_date, ims_stores.store_name, 
-                        CONCAT('PO',LPAD(purchase_id, 5, 0)) as purchase_id, payment_cheque, payment_dates, CONCAT('PR', LPAD(payment_ref, 5, 0)) as payment_ref, 
-                        DATE_ADD(received_date, INTERVAL ims_suppliers.terms DAY) as due_date FROM ims_delivery_receipts
-                        INNER JOIN ims_suppliers ON ims_suppliers.id=ims_delivery_receipts.supplier_id
-                        LEFT JOIN ims_payment_vouchers ON ims_payment_vouchers.payment_id=ims_delivery_receipts.payment_ref
-                        INNER JOIN ims_stores ON ims_stores.store_id=ims_delivery_receipts.store_id " & status & " ORDER BY payable_id DESC"
+            Dim query = "SELECT payable_id, ims_suppliers.supplier, ims_purchase.terms, receipt_ref, receipt_type, amount, ims_delivery_receipts.status, received_date, ims_stores.store_name, 
+                        CONCAT('PO',LPAD(ims_delivery_receipts.purchase_id, 5, 0)) as purchase_id, CONCAT('PV', LPAD(ims_delivery_receipts.p_voucher_id, 5, 0)) as payment_ref, 
+                        DATE_ADD(received_date, INTERVAL ims_suppliers.terms DAY) as due_date 
+                        FROM ims_delivery_receipts
+                        LEFT JOIN ims_suppliers ON ims_suppliers.id=ims_delivery_receipts.supplier_id
+                        LEFT JOIN ims_purchase ON ims_purchase.purchase_id=ims_delivery_receipts.purchase_id
+                        LEFT JOIN ims_payment_vouchers ON ims_payment_vouchers.payment_id=ims_delivery_receipts.p_voucher_id
+                        LEFT JOIN ims_stores ON ims_stores.store_id=ims_delivery_receipts.store_id " & status & " ORDER BY payable_id DESC"
             Dim cmd = New MySqlCommand(query, conn)
             cmd.ExecuteNonQuery()
 

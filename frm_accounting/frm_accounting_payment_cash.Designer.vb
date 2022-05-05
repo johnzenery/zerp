@@ -42,6 +42,7 @@ Partial Class frm_accounting_payment_cash
         Me.col_created_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.cbb_status = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
+        Me.col_voucher_id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GunaPanel4.SuspendLayout()
         Me.GunaPanel5.SuspendLayout()
         Me.GunaPanel1.SuspendLayout()
@@ -172,7 +173,7 @@ Partial Class frm_accounting_payment_cash
         Me.grid_payments_view.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.grid_payments_view.Appearance.Row.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid_payments_view.Appearance.Row.Options.UseFont = True
-        Me.grid_payments_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_id, Me.col_payee, Me.col_amount, Me.col_created_at})
+        Me.grid_payments_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_id, Me.col_payee, Me.col_amount, Me.col_created_at, Me.col_voucher_id})
         Me.grid_payments_view.GridControl = Me.grid_payments
         Me.grid_payments_view.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always
         Me.grid_payments_view.Name = "grid_payments_view"
@@ -245,6 +246,14 @@ Partial Class frm_accounting_payment_cash
         Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
         Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
         '
+        'col_voucher_id
+        '
+        Me.col_voucher_id.Caption = "Voucher ID"
+        Me.col_voucher_id.FieldName = "voucher_id"
+        Me.col_voucher_id.Name = "col_voucher_id"
+        Me.col_voucher_id.Visible = True
+        Me.col_voucher_id.VisibleIndex = 4
+        '
         'frm_accounting_payment_cash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -283,4 +292,5 @@ Partial Class frm_accounting_payment_cash
     Friend WithEvents col_created_at As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents cbb_status As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
     Friend WithEvents RepositoryItemButtonEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
+    Friend WithEvents col_voucher_id As DevExpress.XtraGrid.Columns.GridColumn
 End Class

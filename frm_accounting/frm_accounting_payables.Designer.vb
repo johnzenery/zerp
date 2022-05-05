@@ -24,11 +24,11 @@ Partial Class frm_accounting_payables
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim EditorButtonImageOptions3 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject9 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject10 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject11 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject12 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions2 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject5 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject6 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject7 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject8 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.RepositoryItemMemoEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit()
         Me.GunaPanel4 = New Guna.UI.WinForms.GunaPanel()
         Me.GunaPanel5 = New Guna.UI.WinForms.GunaPanel()
@@ -87,7 +87,7 @@ Partial Class frm_accounting_payables
         Me.GunaPanel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.GunaPanel4.Location = New System.Drawing.Point(0, 0)
         Me.GunaPanel4.Name = "GunaPanel4"
-        Me.GunaPanel4.Size = New System.Drawing.Size(1084, 78)
+        Me.GunaPanel4.Size = New System.Drawing.Size(1131, 78)
         Me.GunaPanel4.TabIndex = 11
         '
         'GunaPanel5
@@ -98,7 +98,7 @@ Partial Class frm_accounting_payables
         Me.GunaPanel5.Controls.Add(Me.GunaPanel1)
         Me.GunaPanel5.Location = New System.Drawing.Point(19, 44)
         Me.GunaPanel5.Name = "GunaPanel5"
-        Me.GunaPanel5.Size = New System.Drawing.Size(1049, 27)
+        Me.GunaPanel5.Size = New System.Drawing.Size(1096, 27)
         Me.GunaPanel5.TabIndex = 5
         '
         'GunaPanel1
@@ -188,7 +188,7 @@ Partial Class frm_accounting_payables
         Me.grid_payables.MainView = Me.grid_payables_view
         Me.grid_payables.Name = "grid_payables"
         Me.grid_payables.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_view})
-        Me.grid_payables.Size = New System.Drawing.Size(1060, 418)
+        Me.grid_payables.Size = New System.Drawing.Size(1107, 418)
         Me.grid_payables.TabIndex = 12
         Me.grid_payables.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_payables_view})
         '
@@ -315,8 +315,6 @@ Partial Class frm_accounting_payables
         Me.col_posted_date.ColumnEdit = Me.RepositoryItemMemoEdit1
         Me.col_posted_date.FieldName = "payment_cheque"
         Me.col_posted_date.Name = "col_posted_date"
-        Me.col_posted_date.Visible = True
-        Me.col_posted_date.VisibleIndex = 12
         Me.col_posted_date.Width = 115
         '
         'col_payment_dates
@@ -329,15 +327,13 @@ Partial Class frm_accounting_payables
         Me.col_payment_dates.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.col_payment_dates.FieldName = "payment_dates"
         Me.col_payment_dates.Name = "col_payment_dates"
-        Me.col_payment_dates.Visible = True
-        Me.col_payment_dates.VisibleIndex = 13
         Me.col_payment_dates.Width = 140
         '
         'col_payment_ref
         '
         Me.col_payment_ref.AppearanceCell.Options.UseTextOptions = True
         Me.col_payment_ref.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.col_payment_ref.Caption = "Voucher Ref."
+        Me.col_payment_ref.Caption = "Voucher ID"
         Me.col_payment_ref.FieldName = "payment_ref"
         Me.col_payment_ref.Name = "col_payment_ref"
         Me.col_payment_ref.Visible = True
@@ -380,8 +376,8 @@ Partial Class frm_accounting_payables
         '
         Me.btn_view.AutoHeight = False
         Me.btn_view.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        EditorButtonImageOptions3.Image = Global.Inventory_Management.My.Resources.Resources.documentmap_16x16
-        Me.btn_view.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions3, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject9, SerializableAppearanceObject10, SerializableAppearanceObject11, SerializableAppearanceObject12, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions2.Image = Global.Inventory_Management.My.Resources.Resources.documentmap_16x16
+        Me.btn_view.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions2, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject5, SerializableAppearanceObject6, SerializableAppearanceObject7, SerializableAppearanceObject8, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.btn_view.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.btn_view.LookAndFeel.UseDefaultLookAndFeel = False
         Me.btn_view.Name = "btn_view"
@@ -394,7 +390,7 @@ Partial Class frm_accounting_payables
         Me.PanelControl1.Controls.Add(Me.btn_unpaid)
         Me.PanelControl1.Controls.Add(Me.btn_paid)
         Me.PanelControl1.Controls.Add(Me.btn_all)
-        Me.PanelControl1.Location = New System.Drawing.Point(821, 17)
+        Me.PanelControl1.Location = New System.Drawing.Point(868, 17)
         Me.PanelControl1.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.PanelControl1.LookAndFeel.UseDefaultLookAndFeel = False
         Me.PanelControl1.Name = "PanelControl1"
@@ -476,7 +472,7 @@ Partial Class frm_accounting_payables
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 78)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1084, 499)
+        Me.Panel1.Size = New System.Drawing.Size(1131, 499)
         Me.Panel1.TabIndex = 14
         '
         'LabelControl1
@@ -484,7 +480,7 @@ Partial Class frm_accounting_payables
         Me.LabelControl1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.LabelControl1.Appearance.Options.UseFont = True
-        Me.LabelControl1.Location = New System.Drawing.Point(764, 31)
+        Me.LabelControl1.Location = New System.Drawing.Point(811, 31)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(51, 16)
         Me.LabelControl1.TabIndex = 14
@@ -495,7 +491,7 @@ Partial Class frm_accounting_payables
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.GhostWhite
-        Me.ClientSize = New System.Drawing.Size(1084, 577)
+        Me.ClientSize = New System.Drawing.Size(1131, 577)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GunaPanel4)
         Me.Name = "frm_accounting_payables"

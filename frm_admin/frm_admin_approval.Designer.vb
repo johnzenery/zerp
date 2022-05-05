@@ -36,16 +36,16 @@ Partial Class frm_admin_approval
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim EditorButtonImageOptions3 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject9 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject10 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject11 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject12 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim EditorButtonImageOptions4 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject13 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject14 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject15 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject16 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions1 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject3 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions2 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject5 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject6 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject7 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject8 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.panel_top = New Guna.UI.WinForms.GunaLinePanel()
         Me.GunaPanel5 = New Guna.UI.WinForms.GunaPanel()
         Me.GunaPanel2 = New Guna.UI.WinForms.GunaPanel()
@@ -79,7 +79,7 @@ Partial Class frm_admin_approval
         Me.col_transfer_status = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.col_transfer_to = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.col_action = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.btn_print_stockTransfer = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
+        Me.btn_view_stockTransfer = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.col_transferType = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.col_created_by = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.col_created_at = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -120,7 +120,7 @@ Partial Class frm_admin_approval
         Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.btn_view_report = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
+        Me.btn_view_report_stockTransfer = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.tab_reconcilations = New System.Windows.Forms.TabPage()
         Me.panel_top.SuspendLayout()
@@ -134,7 +134,7 @@ Partial Class frm_admin_approval
         CType(Me.btn_delete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_transfer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_transfer_view, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_print_stockTransfer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_view_stockTransfer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_po, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_po_view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_sales_returns, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -150,7 +150,7 @@ Partial Class frm_admin_approval
         Me.tab_transferReport.SuspendLayout()
         CType(Me.grid_transferReport, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_transferReport_view, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_view_report, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_view_report_stockTransfer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tab_reconcilations.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -192,7 +192,6 @@ Partial Class frm_admin_approval
         'link_po_list
         '
         Me.link_po_list.Appearance.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.link_po_list.Appearance.LinkColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
         Me.link_po_list.Appearance.Options.UseFont = True
         Me.link_po_list.Appearance.Options.UseLinkColor = True
         Me.link_po_list.AppearanceHovered.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -224,7 +223,6 @@ Partial Class frm_admin_approval
         'link_home
         '
         Me.link_home.Appearance.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.link_home.Appearance.LinkColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
         Me.link_home.Appearance.Options.UseFont = True
         Me.link_home.Appearance.Options.UseLinkColor = True
         Me.link_home.AppearanceDisabled.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -272,7 +270,6 @@ Partial Class frm_admin_approval
         'grid_quotation_view
         '
         Me.grid_quotation_view.Appearance.HeaderPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold)
-        Me.grid_quotation_view.Appearance.HeaderPanel.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
         Me.grid_quotation_view.Appearance.HeaderPanel.Options.UseFont = True
         Me.grid_quotation_view.Appearance.HeaderPanel.Options.UseForeColor = True
         Me.grid_quotation_view.Appearance.HeaderPanel.Options.UseTextOptions = True
@@ -486,7 +483,7 @@ Partial Class frm_admin_approval
         Me.grid_transfer.LookAndFeel.UseDefaultLookAndFeel = False
         Me.grid_transfer.MainView = Me.grid_transfer_view
         Me.grid_transfer.Name = "grid_transfer"
-        Me.grid_transfer.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_print_stockTransfer})
+        Me.grid_transfer.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_view_stockTransfer})
         Me.grid_transfer.Size = New System.Drawing.Size(1178, 560)
         Me.grid_transfer.TabIndex = 5
         Me.grid_transfer.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_transfer_view})
@@ -494,7 +491,6 @@ Partial Class frm_admin_approval
         'grid_transfer_view
         '
         Me.grid_transfer_view.Appearance.HeaderPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold)
-        Me.grid_transfer_view.Appearance.HeaderPanel.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
         Me.grid_transfer_view.Appearance.HeaderPanel.Options.UseFont = True
         Me.grid_transfer_view.Appearance.HeaderPanel.Options.UseForeColor = True
         Me.grid_transfer_view.Appearance.HeaderPanel.Options.UseTextOptions = True
@@ -552,21 +548,21 @@ Partial Class frm_admin_approval
         '
         'col_action
         '
-        Me.col_action.ColumnEdit = Me.btn_print_stockTransfer
+        Me.col_action.ColumnEdit = Me.btn_view_stockTransfer
         Me.col_action.MaxWidth = 50
         Me.col_action.Name = "col_action"
         Me.col_action.Visible = True
         Me.col_action.VisibleIndex = 0
         Me.col_action.Width = 50
         '
-        'btn_print_stockTransfer
+        'btn_view_stockTransfer
         '
-        Me.btn_print_stockTransfer.AutoHeight = False
-        EditorButtonImageOptions3.Image = Global.Inventory_Management.My.Resources.Resources.loadfrom_16x16
-        Me.btn_print_stockTransfer.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions3, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject9, SerializableAppearanceObject10, SerializableAppearanceObject11, SerializableAppearanceObject12, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
-        Me.btn_print_stockTransfer.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.btn_print_stockTransfer.Name = "btn_print_stockTransfer"
-        Me.btn_print_stockTransfer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
+        Me.btn_view_stockTransfer.AutoHeight = False
+        EditorButtonImageOptions1.Image = Global.Inventory_Management.My.Resources.Resources.up_16x16
+        Me.btn_view_stockTransfer.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions1, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, SerializableAppearanceObject2, SerializableAppearanceObject3, SerializableAppearanceObject4, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        Me.btn_view_stockTransfer.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.btn_view_stockTransfer.Name = "btn_view_stockTransfer"
+        Me.btn_view_stockTransfer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
         '
         'col_transferType
         '
@@ -647,7 +643,6 @@ Partial Class frm_admin_approval
         'grid_po_view
         '
         Me.grid_po_view.Appearance.HeaderPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold)
-        Me.grid_po_view.Appearance.HeaderPanel.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
         Me.grid_po_view.Appearance.HeaderPanel.Options.UseFont = True
         Me.grid_po_view.Appearance.HeaderPanel.Options.UseForeColor = True
         Me.grid_po_view.Appearance.HeaderPanel.Options.UseTextOptions = True
@@ -722,7 +717,6 @@ Partial Class frm_admin_approval
         'grid_sales_returns_view
         '
         Me.grid_sales_returns_view.Appearance.HeaderPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold)
-        Me.grid_sales_returns_view.Appearance.HeaderPanel.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
         Me.grid_sales_returns_view.Appearance.HeaderPanel.Options.UseFont = True
         Me.grid_sales_returns_view.Appearance.HeaderPanel.Options.UseForeColor = True
         Me.grid_sales_returns_view.Appearance.HeaderPanel.Options.UseTextOptions = True
@@ -799,7 +793,6 @@ Partial Class frm_admin_approval
         'grid_approval_units_view
         '
         Me.grid_approval_units_view.Appearance.HeaderPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold)
-        Me.grid_approval_units_view.Appearance.HeaderPanel.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
         Me.grid_approval_units_view.Appearance.HeaderPanel.Options.UseFont = True
         Me.grid_approval_units_view.Appearance.HeaderPanel.Options.UseForeColor = True
         Me.grid_approval_units_view.Appearance.HeaderPanel.Options.UseTextOptions = True
@@ -951,7 +944,7 @@ Partial Class frm_admin_approval
         Me.grid_transferReport.LookAndFeel.UseDefaultLookAndFeel = False
         Me.grid_transferReport.MainView = Me.grid_transferReport_view
         Me.grid_transferReport.Name = "grid_transferReport"
-        Me.grid_transferReport.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_view_report})
+        Me.grid_transferReport.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_view_report_stockTransfer})
         Me.grid_transferReport.Size = New System.Drawing.Size(1178, 560)
         Me.grid_transferReport.TabIndex = 6
         Me.grid_transferReport.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_transferReport_view})
@@ -959,7 +952,6 @@ Partial Class frm_admin_approval
         'grid_transferReport_view
         '
         Me.grid_transferReport_view.Appearance.HeaderPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold)
-        Me.grid_transferReport_view.Appearance.HeaderPanel.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
         Me.grid_transferReport_view.Appearance.HeaderPanel.Options.UseFont = True
         Me.grid_transferReport_view.Appearance.HeaderPanel.Options.UseForeColor = True
         Me.grid_transferReport_view.Appearance.HeaderPanel.Options.UseTextOptions = True
@@ -1053,21 +1045,21 @@ Partial Class frm_admin_approval
         '
         'GridColumn6
         '
-        Me.GridColumn6.ColumnEdit = Me.btn_view_report
+        Me.GridColumn6.ColumnEdit = Me.btn_view_report_stockTransfer
         Me.GridColumn6.MaxWidth = 50
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 0
         Me.GridColumn6.Width = 50
         '
-        'btn_view_report
+        'btn_view_report_stockTransfer
         '
-        Me.btn_view_report.AutoHeight = False
-        EditorButtonImageOptions4.Image = Global.Inventory_Management.My.Resources.Resources.loadfrom_16x16
-        Me.btn_view_report.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions4, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject13, SerializableAppearanceObject14, SerializableAppearanceObject15, SerializableAppearanceObject16, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
-        Me.btn_view_report.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.btn_view_report.Name = "btn_view_report"
-        Me.btn_view_report.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
+        Me.btn_view_report_stockTransfer.AutoHeight = False
+        EditorButtonImageOptions2.Image = Global.Inventory_Management.My.Resources.Resources.up_16x16
+        Me.btn_view_report_stockTransfer.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions2, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject5, SerializableAppearanceObject6, SerializableAppearanceObject7, SerializableAppearanceObject8, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        Me.btn_view_report_stockTransfer.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.btn_view_report_stockTransfer.Name = "btn_view_report_stockTransfer"
+        Me.btn_view_report_stockTransfer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
         '
         'LabelControl8
         '
@@ -1117,7 +1109,7 @@ Partial Class frm_admin_approval
         CType(Me.btn_delete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_transfer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_transfer_view, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_print_stockTransfer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_view_stockTransfer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_po, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_po_view, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_sales_returns, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1137,7 +1129,7 @@ Partial Class frm_admin_approval
         Me.tab_transferReport.PerformLayout()
         CType(Me.grid_transferReport, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_transferReport_view, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_view_report, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_view_report_stockTransfer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tab_reconcilations.ResumeLayout(False)
         Me.tab_reconcilations.PerformLayout()
         Me.ResumeLayout(False)
@@ -1204,7 +1196,6 @@ Partial Class frm_admin_approval
     Friend WithEvents tab_stockTransfer As TabPage
     Friend WithEvents tab_reconcilations As TabPage
     Friend WithEvents col_action As GridColumn
-    Friend WithEvents btn_print_stockTransfer As RepositoryItemButtonEdit
     Friend WithEvents col_transferType As GridColumn
     Friend WithEvents col_created_by As GridColumn
     Friend WithEvents col_created_at As GridColumn
@@ -1215,10 +1206,11 @@ Partial Class frm_admin_approval
     Friend WithEvents GridColumn3 As GridColumn
     Friend WithEvents GridColumn4 As GridColumn
     Friend WithEvents GridColumn5 As GridColumn
-    Friend WithEvents btn_view_report As RepositoryItemButtonEdit
     Friend WithEvents col_reportID As GridColumn
     Friend WithEvents GridColumn8 As GridColumn
     Friend WithEvents GridColumn9 As GridColumn
     Friend WithEvents LabelControl8 As LabelControl
     Friend WithEvents GridColumn6 As GridColumn
+    Friend WithEvents btn_view_report_stockTransfer As RepositoryItemButtonEdit
+    Friend WithEvents btn_view_stockTransfer As RepositoryItemButtonEdit
 End Class

@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.1.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -56,169 +56,25 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("winlandene.synology.me")>  _
-        Public Property server() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("WAN")>  _
+        Public Property ConnectionType() As String
             Get
-                Return CType(Me("server"),String)
+                Return CType(Me("ConnectionType"),String)
             End Get
             Set
-                Me("server") = value
+                Me("ConnectionType") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("zerpdb")>  _
-        Public Property database() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("Development")>  _
+        Public Property DatabaseType() As String
             Get
-                Return CType(Me("database"),String)
+                Return CType(Me("DatabaseType"),String)
             End Get
             Set
-                Me("database") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("zerp")>  _
-        Public Property username() As String
-            Get
-                Return CType(Me("username"),String)
-            End Get
-            Set
-                Me("username") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("zerpconnectsall")>  _
-        Public Property password() As String
-            Get
-                Return CType(Me("password"),String)
-            End Get
-            Set
-                Me("password") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("User Photos")>  _
-        Public Property UserFolder() As String
-            Get
-                Return CType(Me("UserFolder"),String)
-            End Get
-            Set
-                Me("UserFolder") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("wlftp")>  _
-        Public Property FTPusername() As String
-            Get
-                Return CType(Me("FTPusername"),String)
-            End Get
-            Set
-                Me("FTPusername") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("@Ftpmaster2297")>  _
-        Public Property FTPpass() As String
-            Get
-                Return CType(Me("FTPpass"),String)
-            End Get
-            Set
-                Me("FTPpass") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property login() As Boolean
-            Get
-                Return CType(Me("login"),Boolean)
-            End Get
-            Set
-                Me("login") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property login_user() As String
-            Get
-                Return CType(Me("login_user"),String)
-            End Get
-            Set
-                Me("login_user") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("63306")>  _
-        Public Property port() As String
-            Get
-                Return CType(Me("port"),String)
-            End Get
-            Set
-                Me("port") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("65021")>  _
-        Public Property FTPport() As String
-            Get
-                Return CType(Me("FTPport"),String)
-            End Get
-            Set
-                Me("FTPport") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("winlandene.synology.me")>  _
-        Public Property FTPserver() As String
-            Get
-                Return CType(Me("FTPserver"),String)
-            End Get
-            Set
-                Me("FTPserver") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Product Photos")>  _
-        Public Property folder_product() As String
-            Get
-                Return CType(Me("folder_product"),String)
-            End Get
-            Set
-                Me("folder_product") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Sales")>  _
-        Public Property SalesFolder() As String
-            Get
-                Return CType(Me("SalesFolder"),String)
-            End Get
-            Set
-                Me("SalesFolder") = value
+                Me("DatabaseType") = value
             End Set
         End Property
     End Class

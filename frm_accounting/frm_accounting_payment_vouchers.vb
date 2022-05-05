@@ -268,17 +268,24 @@ Public Class frm_accounting_payment_vouchers
     '---- CONTROLS ----
 
     'btn_view
-    Private Sub RepositoryItemButtonEdit1_Click(sender As Object, e As EventArgs) Handles btn_print.Click
-        Dim id = grid_payments_view.GetFocusedRowCellValue(col_id)
-        print_voucher(CInt(id.ToString.Replace("PV", "")))
+    Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
+        Try
+            Using connection = New MySqlConnection(str)
+                connection.Open()
+                Dim id As Integer = grid_payments_view.GetFocusedRowCellValue(col_id).ToString.Replace("PV", "")
+                frm_accounting_generate_payment.print_voucher(id, connection)
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical, "Error")
+        End Try
     End Sub
 
     Private Sub btn_void_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles btn_void.ButtonClick
 
         'Validation
-        Dim pvid As Integer = grid_payments_view.GetFocusedRowCellValue(col_id).ToString.Replace("PV", String.Empty)
-        Dim status = grid_payments_view.GetFocusedRowCellValue(col_status)
-        If status = "Voided" Then
+        Dim voucher_id As Integer = grid_payments_view.GetFocusedRowCellValue(col_id).ToString.Replace("PV", String.Empty)
+        Dim voucher_status = grid_payments_view.GetFocusedRowCellValue(col_status)
+        If voucher_status = "VOIDED" Then
             MsgBox("Voided already!", vbInformation, "Information")
             Exit Sub
         End If
@@ -289,28 +296,26 @@ Public Class frm_accounting_payment_vouchers
                     connect.Open()
 
                     Using cmd = New MySqlCommand("UPDATE ims_payment_vouchers SET voucher_status='VOIDED' 
-                                    WHERE payment_id=" & pvid, connect)
+                                    WHERE payment_id=" & voucher_id, connect)
                         If cmd.ExecuteNonQuery > 0 Then
 
                             'Unpaid Receipts
-                            Using cmd_update_receipts = New MySqlCommand("SELECT receipts FROM ims_payment_vouchers WHERE payment_id=" & pvid, connect)
-                                Dim receipts_collection As String = cmd_update_receipts.ExecuteScalar
-                                Dim receipts = receipts_collection.Split(",")
+                            Using cmd_update_receipt = New MySqlCommand("UPDATE ims_delivery_receipts 
+                                                            SET status='UNPAID', p_voucher_id=NULL WHERE p_voucher_id=" & voucher_id, connect)
+                                cmd_update_receipt.ExecuteNonQuery()
+                            End Using
 
-                                For i = 0 To receipts.Length - 1
-                                    Using cmd_update_order = New MySqlCommand("UPDATE ims_delivery_receipts SET status='UNPAID' WHERE payable_id=@payable_id", connect)
-                                        cmd_update_order.Parameters.AddWithValue("@payable_id", receipts(i).Trim)
-                                        cmd_update_order.ExecuteNonQuery()
-                                    End Using
-                                Next
-
+                            'Void Purchase Returns
+                            Using cmd_update_purchase_returns = New MySqlCommand("UPDATE ims_purchase_returns
+                                                            SET status='Pending', is_applied='0', p_voucher_id=NULL
+                                                            WHERE p_voucher_id=" & voucher_id, connect)
+                                cmd_update_purchase_returns.ExecuteNonQuery()
                             End Using
 
                             'Void Cheque
                             Using cmd_update_cheque = New MySqlCommand("UPDATE ims_generated_cheques
-                                                            INNER JOIN ims_delivery_receipts ON ims_delivery_receipts.payment_cheque=cheque_no
-                                                            SET ims_generated_cheques.status='VOIDED'  
-                                                            WHERE payment_ref=" & pvid, connect)
+                                                            SET status='VOIDED'
+                                                            WHERE p_voucher_id=" & voucher_id, connect)
                                 cmd_update_cheque.ExecuteNonQuery()
                             End Using
 

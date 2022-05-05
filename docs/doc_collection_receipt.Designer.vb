@@ -751,7 +751,7 @@ Partial Public Class doc_collection_receipt
         Me.XrLabel27.StylePriority.UseTextAlignment = False
         Me.XrLabel27.Text = "XrLabel27"
         Me.XrLabel27.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrLabel27.TextFormatString = "{0:MM/dd/yyyy}"
+        Me.XrLabel27.TextFormatString = "{0:MM/dd/yyyy (ddd)}"
         '
         'XrLabel26
         '
@@ -999,7 +999,7 @@ Partial Public Class doc_collection_receipt
         Me.Margins = New System.Drawing.Printing.Margins(30, 30, 30, 30)
         Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() {Me.collection_id, Me.collection_date, Me.customer, Me.collection_ref, Me.total_amount, Me.generated_by, Me.store_info, Me.address, Me.collected_by, Me.encoded_by, Me.store_name})
         Me.RequestParameters = False
-        Me.Version = "21.1"
+        Me.Version = "21.2"
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrintData1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).EndInit()

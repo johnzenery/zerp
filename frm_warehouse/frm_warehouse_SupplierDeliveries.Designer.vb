@@ -30,17 +30,17 @@ Partial Class frm_warehouse_SupplierDeliveries
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.dt_receipt = New DevExpress.XtraEditors.DateEdit()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
@@ -86,6 +86,8 @@ Partial Class frm_warehouse_SupplierDeliveries
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lbl_head = New System.Windows.Forms.Label()
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
+        Me.txt_date_sent = New DevExpress.XtraEditors.TextEdit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.dt_receipt.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,6 +105,7 @@ Partial Class frm_warehouse_SupplierDeliveries
         CType(Me.cbb_deliver.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbb_supplier.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.txt_date_sent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControl1
@@ -111,6 +114,8 @@ Partial Class frm_warehouse_SupplierDeliveries
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.PanelControl1.Controls.Add(Me.txt_date_sent)
+        Me.PanelControl1.Controls.Add(Me.LabelControl12)
         Me.PanelControl1.Controls.Add(Me.dt_receipt)
         Me.PanelControl1.Controls.Add(Me.LabelControl11)
         Me.PanelControl1.Controls.Add(Me.grid_order)
@@ -187,36 +192,36 @@ Partial Class frm_warehouse_SupplierDeliveries
         Me.grid_order.BackgroundColor = System.Drawing.Color.GhostWhite
         Me.grid_order.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.grid_order.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 8.25!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grid_order.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer))
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Tahoma", 8.25!)
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grid_order.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
         Me.grid_order.ColumnHeadersHeight = 32
         Me.grid_order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.grid_order.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.col_sup_model, Me.DataGridViewTextBoxColumn4, Me.col_cost, Me.col_total, Me.col_tota_received, Me.col_received, Me.col_remaining_qty})
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Tahoma", 8.25!)
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(78, Byte), Integer))
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grid_order.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Tahoma", 8.25!)
+        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(78, Byte), Integer))
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grid_order.DefaultCellStyle = DataGridViewCellStyle21
         Me.grid_order.EnableHeadersVisualStyles = False
         Me.grid_order.Location = New System.Drawing.Point(22, 179)
         Me.grid_order.Name = "grid_order"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Tahoma", 8.25!)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grid_order.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer))
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Tahoma", 8.25!)
+        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grid_order.RowHeadersDefaultCellStyle = DataGridViewCellStyle22
         Me.grid_order.RowHeadersWidth = 30
         Me.grid_order.RowTemplate.Height = 23
         Me.grid_order.Size = New System.Drawing.Size(987, 324)
@@ -226,9 +231,9 @@ Partial Class frm_warehouse_SupplierDeliveries
         '
         Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "pid"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle13
         Me.DataGridViewTextBoxColumn1.FillWeight = 80.0!
         Me.DataGridViewTextBoxColumn1.HeaderText = "PID"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
@@ -239,8 +244,8 @@ Partial Class frm_warehouse_SupplierDeliveries
         '
         Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "qty"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle14
         Me.DataGridViewTextBoxColumn2.FillWeight = 80.0!
         Me.DataGridViewTextBoxColumn2.HeaderText = "Quantity"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
@@ -250,8 +255,8 @@ Partial Class frm_warehouse_SupplierDeliveries
         '
         Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "winmodel"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle15
         Me.DataGridViewTextBoxColumn3.FillWeight = 73.71088!
         Me.DataGridViewTextBoxColumn3.HeaderText = "Win. Model"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
@@ -281,9 +286,9 @@ Partial Class frm_warehouse_SupplierDeliveries
         '
         Me.col_cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.col_cost.DataPropertyName = "cost"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "n2"
-        Me.col_cost.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle16.Format = "n2"
+        Me.col_cost.DefaultCellStyle = DataGridViewCellStyle16
         Me.col_cost.FillWeight = 102.6804!
         Me.col_cost.HeaderText = "Cost"
         Me.col_cost.Name = "col_cost"
@@ -294,9 +299,9 @@ Partial Class frm_warehouse_SupplierDeliveries
         '
         Me.col_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.col_total.DataPropertyName = "total"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "n2"
-        Me.col_total.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle17.Format = "n2"
+        Me.col_total.DefaultCellStyle = DataGridViewCellStyle17
         Me.col_total.FillWeight = 125.5929!
         Me.col_total.HeaderText = "Total"
         Me.col_total.Name = "col_total"
@@ -307,9 +312,9 @@ Partial Class frm_warehouse_SupplierDeliveries
         'col_tota_received
         '
         Me.col_tota_received.DataPropertyName = "total_received"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.col_tota_received.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.col_tota_received.DefaultCellStyle = DataGridViewCellStyle18
         Me.col_tota_received.HeaderText = "Total Received"
         Me.col_tota_received.Name = "col_tota_received"
         Me.col_tota_received.ReadOnly = True
@@ -318,8 +323,8 @@ Partial Class frm_warehouse_SupplierDeliveries
         'col_received
         '
         Me.col_received.DataPropertyName = "qty_received"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.col_received.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.col_received.DefaultCellStyle = DataGridViewCellStyle19
         Me.col_received.HeaderText = "QTY. Received"
         Me.col_received.Name = "col_received"
         Me.col_received.Width = 95
@@ -327,8 +332,8 @@ Partial Class frm_warehouse_SupplierDeliveries
         'col_remaining_qty
         '
         Me.col_remaining_qty.DataPropertyName = "remaining"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.col_remaining_qty.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.col_remaining_qty.DefaultCellStyle = DataGridViewCellStyle20
         Me.col_remaining_qty.HeaderText = "Remaining"
         Me.col_remaining_qty.Name = "col_remaining_qty"
         Me.col_remaining_qty.ReadOnly = True
@@ -621,9 +626,9 @@ Partial Class frm_warehouse_SupplierDeliveries
         Me.LabelControl5.Appearance.Options.UseFont = True
         Me.LabelControl5.Location = New System.Drawing.Point(20, 30)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(69, 14)
+        Me.LabelControl5.Size = New System.Drawing.Size(65, 14)
         Me.LabelControl5.TabIndex = 69
-        Me.LabelControl5.Text = "Purchase ID:"
+        Me.LabelControl5.Text = "Purchase ID"
         '
         'txt_poid
         '
@@ -667,9 +672,9 @@ Partial Class frm_warehouse_SupplierDeliveries
         Me.LabelControl1.Appearance.Options.UseFont = True
         Me.LabelControl1.Location = New System.Drawing.Point(22, 59)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(47, 14)
+        Me.LabelControl1.Size = New System.Drawing.Size(43, 14)
         Me.LabelControl1.TabIndex = 0
-        Me.LabelControl1.Text = "Supplier:"
+        Me.LabelControl1.Text = "Supplier"
         '
         'LabelControl6
         '
@@ -677,9 +682,9 @@ Partial Class frm_warehouse_SupplierDeliveries
         Me.LabelControl6.Appearance.Options.UseFont = True
         Me.LabelControl6.Location = New System.Drawing.Point(21, 85)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(56, 14)
+        Me.LabelControl6.Size = New System.Drawing.Size(52, 14)
         Me.LabelControl6.TabIndex = 49
-        Me.LabelControl6.Text = "Deliver to:"
+        Me.LabelControl6.Text = "Deliver to"
         '
         'Panel1
         '
@@ -701,6 +706,28 @@ Partial Class frm_warehouse_SupplierDeliveries
         Me.lbl_head.Size = New System.Drawing.Size(174, 27)
         Me.lbl_head.TabIndex = 0
         Me.lbl_head.Text = "Receive Delivery"
+        '
+        'LabelControl12
+        '
+        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.LabelControl12.Appearance.Options.UseFont = True
+        Me.LabelControl12.Location = New System.Drawing.Point(197, 30)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(56, 14)
+        Me.LabelControl12.TabIndex = 124
+        Me.LabelControl12.Text = "Date Sent"
+        '
+        'txt_date_sent
+        '
+        Me.txt_date_sent.Location = New System.Drawing.Point(259, 28)
+        Me.txt_date_sent.Name = "txt_date_sent"
+        Me.txt_date_sent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txt_date_sent.Properties.Appearance.Options.UseFont = True
+        Me.txt_date_sent.Properties.Appearance.Options.UseTextOptions = True
+        Me.txt_date_sent.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.txt_date_sent.Properties.ReadOnly = True
+        Me.txt_date_sent.Size = New System.Drawing.Size(96, 20)
+        Me.txt_date_sent.TabIndex = 125
         '
         'frm_warehouse_SupplierDeliveries
         '
@@ -732,6 +759,7 @@ Partial Class frm_warehouse_SupplierDeliveries
         CType(Me.cbb_supplier.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.txt_date_sent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -780,4 +808,6 @@ Partial Class frm_warehouse_SupplierDeliveries
     Friend WithEvents LabelControl11 As LabelControl
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lbl_head As Label
+    Friend WithEvents txt_date_sent As TextEdit
+    Friend WithEvents LabelControl12 As LabelControl
 End Class

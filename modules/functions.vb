@@ -5,7 +5,7 @@ Imports MySql.Data.MySqlClient
 
 Module functions
 
-    ReadOnly conn As New MySqlConnection(str)
+    'ReadOnly conn As New MySqlConnection(str)
     Public Property rowHandle As Integer
     Public Property sales_return_id As Integer
     Public Property sales_return_amount As Decimal
@@ -13,182 +13,45 @@ Module functions
     'TEST CONNECTION
     Public Function TestConnection()
 
-        Try
-            conn.Open()
-            Return False
+        Dim bool = False
 
+        'SELECT CONNECTION_STRING 
+        Select Case My.Settings.ConnectionType
+            Case "LAN"
+                server = local_server
+                port = local_port
+            Case "WAN"
+                server = wan_server
+                port = wan_port
+        End Select
+
+        'SELECTT Database Type
+        Select Case My.Settings.DatabaseType
+            Case "Production"
+                db = production_db
+            Case "Development"
+                db = development_db
+        End Select
+
+        'SET NEW CONNECTION STRING
+        str = "Server=" & server & ";Userid=" & uid & ";Password=" & password & ";Port=" & port & ";Database=" & db & ";Convert Zero Datetime=True"
+
+        Try
+            Using conn = New MySqlConnection(str)
+                conn.Open()
+
+                If conn.State = ConnectionState.Open Then
+                    bool = True
+                End If
+
+            End Using
         Catch ex As Exception
-            MsgBox("Couldn't connect to server!" & Environment.NewLine & "Please contact your Administrator." & vbCrLf & vbCrLf & "Error: " & ex.Message, vbCritical, "Connection Problem")
-            Return True
-        Finally
-            conn.Close()
+            MsgBox("Couldn't connect to ZERP server!" & Environment.NewLine & "Please contact your administrator.", vbCritical, "Connection Problem")
         End Try
+
+        Return bool
 
     End Function
-
-    'Role Access
-    Public Sub role_access(role_id As Integer)
-
-        Try
-            Dim result = New StringBuilder
-
-            conn.Open()
-            Dim cmd = New MySqlCommand("SELECT access FROM ims_users WHERE usr_id=@id", conn)
-            cmd.Parameters.AddWithValue("@id", role_id)
-            Dim var As String = cmd.ExecuteScalar
-
-            result.Append(var)
-
-            'Hide All Menu
-            With frm_main
-                .menu_product.Visible = False
-                .menu_sales.Visible = False
-                .menu_warehouse.Visible = False
-                .menu_collections.Visible = False
-                .menu_logistics.Visible = False
-                .menu_purchasing.Visible = False
-                .menu_accounting.Visible = False
-                .menu_administration.Visible = False
-
-                If String.IsNullOrEmpty(result.ToString) Then Exit Sub
-                Dim access = result.Replace(";", "", result.Length - 1, 1).ToString.Split(";")
-
-                For i = 0 To access.Count - 1
-
-                    Select Case access(i)
-
-                        'Product
-                        Case "catalogue"
-                            .menu_product.Visible = True
-                            .submenu_catalogue.Visible = True
-                        Case "new_item"
-                            .menu_product.Visible = True
-                            .submenu_new_item.Visible = True
-                        Case "import_catalogue"
-                            .menu_product.Visible = True
-                            .submenu_import_catalogue.Visible = True
-                        Case "export_catalogue"
-                            .menu_product.Visible = True
-                            .submenu_export_catalogue.Visible = True
-
-                        'Sales
-                        Case "orders"
-                            .menu_sales.Visible = True
-                            .submenu_orders.Visible = True
-                        Case "quotations"
-                            .menu_sales.Visible = True
-                            .submenu_quotations.Visible = True
-                        Case "create_order"
-                            .menu_sales.Visible = True
-                            .submenu_create_order.Visible = True
-                        Case "customers"
-                            .menu_sales.Visible = True
-                            .submenu_customers.Visible = True
-                        Case "transaction_invoice"
-                            .menu_sales.Visible = True
-                            .submenu_invoices.Visible = True
-                        Case "logistics"
-                            .menu_sales.Visible = True
-                            .submenu_logistics.Visible = True
-
-                        'Warehouse
-                        Case "daily_delivery"
-                            .menu_warehouse.Visible = True
-                            .submenu_ReceivingManagement.Visible = True
-                        Case "delivery_logs"
-                            .menu_warehouse.Visible = True
-                            .submenu_delivery_logs.Visible = True
-                        Case "stock_management"
-                            .menu_warehouse.Visible = True
-                            .submenu_stock_management.Visible = True
-                        Case "stock_inventory"
-                            .menu_warehouse.Visible = True
-                            .submenu_product_inventory.Visible = True
-                        Case "packing_list"
-                            .menu_warehouse.Visible = True
-                            .submenu_packageManagement.Visible = True
-                        Case "for_selluseller"
-                            .menu_warehouse.Visible = True
-                            .submenu_selluseller.Visible = True
-
-                        'Collections
-                        Case "order_payments"
-                            .menu_collections.Visible = True
-                            .submenu_payments.Visible = True
-                        Case "new_cheque_payment"
-                            .menu_collections.Visible = True
-                            .submenu_payment_new.Visible = True
-                        Case "cheque_book"
-                            .menu_collections.Visible = True
-                            .submenu_cheque_book.Visible = True
-                        Case "statement_of_account"
-                            .menu_collections.Visible = True
-                            .submenu_soa.Visible = True
-
-                        'Logistics
-                        Case "pickup_deliveries"
-                            .menu_logistics.Visible = True
-                            .submenu_order_management.Visible = True
-
-                        'Purchasing
-                        Case "new_purchase"
-                            .menu_purchasing.Visible = True
-                            .submenu_purchasing_new.Visible = True
-                        Case "purchase_orders"
-                            .menu_purchasing.Visible = True
-                            .submenu_purchasing_orders.Visible = True
-
-                        'Accounting
-                        Case "account_payables"
-                            .menu_accounting.Visible = True
-                            .submenu_account_payables.Visible = True
-                        Case "generate"
-                            .menu_accounting.Visible = True
-                            .submenu_generate.Visible = True
-                        Case "payment_vouchers"
-                            .menu_accounting.Visible = True
-                            .submenu_payment_vouchers.Visible = True
-                        Case "payment_cheques"
-                            .menu_accounting.Visible = True
-                            .submenu_payment_cheques.Visible = True
-
-                        'Administration
-                        Case "user_accounts"
-                            .menu_administration.Visible = True
-                            .submenu_user_accounts.Visible = True
-                        Case "approvals"
-                            .menu_administration.Visible = True
-                            .submenu_approvals.Visible = True
-                        Case "price_book"
-                            .menu_administration.Visible = True
-                            .submenu_price_books.Visible = True
-                        Case "reports"
-                            .menu_administration.Visible = True
-                            .submenu_reports.Visible = True
-                        Case "stores"
-                            .menu_administration.Visible = True
-                            .submenu_warehouse.Visible = True
-                        Case "suppliers"
-                            .menu_administration.Visible = True
-                            .submenu_suppliers.Visible = True
-                        Case "settings"
-                            .menu_administration.Visible = True
-                            .submenu_settings.Visible = True
-
-                    End Select
-                Next
-
-            End With
-
-        Catch ex As Exception
-            MsgBox(ex.Message, vbCritical, "Error Found")
-        Finally
-            conn.Close()
-        End Try
-
-
-
-    End Sub
 
     'Encrypt Password
     Public Function Encrypt(clearText As String) As String
@@ -235,26 +98,26 @@ Module functions
     'Payment Logs
     Public Sub Insert_PaymentLog(connection As MySqlConnection, payment_date As Date, order_id As Integer, customer As String,
                                   current_balance As Decimal, payment As Decimal, sales_returns As Decimal, balance As Decimal, payment_gateway As String, payment_ref As String)
-        'Try
-        Using connection
-            Using cmd = New MySqlCommand("INSERT INTO ims_payment_logs (payment_date, order_id, customer_id, current_balance, payment, returns_amount, balance, payment_gateway, payment_ref, received_by)
-                                            VALUES (@payment_date, @order_id, (SELECT customer_id FROM ims_customers WHERE first_name=@customer), @current_balance, @payment, @returns_amount, @balance, @payment_gateway, @payment_ref, @received_by)", connection)
-                cmd.Parameters.AddWithValue("@payment_date", payment_date)
-                cmd.Parameters.AddWithValue("@order_id", order_id)
-                cmd.Parameters.AddWithValue("@customer", customer)
-                cmd.Parameters.AddWithValue("@current_balance", current_balance)
-                cmd.Parameters.AddWithValue("@returns_amount", sales_returns)
-                cmd.Parameters.AddWithValue("@payment", payment)
-                cmd.Parameters.AddWithValue("@balance", balance)
-                cmd.Parameters.AddWithValue("@payment_gateway", payment_gateway)
-                cmd.Parameters.AddWithValue("@payment_ref", payment_ref)
-                cmd.Parameters.AddWithValue("@received_by", frm_main.user_id.Text)
-                cmd.ExecuteNonQuery()
-            End Using
-        End Using
         Try
+            Using connection
+                Using cmd = New MySqlCommand("INSERT INTO ims_payment_logs (payment_date, order_id, customer_id, current_balance, payment, returns_amount, balance, payment_gateway, payment_ref, received_by)
+                                            VALUES (@payment_date, @order_id, (SELECT customer_id FROM ims_customers WHERE first_name=@customer), @current_balance, @payment, @returns_amount, @balance, @payment_gateway, @payment_ref, @received_by)", connection)
+                    cmd.Parameters.AddWithValue("@payment_date", payment_date)
+                    cmd.Parameters.AddWithValue("@order_id", order_id)
+                    cmd.Parameters.AddWithValue("@customer", customer)
+                    cmd.Parameters.AddWithValue("@current_balance", current_balance)
+                    cmd.Parameters.AddWithValue("@returns_amount", sales_returns)
+                    cmd.Parameters.AddWithValue("@payment", payment)
+                    cmd.Parameters.AddWithValue("@balance", balance)
+                    cmd.Parameters.AddWithValue("@payment_gateway", payment_gateway)
+                    cmd.Parameters.AddWithValue("@payment_ref", payment_ref)
+                    cmd.Parameters.AddWithValue("@received_by", frm_main.user_id.Text)
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
+
         Catch ex As Exception
-            MsgBox(ex.Message, vbCritical, "Error")
+            MsgBox(ex.Message, vbCritical, "Error encountered")
         End Try
     End Sub
 
@@ -268,7 +131,7 @@ Module functions
                 End Using
             End Using
         Catch ex As Exception
-            MsgBox(ex.Message, vbCritical, "Error")
+            MsgBox(ex.Message, vbCritical, "Error encountered")
         End Try
     End Sub
 
@@ -329,13 +192,13 @@ End Class
 
 Public Class PurchaseOrderClass
     Public Property pid As Integer
-    Public Property qty As Double
+    Public Property qty As Decimal
     Public Property winmodel As String
     Public Property supmodel As String
     Public Property description As String
     Public Property cost As Decimal
     Public Property total_cost As Decimal
-    Public Property qty_received As Integer
+    Public Property qty_received As Decimal
 End Class
 
 Public Class PurchaseReturnClass
@@ -353,4 +216,5 @@ Public Class SalesCustomerBankAccounts
     Public Property bank_acc_no As String
     Public Property bank_acc_name As String
 End Class
+
 

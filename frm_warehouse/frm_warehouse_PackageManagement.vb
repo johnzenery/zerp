@@ -75,7 +75,7 @@ Public Class frm_warehouse_PackageManagement
                 connect.Open()
 
                 Dim filter = String.Empty
-                If Not (frm_main.user_role_id.Text = 1 Or frm_main.user_role_id.Text = 3 Or frm_main.user_role_id.Text = 6) Then
+                If Not (frm_main.user_role_id.Text = 1 Or frm_main.user_role_id.Text = 3 Or frm_main.user_role_id.Text = 6 Or frm_main.user_role_id.Text = 11) Then
                     filter = "AND SRC.store_name='" & frm_main.user_store.Text.Trim & "'"
                 End If
 

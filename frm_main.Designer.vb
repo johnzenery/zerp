@@ -56,13 +56,13 @@ Partial Class frm_main
         Me.submenu_invoices = New System.Windows.Forms.ToolStripMenuItem()
         Me.submenu_logistics = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_warehouse = New System.Windows.Forms.ToolStripMenuItem()
-        Me.submenu_ReceivingManagement = New System.Windows.Forms.ToolStripMenuItem()
-        Me.submenu_delivery_logs = New System.Windows.Forms.ToolStripMenuItem()
         Me.submenu_stock_management = New System.Windows.Forms.ToolStripMenuItem()
         Me.submenu2_StockTransfer = New System.Windows.Forms.ToolStripMenuItem()
         Me.submenu2_reconcile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.submenu_product_inventory = New System.Windows.Forms.ToolStripMenuItem()
         Me.submenu_packageManagement = New System.Windows.Forms.ToolStripMenuItem()
+        Me.submenu_ReceivingManagement = New System.Windows.Forms.ToolStripMenuItem()
+        Me.submenu_delivery_logs = New System.Windows.Forms.ToolStripMenuItem()
+        Me.submenu_product_inventory = New System.Windows.Forms.ToolStripMenuItem()
         Me.submenu_selluseller = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_logistics = New System.Windows.Forms.ToolStripMenuItem()
         Me.submenu_order_management = New System.Windows.Forms.ToolStripMenuItem()
@@ -314,6 +314,33 @@ Partial Class frm_main
         Me.menu_warehouse.Size = New System.Drawing.Size(94, 24)
         Me.menu_warehouse.Text = "Warehouse"
         '
+        'submenu_stock_management
+        '
+        Me.submenu_stock_management.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.submenu2_StockTransfer, Me.submenu2_reconcile})
+        Me.submenu_stock_management.Name = "submenu_stock_management"
+        Me.submenu_stock_management.Size = New System.Drawing.Size(234, 24)
+        Me.submenu_stock_management.Text = "Stock Management"
+        Me.submenu_stock_management.Visible = False
+        '
+        'submenu2_StockTransfer
+        '
+        Me.submenu2_StockTransfer.Name = "submenu2_StockTransfer"
+        Me.submenu2_StockTransfer.Size = New System.Drawing.Size(170, 24)
+        Me.submenu2_StockTransfer.Text = "Stock Transfer"
+        '
+        'submenu2_reconcile
+        '
+        Me.submenu2_reconcile.Name = "submenu2_reconcile"
+        Me.submenu2_reconcile.Size = New System.Drawing.Size(170, 24)
+        Me.submenu2_reconcile.Text = "Reconcile"
+        '
+        'submenu_packageManagement
+        '
+        Me.submenu_packageManagement.Name = "submenu_packageManagement"
+        Me.submenu_packageManagement.Size = New System.Drawing.Size(234, 24)
+        Me.submenu_packageManagement.Text = "Package Management"
+        Me.submenu_packageManagement.Visible = False
+        '
         'submenu_ReceivingManagement
         '
         Me.submenu_ReceivingManagement.Name = "submenu_ReceivingManagement"
@@ -328,39 +355,12 @@ Partial Class frm_main
         Me.submenu_delivery_logs.Text = "Delivery Logs"
         Me.submenu_delivery_logs.Visible = False
         '
-        'submenu_stock_management
-        '
-        Me.submenu_stock_management.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.submenu2_StockTransfer, Me.submenu2_reconcile})
-        Me.submenu_stock_management.Name = "submenu_stock_management"
-        Me.submenu_stock_management.Size = New System.Drawing.Size(234, 24)
-        Me.submenu_stock_management.Text = "Stock Management"
-        Me.submenu_stock_management.Visible = False
-        '
-        'submenu2_StockTransfer
-        '
-        Me.submenu2_StockTransfer.Name = "submenu2_StockTransfer"
-        Me.submenu2_StockTransfer.Size = New System.Drawing.Size(180, 24)
-        Me.submenu2_StockTransfer.Text = "Stock Transfer"
-        '
-        'submenu2_reconcile
-        '
-        Me.submenu2_reconcile.Name = "submenu2_reconcile"
-        Me.submenu2_reconcile.Size = New System.Drawing.Size(180, 24)
-        Me.submenu2_reconcile.Text = "Reconcile"
-        '
         'submenu_product_inventory
         '
         Me.submenu_product_inventory.Name = "submenu_product_inventory"
         Me.submenu_product_inventory.Size = New System.Drawing.Size(234, 24)
         Me.submenu_product_inventory.Text = "Inventory"
         Me.submenu_product_inventory.Visible = False
-        '
-        'submenu_packageManagement
-        '
-        Me.submenu_packageManagement.Name = "submenu_packageManagement"
-        Me.submenu_packageManagement.Size = New System.Drawing.Size(234, 24)
-        Me.submenu_packageManagement.Text = "Package Management"
-        Me.submenu_packageManagement.Visible = False
         '
         'submenu_selluseller
         '
@@ -388,6 +388,7 @@ Partial Class frm_main
         Me.submenu_StockTransferDispatching.Name = "submenu_StockTransferDispatching"
         Me.submenu_StockTransferDispatching.Size = New System.Drawing.Size(276, 24)
         Me.submenu_StockTransferDispatching.Text = "Stock Transfer Dispatching"
+        Me.submenu_StockTransferDispatching.Visible = False
         '
         'menu_collections
         '
@@ -603,7 +604,7 @@ Partial Class frm_main
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(125, 24)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'GunaLinePanel1

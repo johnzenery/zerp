@@ -64,6 +64,7 @@ Partial Class frm_warehouse_SupplierDeliveries_logs
         Me.btn_print = New DevExpress.XtraEditors.SimpleButton()
         Me.GunaButton1 = New Guna.UI.WinForms.GunaButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_generate_barcode = New DevExpress.XtraEditors.SimpleButton()
         Me.GunaPanel5.SuspendLayout()
         Me.GunaPanel1.SuspendLayout()
         CType(Me.grid_supplier_deliveries, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -253,7 +254,6 @@ Partial Class frm_warehouse_SupplierDeliveries_logs
         'dt_edit_date
         '
         Me.dt_edit_date.AutoHeight = False
-        Me.dt_edit_date.BeepOnError = False
         Me.dt_edit_date.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dt_edit_date.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dt_edit_date.DisplayFormat.FormatString = "hh:mm tt MM/dd/yyyy"
@@ -436,14 +436,16 @@ Partial Class frm_warehouse_SupplierDeliveries_logs
         Me.btn_print.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_print.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_print.Appearance.Options.UseFont = True
-        Me.btn_print.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.print_32x322
+        Me.btn_print.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.export_32x32
         Me.btn_print.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btn_print.ImageOptions.ImageToTextIndent = 5
-        Me.btn_print.Location = New System.Drawing.Point(1164, 97)
+        Me.btn_print.Location = New System.Drawing.Point(1164, 95)
+        Me.btn_print.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.btn_print.LookAndFeel.UseDefaultLookAndFeel = False
         Me.btn_print.Name = "btn_print"
         Me.btn_print.Size = New System.Drawing.Size(123, 46)
         Me.btn_print.TabIndex = 24
-        Me.btn_print.Text = "Print"
+        Me.btn_print.Text = "Export"
         '
         'GunaButton1
         '
@@ -484,12 +486,29 @@ Partial Class frm_warehouse_SupplierDeliveries_logs
         Me.Panel1.Size = New System.Drawing.Size(1299, 78)
         Me.Panel1.TabIndex = 55
         '
+        'btn_generate_barcode
+        '
+        Me.btn_generate_barcode.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_generate_barcode.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_generate_barcode.Appearance.Options.UseFont = True
+        Me.btn_generate_barcode.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.barcode_32x32
+        Me.btn_generate_barcode.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btn_generate_barcode.ImageOptions.ImageToTextIndent = 5
+        Me.btn_generate_barcode.Location = New System.Drawing.Point(986, 95)
+        Me.btn_generate_barcode.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.btn_generate_barcode.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.btn_generate_barcode.Name = "btn_generate_barcode"
+        Me.btn_generate_barcode.Size = New System.Drawing.Size(172, 46)
+        Me.btn_generate_barcode.TabIndex = 56
+        Me.btn_generate_barcode.Text = "Generate Barcode"
+        '
         'frm_warehouse_SupplierDeliveries_logs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1299, 636)
+        Me.Controls.Add(Me.btn_generate_barcode)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GunaButton1)
         Me.Controls.Add(Me.btn_print)
@@ -543,4 +562,5 @@ Partial Class frm_warehouse_SupplierDeliveries_logs
     Friend WithEvents Panel1 As Panel
     Friend WithEvents dt_edit_date As RepositoryItemDateEdit
     Friend WithEvents col_id As GridColumn
+    Friend WithEvents btn_generate_barcode As SimpleButton
 End Class

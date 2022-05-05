@@ -57,7 +57,7 @@ Public Class frm_sales_order_epayment_proofs
     'Upload Image Proof
     Private Function UploadImageProof(filename As String, picture_box As DevExpress.XtraEditors.PictureEdit)
 
-        Using client As New SftpClient(My.Settings.FTPserver, My.Settings.FTPusername, My.Settings.FTPpass)
+        Using client As New SftpClient(server, ftp_username, ftp_password)
             client.Connect()
 
             'Get directoory list
@@ -66,20 +66,20 @@ Public Class frm_sales_order_epayment_proofs
             'Check IF FOLDER EXIST
             Dim is_exist = False
             For Each file As SftpFile In files
-                If Equals(file.Name, My.Settings.SalesFolder) Then is_exist = True
+                If Equals(file.Name, ftp_salesFolder) Then is_exist = True
             Next
 
             'Creating folder IF NOT EXIST
             If is_exist = False Then
-                MsgBox("No folder '" & My.Settings.SalesFolder & "' existed! Creating one...")
-                client.CreateDirectory("./" & My.Settings.SalesFolder)
+                MsgBox("No folder '" & ftp_salesFolder & "' existed! Creating one...")
+                client.CreateDirectory("./" & ftp_salesFolder)
             End If
 
             'Saving file to Folder
             Dim stream As New MemoryStream
             picture_box.Image.Save(stream, Imaging.ImageFormat.Jpeg)
             stream.Position = 0
-            client.UploadFile(stream, "./" & My.Settings.SalesFolder & "/" & filename)
+            client.UploadFile(stream, "./" & ftp_salesFolder & "/" & filename)
         End Using
 
         Return filename
@@ -89,11 +89,11 @@ Public Class frm_sales_order_epayment_proofs
     'Set Image Proof
     Private Sub setImageProof(FileName As String, pic_box As PictureEdit)
 
-        Using client As New SftpClient(My.Settings.FTPserver, My.Settings.FTPusername, My.Settings.FTPpass)
+        Using client As New SftpClient(server, ftp_username, ftp_password)
             Try
                 client.Connect()
                 Dim ms As New MemoryStream
-                client.DownloadFile("./" & My.Settings.SalesFolder & "/" & FileName, ms)
+                client.DownloadFile("./" & ftp_salesFolder & "/" & FileName, ms)
 
                 If Not ms.Length = 0 Then
                     pic_box.Image = Image.FromStream(ms)

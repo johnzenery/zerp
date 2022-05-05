@@ -1,5 +1,4 @@
 ﻿Imports System.Globalization.CultureInfo
-Imports DevExpress.XtraReports.UI
 Imports MySql.Data.MySqlClient
 
 Public Class frm_warehouse_PackageManagement_packed

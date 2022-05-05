@@ -62,11 +62,15 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.txt_note = New System.Windows.Forms.TextBox()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.btn_approved = New DevExpress.XtraEditors.SimpleButton()
+        Me.btn_import = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl()
+        Me.txt_search = New DevExpress.XtraEditors.TextEdit()
         CType(Me.grid_distribute_stock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.lbl_status.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbb_src_warehouse.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_stid.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_search.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_title
@@ -111,7 +115,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.grid_distribute_stock.DefaultCellStyle = DataGridViewCellStyle9
         Me.grid_distribute_stock.Enabled = False
         Me.grid_distribute_stock.EnableHeadersVisualStyles = False
-        Me.grid_distribute_stock.Location = New System.Drawing.Point(17, 154)
+        Me.grid_distribute_stock.Location = New System.Drawing.Point(17, 187)
         Me.grid_distribute_stock.Margin = New System.Windows.Forms.Padding(0)
         Me.grid_distribute_stock.Name = "grid_distribute_stock"
         Me.grid_distribute_stock.RowHeadersWidth = 40
@@ -121,7 +125,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.grid_distribute_stock.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.grid_distribute_stock.RowTemplate.Height = 40
         Me.grid_distribute_stock.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grid_distribute_stock.Size = New System.Drawing.Size(1163, 556)
+        Me.grid_distribute_stock.Size = New System.Drawing.Size(1257, 523)
         Me.grid_distribute_stock.TabIndex = 69
         '
         'pid
@@ -206,7 +210,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.col_m3.DefaultCellStyle = DataGridViewCellStyle7
         Me.col_m3.HeaderText = "CBM"
         Me.col_m3.Name = "col_m3"
-        Me.col_m3.Width = 62
+        Me.col_m3.Width = 61
         '
         'col_kgs
         '
@@ -215,7 +219,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.col_kgs.DefaultCellStyle = DataGridViewCellStyle8
         Me.col_kgs.HeaderText = "KGS"
         Me.col_kgs.Name = "col_kgs"
-        Me.col_kgs.Width = 60
+        Me.col_kgs.Width = 59
         '
         'Panel1
         '
@@ -226,7 +230,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1193, 75)
+        Me.Panel1.Size = New System.Drawing.Size(1287, 75)
         Me.Panel1.TabIndex = 70
         '
         'lbl_created_by
@@ -239,7 +243,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.lbl_created_by.Appearance.Options.UseTextOptions = True
         Me.lbl_created_by.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lbl_created_by.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
-        Me.lbl_created_by.Location = New System.Drawing.Point(780, 47)
+        Me.lbl_created_by.Location = New System.Drawing.Point(874, 47)
         Me.lbl_created_by.Name = "lbl_created_by"
         Me.lbl_created_by.Size = New System.Drawing.Size(400, 20)
         Me.lbl_created_by.TabIndex = 79
@@ -250,7 +254,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         '
         Me.lbl_status.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl_status.EditValue = "Status"
-        Me.lbl_status.Location = New System.Drawing.Point(829, 12)
+        Me.lbl_status.Location = New System.Drawing.Point(923, 12)
         Me.lbl_status.Name = "lbl_status"
         Me.lbl_status.Properties.AllowFocused = False
         Me.lbl_status.Properties.Appearance.BackColor = System.Drawing.Color.GhostWhite
@@ -303,7 +307,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.btn_create.Enabled = False
         Me.btn_create.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.boorderitem_32x32
         Me.btn_create.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btn_create.Location = New System.Drawing.Point(1062, 91)
+        Me.btn_create.Location = New System.Drawing.Point(1156, 91)
         Me.btn_create.Name = "btn_create"
         Me.btn_create.Size = New System.Drawing.Size(118, 46)
         Me.btn_create.TabIndex = 73
@@ -316,7 +320,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.btn_delete.Appearance.Options.UseFont = True
         Me.btn_delete.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.trash_32x32
         Me.btn_delete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btn_delete.Location = New System.Drawing.Point(690, 91)
+        Me.btn_delete.Location = New System.Drawing.Point(784, 91)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(118, 46)
         Me.btn_delete.TabIndex = 74
@@ -348,7 +352,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.btn_save.Appearance.Options.UseFont = True
         Me.btn_save.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.saveto_32x32
         Me.btn_save.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btn_save.Location = New System.Drawing.Point(1063, 104)
+        Me.btn_save.Location = New System.Drawing.Point(1157, 104)
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(118, 46)
         Me.btn_save.TabIndex = 77
@@ -363,7 +367,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.btn_print.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.print_32x321
         Me.btn_print.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btn_print.ImageOptions.ImageToTextIndent = 5
-        Me.btn_print.Location = New System.Drawing.Point(938, 91)
+        Me.btn_print.Location = New System.Drawing.Point(1032, 91)
         Me.btn_print.Name = "btn_print"
         Me.btn_print.Size = New System.Drawing.Size(118, 46)
         Me.btn_print.TabIndex = 78
@@ -375,7 +379,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.LabelControl3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
         Me.LabelControl3.Appearance.Options.UseFont = True
-        Me.LabelControl3.Location = New System.Drawing.Point(1018, 757)
+        Me.LabelControl3.Location = New System.Drawing.Point(1112, 757)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(87, 13)
         Me.LabelControl3.TabIndex = 80
@@ -386,7 +390,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.LabelControl4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
         Me.LabelControl4.Appearance.Options.UseFont = True
-        Me.LabelControl4.Location = New System.Drawing.Point(1018, 776)
+        Me.LabelControl4.Location = New System.Drawing.Point(1112, 776)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(64, 13)
         Me.LabelControl4.TabIndex = 81
@@ -397,7 +401,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.lbl_total_kgs.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl_total_kgs.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
         Me.lbl_total_kgs.Appearance.Options.UseFont = True
-        Me.lbl_total_kgs.Location = New System.Drawing.Point(1116, 776)
+        Me.lbl_total_kgs.Location = New System.Drawing.Point(1210, 776)
         Me.lbl_total_kgs.Name = "lbl_total_kgs"
         Me.lbl_total_kgs.Size = New System.Drawing.Size(59, 13)
         Me.lbl_total_kgs.TabIndex = 83
@@ -408,7 +412,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.lbl_total_cbm.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl_total_cbm.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
         Me.lbl_total_cbm.Appearance.Options.UseFont = True
-        Me.lbl_total_cbm.Location = New System.Drawing.Point(1117, 757)
+        Me.lbl_total_cbm.Location = New System.Drawing.Point(1211, 757)
         Me.lbl_total_cbm.Name = "lbl_total_cbm"
         Me.lbl_total_cbm.Size = New System.Drawing.Size(62, 13)
         Me.lbl_total_cbm.TabIndex = 82
@@ -423,7 +427,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.btn_arrange.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.packing1
         Me.btn_arrange.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btn_arrange.ImageOptions.ImageToTextIndent = 5
-        Me.btn_arrange.Location = New System.Drawing.Point(814, 91)
+        Me.btn_arrange.Location = New System.Drawing.Point(908, 91)
         Me.btn_arrange.Name = "btn_arrange"
         Me.btn_arrange.Size = New System.Drawing.Size(118, 46)
         Me.btn_arrange.TabIndex = 84
@@ -459,19 +463,62 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         Me.btn_approved.Appearance.Options.UseFont = True
         Me.btn_approved.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.knowledgebasearticle_32x32
         Me.btn_approved.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btn_approved.Location = New System.Drawing.Point(566, 91)
+        Me.btn_approved.Location = New System.Drawing.Point(660, 91)
         Me.btn_approved.Name = "btn_approved"
         Me.btn_approved.Size = New System.Drawing.Size(118, 46)
         Me.btn_approved.TabIndex = 87
         Me.btn_approved.Text = "Response"
         Me.btn_approved.Visible = False
         '
+        'btn_import
+        '
+        Me.btn_import.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_import.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!)
+        Me.btn_import.Appearance.Options.UseFont = True
+        Me.btn_import.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.exporttocsv_16x161
+        Me.btn_import.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btn_import.ImageOptions.ImageToTextIndent = 5
+        Me.btn_import.Location = New System.Drawing.Point(1032, 104)
+        Me.btn_import.Name = "btn_import"
+        Me.btn_import.Size = New System.Drawing.Size(118, 46)
+        Me.btn_import.TabIndex = 97
+        Me.btn_import.Text = "Import CSV"
+        '
+        'LabelControl16
+        '
+        Me.LabelControl16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelControl16.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!)
+        Me.LabelControl16.Appearance.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.LabelControl16.Appearance.Options.UseFont = True
+        Me.LabelControl16.Appearance.Options.UseForeColor = True
+        Me.LabelControl16.Location = New System.Drawing.Point(1054, 160)
+        Me.LabelControl16.Name = "LabelControl16"
+        Me.LabelControl16.Size = New System.Drawing.Size(43, 16)
+        Me.LabelControl16.TabIndex = 120
+        Me.LabelControl16.Text = "Search"
+        '
+        'txt_search
+        '
+        Me.txt_search.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_search.Location = New System.Drawing.Point(1103, 155)
+        Me.txt_search.Name = "txt_search"
+        Me.txt_search.Properties.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.txt_search.Properties.Appearance.Options.UseFont = True
+        Me.txt_search.Properties.Appearance.Options.UseTextOptions = True
+        Me.txt_search.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.txt_search.Size = New System.Drawing.Size(171, 24)
+        Me.txt_search.TabIndex = 119
+        Me.txt_search.TabStop = False
+        '
         'frm_warehouse_stocktransfer_distribute_new
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1193, 802)
+        Me.ClientSize = New System.Drawing.Size(1287, 802)
+        Me.Controls.Add(Me.LabelControl16)
+        Me.Controls.Add(Me.txt_search)
+        Me.Controls.Add(Me.btn_import)
         Me.Controls.Add(Me.btn_approved)
         Me.Controls.Add(Me.LabelControl5)
         Me.Controls.Add(Me.txt_note)
@@ -501,6 +548,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
         CType(Me.lbl_status.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbb_src_warehouse.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_stid.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_search.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -534,4 +582,7 @@ Partial Class frm_warehouse_stocktransfer_distribute_new
     Friend WithEvents txt_note As TextBox
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btn_approved As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btn_import As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LabelControl16 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txt_search As DevExpress.XtraEditors.TextEdit
 End Class

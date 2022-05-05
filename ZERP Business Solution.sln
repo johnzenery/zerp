@@ -1,24 +1,33 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ZERP Business Solution", "ZERP Business Solution.vbproj", "{5AF63ACD-E7B0-4F13-B59B-01B3213E1E03}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Zerp Setup", "..\Zerp Setup\Zerp Setup.vdproj", "{FCA3224F-7C5A-4200-8D38-842C9006FC1D}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Zerp Setup", "..\Zerp Setup\Zerp Setup.vdproj", "{B0B46945-8EAA-491D-ABD6-F055088BB17E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5AF63ACD-E7B0-4F13-B59B-01B3213E1E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5AF63ACD-E7B0-4F13-B59B-01B3213E1E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF63ACD-E7B0-4F13-B59B-01B3213E1E03}.Debug|x64.ActiveCfg = Debug|x64
+		{5AF63ACD-E7B0-4F13-B59B-01B3213E1E03}.Debug|x64.Build.0 = Debug|x64
 		{5AF63ACD-E7B0-4F13-B59B-01B3213E1E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AF63ACD-E7B0-4F13-B59B-01B3213E1E03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FCA3224F-7C5A-4200-8D38-842C9006FC1D}.Debug|Any CPU.ActiveCfg = Debug
-		{FCA3224F-7C5A-4200-8D38-842C9006FC1D}.Release|Any CPU.ActiveCfg = Release
+		{5AF63ACD-E7B0-4F13-B59B-01B3213E1E03}.Release|x64.ActiveCfg = Release|x64
+		{5AF63ACD-E7B0-4F13-B59B-01B3213E1E03}.Release|x64.Build.0 = Release|x64
+		{B0B46945-8EAA-491D-ABD6-F055088BB17E}.Debug|Any CPU.ActiveCfg = Debug
+		{B0B46945-8EAA-491D-ABD6-F055088BB17E}.Debug|x64.ActiveCfg = Debug
+		{B0B46945-8EAA-491D-ABD6-F055088BB17E}.Release|Any CPU.ActiveCfg = Release
+		{B0B46945-8EAA-491D-ABD6-F055088BB17E}.Release|x64.ActiveCfg = Release
+		{B0B46945-8EAA-491D-ABD6-F055088BB17E}.Release|x64.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

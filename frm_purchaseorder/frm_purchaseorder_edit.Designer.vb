@@ -118,6 +118,7 @@ Partial Class frm_purchaseorder_edit
         Me.CMS_print = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.CMS_strip_purchase_order = New System.Windows.Forms.ToolStripMenuItem()
         Me.CMS_strip_purchase_slip = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cb_payment_first = New System.Windows.Forms.CheckBox()
         Me.GunaPanel4.SuspendLayout()
         Me.GunaPanel5.SuspendLayout()
         Me.GunaPanel1.SuspendLayout()
@@ -316,6 +317,7 @@ Partial Class frm_purchaseorder_edit
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat
+        Me.PanelControl1.Controls.Add(Me.cb_payment_first)
         Me.PanelControl1.Controls.Add(Me.lbl_noofitems)
         Me.PanelControl1.Controls.Add(Me.LabelControl18)
         Me.PanelControl1.Controls.Add(Me.lbl_date)
@@ -1104,19 +1106,31 @@ Partial Class frm_purchaseorder_edit
         '
         Me.CMS_print.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CMS_strip_purchase_order, Me.CMS_strip_purchase_slip})
         Me.CMS_print.Name = "CMS_print"
-        Me.CMS_print.Size = New System.Drawing.Size(181, 70)
+        Me.CMS_print.Size = New System.Drawing.Size(168, 48)
         '
         'CMS_strip_purchase_order
         '
         Me.CMS_strip_purchase_order.Name = "CMS_strip_purchase_order"
-        Me.CMS_strip_purchase_order.Size = New System.Drawing.Size(180, 22)
+        Me.CMS_strip_purchase_order.Size = New System.Drawing.Size(167, 22)
         Me.CMS_strip_purchase_order.Text = "Purchase Order"
         '
         'CMS_strip_purchase_slip
         '
         Me.CMS_strip_purchase_slip.Name = "CMS_strip_purchase_slip"
-        Me.CMS_strip_purchase_slip.Size = New System.Drawing.Size(180, 22)
+        Me.CMS_strip_purchase_slip.Size = New System.Drawing.Size(167, 22)
         Me.CMS_strip_purchase_slip.Text = "Purchase List"
+        '
+        'cb_payment_first
+        '
+        Me.cb_payment_first.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cb_payment_first.AutoSize = True
+        Me.cb_payment_first.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cb_payment_first.Location = New System.Drawing.Point(956, 494)
+        Me.cb_payment_first.Name = "cb_payment_first"
+        Me.cb_payment_first.Size = New System.Drawing.Size(98, 18)
+        Me.cb_payment_first.TabIndex = 123
+        Me.cb_payment_first.Text = "Payment first"
+        Me.cb_payment_first.UseVisualStyleBackColor = True
         '
         'frm_purchaseorder_edit
         '
@@ -1230,4 +1244,5 @@ Partial Class frm_purchaseorder_edit
     Friend WithEvents CMS_print As ContextMenuStrip
     Friend WithEvents CMS_strip_purchase_order As ToolStripMenuItem
     Friend WithEvents CMS_strip_purchase_slip As ToolStripMenuItem
+    Friend WithEvents cb_payment_first As CheckBox
 End Class

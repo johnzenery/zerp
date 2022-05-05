@@ -67,7 +67,7 @@ Public Class frm_warehouse_stock_reconcile_new
                 If status = "Approved" Then
                     Dim query = ""
 
-                    If rb_add.Checked Then query = "UPDATE ims_" & cbb_stores.Text.ToLower.Replace(" ", "_") & " SET qty=qty+@qty WHERE pid=@pid"
+                    If rb_add.Checked Then query = "INSERT INTO ims_" & cbb_stores.Text.ToLower.Replace(" ", "_") & " (pid, qty) VALUES (@pid, @qty) ON DUPLICATE KEY UPDATE qty=qty+@qty"
                     If rb_deduct.Checked Then query = "UPDATE ims_" & cbb_stores.Text.ToLower.Replace(" ", "_") & " SET qty=qty-@qty WHERE pid=@pid AND qty>=@qty"
 
                     Using cmd = New MySqlCommand(query, conn)
@@ -198,4 +198,5 @@ Public Class frm_warehouse_stock_reconcile_new
         Me.Close()
 
     End Sub
+
 End Class

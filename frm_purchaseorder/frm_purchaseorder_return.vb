@@ -20,7 +20,7 @@ Public Class frm_purchaseorder_return_list
             Using conn = New MySqlConnection(str)
                 conn.Open()
                 Using cmd = New MySqlCommand("SELECT concat('PV',LPAD(po_return_id,5,0)) AS po_return_id, supplier,
-                                total_cost, created_at, status, concat('PV',LPAD(voucher_id,5,0)) AS voucher_id FROM ims_purchase_returns 
+                                total_cost, created_at, status, concat('PV',LPAD(p_voucher_id,5,0)) AS voucher_id FROM ims_purchase_returns 
                                 LEFT JOIN ims_suppliers ON ims_suppliers.id=ims_purchase_returns.supplier_id 
                                 WHERE is_deleted=0 ORDER BY po_return_id DESC", conn)
                     cmd.ExecuteNonQuery()

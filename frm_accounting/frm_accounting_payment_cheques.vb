@@ -1,6 +1,7 @@
 ﻿Imports DevExpress.XtraReports.UI
 Imports MySql.Data.MySqlClient
 
+
 Public Class frm_accounting_payment_cheques
 
 
@@ -22,8 +23,11 @@ Public Class frm_accounting_payment_cheques
         Try
             Using connect = New MySqlConnection(str)
                 connect.Open()
-                Dim cmd = New MySqlCommand("SELECT LPAD(ims_generated_cheques.id, 5, 0) as id, cheque_no, cheque_date, ims_generated_cheques.bank, payee, ims_generated_cheques.acc_no, ims_generated_cheques.acc_name, amount, ims_suppliers.supplier, status FROM `ims_generated_cheques`
-                                        INNER JOIN ims_suppliers ON ims_suppliers.id=ims_generated_cheques.supplier ORDER BY ims_generated_cheques.id DESC", connect)
+                Dim cmd = New MySqlCommand("SELECT LPAD(ims_generated_cheques.id, 5, 0) as id, cheque_no, cheque_date, ims_generated_cheques.bank, 
+                                        payee, ims_generated_cheques.acc_no, ims_generated_cheques.acc_name, amount, ims_suppliers.supplier, status, CONCAT('PV', LPAD(p_voucher_id, 5, 0)) AS voucher_id
+                                        FROM `ims_generated_cheques`
+                                        INNER JOIN ims_suppliers ON ims_suppliers.id=ims_generated_cheques.supplier 
+                                        ORDER BY ims_generated_cheques.id DESC", connect)
                 cmd.ExecuteNonQuery()
 
                 Dim dt = New DataTable

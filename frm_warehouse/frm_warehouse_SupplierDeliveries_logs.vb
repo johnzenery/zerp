@@ -11,7 +11,11 @@ Public Class frm_warehouse_SupplierDeliveries_logs
         dt_end.Value = Date.Now
         LoadDelivered(dt_start.Value, dt_end.Value)
 
-        grid_supplier_deliveries_view.Columns("date_received").OptionsColumn.ReadOnly = False
+        'Super Admin Access
+        If frm_main.user_id.Text = 10 Then
+            grid_supplier_deliveries_view.Columns("date_received").OptionsColumn.ReadOnly = False
+        End If
+
     End Sub
 
 
@@ -80,4 +84,11 @@ Public Class frm_warehouse_SupplierDeliveries_logs
             End If
         End If
     End Sub
+
+    'btn_generate_barcode
+    Private Sub btn_generate_barcode_Click(sender As Object, e As EventArgs) Handles btn_generate_barcode.Click
+        Dim frm = New frm_warehouse_barcode_generator
+        frm.ShowDialog()
+    End Sub
+
 End Class

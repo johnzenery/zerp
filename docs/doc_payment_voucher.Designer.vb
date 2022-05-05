@@ -32,7 +32,6 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell13 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell18 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell16 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
         Me.XrLabel42 = New DevExpress.XtraReports.UI.XRLabel()
@@ -88,7 +87,6 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell17 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell15 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.GroupFooter2 = New DevExpress.XtraReports.UI.GroupFooterBand()
         Me.payment_voucher_cheque = New DevExpress.XtraReports.UI.DetailReportBand()
@@ -179,12 +177,12 @@ Partial Public Class doc_payment_voucher
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(790.0002!, 25.0!)
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(789.9996!, 25.0!)
         Me.XrTable2.StylePriority.UseBorders = False
         '
         'XrTableRow2
         '
-        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell8, Me.XrTableCell20, Me.XrTableCell9, Me.XrTableCell13, Me.XrTableCell18, Me.XrTableCell16, Me.XrTableCell10})
+        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell8, Me.XrTableCell20, Me.XrTableCell9, Me.XrTableCell13, Me.XrTableCell18, Me.XrTableCell10})
         Me.XrTableRow2.Name = "XrTableRow2"
         Me.XrTableRow2.Weight = 1.0R
         '
@@ -235,7 +233,7 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell20.Text = "XrTableCell20"
         Me.XrTableCell20.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         Me.XrTableCell20.TextFormatString = "{0:MM/dd/yyyy}"
-        Me.XrTableCell20.Weight = 3.354846429049001R
+        Me.XrTableCell20.Weight = 3.83411131525231R
         '
         'XrTableCell9
         '
@@ -251,7 +249,7 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell9.StylePriority.UseTextAlignment = False
         Me.XrTableCell9.Text = "XrTableCell9"
         Me.XrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell9.Weight = 3.0529955024088427R
+        Me.XrTableCell9.Weight = 3.2393733121228632R
         '
         'XrTableCell13
         '
@@ -267,7 +265,7 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell13.StylePriority.UseTextAlignment = False
         Me.XrTableCell13.Text = "XrTableCell13"
         Me.XrTableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell13.Weight = 1.777529709475171R
+        Me.XrTableCell13.Weight = 2.9378013895934645R
         '
         'XrTableCell18
         '
@@ -282,22 +280,7 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell18.StylePriority.UseTextAlignment = False
         Me.XrTableCell18.Text = "[due_date!MM/dd/yyyy]"
         Me.XrTableCell18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell18.Weight = 3.3548464261291246R
-        '
-        'XrTableCell16
-        '
-        Me.XrTableCell16.Borders = DevExpress.XtraPrinting.BorderSide.Left
-        Me.XrTableCell16.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrTableCell16.Multiline = True
-        Me.XrTableCell16.Name = "XrTableCell16"
-        Me.XrTableCell16.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 0, 3, 0, 100.0!)
-        Me.XrTableCell16.StylePriority.UseBorders = False
-        Me.XrTableCell16.StylePriority.UseFont = False
-        Me.XrTableCell16.StylePriority.UsePadding = False
-        Me.XrTableCell16.StylePriority.UseTextAlignment = False
-        Me.XrTableCell16.Text = "[bank]"
-        Me.XrTableCell16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableCell16.Weight = 5.1626277378044545R
+        Me.XrTableCell18.Weight = 3.8341103372675103R
         '
         'XrTableCell10
         '
@@ -314,7 +297,7 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell10.Text = "[total_cost!n2]"
         Me.XrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrTableCell10.TextFormatString = "{0:n2}"
-        Me.XrTableCell10.Weight = 3.4262434523881615R
+        Me.XrTableCell10.Weight = 6.2836731604750371R
         '
         'ReportHeader
         '
@@ -698,11 +681,11 @@ Partial Public Class doc_payment_voucher
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrLabel8.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([amount])")})
         Me.XrLabel8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(682.7657!, 2.000014!)
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(593.3333!, 2.000014!)
         Me.XrLabel8.Multiline = True
         Me.XrLabel8.Name = "XrLabel8"
         Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 4, 0, 0, 100.0!)
-        Me.XrLabel8.SizeF = New System.Drawing.SizeF(107.2343!, 25.0!)
+        Me.XrLabel8.SizeF = New System.Drawing.SizeF(196.6667!, 25.0!)
         Me.XrLabel8.StylePriority.UseBorders = False
         Me.XrLabel8.StylePriority.UseFont = False
         Me.XrLabel8.StylePriority.UsePadding = False
@@ -714,7 +697,7 @@ Partial Public Class doc_payment_voucher
         'XrLabel7
         '
         Me.XrLabel7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(605.5352!, 4.000004!)
+        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(520.7495!, 3.999996!)
         Me.XrLabel7.Multiline = True
         Me.XrLabel7.Name = "XrLabel7"
         Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -829,7 +812,7 @@ Partial Public Class doc_payment_voucher
         '
         'XrTableRow1
         '
-        Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell2, Me.XrTableCell1, Me.XrTableCell19, Me.XrTableCell4, Me.XrTableCell5, Me.XrTableCell17, Me.XrTableCell15, Me.XrTableCell3})
+        Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell2, Me.XrTableCell1, Me.XrTableCell19, Me.XrTableCell4, Me.XrTableCell5, Me.XrTableCell17, Me.XrTableCell3})
         Me.XrTableRow1.Name = "XrTableRow1"
         Me.XrTableRow1.Weight = 1.0R
         '
@@ -885,7 +868,7 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell19.StylePriority.UseTextAlignment = False
         Me.XrTableCell19.Text = "Date Received"
         Me.XrTableCell19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell19.Weight = 4.0634685342361108R
+        Me.XrTableCell19.Weight = 4.6439652196704824R
         '
         'XrTableCell4
         '
@@ -903,7 +886,7 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell4.StylePriority.UseTextAlignment = False
         Me.XrTableCell4.Text = "Purchase ID"
         Me.XrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell4.Weight = 3.6978573645278443R
+        Me.XrTableCell4.Weight = 3.9236024668544336R
         '
         'XrTableCell5
         '
@@ -921,7 +904,7 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell5.StylePriority.UseTextAlignment = False
         Me.XrTableCell5.Text = "Terms"
         Me.XrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell5.Weight = 2.1529849584812042R
+        Me.XrTableCell5.Weight = 3.5583327815769263R
         '
         'XrTableCell17
         '
@@ -939,25 +922,7 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell17.StylePriority.UseTextAlignment = False
         Me.XrTableCell17.Text = "Due Date"
         Me.XrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell17.Weight = 4.0634685849422043R
-        '
-        'XrTableCell15
-        '
-        Me.XrTableCell15.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.XrTableCell15.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
-            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrTableCell15.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrTableCell15.Multiline = True
-        Me.XrTableCell15.Name = "XrTableCell15"
-        Me.XrTableCell15.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 0, 3, 0, 100.0!)
-        Me.XrTableCell15.StylePriority.UseBackColor = False
-        Me.XrTableCell15.StylePriority.UseBorders = False
-        Me.XrTableCell15.StylePriority.UseFont = False
-        Me.XrTableCell15.StylePriority.UsePadding = False
-        Me.XrTableCell15.StylePriority.UseTextAlignment = False
-        Me.XrTableCell15.Text = "Bank"
-        Me.XrTableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell15.Weight = 6.2530927277316231R
+        Me.XrTableCell17.Weight = 4.6439638967708445R
         '
         'XrTableCell3
         '
@@ -974,7 +939,7 @@ Partial Public Class doc_payment_voucher
         Me.XrTableCell3.StylePriority.UseTextAlignment = False
         Me.XrTableCell3.Text = "Amount"
         Me.XrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell3.Weight = 4.1499391252190856R
+        Me.XrTableCell3.Weight = 7.6109469302653858R
         '
         'GroupFooter2
         '
@@ -1637,7 +1602,7 @@ Partial Public Class doc_payment_voucher
         Me.Margins = New System.Drawing.Printing.Margins(30, 30, 30, 30)
         Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() {Me.voucher_id, Me.voucher_date, Me.supplier, Me.collection_ref, Me.total_amount, Me.generated_by, Me.store_info, Me.payment_type, Me.contact_person, Me.store_name})
         Me.RequestParameters = False
-        Me.Version = "21.1"
+        Me.Version = "21.2"
         Me.Watermark.Font = New System.Drawing.Font("Arial", 150.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Watermark.ForeColor = System.Drawing.Color.Silver
         Me.Watermark.ShowBehind = False
@@ -1690,7 +1655,6 @@ Partial Public Class doc_payment_voucher
     Friend WithEvents XrTableCell8 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell9 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell13 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell16 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell18 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrLabel19 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel21 As DevExpress.XtraReports.UI.XRLabel
@@ -1735,7 +1699,6 @@ Partial Public Class doc_payment_voucher
     Friend WithEvents XrTableCell4 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell5 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell17 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell15 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell3 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents purchase_return_report As DevExpress.XtraReports.UI.DetailReportBand
     Friend WithEvents details_returns As DevExpress.XtraReports.UI.DetailBand

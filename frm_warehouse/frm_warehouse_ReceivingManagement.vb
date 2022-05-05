@@ -21,7 +21,7 @@ Public Class frm_warehouse_receivingManagement
 
                 'FILTER
                 Dim selection_query = String.Empty
-                If Not (frm_main.user_role_id.Text = 1 Or frm_main.user_role_id.Text = 3 Or frm_main.user_role_id.Text = 6) Then
+                If Not (frm_main.user_role_id.Text = 1 Or frm_main.user_role_id.Text = 3 Or frm_main.user_role_id.Text = 6 Or frm_main.user_role_id.Text = 11) Then
                     selection_query = "AND deliver_to=(SELECT store_id FROM ims_stores WHERE store_name=@deliver_to)"
                 End If
 
@@ -60,7 +60,7 @@ Public Class frm_warehouse_receivingManagement
 
                 'FILTER
                 Dim filter = String.Empty
-                If Not (frm_main.user_role_id.Text = 1 Or frm_main.user_role_id.Text = 3 Or frm_main.user_role_id.Text = 6) Then
+                If Not (frm_main.user_role_id.Text = 1 Or frm_main.user_role_id.Text = 3 Or frm_main.user_role_id.Text = 6 Or frm_main.user_role_id.Text = 11) Then
                     filter = "AND RECVR.store_name='" & frm_main.user_store.Text.Trim & "'"
                 End If
 
@@ -92,7 +92,7 @@ Public Class frm_warehouse_receivingManagement
 
                 'FILTER
                 Dim filter = String.Empty
-                If Not (frm_main.user_role_id.Text = 1 Or frm_main.user_role_id.Text = 3 Or frm_main.user_role_id.Text = 6) Then
+                If Not (frm_main.user_role_id.Text = 1 Or frm_main.user_role_id.Text = 3 Or frm_main.user_role_id.Text = 6 Or frm_main.user_role_id.Text = 11) Then
                     filter = "AND RECVR.store_name='" & frm_main.user_store.Text.Trim & "'"
                 End If
 
@@ -102,7 +102,7 @@ Public Class frm_warehouse_receivingManagement
                                     INNER JOIN ims_customers AS cs ON cs.customer_id=ims_sales_returns.customer_id
                                     INNER JOIN ims_users ON ims_users.usr_id=ims_sales_returns.created_by
                                     INNER JOIN ims_stores ON ims_stores.store_id=ims_sales_returns.store_id
-                                    WHERE status='Approved' AND receiving_status='Pending' AND ims_sales_returns.is_deleted=0", connection)
+                                    WHERE status='Approved' AND ims_sales_returns.is_deleted=0", connection)
                     Dim dt = New DataTable
                     Dim da = New MySqlDataAdapter(cmd)
                     da.Fill(dt)
@@ -217,11 +217,12 @@ Public Class frm_warehouse_receivingManagement
 
     'View Sales Return
     Private Sub btn_view_srid_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles btn_view_srid.ButtonClick
-        Dim frm = New frm_warehouse_returns_list
+        Dim frm = New frm_warehouse_returns_receive
         frm.txt_srid.Text = grid_sales_returns_view.GetFocusedRowCellValue(col_srid)
         frm.txt_customer.Text = grid_sales_returns_view.GetFocusedRowCellValue(col_customer)
         frm.txt_created_by.Text = grid_sales_returns_view.GetFocusedRowCellValue(col_created_by)
         frm.txt_warehouse.Text = grid_sales_returns_view.GetFocusedRowCellValue(col_warehouse)
         LoadtoSalesReturnPanel(frm)
     End Sub
+
 End Class

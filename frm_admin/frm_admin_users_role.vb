@@ -64,7 +64,8 @@ Public Class frm_admin_users_role
                     Case "statement_of_account" : cb_soa.Checked = True
 
                     'Logistics
-                    Case "pickup_deliveries" : cb_pickup_deliveries.Checked = True
+                    Case "pickup_deliveries" : cb_order_management.Checked = True
+                    Case "st_dispatching" : cb_stock_transfer_dispatching.Checked = True
 
                     'Purchasing
                     Case "new_purchase" : cb_new_purchase.Checked = True
@@ -132,7 +133,8 @@ Public Class frm_admin_users_role
         If cb_soa.Checked Then access += "statement_of_account;"
 
         'Logistics
-        If cb_pickup_deliveries.Checked Then access += "pickup_deliveries;"
+        If cb_order_management.Checked Then access += "pickup_deliveries;"
+        If cb_stock_transfer_dispatching.Checked Then access += "st_dispatching;"
 
         'Purchasing
         If cb_new_purchase.Checked Then access += "new_purchase;"

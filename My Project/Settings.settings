@@ -2,47 +2,11 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="server" Type="System.String" Scope="User">
-      <Value Profile="(Default)">winlandene.synology.me</Value>
+    <Setting Name="ConnectionType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">WAN</Value>
     </Setting>
-    <Setting Name="database" Type="System.String" Scope="User">
-      <Value Profile="(Default)">zerpdb</Value>
-    </Setting>
-    <Setting Name="username" Type="System.String" Scope="User">
-      <Value Profile="(Default)">zerp</Value>
-    </Setting>
-    <Setting Name="password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">zerpconnectsall</Value>
-    </Setting>
-    <Setting Name="UserFolder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">User Photos</Value>
-    </Setting>
-    <Setting Name="FTPusername" Type="System.String" Scope="User">
-      <Value Profile="(Default)">wlftp</Value>
-    </Setting>
-    <Setting Name="FTPpass" Type="System.String" Scope="User">
-      <Value Profile="(Default)">@Ftpmaster2297</Value>
-    </Setting>
-    <Setting Name="login" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="login_user" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="port" Type="System.String" Scope="User">
-      <Value Profile="(Default)">63306</Value>
-    </Setting>
-    <Setting Name="FTPport" Type="System.String" Scope="User">
-      <Value Profile="(Default)">65021</Value>
-    </Setting>
-    <Setting Name="FTPserver" Type="System.String" Scope="User">
-      <Value Profile="(Default)">winlandene.synology.me</Value>
-    </Setting>
-    <Setting Name="folder_product" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Product Photos</Value>
-    </Setting>
-    <Setting Name="SalesFolder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Sales</Value>
+    <Setting Name="DatabaseType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Development</Value>
     </Setting>
   </Settings>
 </SettingsFile>

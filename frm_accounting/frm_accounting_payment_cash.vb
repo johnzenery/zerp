@@ -17,7 +17,7 @@ Public Class frm_accounting_payment_cash
         Try
             Using conn = New MySqlConnection(str)
                 conn.Open()
-                Using cmd = New MySqlCommand("SELECT * FROM ims_generated_cash", conn)
+                Using cmd = New MySqlCommand("SELECT *, CONCAT('PV', LPAD(p_voucher_id, 5, 0)) AS voucher_id FROM ims_generated_cash", conn)
                     Dim dt = New DataTable
                     Dim da = New MySqlDataAdapter(cmd)
                     da.Fill(dt)

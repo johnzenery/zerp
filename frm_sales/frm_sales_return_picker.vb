@@ -17,7 +17,7 @@ Public Class frm_sales_return_picker
                 Using cmd = New MySqlCommand("SELECT CONCAT('SR', LPAD(sales_return_id, 5, '0')) AS id, ims_customers.first_name AS customer, amount, created_at
                                         FROM ims_sales_returns
                                         LEFT JOIN ims_customers ON ims_customers.customer_id=ims_sales_returns.customer_id
-                                        WHERE ims_sales_returns.is_deleted=0 AND ims_sales_returns.is_applied=0 AND status='Approved' 
+                                        WHERE ims_sales_returns.is_deleted=0 AND ims_sales_returns.is_applied=0 AND status='Received' 
                                         AND ims_customers.first_name=@customer", conn)
                     cmd.Parameters.AddWithValue("@customer", customer)
                     Dim da = New MySqlDataAdapter(cmd)

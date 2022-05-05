@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.XtraReports.UI
 Imports MySql.Data.MySqlClient
+Imports System.IO
 
 Public Class frm_warehouse_stocktransfer_request_new
 
@@ -17,6 +18,7 @@ Public Class frm_warehouse_stocktransfer_request_new
         Me.Size = frm_main.Size
         CreateDataTable()
         LoadWarehouses()
+        btn_import.Location = btn_print.Location
     End Sub
 
 
@@ -30,7 +32,7 @@ Public Class frm_warehouse_stocktransfer_request_new
         dt.Columns.Add("description", GetType(String))
         dt.Columns.Add("masterbox_qty", GetType(Integer))
         dt.Columns.Add("qty_per_box", GetType(Integer))
-        dt.Columns.Add("qty", GetType(Integer))
+        dt.Columns.Add("qty", GetType(Decimal))
         dt.Columns.Add("cbm", GetType(Decimal))
         dt.Columns.Add("kgs", GetType(Decimal))
     End Sub
@@ -63,7 +65,7 @@ Public Class frm_warehouse_stocktransfer_request_new
                 Dim warehouse = String.Concat("ims_", cbb_src_warehouse.Text.Replace(" ", "_").ToLower)
 
                 Using cmd = New MySqlCommand("SELECT winmodel, description FROM ims_inventory 
-                                            INNER JOIN " & warehouse & " ON " & warehouse & ".pid=ims_inventory.pid", conn)
+                                            LEFT JOIN " & warehouse & " ON " & warehouse & ".pid=ims_inventory.pid", conn)
                     Using rdr As MySqlDataReader = cmd.ExecuteReader
                         While rdr.Read
                             model_AutoCompleteString.Add(rdr("winmodel"))
@@ -85,23 +87,25 @@ Public Class frm_warehouse_stocktransfer_request_new
         total_cbm = 0.00
         total_kgs = 0.00
 
-        For i = 0 To grid_request_stock.Rows.Count - 2
+        Dim dt = DirectCast(grid_request_stock.DataSource, DataTable)
 
-            StoreOverQty += grid_request_stock.Rows(i).Cells(0).Value & "@"     'Start with PID
+        For i = 0 To dt.Rows.Count - 1
 
-            For j = 8 To grid_request_stock.Columns.Count - 2
+            StoreOverQty += dt.Rows(i).Item(0) & "@"     'Start with PID
+
+            For j = 8 To dt.Columns.Count - 2
 
                 'Get Column index of Current Cell
-                Dim ColumnIndex = grid_request_stock.Rows(i).Cells(j).ColumnIndex
+                'Dim ColumnIndex = dt.Rows(i).Item(j).ColumnIndex
 
                 For Each store As String In store_list
                     Dim StoreArr = store.Split("@")
 
                     'Compare Columns & Getting Values
-                    If Equals(StoreArr(1).Trim, grid_request_stock.Columns(ColumnIndex).Name.Replace("Winland ", "").Trim) Then
+                    If Equals(StoreArr(1).Trim, dt.Columns(j).ColumnName.Trim) Then
 
                         'If No Value RETURN FALSE
-                        If IsDBNull(grid_request_stock.Rows(i).Cells(j + 1).Value) Then
+                        If IsDBNull(dt.Rows(i).Item(j + 1)) Then
                             Return "False"
                         End If
 
@@ -109,15 +113,15 @@ Public Class frm_warehouse_stocktransfer_request_new
                         If Not j = 8 Then StoreOverQty += ","
 
                         'Get Value
-                        StoreOverQty += StoreArr(0).Trim & "=" & grid_request_stock.Rows(i).Cells(j + 1).Value
+                        StoreOverQty += StoreArr(0).Trim & "=" & dt.Rows(i).Item(j + 1)
 
                         'Add to Counted Stores
-                        If Not CountedStores.Contains(grid_request_stock.Columns(ColumnIndex).Name.Replace("Winland ", "").Trim) _
-                                                            And Not grid_request_stock.Rows(i).Cells(j + 1).Value = 0 Then
+                        If Not CountedStores.Contains(dt.Columns(j).ColumnName.Trim) _
+                                                            And Not dt.Rows(i).Item(j + 1) = 0 Then
                             If String.IsNullOrEmpty(CountedStores) Then
-                                CountedStores += grid_request_stock.Columns(ColumnIndex).Name.Replace("Winland ", "").Trim
+                                CountedStores += dt.Columns(j).ColumnName.Trim
                             Else
-                                CountedStores += ", " & grid_request_stock.Columns(ColumnIndex).Name.Replace("Winland ", "").Trim
+                                CountedStores += ", " & dt.Columns(j).ColumnName.Trim
                             End If
 
                         End If
@@ -131,8 +135,8 @@ Public Class frm_warehouse_stocktransfer_request_new
             StoreOverQty += ";"
 
             'Get Total CBM and KG
-            total_cbm += grid_request_stock.Rows(i).Cells(5).Value * grid_request_stock.Rows(i).Cells(6).Value
-            total_kgs += grid_request_stock.Rows(i).Cells(5).Value * grid_request_stock.Rows(i).Cells(7).Value
+            total_cbm += dt.Rows(i).Item(5) * dt.Rows(i).Item(6)
+            total_kgs += dt.Rows(i).Item(5) * dt.Rows(i).Item(7)
 
         Next
 
@@ -169,7 +173,7 @@ Public Class frm_warehouse_stocktransfer_request_new
                 For i = 0 To cbb_src_warehouse.Properties.Items.Count - 1
 
                     Dim store = "ims_" & cbb_src_warehouse.Properties.Items(i).ToString.Replace(" ", "_").ToLower
-                    Dim store_tblName = cbb_src_warehouse.Properties.Items(i).Replace("Winland ", "")
+                    Dim store_tblName = cbb_src_warehouse.Properties.Items(i).Replace("Winland ", String.Empty)
 
                     StoreQuery += "IFNULL(" & store & ".qty, 0) AS '" & store_tblName & "', "
                     left_join += "LEFT JOIN " & store & " ON " & store & ".pid=ims_inventory.pid "
@@ -192,7 +196,7 @@ Public Class frm_warehouse_stocktransfer_request_new
                         cmd.Parameters(0).Value = cells(0)
                         Using rdr = cmd.ExecuteReader
                             While rdr.Read
-
+                                Dim output As Integer = rdr("cbm")
                                 With dt.Rows.Add(
                                     rdr("pid"),
                                     rdr("winmodel"),
@@ -212,7 +216,7 @@ Public Class frm_warehouse_stocktransfer_request_new
                                     For Each store As String In store_list
                                         Dim StoreArr = store.Split("@")
                                         If Equals(StoreArr(0).Trim, StoreAndQty(0)) Then
-                                            grid_request_stock.Rows(i).Cells(StoreArr(1).Trim).Value = rdr(StoreArr(1).Trim)
+                                            grid_request_stock.Rows(i).Cells(StoreArr(1).Trim).Value = IIf(rdr(StoreArr(1).Trim) Mod 1 = 0, CInt(rdr(StoreArr(1).Trim)), rdr(StoreArr(1).Trim))
                                             grid_request_stock.Rows(i).Cells("RE: " & StoreArr(1).Trim).Value = StoreAndQty(1)
                                         End If
                                     Next
@@ -243,6 +247,7 @@ Public Class frm_warehouse_stocktransfer_request_new
     Public Sub LoadEdit(stid As Integer)
 
         'Show
+        btn_import.Visible = False
         lbl_created_by.Visible = True
         lbl_status.Visible = True
         btn_print.Visible = True
@@ -305,8 +310,8 @@ Public Class frm_warehouse_stocktransfer_request_new
         Dim items As String = String.Empty
         Dim storesInItem() As String = {}
         Dim linkedWarehouse() As String = {}
-        Dim store_name = "", store_info = "", transfer_id = "", transfer_type = "", src_store = "", transfer_by = "", approved_by = "",
-            prepared_by = "", checked_by = "", released_by = "", delivered_by = ""
+        Dim store_name = String.Empty, store_info = String.Empty, transfer_id = String.Empty, transfer_type = String.Empty, src_store = String.Empty, transfer_by = String.Empty, approved_by = String.Empty,
+            prepared_by = String.Empty, checked_by = String.Empty, released_by = String.Empty, delivered_by = String.Empty
 
         Try
             Using conn = New MySqlConnection(str)
@@ -322,7 +327,7 @@ Public Class frm_warehouse_stocktransfer_request_new
                             INNER JOIN ims_stores ON ims_stores.store_id=ims_stock_transfer.src_store_id
                             LEFT JOIN ims_users AS CREATED_BY ON CREATED_BY.usr_id=ims_stock_transfer.created_by
                             LEFT JOIN ims_users AS APPROVED_BY ON APPROVED_BY.usr_id=ims_stock_transfer.approved_by
-                            WHERE transfer_id=" & CInt(stid.Replace("ST", "")), conn)
+                            WHERE transfer_id=" & CInt(stid.Replace("ST", String.Empty)), conn)
 
                     Using rdr = cmd.ExecuteReader()
                         While rdr.Read
@@ -337,7 +342,7 @@ Public Class frm_warehouse_stocktransfer_request_new
                             src_store = rdr("src_store")
 
                             transfer_by = rdr("created_by")
-                            approved_by = IIf(IsDBNull(rdr("approved_by")), "", rdr("approved_by"))
+                            approved_by = IIf(IsDBNull(rdr("approved_by")), String.Empty, rdr("approved_by"))
 
                         End While
                     End Using
@@ -483,17 +488,17 @@ Public Class frm_warehouse_stocktransfer_request_new
             'Add Warehouse Columns except Source
             For i = 0 To cbb_src_warehouse.Properties.Items.Count - 1
                 'Skip if EXIST
-                If dt.Columns.Contains(cbb_src_warehouse.Properties.Items(i).Replace("Winland ", "")) Then
+                If dt.Columns.Contains(cbb_src_warehouse.Properties.Items(i).Replace("Winland ", String.Empty)) Then
                     Continue For
                 End If
                 'Add Warehouse IF NOT EXIST
-                dt.Columns.Add(cbb_src_warehouse.Properties.Items(i).Replace("Winland ", ""), GetType(Decimal))
-                dt.Columns.Add("RE: " & cbb_src_warehouse.Properties.Items(i).Replace("Winland ", ""), GetType(Decimal))
+                dt.Columns.Add(cbb_src_warehouse.Properties.Items(i).Replace("Winland ", String.Empty), GetType(Decimal))
+                dt.Columns.Add("RE: " & cbb_src_warehouse.Properties.Items(i).Replace("Winland ", String.Empty), GetType(Decimal))
             Next
 
             'Remove Currently Selected
-            dt.Columns.Remove(cbb_src_warehouse.Text.Replace("Winland ", ""))
-            dt.Columns.Remove("RE: " & cbb_src_warehouse.Text.Replace("Winland ", ""))
+            dt.Columns.Remove(cbb_src_warehouse.Text.Replace("Winland ", String.Empty))
+            dt.Columns.Remove("RE: " & cbb_src_warehouse.Text.Replace("Winland ", String.Empty))
 
             'Assign to Datasource
             grid_request_stock.DataSource = dt
@@ -504,8 +509,8 @@ Public Class frm_warehouse_stocktransfer_request_new
                 grid_request_stock.Columns(i).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
                 grid_request_stock.Columns(i).Width = 100
                 If i Mod 2 = 0 Then
-                    grid_request_stock.Columns(i).HeaderCell.Style.BackColor = Color.GhostWhite 'Color.FromArgb(224, 224, 224)
-                    grid_request_stock.Columns(i).DefaultCellStyle.BackColor = Color.GhostWhite 'Color.FromArgb(224, 224, 224)
+                    grid_request_stock.Columns(i).HeaderCell.Style.BackColor = Color.AntiqueWhite 'Color.FromArgb(224, 224, 224)
+                    grid_request_stock.Columns(i).DefaultCellStyle.BackColor = Color.AntiqueWhite 'Color.FromArgb(224, 224, 224)
                     grid_request_stock.Columns(i).ReadOnly = True
                 End If
             Next
@@ -582,7 +587,7 @@ Public Class frm_warehouse_stocktransfer_request_new
                             For i = 0 To cbb_src_warehouse.Properties.Items.Count - 1
 
                                 Dim store = "ims_" & cbb_src_warehouse.Properties.Items(i).ToString.Replace(" ", "_").ToLower
-                                Dim store_tblName = cbb_src_warehouse.Properties.Items(i).Replace("Winland ", "")
+                                Dim store_tblName = cbb_src_warehouse.Properties.Items(i).Replace("Winland ", String.Empty)
 
                                 StoreQuery += "IFNULL(" & store & ".qty, 0) AS '" & store_tblName & "', "
                                 left_join += "LEFT JOIN " & store & " ON " & store & ".pid=ims_inventory.pid "
@@ -592,7 +597,7 @@ Public Class frm_warehouse_stocktransfer_request_new
                                     (IFNULL(length, 0) * IFNULL(width, 0) * IFNULL(height, 0)) / 100 AS cbm, IFNULL(weight, 0) AS kgs
                                     FROM ims_inventory 
                                     " & left_join & "
-                                    INNER JOIN " & warehouse_tbl & " AS inv ON inv.pid=ims_inventory.pid
+                                    LEFT JOIN " & warehouse_tbl & " AS inv ON inv.pid=ims_inventory.pid
                                     WHERE ims_inventory.winmodel=@winmodel", conn)
                                 cmd.Parameters.AddWithValue("@winmodel", grid_request_stock.CurrentCell.Value)
 
@@ -610,12 +615,16 @@ Public Class frm_warehouse_stocktransfer_request_new
                                             grid_request_stock.Rows(e.RowIndex).Cells(6).Value = rdr("cbm")
                                             grid_request_stock.Rows(e.RowIndex).Cells(7).Value = rdr("kgs")
 
+                                            For i = 8 To grid_request_stock.Columns.Count - 1
+                                                grid_request_stock.Rows(e.RowIndex).Cells(i).Value = 0
+                                            Next
+
                                             For Each store As String In cbb_src_warehouse.Properties.Items
-                                                Dim StoreArr = store.Replace("Winland ", "").Trim
+                                                Dim StoreArr = store.Replace("Winland ", String.Empty).Trim
 
                                                 For i = 8 To grid_request_stock.Columns.Count - 1
                                                     If Equals(StoreArr.Trim, grid_request_stock.Columns(i).Name.ToString.Trim) Then
-                                                        grid_request_stock.Rows(e.RowIndex).Cells(i).Value = rdr(StoreArr)
+                                                        grid_request_stock.Rows(e.RowIndex).Cells(i).Value = IIf(rdr(StoreArr) Mod 1 = 0, CInt(rdr(StoreArr)), rdr(StoreArr))
                                                     End If
                                                 Next
                                             Next
@@ -804,7 +813,7 @@ Public Class frm_warehouse_stocktransfer_request_new
                     conn.Open()
                     Using cmd = New MySqlCommand("UPDATE ims_stock_transfer SET is_deleted=1
                                     WHERE transfer_id=@stid", conn)
-                        cmd.Parameters.AddWithValue("@stid", CInt(txt_stid.Text.Replace("ST", "")))
+                        cmd.Parameters.AddWithValue("@stid", CInt(txt_stid.Text.Replace("ST", String.Empty)))
                         cmd.ExecuteNonQuery()
                         Me.Close()
                         MsgBox("Deleted!", vbInformation, "Information")
@@ -834,7 +843,7 @@ Public Class frm_warehouse_stocktransfer_request_new
     Private Sub btn_arrange_Click(sender As Object, e As EventArgs) Handles btn_arrange.Click
 
         If MsgBox("Ready to arrange?", vbYesNo + vbQuestion, "Confirmation") = vbYes Then
-            Dim transfer_id = CInt(txt_stid.Text.Replace("ST", ""))
+            Dim transfer_id = CInt(txt_stid.Text.Replace("ST", String.Empty))
 
             Try
                 Using connect = New MySqlConnection(str)
@@ -865,7 +874,7 @@ Public Class frm_warehouse_stocktransfer_request_new
                 Using connect = New MySqlConnection(str)
                     connect.Open()
 
-                    Dim transfer_id = CInt(txt_stid.Text.Replace("ST", ""))
+                    Dim transfer_id = CInt(txt_stid.Text.Replace("ST", String.Empty))
                     Using cmd = New MySqlCommand("UPDATE ims_stock_transfer SET public_note=@public_note WHERE transfer_id=" & transfer_id, connect)
                         cmd.Parameters.AddWithValue("@public_note", txt_note.Text.Trim)
                         If cmd.ExecuteNonQuery > 0 Then
@@ -880,6 +889,130 @@ Public Class frm_warehouse_stocktransfer_request_new
 
         End If
 
+    End Sub
+
+    'btn_import
+    Private Sub btn_import_Click(sender As Object, e As EventArgs) Handles btn_import.Click
+
+        'cbb Supplier Validation
+        If cbb_src_warehouse.SelectedIndex = -1 Then
+            MsgBox("Select destination warehouse first!.", vbCritical, "Required")
+            Return
+        End If
+
+        Dim openFileDialog = New OpenFileDialog() With
+          {
+             .Title = "Open File Dialog",
+             .Filter = "CSV file (*.csv)|*.csv",
+             .RestoreDirectory = True,
+             .FilterIndex = 2
+          }
+
+        If openFileDialog.ShowDialog() = DialogResult.OK AndAlso MsgBox("Click 'Yes' to continue.", vbQuestion + vbYesNo, "Confirmation") = vbYes Then
+
+            Try
+                'Stream Data from CSV
+                Dim csvData As String = File.ReadAllText(openFileDialog.FileName)
+
+                'Get grid_order DataTable
+                Dim dataSource = DirectCast(grid_request_stock.DataSource, DataTable)
+
+                Dim not_found_unit = String.Empty
+
+                For Each row As String In csvData.Split(ControlChars.Lf)
+
+                    'If EMPTY
+                    If String.IsNullOrEmpty(row) Then Continue For
+
+                    'SPLIT ROW VALUES
+                    Dim values = row.Split(","c)
+
+                    'SKIP ROW IF EMPTY
+                    If String.IsNullOrWhiteSpace(values(0)) Or String.IsNullOrWhiteSpace(values(1)) Then Continue For
+
+                    'GET AND SET
+                    Try
+                        Using conn = New MySqlConnection(str)
+                            conn.Open()
+                            Dim warehouse_tbl = "ims_" & cbb_src_warehouse.Text.Replace(" ", "_").ToLower
+                            Dim left_join = String.Empty
+                            Dim StoreQuery = String.Empty
+
+                            'Query Table
+                            For i = 0 To cbb_src_warehouse.Properties.Items.Count - 1
+
+                                Dim store = "ims_" & cbb_src_warehouse.Properties.Items(i).ToString.Replace(" ", "_").ToLower
+                                Dim store_tblName = cbb_src_warehouse.Properties.Items(i).Replace("Winland ", String.Empty)
+
+                                StoreQuery += "IFNULL(" & store & ".qty, 0) AS '" & store_tblName & "', "
+                                left_join += "LEFT JOIN " & store & " ON " & store & ".pid=ims_inventory.pid "
+                            Next
+
+                            Using cmd = New MySqlCommand("SELECT " & StoreQuery & " ims_inventory.pid, winmodel, description, qty_per_box, masterbox_qty, inv.qty,
+                                    (IFNULL(length, 0) * IFNULL(width, 0) * IFNULL(height, 0)) / 100 AS cbm, IFNULL(weight, 0) AS kgs
+                                    FROM ims_inventory 
+                                    " & left_join & "
+                                    LEFT JOIN " & warehouse_tbl & " AS inv ON inv.pid=ims_inventory.pid
+                                    WHERE ims_inventory.winmodel=@winmodel", conn)
+                                cmd.Parameters.AddWithValue("@winmodel", values(1).Trim)
+
+                                Using rdr As MySqlDataReader = cmd.ExecuteReader
+                                    If rdr.HasRows Then
+                                        While rdr.Read
+
+                                            'SET VALUE to grid_order
+                                            dataSource.Rows.Add(rdr("pid"), rdr("winmodel"), rdr("description"), rdr("masterbox_qty"), rdr("qty_per_box"), 0, rdr("cbm"), rdr("kgs"))
+
+                                            For i = 8 To grid_request_stock.Columns.Count - 1
+                                                dataSource.Rows(dataSource.Rows.Count - 1).Item(i) = 0
+                                            Next
+
+                                            'Show Per Warehouse Table QTY
+                                            For Each store As String In cbb_src_warehouse.Properties.Items
+                                                Dim StoreArr = store.Replace("Winland ", String.Empty).Trim
+                                                For i = 8 To dataSource.Columns.Count - 1
+                                                    If Equals(StoreArr.Trim, dataSource.Columns(i).ColumnName) Then
+                                                        dataSource.Rows(dataSource.Rows.Count - 1).Item(i) = IIf(rdr(StoreArr) Mod 1 = 0, CInt(rdr(StoreArr)), rdr(StoreArr))
+                                                    End If
+                                                Next
+                                            Next
+
+                                        End While
+                                    Else
+                                        not_found_unit += values(1) & vbNewLine
+                                    End If
+                                End Using
+
+                            End Using
+                        End Using
+
+                    Catch ex As Exception
+
+                        MsgBox(ex.Message, vbCritical, "Error")
+                    End Try
+                Next
+
+                grid_request_stock.DataSource = dataSource
+
+                'IF Has Error or Not Active
+                If Not String.IsNullOrEmpty(not_found_unit) Then
+                    MsgBox(String.Concat("Couldn't import item(s) below:", not_found_unit), vbExclamation, "Failed")
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message, vbCritical, "Error")
+            End Try
+
+        End If
+
+    End Sub
+
+    'Search
+    Private Sub txt_search_TextChanged(sender As Object, e As EventArgs) Handles txt_search.TextChanged
+        Dim dt = DirectCast(grid_request_stock.DataSource, DataTable)
+        Dim dataViews As DataView = New DataView(dt)
+        dt.DefaultView.RowFilter = String.Concat(New String() {"winmodel LIKE '%", Me.txt_search.Text.Trim(), "%' OR description LIKE '%", Me.txt_search.Text.Trim(), "%'"})
+        grid_request_stock.DataSource = dt
     End Sub
 
 End Class

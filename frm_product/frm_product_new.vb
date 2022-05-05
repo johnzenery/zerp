@@ -556,7 +556,7 @@ Public Class frm_product_new
     'Upload Photo to Server
     Private Function UploadProductPhoto(model As String)
 
-        Using client As New SftpClient(My.Settings.FTPserver, My.Settings.FTPusername, My.Settings.FTPpass)
+        Using client As New SftpClient(server, ftp_username, ftp_password)
             Try
                 client.Connect()
 
@@ -566,20 +566,20 @@ Public Class frm_product_new
                 'Check IF FOLDER EXIST
                 Dim is_exist = False
                 For Each file As SftpFile In files
-                    If Equals(file.Name, My.Settings.folder_product) Then is_exist = True
+                    If Equals(file.Name, ftp_productFolder) Then is_exist = True
                 Next
 
                 'Creating folder IF NOT EXIST
                 If is_exist = False Then
-                    MsgBox("No folder '" & My.Settings.folder_product & "' existed! Creating one...")
-                    client.CreateDirectory("./" & My.Settings.folder_product)
+                    MsgBox("No folder '" & ftp_productFolder & "' existed! Creating one...")
+                    client.CreateDirectory("./" & ftp_productFolder)
                 End If
 
                 'Saving file to Folder
                 Dim stream As New MemoryStream
                 pb_new_unit.Image.Save(stream, Imaging.ImageFormat.Jpeg)
                 stream.Position = 0
-                client.UploadFile(stream, "./" & My.Settings.folder_product & "/" & model & ".jpg")
+                client.UploadFile(stream, "./" & ftp_productFolder & "/" & model & ".jpg")
 
             Catch ex As Exception
             End Try
@@ -590,60 +590,14 @@ Public Class frm_product_new
 
     End Function
 
-    Private Function uUploadProductPhoto(model As String)
-
-        Dim strFile As Stream = Nothing
-        Dim cred = New NetworkCredential(My.Settings.FTPusername, My.Settings.FTPpass)
-        Dim URi = "ftp://" & My.Settings.server & "/Product Photos"
-
-        'CONVERTING IMAGE TO BYTES
-        Dim ms As New MemoryStream
-        pb_new_unit.Image.Save(ms, Imaging.ImageFormat.Jpeg)
-        Dim btfile() As Byte = ms.GetBuffer
-
-        'Make request for Upload
-        Dim wrUpload As FtpWebRequest
-        Dim Filename = model & ".jpg"
-        wrUpload = DirectCast(WebRequest.Create(URi & "/" & Filename), FtpWebRequest)
-        wrUpload.Credentials = cred
-        wrUpload.Method = WebRequestMethods.Ftp.UploadFile
-
-        'Check IF FOLDER EXIST
-        Dim chkFolder As FtpWebRequest = DirectCast(WebRequest.Create(URi), FtpWebRequest)
-        chkFolder.Credentials = cred
-        chkFolder.Method = WebRequestMethods.Ftp.MakeDirectory
-
-        Try
-
-            Using response As FtpWebResponse = DirectCast(chkFolder.GetResponse(), FtpWebResponse)
-                'Get and Write request to server
-                strFile = wrUpload.GetRequestStream()
-                strFile.Write(btfile, 0, btfile.Length)
-            End Using
-
-        Catch ex As Exception
-
-            'Get and Write request to server
-            strFile = wrUpload.GetRequestStream()
-            strFile.Write(btfile, 0, btfile.Length)
-
-        Finally
-            strFile.Close()
-            strFile.Dispose()
-        End Try
-
-        Return Filename
-
-    End Function
-
     'Set Photo from server
     Private Sub setImage(FileName As String)
 
-        Using client As New SftpClient(My.Settings.FTPserver, My.Settings.FTPusername, My.Settings.FTPpass)
+        Using client As New SftpClient(server, ftp_username, ftp_password)
             Try
                 client.Connect()
                 Dim ms As New MemoryStream
-                client.DownloadFile("./" & My.Settings.folder_product & "/" & FileName & ".jpg", ms)
+                client.DownloadFile("./" & ftp_productFolder & "/" & FileName & ".jpg", ms)
 
                 If Not ms.Length = 0 Then
                     pb_new_unit.Image = Image.FromStream(ms)
@@ -654,28 +608,6 @@ Public Class frm_product_new
                 client.Disconnect()
             End Try
         End Using
-
-    End Sub
-
-    Private Sub ssetImage(FileName As String)
-
-        Try
-            Dim DownloadURi = "ftp://" & My.Settings.server & "/Product Photos/" & FileName & ".jpg"
-
-            'Creating Client request to download
-            Dim DLReq As New WebClient
-            DLReq.Credentials = New NetworkCredential(My.Settings.FTPusername, My.Settings.FTPpass)
-            Dim imgbytes() As Byte = DLReq.DownloadData(DownloadURi)
-
-            'Setting Image bytes to PictureBox
-            Dim ms As New MemoryStream(imgbytes)
-            pb_new_unit.Image = Image.FromStream(ms)
-
-            'Memory cleaning
-            DLReq.Dispose()
-        Catch ex As Exception
-
-        End Try
 
     End Sub
 

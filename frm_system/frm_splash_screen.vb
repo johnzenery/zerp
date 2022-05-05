@@ -26,7 +26,4 @@ Public Class frm_splash_screen
         set_status
     End Enum
 
-    Private Sub panel_top_Click(sender As Object, e As EventArgs) Handles panel_top.Click
-
-    End Sub
 End Class

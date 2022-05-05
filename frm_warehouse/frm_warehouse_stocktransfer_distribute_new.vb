@@ -1,4 +1,5 @@
-﻿Imports DevExpress.XtraReports.UI
+﻿Imports System.IO
+Imports DevExpress.XtraReports.UI
 Imports MySql.Data.MySqlClient
 
 Public Class frm_warehouse_stocktransfer_distribute_new
@@ -17,6 +18,7 @@ Public Class frm_warehouse_stocktransfer_distribute_new
         Me.Size = frm_main.Size
         CreateDataTable()
         LoadWarehouses()
+        btn_import.Location = btn_print.Location
     End Sub
 
 
@@ -30,7 +32,7 @@ Public Class frm_warehouse_stocktransfer_distribute_new
         dt.Columns.Add("description", GetType(String))
         dt.Columns.Add("masterbox_qty", GetType(Integer))
         dt.Columns.Add("qty_per_box", GetType(Integer))
-        dt.Columns.Add("qty", GetType(Integer))
+        dt.Columns.Add("qty", GetType(Decimal))
         dt.Columns.Add("cbm", GetType(Decimal))
         dt.Columns.Add("kgs", GetType(Decimal))
     End Sub
@@ -85,39 +87,41 @@ Public Class frm_warehouse_stocktransfer_distribute_new
         total_cbm = 0.00
         total_kgs = 0.00
 
-        For i = 0 To grid_distribute_stock.Rows.Count - 2
+        Dim dt = DirectCast(grid_distribute_stock.DataSource, DataTable)
 
-            StoreOverQty += grid_distribute_stock.Rows(i).Cells(0).Value & "@"      'Start with PID
+        For i = 0 To dt.Rows.Count - 1
 
-            For j = 8 To grid_distribute_stock.Columns.Count - 1
+            StoreOverQty += dt.Rows(i).Item(0) & "@"      'Start with PID
+
+            For j = 8 To dt.Columns.Count - 1
 
                 'If No Value RETURN FALSE
-                If IsDBNull(grid_distribute_stock.Rows(i).Cells(j).Value) Then
+                If IsDBNull(dt.Rows(i).Item(j)) Then
                     Return "False"
                 End If
 
                 'Get Column index of Current Cell
-                Dim ColumnIndex = grid_distribute_stock.Rows(i).Cells(j).ColumnIndex
+                'Dim ColumnIndex = dt.Rows(i).Item(j).ColumnIndex
 
                 For Each store As String In store_list
                     Dim StoreArr = store.Split("@")
 
                     'Compare Columns & Getting Values
-                    If Equals(StoreArr(1).Trim, grid_distribute_stock.Columns(ColumnIndex).Name.Replace("Winland ", "").Trim) Then
+                    If Equals(StoreArr(1).Trim, dt.Columns(j).ColumnName.Replace("Winland ", "").Trim) Then
 
                         'No comma at first & put comma before value
                         If Not j = 8 Then StoreOverQty += ","
 
                         'Get Value
-                        StoreOverQty += StoreArr(0).Trim & "=" & grid_distribute_stock.Rows(i).Cells(j).Value
+                        StoreOverQty += StoreArr(0).Trim & "=" & dt.Rows(i).Item(j)
 
                         'Add to Counted Stores
-                        If Not CountedStores.Contains(grid_distribute_stock.Columns(ColumnIndex).Name.Replace("Winland ", "").Trim) _
-                                                            And Not grid_distribute_stock.Rows(i).Cells(j).Value = 0 Then
+                        If Not CountedStores.Contains(dt.Columns(j).ColumnName.Replace("Winland ", "").Trim) _
+                                                            And Not dt.Rows(i).Item(j) = 0 Then
                             If String.IsNullOrEmpty(CountedStores) Then
-                                CountedStores += grid_distribute_stock.Columns(ColumnIndex).Name.Replace("Winland ", "").Trim
+                                CountedStores += dt.Columns(j).ColumnName.Replace("Winland ", "").Trim
                             Else
-                                CountedStores += ", " & grid_distribute_stock.Columns(ColumnIndex).Name.Replace("Winland ", "").Trim
+                                CountedStores += ", " & dt.Columns(j).ColumnName.Replace("Winland ", "").Trim
                             End If
                         End If
 
@@ -125,8 +129,8 @@ Public Class frm_warehouse_stocktransfer_distribute_new
                 Next
 
                 'Get Total CBM and KG
-                total_cbm += grid_distribute_stock.Rows(i).Cells(j).Value * grid_distribute_stock.Rows(i).Cells(6).Value
-                total_kgs += grid_distribute_stock.Rows(i).Cells(j).Value * grid_distribute_stock.Rows(i).Cells(7).Value
+                total_cbm += dt.Rows(i).Item(j) * dt.Rows(i).Item(6) '(qty * CBM)
+                total_kgs += dt.Rows(i).Item(j) * dt.Rows(i).Item(7) '(qty * kgs)
             Next
 
             'End with comma
@@ -163,7 +167,7 @@ Public Class frm_warehouse_stocktransfer_distribute_new
                 Using cmd = New MySqlCommand("SELECT ims_inventory.pid, winmodel, description, qty_per_box, masterbox_qty, IFNULL(inv.qty, 0) AS qty,
                                      (IFNULL(length, 0) * IFNULL(width, 0) * IFNULL(height, 0)) / 100 AS cbm, IFNULL(weight, 0) AS kgs
                                     FROM ims_inventory 
-                                    LEFT JOIN " & warehouse_tbl & " AS inv ON inv.pid=ims_inventory.pid
+                                    INNER JOIN " & warehouse_tbl & " AS inv ON inv.pid=ims_inventory.pid
                                     WHERE ims_inventory.pid=@pid", connection)
                     cmd.Parameters.AddWithValue("@pid", 0)
                     cmd.Prepare()
@@ -216,6 +220,7 @@ Public Class frm_warehouse_stocktransfer_distribute_new
     Public Sub LoadEdit(stid As Integer)
 
         'Show
+        btn_import.Visible = False
         lbl_created_by.Visible = True
         lbl_status.Visible = True
         btn_print.Visible = True
@@ -562,6 +567,11 @@ Public Class frm_warehouse_stocktransfer_distribute_new
                                             grid_distribute_stock.Rows(e.RowIndex).Cells(5).Value = rdr("qty")
                                             grid_distribute_stock.Rows(e.RowIndex).Cells(6).Value = rdr("cbm")
                                             grid_distribute_stock.Rows(e.RowIndex).Cells(7).Value = rdr("kgs")
+
+                                            For i = 8 To grid_distribute_stock.Columns.Count - 1
+                                                grid_distribute_stock.Rows(e.RowIndex).Cells(i).Value = 0
+                                            Next
+
                                         End While
                                     Else
                                         MsgBox("Selected item couldn't found!", vbCritical, "Not Found")
@@ -796,6 +806,7 @@ Public Class frm_warehouse_stocktransfer_distribute_new
         End If
     End Sub
 
+    'btn_approved
     Private Sub btn_approved_Click(sender As Object, e As EventArgs) Handles btn_approved.Click
 
         Dim frm = New frm_warehouse_stocktransfer_approval_dialog
@@ -822,4 +833,105 @@ Public Class frm_warehouse_stocktransfer_distribute_new
         End If
 
     End Sub
+
+    'btn_import
+    Private Sub btn_import_Click(sender As Object, e As EventArgs) Handles btn_import.Click
+
+        'cbb Supplier Validation
+        If cbb_src_warehouse.SelectedIndex = -1 Then
+            MsgBox("Select source warehouse first!.", vbCritical, "Required")
+            Return
+        End If
+
+        Dim openFileDialog = New OpenFileDialog() With
+          {
+             .Title = "Open File Dialog",
+             .Filter = "CSV file (*.csv)|*.csv",
+             .RestoreDirectory = True,
+             .FilterIndex = 2
+          }
+
+        If openFileDialog.ShowDialog() = DialogResult.OK AndAlso MsgBox("Click 'Yes' to continue.", vbQuestion + vbYesNo, "Confirmation") = vbYes Then
+
+            Try
+                'Stream Data from CSV
+                Dim csvData As String = File.ReadAllText(openFileDialog.FileName)
+
+                'Get grid_order DataTable
+                Dim dataSource = DirectCast(grid_distribute_stock.DataSource, DataTable)
+
+                Dim not_found_unit = String.Empty
+
+                For Each row As String In csvData.Split(ControlChars.Lf)
+
+                    'If EMPTY
+                    If String.IsNullOrEmpty(row) Then Continue For
+
+                    'SPLIT ROW VALUES
+                    Dim values = row.Split(","c)
+
+                    'SKIP ROW IF EMPTY
+                    If String.IsNullOrWhiteSpace(values(0)) Or String.IsNullOrWhiteSpace(values(1)) Then Continue For
+
+                    'GET AND SET
+                    Try
+                        Using conn = New MySqlConnection(str)
+                            conn.Open()
+
+                            Dim warehouse_tbl = "ims_" & cbb_src_warehouse.Text.Replace(" ", "_").ToLower
+                            Using cmd = New MySqlCommand("SELECT ims_inventory.pid, winmodel, description, qty_per_box, masterbox_qty, inv.qty,
+                                    (IFNULL(length, 0) * IFNULL(width, 0) * IFNULL(height, 0)) / 100 AS cbm, IFNULL(weight, 0) AS kgs
+                                    FROM ims_inventory 
+                                    INNER JOIN " & warehouse_tbl & " AS inv ON inv.pid=ims_inventory.pid
+                                    WHERE ims_inventory.winmodel=@winmodel", conn)
+                                cmd.Parameters.AddWithValue("@winmodel", values(1).Trim)
+
+                                Using rdr As MySqlDataReader = cmd.ExecuteReader
+                                    If rdr.HasRows Then
+                                        While rdr.Read
+
+                                            'SET VALUE to grid_order
+                                            dataSource.Rows.Add(rdr("pid"), rdr("winmodel"), rdr("description"), rdr("masterbox_qty"), rdr("qty_per_box"), 0, rdr("cbm"), rdr("kgs"))
+
+                                            For i = 8 To grid_distribute_stock.Columns.Count - 1
+                                                dataSource.Rows(dataSource.Rows.Count - 1).Item(i) = 0
+                                            Next
+
+                                        End While
+                                    Else
+                                        not_found_unit += values(1) & vbNewLine
+                                    End If
+                                End Using
+
+                            End Using
+                        End Using
+
+                    Catch ex As Exception
+                        MsgBox(ex.Message, vbCritical, "Error")
+                    End Try
+                Next
+
+                grid_distribute_stock.DataSource = dataSource
+
+                'IF Has Error or Not Active
+                If Not String.IsNullOrEmpty(not_found_unit) Then
+                    MsgBox(String.Concat("Couldn't import item(s) below:", not_found_unit), vbExclamation, "Failed")
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message, vbCritical, "Error")
+            End Try
+
+        End If
+
+    End Sub
+
+    'Search
+    Private Sub txt_search_TextChanged(sender As Object, e As EventArgs) Handles txt_search.TextChanged
+        Dim dt = DirectCast(grid_distribute_stock.DataSource, DataTable)
+        Dim dataViews As DataView = New DataView(dt)
+        dt.DefaultView.RowFilter = String.Concat(New String() {"winmodel LIKE '%", Me.txt_search.Text.Trim(), "%' OR description LIKE '%", Me.txt_search.Text.Trim(), "%'"})
+        grid_distribute_stock.DataSource = dt
+    End Sub
+
 End Class

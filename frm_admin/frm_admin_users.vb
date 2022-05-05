@@ -114,9 +114,9 @@ Public Class frm_admin_users
     End Sub
 
     'Upload Photo to Server
-    Private Function UploadImageProof(username As String, picture_box As DevExpress.XtraEditors.PictureEdit)
+    Private Function UploadUserPhoto(username As String, picture_box As DevExpress.XtraEditors.PictureEdit)
 
-        Using client As New SftpClient(My.Settings.FTPserver, My.Settings.FTPusername, My.Settings.FTPpass)
+        Using client As New SftpClient(server, ftp_username, ftp_password)
             client.Connect()
 
             'Get directoory list
@@ -125,20 +125,20 @@ Public Class frm_admin_users
             'Check IF FOLDER EXIST
             Dim is_exist = False
             For Each file As SftpFile In files
-                If Equals(file.Name, My.Settings.UserFolder) Then is_exist = True
+                If Equals(file.Name, ftp_userFolder) Then is_exist = True
             Next
 
             'Creating folder IF NOT EXIST
             If is_exist = False Then
-                MsgBox("No folder '" & My.Settings.folder_product & "' existed! Creating one...")
-                client.CreateDirectory("./" & My.Settings.UserFolder)
+                MsgBox("No folder '" & ftp_userFolder & "' existed! Creating one...")
+                client.CreateDirectory("./" & ftp_userFolder)
             End If
 
             'Saving file to Folder
             Dim stream As New MemoryStream
             pb_view_user.Image.Save(stream, Imaging.ImageFormat.Jpeg)
             stream.Position = 0
-            client.UploadFile(stream, "./" & My.Settings.UserFolder & "/" & username)
+            client.UploadFile(stream, "./" & ftp_userFolder & "/" & username)
         End Using
 
         Return username
@@ -197,11 +197,11 @@ Public Class frm_admin_users
 
     Private Sub setUserPhoto(FileName As String)
 
-        Using client As New SftpClient(My.Settings.FTPserver, My.Settings.FTPusername, My.Settings.FTPpass)
+        Using client As New SftpClient(server, ftp_username, ftp_password)
             Try
                 client.Connect()
                 Dim ms As New MemoryStream
-                client.DownloadFile("./" & My.Settings.UserFolder & "/" & FileName, ms)
+                client.DownloadFile("./" & ftp_userFolder & "/" & FileName, ms)
 
                 If Not ms.Length = 0 Then
                     pb_view_user.Image = Image.FromStream(ms)
@@ -276,7 +276,7 @@ Public Class frm_admin_users
                 cmd.Parameters.AddWithValue("@role", cbb_role.Text.Trim)
 
                 If pb_user.Image IsNot Nothing Then
-                    cmd.Parameters.AddWithValue("@usr_photo", UploadImageProof("usr_" & txt_username.Text.Trim & ".jpg", pb_user))
+                    cmd.Parameters.AddWithValue("@usr_photo", UploadUserPhoto("usr_" & txt_username.Text.Trim & ".jpg", pb_user))
                 Else
                     cmd.Parameters.AddWithValue("@usr_photo", "usr_default.jpg")
                 End If
@@ -344,7 +344,7 @@ Public Class frm_admin_users
             cmd.Parameters.AddWithValue("@role", cbb_view_role.Text.Trim)
 
             If pb_view_user.Image IsNot Nothing Then
-                cmd.Parameters.AddWithValue("@usr_photo", UploadImageProof("usr_" & txt_view_username.Text.Trim & ".jpg", pb_view_user))
+                cmd.Parameters.AddWithValue("@usr_photo", UploadUserPhoto("usr_" & txt_view_username.Text.Trim & ".jpg", pb_view_user))
             Else
                 cmd.Parameters.AddWithValue("@usr_photo", "usr_default.jpg")
             End If

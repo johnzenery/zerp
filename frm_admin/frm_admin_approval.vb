@@ -215,13 +215,14 @@ Public Class frm_admin_approval
             frm.btn_update.Visible = False
             frm.btn_delete.Visible = False
             frm.btn_approved.Visible = True
+            frm.btn_print.Visible = False
             frm.btn_approved.Location = frm.btn_create.Location
             frm.cbb_customer.ReadOnly = True
         End If
     End Sub
 
     'Stock Transfer Approval
-    Private Sub btn_print_stockTransfer_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles btn_print_stockTransfer.ButtonClick
+    Private Sub btn_view_stockTransfer_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles btn_view_stockTransfer.ButtonClick
         Dim stid = CInt(grid_transfer_view.GetFocusedRowCellValue(col_transfer_id).ToString.Replace("ST", ""))
         Dim status = grid_transfer_view.GetFocusedRowCellValue(col_transfer_status)
         Dim transfer_type = grid_transfer_view.GetFocusedRowCellValue(col_transferType)
@@ -253,7 +254,7 @@ Public Class frm_admin_approval
     End Sub
 
     'Stock Transfer Report
-    Private Sub btn_view_report_stockTransfer_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles btn_view_report.ButtonClick
+    Private Sub btn_view_report_stockTransfer_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles btn_view_report_stockTransfer.ButtonClick
         Dim reportID = CInt(grid_transferReport_view.GetFocusedRowCellValue(col_reportID))
 
         Dim frm = New frm_admin_transfer_reports
@@ -261,5 +262,8 @@ Public Class frm_admin_approval
         frm.ShowDialog()
         load_data()
     End Sub
+
+
+
 
 End Class

@@ -147,12 +147,12 @@ Public Class frm_product_catalogue
     'Set Photo from server
     Private Sub setImage(FileName As String)
 
-        Using client As New SftpClient(My.Settings.FTPserver, My.Settings.FTPusername, My.Settings.FTPpass)
+        Using client As New SftpClient(server, ftp_username, ftp_password)
 
             Try
                 client.Connect()
                 Dim ms As New MemoryStream
-                client.DownloadFile("./" & My.Settings.folder_product & "/" & FileName & ".jpg", ms)
+                client.DownloadFile("./" & ftp_productFolder & "/" & FileName & ".jpg", ms)
 
                 If Not ms.Length = 0 Then
                     pb_product.Invoke(Sub()

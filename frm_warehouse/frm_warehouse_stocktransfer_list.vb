@@ -22,7 +22,8 @@ Public Class frm_warehouse_stocktransfer_list
                                     FROM ims_stock_transfer 
                                     INNER JOIN ims_stores ON ims_stores.store_id=ims_stock_transfer.src_store_id
                                     INNER JOIN ims_users ON ims_users.usr_id=ims_stock_transfer.created_by
-                                    WHERE is_deleted=0 AND NOT status='Completed'", connection)
+                                    WHERE is_deleted=0
+                                    ORDER BY transfer_id DESC", connection) 'AND NOT status='Completed'
                     Dim dt = New DataTable
                     Dim da = New MySqlDataAdapter(cmd)
                     da.Fill(dt)
@@ -47,8 +48,7 @@ Public Class frm_warehouse_stocktransfer_list
                                     FROM ims_stock_transfer_sub
                                     INNER JOIN ims_stores AS SRC ON SRC.store_id=ims_stock_transfer_sub.src_store_id
                                     INNER JOIN ims_stores AS RECVR ON RECVR.store_id=ims_stock_transfer_sub.recvr_store_id
-                                    AND NOT status='Transferred'
-                                    ORDER BY sub_transfer_id DESC"
+                                    ORDER BY sub_transfer_id DESC" 'AND NOT status='Transferred'
 
 
                 Dim cmd = New MySqlCommand(query, connect)

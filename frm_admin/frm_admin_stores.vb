@@ -29,9 +29,6 @@ Public Class frm_admin_stores
     Public Sub Load_Stores()
 
         Try
-            'CHECK IF EXIST
-            CheckToCreateTable()
-
             conn.Open()
             Dim query = "Select store_id, store_name, store_addr, person_in_charge FROM ims_stores"
 
@@ -49,36 +46,6 @@ Public Class frm_admin_stores
         Finally
             conn.Close()
         End Try
-    End Sub
-
-
-    'Check IF IMS_purchase EXIST
-    Private Sub CheckToCreateTable()
-
-        conn.Open()
-
-        Try
-            Dim checktable As New MySqlCommand("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '" & My.Settings.database & "' AND table_name = 'ims_stores'", conn)
-            Dim rdr As MySqlDataReader = checktable.ExecuteReader
-            rdr.Read()
-            Dim count = rdr("COUNT(*)")
-            rdr.Close()
-
-            If count = 0 Then
-                Dim createTable As New MySqlCommand("CREATE TABLE `ims_stores` (
-                                                      `store_id` int AUTO_INCREMENT PRIMARY KEY,
-                                                      `store_name` text,
-                                                      `store_addr` text,
-                                                      `person_in_charge` varchar(30),
-                                                      `deleted` tinyint(1))", conn)
-                createTable.ExecuteNonQuery()
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            conn.Close()
-        End Try
-
     End Sub
 
     Private Sub gridview_supplier_RowUpdated(sender As Object, e As DevExpress.XtraGrid.Views.Base.RowObjectEventArgs) Handles gridview_supplier.RowUpdated

@@ -71,6 +71,8 @@ Partial Class frm_warehouse_selluseller
         Me.btn_print.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btn_print.ImageOptions.ImageToTextIndent = 5
         Me.btn_print.Location = New System.Drawing.Point(874, 95)
+        Me.btn_print.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.btn_print.LookAndFeel.UseDefaultLookAndFeel = False
         Me.btn_print.Name = "btn_print"
         Me.btn_print.Size = New System.Drawing.Size(123, 46)
         Me.btn_print.TabIndex = 32
@@ -453,7 +455,7 @@ Partial Class frm_warehouse_selluseller
         Me.GunaPanel4.Size = New System.Drawing.Size(1009, 78)
         Me.GunaPanel4.TabIndex = 25
         '
-        'frm_selluseller
+        'frm_warehouse_selluseller
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -467,7 +469,7 @@ Partial Class frm_warehouse_selluseller
         Me.Controls.Add(Me.dt_start)
         Me.Controls.Add(Me.grid_delivered)
         Me.Controls.Add(Me.GunaPanel4)
-        Me.Name = "frm_selluseller"
+        Me.Name = "frm_warehouse_selluseller"
         Me.Text = "frm_selluseller"
         CType(Me.grid_delivered_view, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbb_IsAdded, System.ComponentModel.ISupportInitialize).EndInit()

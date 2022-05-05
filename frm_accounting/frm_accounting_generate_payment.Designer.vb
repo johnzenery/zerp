@@ -33,6 +33,11 @@ Partial Class frm_accounting_generate_payment
         Dim SerializableAppearanceObject6 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim SerializableAppearanceObject7 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim SerializableAppearanceObject8 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions3 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject9 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject10 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject11 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject12 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.GunaPanel4 = New Guna.UI.WinForms.GunaPanel()
         Me.GunaPanel5 = New Guna.UI.WinForms.GunaPanel()
         Me.GunaPanel1 = New Guna.UI.WinForms.GunaPanel()
@@ -53,6 +58,9 @@ Partial Class frm_accounting_generate_payment
         Me.RepositoryItemMemoEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit()
         Me.btn_generate = New DevExpress.XtraEditors.SimpleButton()
         Me.panel_cheque = New DevExpress.XtraEditors.PanelControl()
+        Me.txt_amount = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl()
+        Me.btn_add = New System.Windows.Forms.Button()
         Me.cb_crossed_check = New System.Windows.Forms.CheckBox()
         Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
         Me.txt_acc_name = New DevExpress.XtraEditors.TextEdit()
@@ -89,6 +97,19 @@ Partial Class frm_accounting_generate_payment
         Me.rb_cheque = New System.Windows.Forms.RadioButton()
         Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
         Me.lbl_receipt_no = New DevExpress.XtraEditors.TextEdit()
+        Me.grid_cheque = New DevExpress.XtraGrid.GridControl()
+        Me.grid_cheque_view = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.col_cheque_no = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.col_cheque_date = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.col_cheque_amount = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.col_acc_no = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.col_acc_name = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.col_payee = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.col_bank = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.col_crossed_check = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.cb_cc = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.col_delete = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.btn_delete = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.GunaPanel4.SuspendLayout()
         Me.GunaPanel5.SuspendLayout()
         Me.GunaPanel1.SuspendLayout()
@@ -97,6 +118,7 @@ Partial Class frm_accounting_generate_payment
         CType(Me.RepositoryItemMemoEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.panel_cheque, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel_cheque.SuspendLayout()
+        CType(Me.txt_amount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_acc_name.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,6 +137,10 @@ Partial Class frm_accounting_generate_payment
         CType(Me.btn_view_order, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.lbl_receipt_no.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grid_cheque, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grid_cheque_view, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cb_cc, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_delete, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GunaPanel4
@@ -125,7 +151,7 @@ Partial Class frm_accounting_generate_payment
         Me.GunaPanel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.GunaPanel4.Location = New System.Drawing.Point(0, 0)
         Me.GunaPanel4.Name = "GunaPanel4"
-        Me.GunaPanel4.Size = New System.Drawing.Size(1116, 78)
+        Me.GunaPanel4.Size = New System.Drawing.Size(1278, 78)
         Me.GunaPanel4.TabIndex = 12
         '
         'GunaPanel5
@@ -136,7 +162,7 @@ Partial Class frm_accounting_generate_payment
         Me.GunaPanel5.Controls.Add(Me.GunaPanel1)
         Me.GunaPanel5.Location = New System.Drawing.Point(19, 44)
         Me.GunaPanel5.Name = "GunaPanel5"
-        Me.GunaPanel5.Size = New System.Drawing.Size(1081, 27)
+        Me.GunaPanel5.Size = New System.Drawing.Size(1243, 27)
         Me.GunaPanel5.TabIndex = 5
         '
         'GunaPanel1
@@ -220,13 +246,13 @@ Partial Class frm_accounting_generate_payment
         Me.grid_receipts.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grid_receipts.Location = New System.Drawing.Point(315, 144)
+        Me.grid_receipts.Location = New System.Drawing.Point(413, 144)
         Me.grid_receipts.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.grid_receipts.LookAndFeel.UseDefaultLookAndFeel = False
         Me.grid_receipts.MainView = Me.grid_receipts_view
         Me.grid_receipts.Name = "grid_receipts"
         Me.grid_receipts.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemMemoEdit1})
-        Me.grid_receipts.Size = New System.Drawing.Size(783, 267)
+        Me.grid_receipts.Size = New System.Drawing.Size(847, 345)
         Me.grid_receipts.TabIndex = 13
         Me.grid_receipts.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_receipts_view})
         '
@@ -349,20 +375,24 @@ Partial Class frm_accounting_generate_payment
         '
         'btn_generate
         '
+        Me.btn_generate.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_generate.Appearance.BackColor = System.Drawing.Color.DarkKhaki
         Me.btn_generate.Appearance.Options.UseBackColor = True
         Me.btn_generate.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.createmodeldifferences_16x16
         Me.btn_generate.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btn_generate.Location = New System.Drawing.Point(10, 480)
+        Me.btn_generate.Location = New System.Drawing.Point(12, 710)
         Me.btn_generate.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.btn_generate.LookAndFeel.UseDefaultLookAndFeel = False
         Me.btn_generate.Name = "btn_generate"
-        Me.btn_generate.Size = New System.Drawing.Size(290, 43)
+        Me.btn_generate.Size = New System.Drawing.Size(389, 43)
         Me.btn_generate.TabIndex = 8
         Me.btn_generate.Text = "Generate Payment && Voucher"
         '
         'panel_cheque
         '
+        Me.panel_cheque.Controls.Add(Me.txt_amount)
+        Me.panel_cheque.Controls.Add(Me.LabelControl15)
+        Me.panel_cheque.Controls.Add(Me.btn_add)
         Me.panel_cheque.Controls.Add(Me.cb_crossed_check)
         Me.panel_cheque.Controls.Add(Me.DateEdit1)
         Me.panel_cheque.Controls.Add(Me.txt_acc_name)
@@ -382,15 +412,48 @@ Partial Class frm_accounting_generate_payment
         Me.panel_cheque.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.panel_cheque.LookAndFeel.UseDefaultLookAndFeel = False
         Me.panel_cheque.Name = "panel_cheque"
-        Me.panel_cheque.Size = New System.Drawing.Size(290, 281)
+        Me.panel_cheque.Size = New System.Drawing.Size(389, 319)
         Me.panel_cheque.TabIndex = 14
+        '
+        'txt_amount
+        '
+        Me.txt_amount.EditValue = ""
+        Me.txt_amount.Location = New System.Drawing.Point(122, 249)
+        Me.txt_amount.Name = "txt_amount"
+        Me.txt_amount.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.txt_amount.Properties.Appearance.Options.UseFont = True
+        Me.txt_amount.Properties.MaskSettings.Set("MaskManagerType", GetType(DevExpress.Data.Mask.NumericMaskManager))
+        Me.txt_amount.Properties.MaskSettings.Set("autoHideDecimalSeparator", Nothing)
+        Me.txt_amount.Properties.MaskSettings.Set("mask", "n2")
+        Me.txt_amount.Properties.UseMaskAsDisplayFormat = True
+        Me.txt_amount.Size = New System.Drawing.Size(149, 22)
+        Me.txt_amount.TabIndex = 22
+        '
+        'LabelControl15
+        '
+        Me.LabelControl15.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.LabelControl15.Appearance.Options.UseFont = True
+        Me.LabelControl15.Location = New System.Drawing.Point(16, 252)
+        Me.LabelControl15.Name = "LabelControl15"
+        Me.LabelControl15.Size = New System.Drawing.Size(49, 16)
+        Me.LabelControl15.TabIndex = 23
+        Me.LabelControl15.Text = "Amount:"
+        '
+        'btn_add
+        '
+        Me.btn_add.Location = New System.Drawing.Point(289, 275)
+        Me.btn_add.Name = "btn_add"
+        Me.btn_add.Size = New System.Drawing.Size(89, 29)
+        Me.btn_add.TabIndex = 21
+        Me.btn_add.Text = "Add"
+        Me.btn_add.UseVisualStyleBackColor = True
         '
         'cb_crossed_check
         '
         Me.cb_crossed_check.AutoSize = True
         Me.cb_crossed_check.Checked = True
         Me.cb_crossed_check.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cb_crossed_check.Location = New System.Drawing.Point(16, 251)
+        Me.cb_crossed_check.Location = New System.Drawing.Point(16, 283)
         Me.cb_crossed_check.Name = "cb_crossed_check"
         Me.cb_crossed_check.Size = New System.Drawing.Size(127, 17)
         Me.cb_crossed_check.TabIndex = 20
@@ -417,7 +480,7 @@ Partial Class frm_accounting_generate_payment
         '
         'txt_acc_name
         '
-        Me.txt_acc_name.Location = New System.Drawing.Point(122, 213)
+        Me.txt_acc_name.Location = New System.Drawing.Point(122, 221)
         Me.txt_acc_name.Name = "txt_acc_name"
         Me.txt_acc_name.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
         Me.txt_acc_name.Properties.Appearance.Options.UseFont = True
@@ -428,7 +491,7 @@ Partial Class frm_accounting_generate_payment
         '
         Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
         Me.LabelControl11.Appearance.Options.UseFont = True
-        Me.LabelControl11.Location = New System.Drawing.Point(16, 216)
+        Me.LabelControl11.Location = New System.Drawing.Point(16, 224)
         Me.LabelControl11.Name = "LabelControl11"
         Me.LabelControl11.Size = New System.Drawing.Size(87, 16)
         Me.LabelControl11.TabIndex = 18
@@ -449,13 +512,14 @@ Partial Class frm_accounting_generate_payment
         Me.LabelControl10.Location = New System.Drawing.Point(2, 2)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.LabelControl10.Size = New System.Drawing.Size(286, 25)
+        Me.LabelControl10.Size = New System.Drawing.Size(385, 25)
         Me.LabelControl10.TabIndex = 16
         Me.LabelControl10.Text = "Cheque Details"
         '
         'txt_acc_no
         '
-        Me.txt_acc_no.Location = New System.Drawing.Point(122, 183)
+        Me.txt_acc_no.EditValue = ""
+        Me.txt_acc_no.Location = New System.Drawing.Point(122, 191)
         Me.txt_acc_no.Name = "txt_acc_no"
         Me.txt_acc_no.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
         Me.txt_acc_no.Properties.Appearance.Options.UseFont = True
@@ -466,7 +530,7 @@ Partial Class frm_accounting_generate_payment
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
         Me.LabelControl6.Appearance.Options.UseFont = True
-        Me.LabelControl6.Location = New System.Drawing.Point(16, 186)
+        Me.LabelControl6.Location = New System.Drawing.Point(16, 194)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(73, 16)
         Me.LabelControl6.TabIndex = 9
@@ -476,7 +540,7 @@ Partial Class frm_accounting_generate_payment
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
         Me.LabelControl5.Appearance.Options.UseFont = True
-        Me.LabelControl5.Location = New System.Drawing.Point(16, 156)
+        Me.LabelControl5.Location = New System.Drawing.Point(16, 164)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(76, 16)
         Me.LabelControl5.TabIndex = 8
@@ -499,13 +563,13 @@ Partial Class frm_accounting_generate_payment
         Me.LabelControl4.Appearance.Options.UseFont = True
         Me.LabelControl4.Location = New System.Drawing.Point(19, 112)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(72, 16)
+        Me.LabelControl4.Size = New System.Drawing.Size(40, 16)
         Me.LabelControl4.TabIndex = 6
-        Me.LabelControl4.Text = "*Bank Type:"
+        Me.LabelControl4.Text = "*Bank:"
         '
         'txt_payee
         '
-        Me.txt_payee.Location = New System.Drawing.Point(122, 153)
+        Me.txt_payee.Location = New System.Drawing.Point(122, 161)
         Me.txt_payee.Name = "txt_payee"
         Me.txt_payee.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!)
         Me.txt_payee.Properties.Appearance.Options.UseFont = True
@@ -552,9 +616,10 @@ Partial Class frm_accounting_generate_payment
         '
         'LabelControl13
         '
+        Me.LabelControl13.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Roboto", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl13.Appearance.Options.UseFont = True
-        Me.LabelControl13.Location = New System.Drawing.Point(32, 444)
+        Me.LabelControl13.Location = New System.Drawing.Point(13, 685)
         Me.LabelControl13.Name = "LabelControl13"
         Me.LabelControl13.Size = New System.Drawing.Size(85, 15)
         Me.LabelControl13.TabIndex = 26
@@ -562,8 +627,9 @@ Partial Class frm_accounting_generate_payment
         '
         'txt_collection_ref
         '
+        Me.txt_collection_ref.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_collection_ref.EditValue = ""
-        Me.txt_collection_ref.Location = New System.Drawing.Point(134, 439)
+        Me.txt_collection_ref.Location = New System.Drawing.Point(115, 680)
         Me.txt_collection_ref.Name = "txt_collection_ref"
         Me.txt_collection_ref.Properties.Appearance.Font = New System.Drawing.Font("Roboto", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_collection_ref.Properties.Appearance.Options.UseFont = True
@@ -586,7 +652,7 @@ Partial Class frm_accounting_generate_payment
         Me.cbb_suppliers.Location = New System.Drawing.Point(63, 8)
         Me.cbb_suppliers.Name = "cbb_suppliers"
         Me.cbb_suppliers.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbb_suppliers.Size = New System.Drawing.Size(182, 20)
+        Me.cbb_suppliers.Size = New System.Drawing.Size(271, 20)
         Me.cbb_suppliers.TabIndex = 0
         '
         'LabelControl9
@@ -596,7 +662,7 @@ Partial Class frm_accounting_generate_payment
         Me.LabelControl9.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.LabelControl9.Appearance.Options.UseFont = True
         Me.LabelControl9.Appearance.Options.UseForeColor = True
-        Me.LabelControl9.Location = New System.Drawing.Point(772, 684)
+        Me.LabelControl9.Location = New System.Drawing.Point(934, 762)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(131, 22)
         Me.LabelControl9.TabIndex = 15
@@ -606,7 +672,7 @@ Partial Class frm_accounting_generate_payment
         '
         Me.txt_total_view.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_total_view.EditValue = ""
-        Me.txt_total_view.Location = New System.Drawing.Point(919, 681)
+        Me.txt_total_view.Location = New System.Drawing.Point(1081, 759)
         Me.txt_total_view.Name = "txt_total_view"
         Me.txt_total_view.Properties.Appearance.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Bold)
         Me.txt_total_view.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(91, Byte), Integer))
@@ -626,11 +692,11 @@ Partial Class frm_accounting_generate_payment
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelControl2.Controls.Add(Me.LabelControl3)
         Me.PanelControl2.Controls.Add(Me.cbb_suppliers)
-        Me.PanelControl2.Location = New System.Drawing.Point(315, 104)
+        Me.PanelControl2.Location = New System.Drawing.Point(413, 104)
         Me.PanelControl2.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.PanelControl2.LookAndFeel.UseDefaultLookAndFeel = False
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(783, 34)
+        Me.PanelControl2.Size = New System.Drawing.Size(847, 34)
         Me.PanelControl2.TabIndex = 18
         '
         'grid_returns
@@ -638,13 +704,13 @@ Partial Class frm_accounting_generate_payment
         Me.grid_returns.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grid_returns.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grid_returns.Location = New System.Drawing.Point(317, 444)
+        Me.grid_returns.Location = New System.Drawing.Point(415, 522)
         Me.grid_returns.LookAndFeel.SkinName = "Office 2010 Blue"
         Me.grid_returns.LookAndFeel.UseDefaultLookAndFeel = False
         Me.grid_returns.MainView = Me.grid_returns_view
         Me.grid_returns.Name = "grid_returns"
         Me.grid_returns.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_view_order})
-        Me.grid_returns.Size = New System.Drawing.Size(783, 231)
+        Me.grid_returns.Size = New System.Drawing.Size(847, 231)
         Me.grid_returns.TabIndex = 19
         Me.grid_returns.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_returns_view})
         '
@@ -746,7 +812,7 @@ Partial Class frm_accounting_generate_payment
         Me.LabelControl8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl8.Appearance.Options.UseFont = True
-        Me.LabelControl8.Location = New System.Drawing.Point(315, 417)
+        Me.LabelControl8.Location = New System.Drawing.Point(413, 495)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(121, 21)
         Me.LabelControl8.TabIndex = 20
@@ -803,7 +869,7 @@ Partial Class frm_accounting_generate_payment
         Me.LabelControl14.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.LabelControl14.Appearance.Options.UseFont = True
         Me.LabelControl14.Appearance.Options.UseForeColor = True
-        Me.LabelControl14.Location = New System.Drawing.Point(541, 684)
+        Me.LabelControl14.Location = New System.Drawing.Point(703, 762)
         Me.LabelControl14.Name = "LabelControl14"
         Me.LabelControl14.Size = New System.Drawing.Size(134, 22)
         Me.LabelControl14.TabIndex = 27
@@ -813,7 +879,7 @@ Partial Class frm_accounting_generate_payment
         '
         Me.lbl_receipt_no.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbl_receipt_no.EditValue = ""
-        Me.lbl_receipt_no.Location = New System.Drawing.Point(681, 681)
+        Me.lbl_receipt_no.Location = New System.Drawing.Point(843, 759)
         Me.lbl_receipt_no.Name = "lbl_receipt_no"
         Me.lbl_receipt_no.Properties.Appearance.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Bold)
         Me.lbl_receipt_no.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(57, Byte), Integer), CType(CType(91, Byte), Integer))
@@ -827,12 +893,180 @@ Partial Class frm_accounting_generate_payment
         Me.lbl_receipt_no.Size = New System.Drawing.Size(74, 30)
         Me.lbl_receipt_no.TabIndex = 29
         '
+        'grid_cheque
+        '
+        Me.grid_cheque.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.grid_cheque.Location = New System.Drawing.Point(12, 472)
+        Me.grid_cheque.LookAndFeel.SkinName = "Office 2010 Blue"
+        Me.grid_cheque.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.grid_cheque.MainView = Me.grid_cheque_view
+        Me.grid_cheque.Name = "grid_cheque"
+        Me.grid_cheque.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cb_cc, Me.btn_delete})
+        Me.grid_cheque.Size = New System.Drawing.Size(389, 200)
+        Me.grid_cheque.TabIndex = 53
+        Me.grid_cheque.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_cheque_view})
+        '
+        'grid_cheque_view
+        '
+        Me.grid_cheque_view.Appearance.HeaderPanel.Options.UseTextOptions = True
+        Me.grid_cheque_view.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.grid_cheque_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_cheque_no, Me.col_cheque_date, Me.col_cheque_amount, Me.col_acc_no, Me.col_acc_name, Me.col_payee, Me.col_bank, Me.col_crossed_check, Me.col_delete})
+        Me.grid_cheque_view.GridControl = Me.grid_cheque
+        Me.grid_cheque_view.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always
+        Me.grid_cheque_view.Name = "grid_cheque_view"
+        Me.grid_cheque_view.OptionsView.ColumnAutoWidth = False
+        Me.grid_cheque_view.OptionsView.ShowGroupPanel = False
+        '
+        'col_cheque_no
+        '
+        Me.col_cheque_no.AppearanceCell.Options.UseTextOptions = True
+        Me.col_cheque_no.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_cheque_no.AppearanceHeader.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
+        Me.col_cheque_no.AppearanceHeader.Options.UseForeColor = True
+        Me.col_cheque_no.AppearanceHeader.Options.UseTextOptions = True
+        Me.col_cheque_no.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_cheque_no.Caption = "Cheque No"
+        Me.col_cheque_no.FieldName = "cheque_no"
+        Me.col_cheque_no.MaxWidth = 120
+        Me.col_cheque_no.Name = "col_cheque_no"
+        Me.col_cheque_no.Visible = True
+        Me.col_cheque_no.VisibleIndex = 1
+        Me.col_cheque_no.Width = 92
+        '
+        'col_cheque_date
+        '
+        Me.col_cheque_date.AppearanceCell.Options.UseTextOptions = True
+        Me.col_cheque_date.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_cheque_date.AppearanceHeader.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
+        Me.col_cheque_date.AppearanceHeader.Options.UseForeColor = True
+        Me.col_cheque_date.AppearanceHeader.Options.UseTextOptions = True
+        Me.col_cheque_date.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_cheque_date.Caption = "Date"
+        Me.col_cheque_date.DisplayFormat.FormatString = "MM/dd/yyyy"
+        Me.col_cheque_date.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.col_cheque_date.FieldName = "cheque_date"
+        Me.col_cheque_date.MaxWidth = 150
+        Me.col_cheque_date.Name = "col_cheque_date"
+        Me.col_cheque_date.Visible = True
+        Me.col_cheque_date.VisibleIndex = 2
+        Me.col_cheque_date.Width = 78
+        '
+        'col_cheque_amount
+        '
+        Me.col_cheque_amount.AppearanceCell.Options.UseTextOptions = True
+        Me.col_cheque_amount.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.col_cheque_amount.AppearanceHeader.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
+        Me.col_cheque_amount.AppearanceHeader.Options.UseForeColor = True
+        Me.col_cheque_amount.AppearanceHeader.Options.UseTextOptions = True
+        Me.col_cheque_amount.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_cheque_amount.Caption = "Amount"
+        Me.col_cheque_amount.DisplayFormat.FormatString = "c2"
+        Me.col_cheque_amount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.col_cheque_amount.FieldName = "cheque_amount"
+        Me.col_cheque_amount.Name = "col_cheque_amount"
+        Me.col_cheque_amount.Visible = True
+        Me.col_cheque_amount.VisibleIndex = 3
+        Me.col_cheque_amount.Width = 92
+        '
+        'col_acc_no
+        '
+        Me.col_acc_no.AppearanceCell.Options.UseTextOptions = True
+        Me.col_acc_no.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_acc_no.AppearanceHeader.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
+        Me.col_acc_no.AppearanceHeader.Options.UseForeColor = True
+        Me.col_acc_no.AppearanceHeader.Options.UseTextOptions = True
+        Me.col_acc_no.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_acc_no.Caption = "Acc. No."
+        Me.col_acc_no.FieldName = "acc_no"
+        Me.col_acc_no.Name = "col_acc_no"
+        Me.col_acc_no.Visible = True
+        Me.col_acc_no.VisibleIndex = 5
+        Me.col_acc_no.Width = 108
+        '
+        'col_acc_name
+        '
+        Me.col_acc_name.AppearanceHeader.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
+        Me.col_acc_name.AppearanceHeader.Options.UseForeColor = True
+        Me.col_acc_name.AppearanceHeader.Options.UseTextOptions = True
+        Me.col_acc_name.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_acc_name.Caption = "Acc. Name"
+        Me.col_acc_name.FieldName = "acc_name"
+        Me.col_acc_name.Name = "col_acc_name"
+        Me.col_acc_name.Visible = True
+        Me.col_acc_name.VisibleIndex = 6
+        '
+        'col_payee
+        '
+        Me.col_payee.AppearanceCell.Options.UseTextOptions = True
+        Me.col_payee.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_payee.AppearanceHeader.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
+        Me.col_payee.AppearanceHeader.Options.UseForeColor = True
+        Me.col_payee.AppearanceHeader.Options.UseTextOptions = True
+        Me.col_payee.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_payee.Caption = "Payee"
+        Me.col_payee.FieldName = "payee"
+        Me.col_payee.Name = "col_payee"
+        Me.col_payee.Visible = True
+        Me.col_payee.VisibleIndex = 7
+        '
+        'col_bank
+        '
+        Me.col_bank.AppearanceHeader.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText
+        Me.col_bank.AppearanceHeader.Options.UseForeColor = True
+        Me.col_bank.AppearanceHeader.Options.UseTextOptions = True
+        Me.col_bank.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_bank.Caption = "Bank"
+        Me.col_bank.FieldName = "bank"
+        Me.col_bank.Name = "col_bank"
+        Me.col_bank.Visible = True
+        Me.col_bank.VisibleIndex = 4
+        Me.col_bank.Width = 85
+        '
+        'col_crossed_check
+        '
+        Me.col_crossed_check.AppearanceCell.Options.UseTextOptions = True
+        Me.col_crossed_check.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_crossed_check.Caption = "CC"
+        Me.col_crossed_check.ColumnEdit = Me.cb_cc
+        Me.col_crossed_check.FieldName = "is_crossed_check"
+        Me.col_crossed_check.Name = "col_crossed_check"
+        Me.col_crossed_check.Visible = True
+        Me.col_crossed_check.VisibleIndex = 8
+        '
+        'cb_cc
+        '
+        Me.cb_cc.AutoHeight = False
+        Me.cb_cc.Name = "cb_cc"
+        Me.cb_cc.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked
+        '
+        'col_delete
+        '
+        Me.col_delete.Caption = "Action"
+        Me.col_delete.ColumnEdit = Me.btn_delete
+        Me.col_delete.MaxWidth = 40
+        Me.col_delete.MinWidth = 40
+        Me.col_delete.Name = "col_delete"
+        Me.col_delete.Visible = True
+        Me.col_delete.VisibleIndex = 0
+        Me.col_delete.Width = 40
+        '
+        'btn_delete
+        '
+        Me.btn_delete.AutoHeight = False
+        EditorButtonImageOptions3.Image = Global.Inventory_Management.My.Resources.Resources.close_16x16
+        Me.btn_delete.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions3, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject9, SerializableAppearanceObject10, SerializableAppearanceObject11, SerializableAppearanceObject12, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        Me.btn_delete.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.btn_delete.Name = "btn_delete"
+        Me.btn_delete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
+        '
         'frm_accounting_generate_payment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1116, 724)
+        Me.ClientSize = New System.Drawing.Size(1278, 802)
+        Me.Controls.Add(Me.grid_cheque)
         Me.Controls.Add(Me.lbl_receipt_no)
         Me.Controls.Add(Me.LabelControl14)
         Me.Controls.Add(Me.LabelControl13)
@@ -861,6 +1095,7 @@ Partial Class frm_accounting_generate_payment
         CType(Me.panel_cheque, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel_cheque.ResumeLayout(False)
         Me.panel_cheque.PerformLayout()
+        CType(Me.txt_amount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_acc_name.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -881,6 +1116,10 @@ Partial Class frm_accounting_generate_payment
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.lbl_receipt_no.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grid_cheque, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grid_cheque_view, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cb_cc, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_delete, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -942,4 +1181,20 @@ Partial Class frm_accounting_generate_payment
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lbl_receipt_no As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents btn_add As Button
+    Friend WithEvents grid_cheque As DevExpress.XtraGrid.GridControl
+    Friend WithEvents grid_cheque_view As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents col_cheque_no As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents col_cheque_date As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents col_cheque_amount As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents col_acc_no As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents col_acc_name As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents col_payee As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents col_bank As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents txt_amount As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents col_crossed_check As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents cb_cc As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
+    Friend WithEvents col_delete As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents btn_delete As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
 End Class

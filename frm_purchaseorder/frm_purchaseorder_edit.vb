@@ -1,5 +1,4 @@
-﻿Imports System.Text.RegularExpressions
-Imports DevExpress.XtraEditors.Controls
+﻿Imports DevExpress.XtraEditors.Controls
 Imports DevExpress.XtraReports.UI
 Imports MySql.Data.MySqlClient
 Imports Newtonsoft.Json
@@ -310,7 +309,7 @@ Public Class frm_purchaseorder_edit
 
         Dim dt = New DataTable
         dt.Columns.Add("sku", GetType(Integer))
-        dt.Columns.Add("qty", GetType(Double))
+        dt.Columns.Add("qty", GetType(Decimal))
         dt.Columns.Add("qty_per_box", GetType(Integer))
         dt.Columns.Add("winmodel", GetType(String))
         dt.Columns.Add("supmodel", GetType(String))
@@ -319,7 +318,7 @@ Public Class frm_purchaseorder_edit
         dt.Columns.Add("total", GetType(Decimal))
         dt.Columns.Add("total_received", GetType(Integer))
         dt.Columns.Add("qty_received", GetType(Integer))
-        dt.Columns.Add("remaining", GetType(Integer))
+        dt.Columns.Add("remaining", GetType(Decimal))
 
         If Not String.IsNullOrEmpty(units) Then
 
@@ -678,7 +677,7 @@ Public Class frm_purchaseorder_edit
                 Using connection = New MySqlConnection(str)
                     connection.Open()
                     Dim cmd = New MySqlCommand("UPDATE ims_purchase SET contact_person=@contact_person, address=@address,deliver_to=(SELECT store_id FROM ims_stores WHERE store_name=@deliver_to), status=@status,
-                                        orders=@orders, is_vatable=@is_vatable, discount_val=@discount_val, discount_type=@discount_type, pub_notes=@pub_notes, notes=@notes, 
+                                        orders=@orders, is_vatable=@is_vatable, discount_val=@discount_val, discount_type=@discount_type, pub_notes=@pub_notes, notes=@notes, is_payment_first=@is_payment_first,
                                         is_withholding_tax_applied=@is_withholding_tax_applied, withholding_tax_amount=@withholding_tax_amount, withholding_tax_percentage=@withholding_tax_percentage,
                                         total=@total, terms=@terms, lead_time=@lead_time WHERE purchase_id=@id", connection)
                     cmd.Parameters.AddWithValue("@id", CInt(purchase_id.Replace("PO", "")))
@@ -698,6 +697,7 @@ Public Class frm_purchaseorder_edit
                     cmd.Parameters.AddWithValue("@terms", CInt(txt_terms.Text))
                     cmd.Parameters.AddWithValue("@lead_time", CInt(txt_lead_time.Text))
                     cmd.Parameters.AddWithValue("@status", "Unfinished")
+                    cmd.Parameters.AddWithValue("@is_payment_first", cb_payment_first.Checked)
 
                     If cmd.ExecuteNonQuery() >= 1 Then MsgBox("Saved Successfully!", vbInformation, "Information")
                     frm_main.LoadFrm(New frm_purchaseorder_list)
@@ -783,7 +783,7 @@ Public Class frm_purchaseorder_edit
                 Using connection = New MySqlConnection(str)
                     connection.Open()
                     Dim cmd = New MySqlCommand("UPDATE ims_purchase SET contact_person=@contact_person, address=@address, deliver_to=(SELECT store_id FROM ims_stores WHERE store_name=@deliver_to), status=@status,
-                                        orders=@orders, is_vatable=@is_vatable, discount_val=@discount_val, discount_type=@discount_type, pub_notes=@pub_notes, notes=@notes, 
+                                        orders=@orders, is_vatable=@is_vatable, discount_val=@discount_val, discount_type=@discount_type, pub_notes=@pub_notes, notes=@notes, is_payment_first=@is_payment_first,
                                         is_withholding_tax_applied=@is_withholding_tax_applied, withholding_tax_amount=@withholding_tax_amount, withholding_tax_percentage=@withholding_tax_percentage,
                                         total=@total, terms=@terms, lead_time=@lead_time WHERE purchase_id=@id", connection)
                     cmd.Parameters.AddWithValue("@id", CInt(purchase_id.Replace("PO", "")))
@@ -803,6 +803,7 @@ Public Class frm_purchaseorder_edit
                     cmd.Parameters.AddWithValue("@terms", CInt(txt_terms.Text))
                     cmd.Parameters.AddWithValue("@lead_time", CInt(txt_lead_time.Text))
                     cmd.Parameters.AddWithValue("@status", status)
+                    cmd.Parameters.AddWithValue("@is_payment_first", cb_payment_first.Checked)
 
                     If cmd.ExecuteNonQuery() >= 1 Then MsgBox("Saved Successfully!", vbInformation, "Information")
                     frm_main.LoadFrm(New frm_purchaseorder_list)

@@ -42,6 +42,11 @@ ZERP Business Solution
   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
 </summary>
 </member>
+<member name="P:Inventory_Management.My.Resources.Resources.actions_forbid">
+<summary>
+  Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+</summary>
+</member>
 <member name="P:Inventory_Management.My.Resources.Resources.actions_user">
 <summary>
   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
@@ -140,6 +145,16 @@ ZERP Business Solution
 <member name="P:Inventory_Management.My.Resources.Resources.assignto_32x32">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Inventory_Management.My.Resources.Resources.barcode_32x32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Inventory_Management.My.Resources.Resources.barcode_template">
+<summary>
+  Looks up a localized resource of type System.Byte[].
 </summary>
 </member>
 <member name="P:Inventory_Management.My.Resources.Resources.bo_user">
@@ -317,7 +332,17 @@ ZERP Business Solution
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Inventory_Management.My.Resources.Resources.export_32x32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Inventory_Management.My.Resources.Resources.exporttocsv_16x16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Inventory_Management.My.Resources.Resources.exporttocsv_16x161">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -372,6 +397,11 @@ ZERP Business Solution
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Inventory_Management.My.Resources.Resources.import_template">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
 <member name="P:Inventory_Management.My.Resources.Resources.info_16x16">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -393,6 +423,11 @@ ZERP Business Solution
 </summary>
 </member>
 <member name="P:Inventory_Management.My.Resources.Resources.knowledgebasearticle_32x32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Inventory_Management.My.Resources.Resources.loadfrom_16x16">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -568,6 +603,11 @@ ZERP Business Solution
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Inventory_Management.My.Resources.Resources.shipment">
+<summary>
+  Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+</summary>
+</member>
 <member name="P:Inventory_Management.My.Resources.Resources.shopping_delivery">
 <summary>
   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
@@ -658,11 +698,6 @@ ZERP Business Solution
   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
 </summary>
 </member>
-<member name="P:Inventory_Management.My.Resources.Resources.ZERP_Imports">
-<summary>
-  Looks up a localized resource of type System.Byte[].
-</summary>
-</member>
 <member name="T:Inventory_Management.PrintData">
 <summary>
 Represents a strongly typed in-memory cache of data.
@@ -733,6 +768,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:Inventory_Management.PrintData.sales_returnsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:Inventory_Management.PrintData.purchase_order_slipRow">
 <summary>
 Represents strongly named DataRow class.
@@ -798,6 +838,11 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member>
+<member name="T:Inventory_Management.PrintData.sales_returnsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
 <member name="T:Inventory_Management.PrintData.purchase_order_slipRowChangeEvent">
 <summary>
 Row event argument class
@@ -859,6 +904,11 @@ Row event argument class
 </summary>
 </member>
 <member name="T:Inventory_Management.PrintData.inventory_stock_countRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventory_Management.PrintData.sales_returnsRowChangeEvent">
 <summary>
 Row event argument class
 </summary>

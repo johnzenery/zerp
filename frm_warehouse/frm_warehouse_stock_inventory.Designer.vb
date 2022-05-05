@@ -45,6 +45,9 @@ Partial Class frm_warehouse_stock_inventory
         Me.tab_allstore = New DevExpress.XtraBars.Navigation.TabNavigationPage()
         Me.grid_all = New DevExpress.XtraGrid.GridControl()
         Me.grid_all_view = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.col_brand = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.col_main_category = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.col_sub_category = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.panel_top.SuspendLayout()
         Me.GunaPanel5.SuspendLayout()
         Me.GunaPanel2.SuspendLayout()
@@ -270,7 +273,7 @@ Partial Class frm_warehouse_stock_inventory
         Me.grid_mystore_view.Appearance.Row.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!)
         Me.grid_mystore_view.Appearance.Row.Options.UseFont = True
         Me.grid_mystore_view.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.grid_mystore_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_pid, Me.col_winmodel, Me.col_description, Me.col_qty, Me.col_on_hold, Me.col_location})
+        Me.grid_mystore_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_pid, Me.col_winmodel, Me.col_brand, Me.col_main_category, Me.col_sub_category, Me.col_description, Me.col_qty, Me.col_on_hold, Me.col_location})
         Me.grid_mystore_view.GridControl = Me.grid_mystore
         Me.grid_mystore_view.Name = "grid_mystore_view"
         Me.grid_mystore_view.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm
@@ -304,7 +307,7 @@ Partial Class frm_warehouse_stock_inventory
         Me.col_description.FieldName = "description"
         Me.col_description.Name = "col_description"
         Me.col_description.Visible = True
-        Me.col_description.VisibleIndex = 2
+        Me.col_description.VisibleIndex = 5
         Me.col_description.Width = 466
         '
         'col_qty
@@ -315,7 +318,7 @@ Partial Class frm_warehouse_stock_inventory
         Me.col_qty.FieldName = "qty"
         Me.col_qty.Name = "col_qty"
         Me.col_qty.Visible = True
-        Me.col_qty.VisibleIndex = 3
+        Me.col_qty.VisibleIndex = 6
         Me.col_qty.Width = 100
         '
         'col_on_hold
@@ -326,7 +329,7 @@ Partial Class frm_warehouse_stock_inventory
         Me.col_on_hold.FieldName = "on_hold"
         Me.col_on_hold.Name = "col_on_hold"
         Me.col_on_hold.Visible = True
-        Me.col_on_hold.VisibleIndex = 4
+        Me.col_on_hold.VisibleIndex = 7
         Me.col_on_hold.Width = 102
         '
         'col_location
@@ -337,7 +340,7 @@ Partial Class frm_warehouse_stock_inventory
         Me.col_location.FieldName = "location"
         Me.col_location.Name = "col_location"
         Me.col_location.Visible = True
-        Me.col_location.VisibleIndex = 5
+        Me.col_location.VisibleIndex = 8
         '
         'tab_allstore
         '
@@ -373,6 +376,30 @@ Partial Class frm_warehouse_stock_inventory
         Me.grid_all_view.GridControl = Me.grid_all
         Me.grid_all_view.Name = "grid_all_view"
         Me.grid_all_view.OptionsBehavior.Editable = False
+        '
+        'col_brand
+        '
+        Me.col_brand.Caption = "Brand"
+        Me.col_brand.FieldName = "brand"
+        Me.col_brand.Name = "col_brand"
+        Me.col_brand.Visible = True
+        Me.col_brand.VisibleIndex = 2
+        '
+        'col_main_category
+        '
+        Me.col_main_category.Caption = "Category"
+        Me.col_main_category.FieldName = "main_category"
+        Me.col_main_category.Name = "col_main_category"
+        Me.col_main_category.Visible = True
+        Me.col_main_category.VisibleIndex = 3
+        '
+        'col_sub_category
+        '
+        Me.col_sub_category.Caption = "Sub Category"
+        Me.col_sub_category.FieldName = "sub_category"
+        Me.col_sub_category.Name = "col_sub_category"
+        Me.col_sub_category.Visible = True
+        Me.col_sub_category.VisibleIndex = 4
         '
         'frm_warehouse_stock_inventory
         '
@@ -424,4 +451,7 @@ Partial Class frm_warehouse_stock_inventory
     Friend WithEvents btn_export As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btn_print As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents col_location As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents col_brand As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents col_main_category As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents col_sub_category As DevExpress.XtraGrid.Columns.GridColumn
 End Class

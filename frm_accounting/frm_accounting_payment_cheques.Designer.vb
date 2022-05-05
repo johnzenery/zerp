@@ -22,11 +22,11 @@ Partial Class frm_accounting_payment_cheques
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim EditorButtonImageOptions1 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject3 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions3 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject9 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject10 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject11 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject12 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.GunaPanel4 = New Guna.UI.WinForms.GunaPanel()
         Me.GunaPanel5 = New Guna.UI.WinForms.GunaPanel()
         Me.GunaPanel1 = New Guna.UI.WinForms.GunaPanel()
@@ -49,6 +49,7 @@ Partial Class frm_accounting_payment_cheques
         Me.cbb_status = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.col_print = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.btn_print = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
+        Me.col_voucher_id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GunaPanel4.SuspendLayout()
         Me.GunaPanel5.SuspendLayout()
         Me.GunaPanel1.SuspendLayout()
@@ -66,7 +67,7 @@ Partial Class frm_accounting_payment_cheques
         Me.GunaPanel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.GunaPanel4.Location = New System.Drawing.Point(0, 0)
         Me.GunaPanel4.Name = "GunaPanel4"
-        Me.GunaPanel4.Size = New System.Drawing.Size(930, 78)
+        Me.GunaPanel4.Size = New System.Drawing.Size(1487, 78)
         Me.GunaPanel4.TabIndex = 13
         '
         'GunaPanel5
@@ -77,7 +78,7 @@ Partial Class frm_accounting_payment_cheques
         Me.GunaPanel5.Controls.Add(Me.GunaPanel1)
         Me.GunaPanel5.Location = New System.Drawing.Point(19, 44)
         Me.GunaPanel5.Name = "GunaPanel5"
-        Me.GunaPanel5.Size = New System.Drawing.Size(895, 27)
+        Me.GunaPanel5.Size = New System.Drawing.Size(1452, 27)
         Me.GunaPanel5.TabIndex = 5
         '
         'GunaPanel1
@@ -108,9 +109,9 @@ Partial Class frm_accounting_payment_cheques
         Me.link_po_list.Location = New System.Drawing.Point(70, 5)
         Me.link_po_list.Name = "link_po_list"
         Me.link_po_list.ShowLineShadow = False
-        Me.link_po_list.Size = New System.Drawing.Size(112, 18)
+        Me.link_po_list.Size = New System.Drawing.Size(123, 18)
         Me.link_po_list.TabIndex = 7
-        Me.link_po_list.Text = "Payment Cheques"
+        Me.link_po_list.Text = "Generated Cheques"
         '
         'LabelControl7
         '
@@ -152,9 +153,9 @@ Partial Class frm_accounting_payment_cheques
         Me.GunaLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.GunaLabel2.Location = New System.Drawing.Point(14, 10)
         Me.GunaLabel2.Name = "GunaLabel2"
-        Me.GunaLabel2.Size = New System.Drawing.Size(237, 31)
+        Me.GunaLabel2.Size = New System.Drawing.Size(258, 31)
         Me.GunaLabel2.TabIndex = 1
-        Me.GunaLabel2.Text = "Payment Cheques"
+        Me.GunaLabel2.Text = "Generated Cheques"
         '
         'grid_payments
         '
@@ -167,7 +168,7 @@ Partial Class frm_accounting_payment_cheques
         Me.grid_payments.MainView = Me.grid_payments_view
         Me.grid_payments.Name = "grid_payments"
         Me.grid_payments.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_print, Me.cbb_status})
-        Me.grid_payments.Size = New System.Drawing.Size(882, 579)
+        Me.grid_payments.Size = New System.Drawing.Size(1439, 579)
         Me.grid_payments.TabIndex = 14
         Me.grid_payments.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_payments_view})
         '
@@ -179,7 +180,7 @@ Partial Class frm_accounting_payment_cheques
         Me.grid_payments_view.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.grid_payments_view.Appearance.Row.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid_payments_view.Appearance.Row.Options.UseFont = True
-        Me.grid_payments_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_id, Me.col_supplier, Me.col_cheque_no, Me.col_cheque_date, Me.col_bank, Me.col_payee, Me.col_acc_no, Me.col_acc_name, Me.col_amount, Me.col_status, Me.col_print})
+        Me.grid_payments_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_id, Me.col_supplier, Me.col_cheque_no, Me.col_cheque_date, Me.col_bank, Me.col_payee, Me.col_acc_no, Me.col_acc_name, Me.col_amount, Me.col_status, Me.col_print, Me.col_voucher_id})
         Me.grid_payments_view.GridControl = Me.grid_payments
         Me.grid_payments_view.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always
         Me.grid_payments_view.Name = "grid_payments_view"
@@ -311,23 +312,33 @@ Partial Class frm_accounting_payment_cheques
         Me.col_print.Name = "col_print"
         Me.col_print.OptionsColumn.FixedWidth = True
         Me.col_print.Visible = True
-        Me.col_print.VisibleIndex = 10
+        Me.col_print.VisibleIndex = 11
         '
         'btn_print
         '
         Me.btn_print.AutoHeight = False
-        EditorButtonImageOptions1.Image = Global.Inventory_Management.My.Resources.Resources.print_16x16
-        Me.btn_print.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions1, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, SerializableAppearanceObject2, SerializableAppearanceObject3, SerializableAppearanceObject4, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions3.Image = Global.Inventory_Management.My.Resources.Resources.print_16x16
+        Me.btn_print.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions3, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject9, SerializableAppearanceObject10, SerializableAppearanceObject11, SerializableAppearanceObject12, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.btn_print.LookAndFeel.UseDefaultLookAndFeel = False
         Me.btn_print.Name = "btn_print"
         Me.btn_print.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
+        '
+        'col_voucher_id
+        '
+        Me.col_voucher_id.AppearanceCell.Options.UseTextOptions = True
+        Me.col_voucher_id.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_voucher_id.Caption = "Voucher ID"
+        Me.col_voucher_id.FieldName = "voucher_id"
+        Me.col_voucher_id.Name = "col_voucher_id"
+        Me.col_voucher_id.Visible = True
+        Me.col_voucher_id.VisibleIndex = 10
         '
         'frm_accounting_payment_cheques
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(930, 690)
+        Me.ClientSize = New System.Drawing.Size(1487, 690)
         Me.Controls.Add(Me.grid_payments)
         Me.Controls.Add(Me.GunaPanel4)
         Me.Name = "frm_accounting_payment_cheques"
@@ -367,4 +378,5 @@ Partial Class frm_accounting_payment_cheques
     Friend WithEvents col_amount As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents col_status As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents cbb_status As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
+    Friend WithEvents col_voucher_id As DevExpress.XtraGrid.Columns.GridColumn
 End Class

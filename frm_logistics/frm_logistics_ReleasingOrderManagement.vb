@@ -30,8 +30,8 @@ Public Class frm_logistics_ReleasingOrderManagement
             Dim cmd = New MySqlCommand("SELECT order_id, date_ordered, ims_users.first_name as agent, ims_customers.first_name, payment_type, IFNULL(payment_status, 'UNPAID') as payment_status, ship_to, trucking, status, shipping_method, amount_due FROM `ims_orders` 
                                 INNER JOIN ims_customers on ims_orders.customer=ims_customers.customer_id
                                 INNER JOIN ims_users on ims_orders.agent=ims_users.usr_id
-                                WHERE (status='Packed' OR status='Released') AND ims_orders.deleted=0
-                                ORDER BY order_id DESC", conn)
+                                WHERE (status='Packed') AND ims_orders.deleted=0
+                                ORDER BY order_id DESC", conn) ' OR status='Released'
             cmd.ExecuteNonQuery()
 
             Dim dt = New DataTable

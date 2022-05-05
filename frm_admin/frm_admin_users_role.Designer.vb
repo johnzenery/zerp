@@ -86,12 +86,13 @@ Partial Class frm_admin_users_role
         Me.cb_create_order = New System.Windows.Forms.CheckBox()
         Me.cb_customers = New System.Windows.Forms.CheckBox()
         Me.GroupControl10 = New DevExpress.XtraEditors.GroupControl()
-        Me.cb_pickup_deliveries = New System.Windows.Forms.CheckBox()
+        Me.cb_order_management = New System.Windows.Forms.CheckBox()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.cb_catalogue = New System.Windows.Forms.CheckBox()
         Me.cb_new_item = New System.Windows.Forms.CheckBox()
         Me.cb_import_catalogue = New System.Windows.Forms.CheckBox()
         Me.cb_export_catalogue = New System.Windows.Forms.CheckBox()
+        Me.cb_stock_transfer_dispatching = New System.Windows.Forms.CheckBox()
         Me.GunaPanel2.SuspendLayout()
         Me.GunaPanel3.SuspendLayout()
         Me.GunaPanel4.SuspendLayout()
@@ -758,22 +759,23 @@ Partial Class frm_admin_users_role
         '
         'GroupControl10
         '
-        Me.GroupControl10.Controls.Add(Me.cb_pickup_deliveries)
+        Me.GroupControl10.Controls.Add(Me.cb_stock_transfer_dispatching)
+        Me.GroupControl10.Controls.Add(Me.cb_order_management)
         Me.GroupControl10.Location = New System.Drawing.Point(31, 269)
         Me.GroupControl10.Name = "GroupControl10"
         Me.GroupControl10.Size = New System.Drawing.Size(169, 212)
         Me.GroupControl10.TabIndex = 22
         Me.GroupControl10.Text = "Logistics"
         '
-        'cb_pickup_deliveries
+        'cb_order_management
         '
-        Me.cb_pickup_deliveries.AutoSize = True
-        Me.cb_pickup_deliveries.Location = New System.Drawing.Point(23, 30)
-        Me.cb_pickup_deliveries.Name = "cb_pickup_deliveries"
-        Me.cb_pickup_deliveries.Size = New System.Drawing.Size(126, 17)
-        Me.cb_pickup_deliveries.TabIndex = 0
-        Me.cb_pickup_deliveries.Text = "Pickup and Deliveries"
-        Me.cb_pickup_deliveries.UseVisualStyleBackColor = True
+        Me.cb_order_management.AutoSize = True
+        Me.cb_order_management.Location = New System.Drawing.Point(15, 30)
+        Me.cb_order_management.Name = "cb_order_management"
+        Me.cb_order_management.Size = New System.Drawing.Size(136, 17)
+        Me.cb_order_management.TabIndex = 0
+        Me.cb_order_management.Text = "Order Releasing Mgmt."
+        Me.cb_order_management.UseVisualStyleBackColor = True
         '
         'GroupControl3
         '
@@ -790,7 +792,7 @@ Partial Class frm_admin_users_role
         'cb_catalogue
         '
         Me.cb_catalogue.AutoSize = True
-        Me.cb_catalogue.Location = New System.Drawing.Point(23, 27)
+        Me.cb_catalogue.Location = New System.Drawing.Point(15, 27)
         Me.cb_catalogue.Name = "cb_catalogue"
         Me.cb_catalogue.Size = New System.Drawing.Size(75, 17)
         Me.cb_catalogue.TabIndex = 0
@@ -800,7 +802,7 @@ Partial Class frm_admin_users_role
         'cb_new_item
         '
         Me.cb_new_item.AutoSize = True
-        Me.cb_new_item.Location = New System.Drawing.Point(23, 50)
+        Me.cb_new_item.Location = New System.Drawing.Point(15, 50)
         Me.cb_new_item.Name = "cb_new_item"
         Me.cb_new_item.Size = New System.Drawing.Size(72, 17)
         Me.cb_new_item.TabIndex = 2
@@ -810,7 +812,7 @@ Partial Class frm_admin_users_role
         'cb_import_catalogue
         '
         Me.cb_import_catalogue.AutoSize = True
-        Me.cb_import_catalogue.Location = New System.Drawing.Point(23, 73)
+        Me.cb_import_catalogue.Location = New System.Drawing.Point(15, 73)
         Me.cb_import_catalogue.Name = "cb_import_catalogue"
         Me.cb_import_catalogue.Size = New System.Drawing.Size(110, 17)
         Me.cb_import_catalogue.TabIndex = 3
@@ -820,12 +822,22 @@ Partial Class frm_admin_users_role
         'cb_export_catalogue
         '
         Me.cb_export_catalogue.AutoSize = True
-        Me.cb_export_catalogue.Location = New System.Drawing.Point(23, 96)
+        Me.cb_export_catalogue.Location = New System.Drawing.Point(15, 96)
         Me.cb_export_catalogue.Name = "cb_export_catalogue"
         Me.cb_export_catalogue.Size = New System.Drawing.Size(110, 17)
         Me.cb_export_catalogue.TabIndex = 4
         Me.cb_export_catalogue.Text = "Export Catalogue"
         Me.cb_export_catalogue.UseVisualStyleBackColor = True
+        '
+        'cb_stock_transfer_dispatching
+        '
+        Me.cb_stock_transfer_dispatching.AutoSize = True
+        Me.cb_stock_transfer_dispatching.Location = New System.Drawing.Point(15, 53)
+        Me.cb_stock_transfer_dispatching.Name = "cb_stock_transfer_dispatching"
+        Me.cb_stock_transfer_dispatching.Size = New System.Drawing.Size(154, 17)
+        Me.cb_stock_transfer_dispatching.TabIndex = 1
+        Me.cb_stock_transfer_dispatching.Text = "Stock Transfer Dispatching"
+        Me.cb_stock_transfer_dispatching.UseVisualStyleBackColor = True
         '
         'frm_admin_users_role
         '
@@ -932,7 +944,7 @@ Partial Class frm_admin_users_role
     Friend WithEvents cb_new_purchase As CheckBox
     Friend WithEvents cb_purchase_orders As CheckBox
     Friend WithEvents GroupControl10 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents cb_pickup_deliveries As CheckBox
+    Friend WithEvents cb_order_management As CheckBox
     Friend WithEvents cb_transaction_invoice As CheckBox
     Friend WithEvents cb_stores As CheckBox
     Friend WithEvents cb_suppliers As CheckBox
@@ -945,4 +957,5 @@ Partial Class frm_admin_users_role
     Friend WithEvents cb_reports As CheckBox
     Friend WithEvents cb_quotations As CheckBox
     Friend WithEvents cb_for_selluseller As CheckBox
+    Friend WithEvents cb_stock_transfer_dispatching As CheckBox
 End Class

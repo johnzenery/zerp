@@ -795,7 +795,7 @@ Partial Class frm_admin_reports
         '
         'col_nonvatable_sales
         '
-        Me.col_nonvatable_sales.Caption = "Non-Vatable Sales"
+        Me.col_nonvatable_sales.Caption = "NON VAT Sales"
         Me.col_nonvatable_sales.DisplayFormat.FormatString = "n2"
         Me.col_nonvatable_sales.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.col_nonvatable_sales.FieldName = "nonvat_sales"
@@ -807,7 +807,7 @@ Partial Class frm_admin_reports
         '
         'col_vatable_sales
         '
-        Me.col_vatable_sales.Caption = "Vatable Sales"
+        Me.col_vatable_sales.Caption = "VAT Sales"
         Me.col_vatable_sales.DisplayFormat.FormatString = "n2"
         Me.col_vatable_sales.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.col_vatable_sales.FieldName = "vat_sales"
@@ -1656,7 +1656,7 @@ Partial Class frm_admin_reports
         '
         Me.SplitContainer6.Panel2.Controls.Add(Me.grid_perf_sa)
         Me.SplitContainer6.Size = New System.Drawing.Size(1393, 248)
-        Me.SplitContainer6.SplitterDistance = 696
+        Me.SplitContainer6.SplitterDistance = 695
         Me.SplitContainer6.TabIndex = 13
         '
         'grid_perf_coor
@@ -1667,7 +1667,7 @@ Partial Class frm_admin_reports
         Me.grid_perf_coor.LookAndFeel.UseDefaultLookAndFeel = False
         Me.grid_perf_coor.MainView = Me.GridView3
         Me.grid_perf_coor.Name = "grid_perf_coor"
-        Me.grid_perf_coor.Size = New System.Drawing.Size(696, 248)
+        Me.grid_perf_coor.Size = New System.Drawing.Size(695, 248)
         Me.grid_perf_coor.TabIndex = 1
         Me.grid_perf_coor.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
         '
@@ -1758,7 +1758,7 @@ Partial Class frm_admin_reports
         Me.grid_perf_sa.LookAndFeel.UseDefaultLookAndFeel = False
         Me.grid_perf_sa.MainView = Me.GridView4
         Me.grid_perf_sa.Name = "grid_perf_sa"
-        Me.grid_perf_sa.Size = New System.Drawing.Size(693, 248)
+        Me.grid_perf_sa.Size = New System.Drawing.Size(694, 248)
         Me.grid_perf_sa.TabIndex = 2
         Me.grid_perf_sa.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView4})
         '
