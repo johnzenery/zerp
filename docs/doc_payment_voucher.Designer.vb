@@ -145,6 +145,7 @@ Partial Public Class doc_payment_voucher
         Me.XrLine4 = New DevExpress.XtraReports.UI.XRLine()
         Me.contact_person = New DevExpress.XtraReports.Parameters.Parameter()
         Me.store_name = New DevExpress.XtraReports.Parameters.Parameter()
+        Me.XrLabel43 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrintData1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -957,7 +958,7 @@ Partial Public Class doc_payment_voucher
         '
         'Detail2
         '
-        Me.Detail2.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel28, Me.XrLabel27, Me.XrLabel26, Me.XrLabel25})
+        Me.Detail2.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel43, Me.XrLabel28, Me.XrLabel27, Me.XrLabel26, Me.XrLabel25})
         Me.Detail2.HeightF = 25.0!
         Me.Detail2.Name = "Detail2"
         '
@@ -992,13 +993,13 @@ Partial Public Class doc_payment_voucher
         '
         'XrLabel26
         '
-        Me.XrLabel26.Borders = CType((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel26.Borders = DevExpress.XtraPrinting.BorderSide.Left
         Me.XrLabel26.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[bank]")})
-        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(0.0001271566!, 0!)
+        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrLabel26.Multiline = True
         Me.XrLabel26.Name = "XrLabel26"
         Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100.0!)
-        Me.XrLabel26.SizeF = New System.Drawing.SizeF(360.5526!, 25.0!)
+        Me.XrLabel26.SizeF = New System.Drawing.SizeF(199.3751!, 25.0!)
         Me.XrLabel26.StylePriority.UseBorders = False
         Me.XrLabel26.StylePriority.UsePadding = False
         Me.XrLabel26.StylePriority.UseTextAlignment = False
@@ -1592,6 +1593,21 @@ Partial Public Class doc_payment_voucher
         Me.store_name.Name = "store_name"
         Me.store_name.Visible = False
         '
+        'XrLabel43
+        '
+        Me.XrLabel43.Borders = DevExpress.XtraPrinting.BorderSide.Right
+        Me.XrLabel43.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[acc_no]")})
+        Me.XrLabel43.LocationFloat = New DevExpress.Utils.PointFloat(199.3751!, 0!)
+        Me.XrLabel43.Multiline = True
+        Me.XrLabel43.Name = "XrLabel43"
+        Me.XrLabel43.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 20, 0, 0, 100.0!)
+        Me.XrLabel43.SizeF = New System.Drawing.SizeF(161.1775!, 24.99998!)
+        Me.XrLabel43.StylePriority.UseBorders = False
+        Me.XrLabel43.StylePriority.UsePadding = False
+        Me.XrLabel43.StylePriority.UseTextAlignment = False
+        Me.XrLabel43.Text = "XrLabel43"
+        Me.XrLabel43.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        '
         'doc_payment_voucher
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.TopMargin, Me.BottomMargin, Me.Detail, Me.ReportHeader, Me.PageHeader, Me.ReportFooter, Me.DetailReport, Me.payment_voucher_cheque, Me.purchase_return_report, Me.payment_voucher_cash})
@@ -1741,4 +1757,5 @@ Partial Public Class doc_payment_voucher
     Friend WithEvents XrLabel41 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents contact_person As DevExpress.XtraReports.Parameters.Parameter
     Friend WithEvents store_name As DevExpress.XtraReports.Parameters.Parameter
+    Friend WithEvents XrLabel43 As DevExpress.XtraReports.UI.XRLabel
 End Class

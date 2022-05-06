@@ -1,5 +1,5 @@
 ﻿Imports DevExpress.XtraReports.UI
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_admin_transfer_view
 

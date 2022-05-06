@@ -1,5 +1,5 @@
 ﻿Imports DevExpress.XtraCharts
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_accounting_inventory_count
     Private Sub _accounting_inventory_count_Load(sender As Object, e As EventArgs) Handles MyBase.Load

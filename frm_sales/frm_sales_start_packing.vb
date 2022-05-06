@@ -1,6 +1,6 @@
 ﻿Imports System.Text.RegularExpressions
 Imports DevExpress.XtraReports.UI
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_sales_start_packing
 

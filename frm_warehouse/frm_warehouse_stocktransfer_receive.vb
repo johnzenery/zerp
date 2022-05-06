@@ -1,5 +1,5 @@
 ﻿Imports System.Text.RegularExpressions
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_warehouse_stocktransfer_receive
 

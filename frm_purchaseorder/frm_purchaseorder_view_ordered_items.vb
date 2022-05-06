@@ -1,4 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports MySqlConnector
 Imports Newtonsoft.Json
 
 Public Class frm_purchaseorder_view_ordered_items

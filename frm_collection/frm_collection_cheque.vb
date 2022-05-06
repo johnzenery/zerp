@@ -1,7 +1,7 @@
 ﻿Imports System.Globalization
 Imports DevExpress.XtraGrid.Views.Grid
 Imports DevExpress.XtraReports.UI
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 Imports Newtonsoft.Json
 
 Public Class frm_collection_cheque

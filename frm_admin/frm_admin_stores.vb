@@ -1,5 +1,5 @@
 ﻿Imports System.Globalization
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_admin_stores
 

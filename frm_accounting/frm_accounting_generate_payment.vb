@@ -1,6 +1,6 @@
 ﻿Imports System.Globalization
 Imports DevExpress.XtraReports.UI
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_accounting_generate_payment
 
@@ -202,13 +202,13 @@ Public Class frm_accounting_generate_payment
 
                 Case "cheque"
                     'Get Cheque Total No. and Details
-                    Using get_cheque = New MySqlCommand("SELECT bank, cheque_no, cheque_date, amount 
+                    Using get_cheque = New MySqlCommand("SELECT bank, cheque_no, cheque_date, amount, acc_no
                                             FROM ims_generated_cheques
                                             WHERE p_voucher_id=" & id, connection)
 
                         Using rdr_cheque = get_cheque.ExecuteReader
                             While rdr_cheque.Read
-                                table.payment_voucher_cheque.Rows.Add(rdr_cheque("bank"), rdr_cheque("cheque_date"), rdr_cheque("cheque_no"), rdr_cheque("amount"))
+                                table.payment_voucher_cheque.Rows.Add(rdr_cheque("bank"), rdr_cheque("cheque_date"), rdr_cheque("cheque_no"), rdr_cheque("amount"), rdr_cheque("acc_no"))
                             End While
                         End Using
                     End Using

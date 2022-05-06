@@ -1,5 +1,5 @@
 ﻿Imports System.Globalization.CultureInfo
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_warehouse_PackageManagement_packed
 

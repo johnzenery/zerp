@@ -1,6 +1,6 @@
 ﻿
 
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_sales_unserved_dialog
 

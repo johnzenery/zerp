@@ -2622,6 +2622,8 @@ Partial Public Class PrintData
         
         Private columnamount As Global.System.Data.DataColumn
         
+        Private columnacc_no As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -2690,6 +2692,14 @@ Partial Public Class PrintData
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property acc_noColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnacc_no
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2726,9 +2736,9 @@ Partial Public Class PrintData
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function Addpayment_voucher_chequeRow(ByVal bank As String, ByVal cheque_date As Date, ByVal cheque_no As String, ByVal amount As Decimal) As payment_voucher_chequeRow
+        Public Overloads Function Addpayment_voucher_chequeRow(ByVal bank As String, ByVal cheque_date As Date, ByVal cheque_no As String, ByVal amount As Decimal, ByVal acc_no As String) As payment_voucher_chequeRow
             Dim rowpayment_voucher_chequeRow As payment_voucher_chequeRow = CType(Me.NewRow,payment_voucher_chequeRow)
-            Dim columnValuesArray() As Object = New Object() {bank, cheque_date, cheque_no, amount}
+            Dim columnValuesArray() As Object = New Object() {bank, cheque_date, cheque_no, amount, acc_no}
             rowpayment_voucher_chequeRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowpayment_voucher_chequeRow)
             Return rowpayment_voucher_chequeRow
@@ -2755,6 +2765,7 @@ Partial Public Class PrintData
             Me.columncheque_date = MyBase.Columns("cheque_date")
             Me.columncheque_no = MyBase.Columns("cheque_no")
             Me.columnamount = MyBase.Columns("amount")
+            Me.columnacc_no = MyBase.Columns("acc_no")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2768,6 +2779,8 @@ Partial Public Class PrintData
             MyBase.Columns.Add(Me.columncheque_no)
             Me.columnamount = New Global.System.Data.DataColumn("amount", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnamount)
+            Me.columnacc_no = New Global.System.Data.DataColumn("acc_no", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnacc_no)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6093,6 +6106,21 @@ Partial Public Class PrintData
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property acc_no() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablepayment_voucher_cheque.acc_noColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'acc_no' in table 'payment_voucher_cheque' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablepayment_voucher_cheque.acc_noColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsbankNull() As Boolean
             Return Me.IsNull(Me.tablepayment_voucher_cheque.bankColumn)
         End Function
@@ -6137,6 +6165,18 @@ Partial Public Class PrintData
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetamountNull()
             Me(Me.tablepayment_voucher_cheque.amountColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isacc_noNull() As Boolean
+            Return Me.IsNull(Me.tablepayment_voucher_cheque.acc_noColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setacc_noNull()
+            Me(Me.tablepayment_voucher_cheque.acc_noColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 Imports DevExpress.XtraGrid
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 Imports Renci.SshNet
 
 Public Class frm_product_catalogue

@@ -1,7 +1,7 @@
 ﻿Imports System.Globalization.CultureInfo
 Imports System.Text.RegularExpressions
 Imports DevExpress.XtraReports.UI
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_warehouse_stocktransfer_dispatch_dialog
 

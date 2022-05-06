@@ -1207,7 +1207,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="ZERP Business Solution_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PrintData.xsc">
@@ -1572,8 +1571,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Shell.15.0">
       <Version>17.1.32210.191</Version>
     </PackageReference>
-    <PackageReference Include="MySql.Data">
-      <Version>8.0.29</Version>
+    <PackageReference Include="MySqlConnector">
+      <Version>2.1.8</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>

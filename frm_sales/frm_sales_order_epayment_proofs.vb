@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 Imports DevExpress.XtraEditors
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 Imports Renci.SshNet
 Imports Renci.SshNet.Sftp
 

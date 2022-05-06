@@ -1,5 +1,5 @@
 ﻿Imports DevExpress.XtraReports.UI
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 Imports System.IO
 
 Public Class frm_warehouse_stocktransfer_request_new

@@ -58,9 +58,9 @@ Partial Class frm_product_import
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(27, 50)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(80, 13)
+        Me.Label2.Size = New System.Drawing.Size(114, 13)
         Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Select CSV file:"
+        Me.Label2.Text = "Select Excel file (.xlsx):"
         '
         'Label1
         '

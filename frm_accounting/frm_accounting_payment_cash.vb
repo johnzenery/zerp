@@ -1,4 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports MySqlConnector
 
 Public Class frm_accounting_payment_cash
 

@@ -1,6 +1,6 @@
 ﻿Imports System.Globalization
 Imports System.IO
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 Imports Renci.SshNet
 Imports Renci.SshNet.Sftp
 

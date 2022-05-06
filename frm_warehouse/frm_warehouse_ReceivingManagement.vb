@@ -1,5 +1,5 @@
 ﻿Imports DevExpress.XtraGrid.Views.Grid
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_warehouse_receivingManagement
 

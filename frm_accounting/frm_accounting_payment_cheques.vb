@@ -1,5 +1,5 @@
 ﻿Imports DevExpress.XtraReports.UI
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 
 Public Class frm_accounting_payment_cheques

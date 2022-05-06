@@ -31,7 +31,6 @@ Partial Class frm_main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim splashScreenManager As DevExpress.XtraSplashScreen.SplashScreenManager = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, Nothing, True, True)
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_main))
         Me.panel_main = New Guna.UI.WinForms.GunaPanel()
@@ -106,7 +105,6 @@ Partial Class frm_main
         Me.user_name = New Guna.UI.WinForms.GunaLabel()
         Me.user_photo = New Guna.UI.WinForms.GunaCirclePictureBox()
         Me.bgw_main = New System.ComponentModel.BackgroundWorker()
-        Me.Guna2Elipse = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.panel_main.SuspendLayout()
         Me.panel_top.SuspendLayout()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -604,7 +602,7 @@ Partial Class frm_main
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(125, 24)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'GunaLinePanel1
@@ -683,11 +681,6 @@ Partial Class frm_main
         Me.user_photo.TabIndex = 1
         Me.user_photo.TabStop = False
         Me.user_photo.UseTransfarantBackground = False
-        '
-        'Guna2Elipse
-        '
-        Me.Guna2Elipse.BorderRadius = 10
-        Me.Guna2Elipse.TargetControl = Me.user_store
         '
         'frm_main
         '
@@ -770,7 +763,6 @@ Partial Class frm_main
     Friend WithEvents user_role_id As Guna.UI.WinForms.GunaLabel
     Friend WithEvents bgw_main As System.ComponentModel.BackgroundWorker
     Friend WithEvents submenu_soa As ToolStripMenuItem
-    Friend WithEvents Guna2Elipse As Guna.UI2.WinForms.Guna2Elipse
     Friend WithEvents submenu_invoices As ToolStripMenuItem
     'MY EDIT
     Friend WithEvents submenu_logistics As ToolStripMenuItem

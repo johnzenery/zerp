@@ -1,5 +1,5 @@
 ﻿Imports DevExpress.XtraBars.Navigation
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_warehouse_PackageManagement
 

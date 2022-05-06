@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 Imports DevExpress.XtraEditors.Controls
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 Imports Newtonsoft.Json
 
 Public Class frm_purchaseorder_new

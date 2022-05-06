@@ -1,6 +1,6 @@
 ﻿Imports System.Globalization
 Imports DevExpress.XtraEditors.Controls
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_sales_create_quotation
 

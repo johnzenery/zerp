@@ -2,7 +2,7 @@
 Imports System.Text.RegularExpressions
 Imports DevExpress.XtraEditors.Controls
 Imports DevExpress.XtraReports.UI
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_sales_view_quotation
 

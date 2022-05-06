@@ -3,7 +3,7 @@ Imports System.Net
 Imports System.Reflection
 Imports System.Text
 Imports DevExpress.XtraSplashScreen
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 Imports Renci.SshNet
 
 Public Class frm_main

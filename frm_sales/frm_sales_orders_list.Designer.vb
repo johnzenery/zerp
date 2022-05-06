@@ -14,7 +14,7 @@ Imports Inventory_Management.My
 Imports Inventory_Management.My.Resources
 Imports Microsoft.VisualBasic
 Imports Microsoft.VisualBasic.CompilerServices
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 Imports System
 Imports System.ComponentModel
 Imports System.Data

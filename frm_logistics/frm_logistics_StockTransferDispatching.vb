@@ -1,4 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports MySqlConnector
 
 Public Class frm_logistics_StockTransferDispatching
     Private Sub frm_logistics_StockTransferDispatching_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -1,4 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports MySqlConnector
 
 Public Class frm_warehouse_stocktransfer_approval_dialog
     Private Sub btn_approved_Click(sender As Object, e As EventArgs) Handles btn_approved.Click

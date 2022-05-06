@@ -1,5 +1,5 @@
 ﻿Imports System.IO
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 Imports Newtonsoft.Json
 Imports Seagull.BarTender.Print
 Imports Seagull.BarTender.Print.Database

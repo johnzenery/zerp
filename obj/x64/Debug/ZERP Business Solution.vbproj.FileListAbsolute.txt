@@ -3,13 +3,7 @@ D:\_workstation\source code\zerp\bin\x64\Debug\ZERP Business Solution.exe.manife
 D:\_workstation\source code\zerp\bin\x64\Debug\ZERP Business Solution.application
 D:\_workstation\source code\zerp\bin\x64\Debug\ZERP Business Solution.exe
 D:\_workstation\source code\zerp\bin\x64\Debug\ZERP Business Solution.pdb
-D:\_workstation\source code\zerp\bin\x64\Debug\BouncyCastle.Crypto.dll
 D:\_workstation\source code\zerp\bin\x64\Debug\EPPlus.dll
-D:\_workstation\source code\zerp\bin\x64\Debug\Google.Protobuf.dll
-D:\_workstation\source code\zerp\bin\x64\Debug\Google.Protobuf.pdb
-D:\_workstation\source code\zerp\bin\x64\Debug\K4os.Compression.LZ4.dll
-D:\_workstation\source code\zerp\bin\x64\Debug\K4os.Compression.LZ4.Streams.dll
-D:\_workstation\source code\zerp\bin\x64\Debug\K4os.Hash.xxHash.dll
 D:\_workstation\source code\zerp\bin\x64\Debug\MessagePack.dll
 D:\_workstation\source code\zerp\bin\x64\Debug\MessagePack.Annotations.dll
 D:\_workstation\source code\zerp\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -104,9 +98,6 @@ D:\_workstation\source code\zerp\bin\x64\Debug\tr\Microsoft.VisualStudio.Validat
 D:\_workstation\source code\zerp\bin\x64\Debug\zh-Hans\Microsoft.VisualStudio.Validation.resources.dll
 D:\_workstation\source code\zerp\bin\x64\Debug\zh-Hant\Microsoft.VisualStudio.Validation.resources.dll
 D:\_workstation\source code\zerp\bin\x64\Debug\Microsoft.Win32.Registry.dll
-D:\_workstation\source code\zerp\bin\x64\Debug\MySql.Data.dll
-D:\_workstation\source code\zerp\bin\x64\Debug\Ubiety.Dns.Core.dll
-D:\_workstation\source code\zerp\bin\x64\Debug\ZstdNet.dll
 D:\_workstation\source code\zerp\bin\x64\Debug\Nerdbank.Streams.dll
 D:\_workstation\source code\zerp\bin\x64\Debug\Nerdbank.Streams.pdb
 D:\_workstation\source code\zerp\bin\x64\Debug\Newtonsoft.Json.dll
@@ -452,3 +443,4 @@ D:\_workstation\source code\zerp\obj\x64\Debug\ZERP Business Solution.applicatio
 D:\_workstation\source code\zerp\obj\x64\Debug\ZERP Business Solution.vbproj.CopyComplete
 D:\_workstation\source code\zerp\obj\x64\Debug\ZERP Business Solution.exe
 D:\_workstation\source code\zerp\obj\x64\Debug\ZERP Business Solution.pdb
+D:\_workstation\source code\zerp\bin\x64\Debug\MySqlConnector.dll

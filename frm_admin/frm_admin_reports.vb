@@ -1,6 +1,6 @@
 ﻿Imports DevExpress.XtraCharts
 Imports DevExpress.XtraEditors
-Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class frm_admin_reports
 

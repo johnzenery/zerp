@@ -24,6 +24,7 @@ Partial Class frm_collection_soa_new
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_collection_soa_new))
         Me.panel_content = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txt_total_view = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
@@ -40,8 +41,8 @@ Partial Class frm_collection_soa_new
         Me.btn_generate = New DevExpress.XtraEditors.SimpleButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.panel_content.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         CType(Me.txt_total_view.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbb_customers.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_orders, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,7 +51,6 @@ Partial Class frm_collection_soa_new
         CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'panel_content
@@ -61,6 +61,20 @@ Partial Class frm_collection_soa_new
         Me.panel_content.Name = "panel_content"
         Me.panel_content.Size = New System.Drawing.Size(790, 496)
         Me.panel_content.TabIndex = 17
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.txt_total_view)
+        Me.Panel2.Controls.Add(Me.LabelControl9)
+        Me.Panel2.Controls.Add(Me.LabelControl1)
+        Me.Panel2.Controls.Add(Me.cbb_customers)
+        Me.Panel2.Controls.Add(Me.btn_cancel)
+        Me.Panel2.Controls.Add(Me.grid_orders)
+        Me.Panel2.Controls.Add(Me.btn_generate)
+        Me.Panel2.Location = New System.Drawing.Point(12, 12)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(766, 472)
+        Me.Panel2.TabIndex = 20
         '
         'txt_total_view
         '
@@ -224,7 +238,7 @@ Partial Class frm_collection_soa_new
         '
         Me.col_date_of_order.AppearanceCell.Options.UseTextOptions = True
         Me.col_date_of_order.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.col_date_of_order.Caption = "Order Date"
+        Me.col_date_of_order.Caption = "Date Released"
         Me.col_date_of_order.DisplayFormat.FormatString = "MMMM dd, yyyy"
         Me.col_date_of_order.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.col_date_of_order.FieldName = "date_released"
@@ -279,20 +293,6 @@ Partial Class frm_collection_soa_new
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "New Statement of Account"
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.txt_total_view)
-        Me.Panel2.Controls.Add(Me.LabelControl9)
-        Me.Panel2.Controls.Add(Me.LabelControl1)
-        Me.Panel2.Controls.Add(Me.cbb_customers)
-        Me.Panel2.Controls.Add(Me.btn_cancel)
-        Me.Panel2.Controls.Add(Me.grid_orders)
-        Me.Panel2.Controls.Add(Me.btn_generate)
-        Me.Panel2.Location = New System.Drawing.Point(12, 12)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(766, 472)
-        Me.Panel2.TabIndex = 20
-        '
         'frm_collection_soa_new
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -309,6 +309,8 @@ Partial Class frm_collection_soa_new
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Generate SOA"
         Me.panel_content.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         CType(Me.txt_total_view.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbb_customers.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_orders, System.ComponentModel.ISupportInitialize).EndInit()
@@ -318,8 +320,6 @@ Partial Class frm_collection_soa_new
         CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
