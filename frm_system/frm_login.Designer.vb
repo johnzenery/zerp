@@ -51,7 +51,7 @@ Partial Class frm_login
         Me.lbl_username.Appearance.Options.UseFont = True
         Me.lbl_username.Appearance.Options.UseForeColor = True
         Me.lbl_username.Location = New System.Drawing.Point(173, 16)
-        Me.lbl_username.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_username.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_username.Name = "lbl_username"
         Me.lbl_username.Size = New System.Drawing.Size(71, 21)
         Me.lbl_username.TabIndex = 5
@@ -66,7 +66,7 @@ Partial Class frm_login
         Me.lbl_pass.Location = New System.Drawing.Point(173, 81)
         Me.lbl_pass.LookAndFeel.SkinName = "Office 2010 Silver"
         Me.lbl_pass.LookAndFeel.UseDefaultLookAndFeel = False
-        Me.lbl_pass.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_pass.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_pass.Name = "lbl_pass"
         Me.lbl_pass.Size = New System.Drawing.Size(67, 21)
         Me.lbl_pass.TabIndex = 6
@@ -80,7 +80,7 @@ Partial Class frm_login
         '
         Me.txt_username.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_username.Location = New System.Drawing.Point(173, 44)
-        Me.txt_username.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_username.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_username.Name = "txt_username"
         Me.txt_username.Size = New System.Drawing.Size(193, 32)
         Me.txt_username.TabIndex = 10
@@ -90,7 +90,7 @@ Partial Class frm_login
         '
         Me.txt_password.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_password.Location = New System.Drawing.Point(173, 105)
-        Me.txt_password.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_password.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.Size = New System.Drawing.Size(193, 32)
         Me.txt_password.TabIndex = 11
@@ -102,7 +102,7 @@ Partial Class frm_login
         Me.btn_validate.Appearance.ForeColor = System.Drawing.Color.Black
         Me.btn_validate.Appearance.Options.UseForeColor = True
         Me.btn_validate.Location = New System.Drawing.Point(273, 150)
-        Me.btn_validate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_validate.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_validate.Name = "btn_validate"
         Me.btn_validate.Size = New System.Drawing.Size(93, 49)
         Me.btn_validate.TabIndex = 12
@@ -115,7 +115,7 @@ Partial Class frm_login
         Me.LabelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
         Me.LabelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl1.Location = New System.Drawing.Point(18, 149)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(144, 65)
         Me.LabelControl1.TabIndex = 15
@@ -123,9 +123,9 @@ Partial Class frm_login
         '
         'PictureEdit1
         '
-        Me.PictureEdit1.EditValue = Global.Inventory_Management.My.Resources.Resources.man_key
+        Me.PictureEdit1.EditValue = Global.Inventory_Management.My.Resources.Resources.Parsell_Logo
         Me.PictureEdit1.Location = New System.Drawing.Point(22, 16)
-        Me.PictureEdit1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureEdit1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureEdit1.Name = "PictureEdit1"
         Me.PictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.PictureEdit1.Properties.Appearance.Options.UseBackColor = True
@@ -141,7 +141,7 @@ Partial Class frm_login
         Me.btn_close.Appearance.ForeColor = System.Drawing.Color.Black
         Me.btn_close.Appearance.Options.UseForeColor = True
         Me.btn_close.Location = New System.Drawing.Point(173, 150)
-        Me.btn_close.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_close.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_close.Name = "btn_close"
         Me.btn_close.Size = New System.Drawing.Size(93, 49)
         Me.btn_close.TabIndex = 13
@@ -150,7 +150,7 @@ Partial Class frm_login
         'cbb_warehouse
         '
         Me.cbb_warehouse.Location = New System.Drawing.Point(15, 42)
-        Me.cbb_warehouse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbb_warehouse.Margin = New System.Windows.Forms.Padding(4)
         Me.cbb_warehouse.Name = "cbb_warehouse"
         Me.cbb_warehouse.Properties.Appearance.Font = New System.Drawing.Font("Calibri", 12.0!)
         Me.cbb_warehouse.Properties.Appearance.Options.UseFont = True
@@ -166,7 +166,7 @@ Partial Class frm_login
         Me.btn_login.Appearance.Options.UseBackColor = True
         Me.btn_login.Appearance.Options.UseForeColor = True
         Me.btn_login.Location = New System.Drawing.Point(274, 42)
-        Me.btn_login.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_login.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_login.Name = "btn_login"
         Me.btn_login.Size = New System.Drawing.Size(93, 42)
         Me.btn_login.TabIndex = 17
@@ -178,7 +178,7 @@ Partial Class frm_login
         Me.PanelControl1.Controls.Add(Me.cbb_warehouse)
         Me.PanelControl1.Controls.Add(Me.btn_login)
         Me.PanelControl1.Location = New System.Drawing.Point(-1, 222)
-        Me.PanelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(392, 102)
         Me.PanelControl1.TabIndex = 18
@@ -212,7 +212,7 @@ Partial Class frm_login
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.IconOptions.Icon = CType(resources.GetObject("frm_login.IconOptions.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frm_login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"

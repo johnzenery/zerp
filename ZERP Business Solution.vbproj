@@ -1778,6 +1778,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\Parsell Logo.png" />
     <None Include="Resources\actions_deletecircled.svg" />
     <None Include="Resources\financial_32x321.png" />
     <None Include="Resources\business_cash.svg" />
