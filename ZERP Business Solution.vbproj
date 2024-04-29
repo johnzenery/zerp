@@ -1,0 +1,1910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5AF63ACD-E7B0-4F13-B59B-01B3213E1E03}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Inventory_Management.My.MyApplication</StartupObject>
+    <RootNamespace>Inventory_Management</RootNamespace>
+    <AssemblyName>ZERP Business Solution</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>false</GenerateBindingRedirectsOutputType>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <PublishUrl>D:\_workstation\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Zerp</ProductName>
+    <PublisherName>Winlandene Softwares</PublisherName>
+    <SuiteName>Winlandene Softwares</SuiteName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>5.2.5.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ZERP Business Solution.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ZERP Business Solution.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8547019A82E987AB1BC036FA712F765EF59CFA78</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ZERP Business Solution_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dialogs.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.1.Export, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1.UI, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1.UI, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1.Extensions, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraWizard.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\resources\GunaUI\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\resources\GunaUI\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Seagull.BarTender.Print, Version=11.1.6.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\resources\Bartender\Seagull.BarTender.Print.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="docs\doc_batch_pullout.Designer.vb">
+      <DependentUpon>doc_batch_pullout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_batch_pullout.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_pullout_request.Designer.vb">
+      <DependentUpon>doc_pullout_request.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_pullout_request.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_purchase_list.Designer.vb">
+      <DependentUpon>doc_purchase_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_purchase_list.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_return_tag.Designer.vb">
+      <DependentUpon>doc_return_tag.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_return_tag.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_sales_return.Designer.vb">
+      <DependentUpon>doc_sales_return.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_sales_return.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_sub_transfer.Designer.vb">
+      <DependentUpon>doc_sub_transfer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_sub_transfer.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_supplier_returns.Designer.vb">
+      <DependentUpon>doc_supplier_returns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_supplier_returns.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_payment_vouchers_release.Designer.vb">
+      <DependentUpon>frm_accounting_payment_vouchers_release.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_payment_vouchers_release.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_ccterminal_new.Designer.vb">
+      <DependentUpon>frm_admin_ccterminal_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_ccterminal_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_price_matrix.Designer.vb">
+      <DependentUpon>frm_admin_price_matrix.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_price_matrix.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_product_database.Designer.vb">
+      <DependentUpon>frm_admin_product_database.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_product_database.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_users_new.Designer.vb">
+      <DependentUpon>frm_admin_users_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_users_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_users_roles_list.Designer.vb">
+      <DependentUpon>frm_admin_users_roles_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_users_roles_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_user_management.Designer.vb">
+      <DependentUpon>frm_admin_user_management.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_user_management.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\ctl_collection_cashier_register_pay.Designer.vb">
+      <DependentUpon>ctl_collection_cashier_register_pay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\ctl_collection_cashier_register_pay.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cashier_refund.Designer.vb">
+      <DependentUpon>frm_collection_cashier_refund.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cashier_refund.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cashier_register_pay.Designer.vb">
+      <DependentUpon>frm_collection_cashier_register_pay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cashier_register_pay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cashier_register.Designer.vb">
+      <DependentUpon>frm_collection_cashier_register.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cashier_register.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_payment_reversal.Designer.vb">
+      <DependentUpon>frm_collection_payment_reversal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_payment_reversal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_SelectFromBilling_dialog.Designer.vb">
+      <DependentUpon>frm_collection_SelectFromBilling_dialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_SelectFromBilling_dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_logistics\frm_logistics_delivered_by.Designer.vb">
+      <DependentUpon>frm_logistics_delivered_by.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_logistics\frm_logistics_delivered_by.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_logistics\frm_logistics_StockReturn_releasing.Designer.vb">
+      <DependentUpon>frm_logistics_StockReturn_releasing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_logistics\frm_logistics_StockReturn_releasing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_logistics\frm_logistics_StockTransferDispatching.Designer.vb">
+      <DependentUpon>frm_logistics_StockTransferDispatching.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_logistics\frm_logistics_StockTransferDispatching.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_purchase_request_list.Designer.vb">
+      <DependentUpon>frm_purchaseorder_purchase_request_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_purchase_request_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_purchase_request_new.Designer.vb">
+      <DependentUpon>frm_purchaseorder_purchase_request_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_purchase_request_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchasing_credit_memo_pending_dialog.Designer.vb">
+      <DependentUpon>frm_purchasing_credit_memo_pending_dialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchasing_credit_memo_pending_dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_confirmation.Designer.vb">
+      <DependentUpon>frm_stock_return_confirmation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_confirmation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_batch.Designer.vb">
+      <DependentUpon>frm_stock_return_batch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_batch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_delivery_logs.Designer.vb">
+      <DependentUpon>frm_stock_return_delivery_logs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_delivery_logs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_to_vendor.Designer.vb">
+      <DependentUpon>frm_stock_return_to_vendor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_to_vendor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_new.Designer.vb">
+      <DependentUpon>frm_stock_return_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_print.Designer.vb">
+      <DependentUpon>frm_stock_return_print.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_print.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_pullout.Designer.vb">
+      <DependentUpon>frm_stock_return_pullout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_pullout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_approval_dialog.Designer.vb">
+      <DependentUpon>frm_sales_approval_dialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_approval_dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_order_new.Designer.vb">
+      <DependentUpon>frm_sales_order_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_order_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_order_qty_dialog.Designer.vb">
+      <DependentUpon>frm_sales_order_qty_dialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_order_qty_dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_quotation_new.Designer.vb">
+      <DependentUpon>frm_sales_quotation_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_quotation_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_import.Designer.vb">
+      <DependentUpon>frm_warehouse_import.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_import.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_system\frm_printers.Designer.vb">
+      <DependentUpon>frm_printers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_system\frm_printers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_barcode_generator.Designer.vb">
+      <DependentUpon>frm_warehouse_barcode_generator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_barcode_generator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_barcode_label_list.Designer.vb">
+      <DependentUpon>frm_warehouse_barcode_label_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_barcode_label_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_pricetag_generator.Designer.vb">
+      <DependentUpon>frm_warehouse_pricetag_generator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_pricetag_generator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_pullout_packed.Designer.vb">
+      <DependentUpon>frm_warehouse_pullout_packed.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_pullout_packed.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_approval_dialog.Designer.vb">
+      <DependentUpon>frm_warehouse_stocktransfer_approval_dialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_approval_dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_logs.Designer.vb">
+      <DependentUpon>frm_warehouse_stocktransfer_logs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_logs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stock_inventory_export_dialog.Designer.vb">
+      <DependentUpon>frm_warehouse_stock_inventory_export_dialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stock_inventory_export_dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stock_transfer_packed.Designer.vb">
+      <DependentUpon>frm_warehouse_stock_transfer_packed.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stock_transfer_packed.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_cancel_dialog.Designer.vb">
+      <DependentUpon>frm_warehouse_stocktransfer_cancel_dialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_cancel_dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_list.Designer.vb">
+      <DependentUpon>frm_warehouse_stocktransfer_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_new_distribute.Designer.vb">
+      <DependentUpon>frm_warehouse_stocktransfer_new_distribute.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_new_distribute.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_new_request.Designer.vb">
+      <DependentUpon>frm_warehouse_stocktransfer_new_request.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_new_request.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules\config.vb" />
+    <Compile Include="modules\connection.vb" />
+    <Compile Include="frm_system\control_inventory_side.Designer.vb">
+      <DependentUpon>control_inventory_side.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_system\control_inventory_side.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="docs\doc_cheque.Designer.vb">
+      <DependentUpon>doc_cheque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_cheque.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_collection_receipt.Designer.vb">
+      <DependentUpon>doc_collection_receipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_collection_receipt.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_delivery_list.Designer.vb">
+      <DependentUpon>doc_delivery_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_delivery_list.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_draft_receipt.Designer.vb">
+      <DependentUpon>doc_draft_receipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_draft_receipt.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_payment_voucher.Designer.vb">
+      <DependentUpon>doc_payment_voucher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_payment_voucher.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_purchase_order.Designer.vb">
+      <DependentUpon>doc_purchase_order.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_purchase_order.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_purchase_credit_memo.Designer.vb">
+      <DependentUpon>doc_purchase_credit_memo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_purchase_credit_memo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_quotation.Designer.vb">
+      <DependentUpon>doc_quotation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_quotation.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_sales_order_receipt.Designer.vb">
+      <DependentUpon>doc_sales_order_receipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_sales_order_receipt.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_billing_statement.Designer.vb">
+      <DependentUpon>doc_billing_statement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_billing_statement.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="docs\doc_transfer_request.Designer.vb">
+      <DependentUpon>doc_transfer_request.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_transfer_request.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_generate_payment.Designer.vb">
+      <DependentUpon>frm_accounting_generate_payment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_generate_payment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_new_payable.Designer.vb">
+      <DependentUpon>frm_accounting_new_payable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_new_payable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_payment_cash.Designer.vb">
+      <DependentUpon>frm_accounting_payment_cash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_payment_cash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_payment_cheques.Designer.vb">
+      <DependentUpon>frm_accounting_payment_cheques.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_payment_cheques.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_payment_vouchers.Designer.vb">
+      <DependentUpon>frm_accounting_payment_vouchers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_payment_vouchers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_view_transaction.Designer.vb">
+      <DependentUpon>frm_accounting_view_transaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_view_transaction.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_approval.Designer.vb">
+      <DependentUpon>frm_admin_approval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_approval.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_banks.Designer.vb">
+      <DependentUpon>frm_admin_banks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_banks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_banks_new.Designer.vb">
+      <DependentUpon>frm_admin_banks_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_banks_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_transfer_reports.Designer.vb">
+      <DependentUpon>frm_admin_transfer_reports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_transfer_reports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_transfer_view.Designer.vb">
+      <DependentUpon>frm_admin_transfer_view.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_transfer_view.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_payment_terms.Designer.vb">
+      <DependentUpon>frm_collection_payment_terms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_payment_terms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cheque_books.Designer.vb">
+      <DependentUpon>frm_collection_cheque_books.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cheque_books.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cheque_customer.Designer.vb">
+      <DependentUpon>frm_collection_cheque_customer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cheque_customer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cheque_view.Designer.vb">
+      <DependentUpon>frm_collection_cheque_view.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cheque_view.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_epayment.Designer.vb">
+      <DependentUpon>frm_collection_epayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_epayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_supplier_invoice.Designer.vb">
+      <DependentUpon>frm_accounting_supplier_invoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_accounting\frm_accounting_supplier_invoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_payment_journal.Designer.vb">
+      <DependentUpon>frm_collection_payment_journal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_payment_journal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cash.Designer.vb">
+      <DependentUpon>frm_collection_cash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_cash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_receipts.Designer.vb">
+      <DependentUpon>frm_collection_receipts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_receipts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_refund.Designer.vb">
+      <DependentUpon>frm_collection_refund.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_refund.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_return_picker.Designer.vb">
+      <DependentUpon>frm_collection_return_picker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_return_picker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_billing_statement.Designer.vb">
+      <DependentUpon>frm_collection_billing_statement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_billing_statement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_billing_statement_new.Designer.vb">
+      <DependentUpon>frm_collection_billing_statement_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_billing_statement_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_terms.Designer.vb">
+      <DependentUpon>frm_collection_terms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection\frm_collection_terms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_system\frm_connection_panel.Designer.vb">
+      <DependentUpon>frm_connection_panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_system\frm_connection_panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_product\frm_product_details.Designer.vb">
+      <DependentUpon>frm_product_details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_product\frm_product_details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_approval_dialog.Designer.vb">
+      <DependentUpon>frm_purchaseorder_approval_dialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_approval_dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchasing_credit_memo.Designer.vb">
+      <DependentUpon>frm_purchasing_credit_memo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchasing_credit_memo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchasing_credit_memo_new.Designer.vb">
+      <DependentUpon>frm_purchasing_credit_memo_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchasing_credit_memo_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_view_ordered_items.Designer.vb">
+      <DependentUpon>frm_purchaseorder_view_ordered_items.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_view_ordered_items.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_quotation_order_list.Designer.vb">
+      <DependentUpon>frm_sales_quotation_order_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_quotation_order_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_customers_list.Designer.vb">
+      <DependentUpon>frm_sales_customers_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_customers_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_customers_new.Designer.vb">
+      <DependentUpon>frm_sales_customers_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_customers_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_order_epayment_proofs.Designer.vb">
+      <DependentUpon>frm_sales_order_epayment_proofs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_order_epayment_proofs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_password_required.Designer.vb">
+      <DependentUpon>frm_sales_password_required.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_password_required.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_return_list.Designer.vb">
+      <DependentUpon>frm_sales_return_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_return_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_return_new.Designer.vb">
+      <DependentUpon>frm_sales_return_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_return_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_start_packing.Designer.vb">
+      <DependentUpon>frm_warehouse_start_packing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_start_packing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_unserved_dialog.Designer.vb">
+      <DependentUpon>frm_sales_unserved_dialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_unserved_dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_new_deliveries.Designer.vb">
+      <DependentUpon>frm_warehouse_new_deliveries.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_new_deliveries.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_system\frm_splash_screen.Designer.vb">
+      <DependentUpon>frm_splash_screen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_system\frm_splash_screen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_ReceivingManagement.Designer.vb">
+      <DependentUpon>frm_warehouse_ReceivingManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_ReceivingManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_delivery_logs.Designer.vb">
+      <DependentUpon>frm_purchaseorder_delivery_logs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_delivery_logs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_system\frm_homepage.Designer.vb">
+      <DependentUpon>frm_homepage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_system\frm_homepage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_system\frm_login.Designer.vb">
+      <DependentUpon>frm_login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_system\frm_login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_logistics\frm_logistics_ReleasingOrderManagement.Designer.vb">
+      <DependentUpon>frm_logistics_ReleasingOrderManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_logistics\frm_logistics_ReleasingOrderManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_PackageManagement.Designer.vb">
+      <DependentUpon>frm_warehouse_PackageManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_PackageManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_sales_order_packed.Designer.vb">
+      <DependentUpon>frm_warehouse_sales_order_packed.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_sales_order_packed.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_price_book.Designer.vb">
+      <DependentUpon>frm_admin_price_book.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_price_book.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_transaction_invoice.Designer.vb">
+      <DependentUpon>frm_sales_transaction_invoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_transaction_invoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_product\frm_product_import.Designer.vb">
+      <DependentUpon>frm_product_import.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_product\frm_product_import.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stock_inventory.Designer.vb">
+      <DependentUpon>frm_warehouse_stock_inventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stock_inventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_edit.Designer.vb">
+      <DependentUpon>frm_purchaseorder_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_list.Designer.vb">
+      <DependentUpon>frm_purchaseorder_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_purchaseorder_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_delivery_receive.Designer.vb">
+      <DependentUpon>frm_warehouse_delivery_receive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_delivery_receive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_orders_list.Designer.vb">
+      <DependentUpon>frm_sales_orders_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_sales\frm_sales_orders_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_settings.Designer.vb">
+      <DependentUpon>frm_admin_settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_returns_receive.Designer.vb">
+      <DependentUpon>frm_warehouse_returns_receive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_returns_receive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stock_reconcile_list.Designer.vb">
+      <DependentUpon>frm_warehouse_stock_reconcile_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stock_reconcile_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stock_reconcile_new.Designer.vb">
+      <DependentUpon>frm_warehouse_stock_reconcile_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stock_reconcile_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_dispatch_dialog.Designer.vb">
+      <DependentUpon>frm_warehouse_stocktransfer_dispatch_dialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_dispatch_dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_receive.Designer.vb">
+      <DependentUpon>frm_warehouse_stocktransfer_receive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_receive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_stores.Designer.vb">
+      <DependentUpon>frm_admin_stores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_stores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_store_add.Designer.vb">
+      <DependentUpon>frm_admin_store_add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_store_add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_supplier.Designer.vb">
+      <DependentUpon>frm_admin_supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_product\frm_product_new.Designer.vb">
+      <DependentUpon>frm_product_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_product\frm_product_new.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_product\frm_product_catalogue.Designer.vb">
+      <DependentUpon>frm_product_catalogue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_product\frm_product_catalogue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_main.Designer.vb">
+      <DependentUpon>frm_main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_supplier_add.Designer.vb">
+      <DependentUpon>frm_admin_supplier_add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_supplier_add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_users.Designer.vb">
+      <DependentUpon>frm_admin_users.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_users.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_users_roles_assignment.Designer.vb">
+      <DependentUpon>frm_admin_users_roles_assignment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_users_roles_assignment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_report.Designer.vb">
+      <DependentUpon>frm_warehouse_stocktransfer_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_warehouse\frm_warehouse_stocktransfer_report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_reports.Designer.vb">
+      <DependentUpon>frm_admin_reports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_admin\frm_admin_reports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules\functions.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PrintData.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PrintData.vb">
+      <DependentUpon>PrintData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_packing_list.Designer.vb">
+      <DependentUpon>doc_packing_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_packing_list.vb">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="docs\doc_batch_pullout.resx">
+      <DependentUpon>doc_batch_pullout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_pullout_request.resx">
+      <DependentUpon>doc_pullout_request.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_purchase_list.resx">
+      <DependentUpon>doc_purchase_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_return_tag.resx">
+      <DependentUpon>doc_return_tag.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_sales_return.resx">
+      <DependentUpon>doc_sales_return.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_sub_transfer.resx">
+      <DependentUpon>doc_sub_transfer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_supplier_returns.resx">
+      <DependentUpon>doc_supplier_returns.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_accounting\frm_accounting_payment_vouchers_release.resx">
+      <DependentUpon>frm_accounting_payment_vouchers_release.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_ccterminal_new.resx">
+      <DependentUpon>frm_admin_ccterminal_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_price_matrix.resx">
+      <DependentUpon>frm_admin_price_matrix.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_product_database.resx">
+      <DependentUpon>frm_admin_product_database.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_users_new.resx">
+      <DependentUpon>frm_admin_users_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_users_roles_list.resx">
+      <DependentUpon>frm_admin_users_roles_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_user_management.resx">
+      <DependentUpon>frm_admin_user_management.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\ctl_collection_cashier_register_pay.resx">
+      <DependentUpon>ctl_collection_cashier_register_pay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_cashier_refund.resx">
+      <DependentUpon>frm_collection_cashier_refund.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_cashier_register_pay.resx">
+      <DependentUpon>frm_collection_cashier_register_pay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_cashier_register.resx">
+      <DependentUpon>frm_collection_cashier_register.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_payment_reversal.resx">
+      <DependentUpon>frm_collection_payment_reversal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_SelectFromBilling_dialog.resx">
+      <DependentUpon>frm_collection_SelectFromBilling_dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_logistics\frm_logistics_delivered_by.resx">
+      <DependentUpon>frm_logistics_delivered_by.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_logistics\frm_logistics_StockReturn_releasing.resx">
+      <DependentUpon>frm_logistics_StockReturn_releasing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_logistics\frm_logistics_StockTransferDispatching.resx">
+      <DependentUpon>frm_logistics_StockTransferDispatching.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_purchaseorder_purchase_request_list.resx">
+      <DependentUpon>frm_purchaseorder_purchase_request_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_purchaseorder_purchase_request_new.resx">
+      <DependentUpon>frm_purchaseorder_purchase_request_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_purchasing_credit_memo_pending_dialog.resx">
+      <DependentUpon>frm_purchasing_credit_memo_pending_dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_stock_return_confirmation.resx">
+      <DependentUpon>frm_stock_return_confirmation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_stock_return_batch.resx">
+      <DependentUpon>frm_stock_return_batch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_stock_return_delivery_logs.resx">
+      <DependentUpon>frm_stock_return_delivery_logs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_stock_return_to_vendor.resx">
+      <DependentUpon>frm_stock_return_to_vendor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_stock_return_new.resx">
+      <DependentUpon>frm_stock_return_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_stock_return_print.resx">
+      <DependentUpon>frm_stock_return_print.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_stock_return_pullout.resx">
+      <DependentUpon>frm_stock_return_pullout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_approval_dialog.resx">
+      <DependentUpon>frm_sales_approval_dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_order_new.resx">
+      <DependentUpon>frm_sales_order_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_order_qty_dialog.resx">
+      <DependentUpon>frm_sales_order_qty_dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_quotation_new.resx">
+      <DependentUpon>frm_sales_quotation_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_system\frm_printers.resx">
+      <DependentUpon>frm_printers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_barcode_generator.resx">
+      <DependentUpon>frm_warehouse_barcode_generator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_barcode_label_list.resx">
+      <DependentUpon>frm_warehouse_barcode_label_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_import.resx">
+      <DependentUpon>frm_warehouse_import.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_pricetag_generator.resx">
+      <DependentUpon>frm_warehouse_pricetag_generator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_pullout_packed.resx">
+      <DependentUpon>frm_warehouse_pullout_packed.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stocktransfer_approval_dialog.resx">
+      <DependentUpon>frm_warehouse_stocktransfer_approval_dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stocktransfer_logs.resx">
+      <DependentUpon>frm_warehouse_stocktransfer_logs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stock_inventory_export_dialog.resx">
+      <DependentUpon>frm_warehouse_stock_inventory_export_dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stock_transfer_packed.resx">
+      <DependentUpon>frm_warehouse_stock_transfer_packed.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_system\control_inventory_side.resx">
+      <DependentUpon>control_inventory_side.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_cheque.resx">
+      <DependentUpon>doc_cheque.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_collection_receipt.resx">
+      <DependentUpon>doc_collection_receipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_delivery_list.resx">
+      <DependentUpon>doc_delivery_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_draft_receipt.resx">
+      <DependentUpon>doc_draft_receipt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_payment_voucher.resx">
+      <DependentUpon>doc_payment_voucher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_purchase_order.resx">
+      <DependentUpon>doc_purchase_order.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_purchase_credit_memo.resx">
+      <DependentUpon>doc_purchase_credit_memo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_quotation.resx">
+      <DependentUpon>doc_quotation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_sales_order_receipt.resx">
+      <DependentUpon>doc_sales_order_receipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_billing_statement.resx">
+      <DependentUpon>doc_billing_statement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_transfer_request.resx">
+      <DependentUpon>doc_transfer_request.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_accounting\frm_accounting_new_payable.resx">
+      <DependentUpon>frm_accounting_new_payable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_accounting\frm_accounting_supplier_invoice.resx">
+      <DependentUpon>frm_accounting_supplier_invoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_accounting\frm_accounting_generate_payment.resx">
+      <DependentUpon>frm_accounting_generate_payment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_accounting\frm_accounting_payment_cash.resx">
+      <DependentUpon>frm_accounting_payment_cash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_accounting\frm_accounting_payment_cheques.resx">
+      <DependentUpon>frm_accounting_payment_cheques.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_accounting\frm_accounting_payment_vouchers.resx">
+      <DependentUpon>frm_accounting_payment_vouchers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_accounting\frm_accounting_view_transaction.resx">
+      <DependentUpon>frm_accounting_view_transaction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_approval.resx">
+      <DependentUpon>frm_admin_approval.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_banks.resx">
+      <DependentUpon>frm_admin_banks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_banks_new.resx">
+      <DependentUpon>frm_admin_banks_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_transfer_reports.resx">
+      <DependentUpon>frm_admin_transfer_reports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_transfer_view.resx">
+      <DependentUpon>frm_admin_transfer_view.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_payment_terms.resx">
+      <DependentUpon>frm_collection_payment_terms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_cheque_books.resx">
+      <DependentUpon>frm_collection_cheque_books.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_cheque_customer.resx">
+      <DependentUpon>frm_collection_cheque_customer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_cheque_view.resx">
+      <DependentUpon>frm_collection_cheque_view.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_epayment.resx">
+      <DependentUpon>frm_collection_epayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_payment_journal.resx">
+      <DependentUpon>frm_collection_payment_journal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_cash.resx">
+      <DependentUpon>frm_collection_cash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_receipts.resx">
+      <DependentUpon>frm_collection_receipts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_refund.resx">
+      <DependentUpon>frm_collection_refund.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_return_picker.resx">
+      <DependentUpon>frm_collection_return_picker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_billing_statement.resx">
+      <DependentUpon>frm_collection_billing_statement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_billing_statement_new.resx">
+      <DependentUpon>frm_collection_billing_statement_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection\frm_collection_terms.resx">
+      <DependentUpon>frm_collection_terms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_system\frm_connection_panel.resx">
+      <DependentUpon>frm_connection_panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_product\frm_product_details.resx">
+      <DependentUpon>frm_product_details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_purchaseorder_approval_dialog.resx">
+      <DependentUpon>frm_purchaseorder_approval_dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_purchasing_credit_memo.resx">
+      <DependentUpon>frm_purchasing_credit_memo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_purchasing_credit_memo_new.resx">
+      <DependentUpon>frm_purchasing_credit_memo_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_purchaseorder_view_ordered_items.resx">
+      <DependentUpon>frm_purchaseorder_view_ordered_items.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_quotation_order_list.resx">
+      <DependentUpon>frm_sales_quotation_order_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_customers_list.resx">
+      <DependentUpon>frm_sales_customers_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_customers_new.resx">
+      <DependentUpon>frm_sales_customers_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_order_epayment_proofs.resx">
+      <DependentUpon>frm_sales_order_epayment_proofs.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_password_required.resx">
+      <DependentUpon>frm_sales_password_required.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_return_list.resx">
+      <DependentUpon>frm_sales_return_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_return_new.resx">
+      <DependentUpon>frm_sales_return_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_start_packing.resx">
+      <DependentUpon>frm_warehouse_start_packing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_unserved_dialog.resx">
+      <DependentUpon>frm_sales_unserved_dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_new_deliveries.resx">
+      <DependentUpon>frm_warehouse_new_deliveries.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_system\frm_splash_screen.resx">
+      <DependentUpon>frm_splash_screen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_ReceivingManagement.resx">
+      <DependentUpon>frm_warehouse_ReceivingManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stocktransfer_cancel_dialog.resx">
+      <DependentUpon>frm_warehouse_stocktransfer_cancel_dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_purchaseorder_delivery_logs.resx">
+      <DependentUpon>frm_purchaseorder_delivery_logs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_system\frm_homepage.resx">
+      <DependentUpon>frm_homepage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_system\frm_login.resx">
+      <DependentUpon>frm_login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_logistics\frm_logistics_ReleasingOrderManagement.resx">
+      <DependentUpon>frm_logistics_ReleasingOrderManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_main.resx">
+      <DependentUpon>frm_main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_PackageManagement.resx">
+      <DependentUpon>frm_warehouse_PackageManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_sales_order_packed.resx">
+      <DependentUpon>frm_warehouse_sales_order_packed.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_price_book.resx">
+      <DependentUpon>frm_admin_price_book.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_transaction_invoice.resx">
+      <DependentUpon>frm_sales_transaction_invoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_product\frm_product_import.resx">
+      <DependentUpon>frm_product_import.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stocktransfer_list.resx">
+      <DependentUpon>frm_warehouse_stocktransfer_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stocktransfer_new_distribute.resx">
+      <DependentUpon>frm_warehouse_stocktransfer_new_distribute.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stocktransfer_new_request.resx">
+      <DependentUpon>frm_warehouse_stocktransfer_new_request.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stock_inventory.resx">
+      <DependentUpon>frm_warehouse_stock_inventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_purchaseorder_edit.resx">
+      <DependentUpon>frm_purchaseorder_edit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_purchaseorder_list.resx">
+      <DependentUpon>frm_purchaseorder_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_delivery_receive.resx">
+      <DependentUpon>frm_warehouse_delivery_receive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_sales\frm_sales_orders_list.resx">
+      <DependentUpon>frm_sales_orders_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_settings.resx">
+      <DependentUpon>frm_admin_settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_returns_receive.resx">
+      <DependentUpon>frm_warehouse_returns_receive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stock_reconcile_list.resx">
+      <DependentUpon>frm_warehouse_stock_reconcile_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stock_reconcile_new.resx">
+      <DependentUpon>frm_warehouse_stock_reconcile_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stocktransfer_dispatch_dialog.resx">
+      <DependentUpon>frm_warehouse_stocktransfer_dispatch_dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stocktransfer_receive.resx">
+      <DependentUpon>frm_warehouse_stocktransfer_receive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_stores.resx">
+      <DependentUpon>frm_admin_stores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_store_add.resx">
+      <DependentUpon>frm_admin_store_add.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_supplier.resx">
+      <DependentUpon>frm_admin_supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_product\frm_product_new.resx">
+      <DependentUpon>frm_product_new.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_product\frm_product_catalogue.resx">
+      <DependentUpon>frm_product_catalogue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_supplier_add.resx">
+      <DependentUpon>frm_admin_supplier_add.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_users.resx">
+      <DependentUpon>frm_admin_users.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_users_roles_assignment.resx">
+      <DependentUpon>frm_admin_users_roles_assignment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_warehouse\frm_warehouse_stocktransfer_report.resx">
+      <DependentUpon>frm_warehouse_stocktransfer_report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_admin\frm_admin_reports.resx">
+      <DependentUpon>frm_admin_reports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_packing_list.resx">
+      <DependentUpon>doc_packing_list.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x64\Debug\tmp\barcodes_to_print.csv" />
+    <None Include="bin\x64\Debug\tmp\barcode_template.btw" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PrintData.xsc">
+      <DependentUpon>PrintData.xsd</DependentUpon>
+    </None>
+    <None Include="PrintData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrintData.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PrintData.xss">
+      <DependentUpon>PrintData.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\barcode_pricetag.btw" />
+    <None Include="Resources\barcode_template.btw" />
+    <None Include="Resources\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ginee_export_template.xlsx" />
+    <None Include="Resources\import_template.xlsx" />
+    <None Include="Resources\Inventory Template.xlsx" />
+    <None Include="Resources\inventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Masterlist Format.csv" />
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_add.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_addcircled.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\additem_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_addcircled1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Winland Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historyitem_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_user.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\security_key.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drop_down1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_user1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doublenext_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doubleprev_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electronics_photo.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_16x162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\convert_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveall_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveto_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\converttoparagraphs_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\packageproduct_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boproduct_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\windows_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping_delivery.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deliver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\packing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unpacking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\packing1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\packing2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unpacking1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\packing_now.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\packing_now.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employeedirectory_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradientlightbluedatabar_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\createmodeldifferences_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\assignto_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clearall_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\solidorangedatabar_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saledetalis_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exporttocsv_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exporttoxls_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reviewallowuserstoeditranges_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recurrence_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newemployee_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switchtimescalesto_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\article_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_user.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editcontact_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zero.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZERP Imports.xlsx" />
+    <None Include="Resources\zerp.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zerp1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boorderitem_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zerp2.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electronics_photo1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adddatasource.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\actions_deletecircled.svg" />
+    <None Include="Resources\financial_32x321.png" />
+    <None Include="Resources\business_cash.svg" />
+    <None Include="Resources\actions_trash.svg" />
+    <None Include="Resources\payment.svg" />
+    <None Include="Resources\showcontainerheader.svg" />
+    <None Include="Resources\exporttoxls.svg" />
+    <None Include="Resources\next.svg" />
+    <None Include="Resources\productorderdetail-21.svg" />
+    <None Include="Resources\switchtimescalesto.svg" />
+    <None Include="Resources\markcomplete.svg" />
+    <None Include="Resources\enablesearch.svg" />
+    <None Include="Resources\updatedataextract1.svg" />
+    <None Include="Resources\morecolors.svg" />
+    <None Include="Resources\updatedataextract.svg" />
+    <None Include="Resources\changeview.svg" />
+    <None Include="Resources\detailed.svg" />
+    <None Include="Resources\print.svg" />
+    <None Include="Resources\electronics_photo2.svg" />
+    <None Include="Resources\actions_edit.svg" />
+    <None Include="Resources\delete.svg" />
+    <None Include="Resources\icon.ico" />
+    <None Include="Resources\actions_remove.svg" />
+    <None Include="Resources\actions_add1.svg" />
+    <None Include="Resources\actions_addcircled2.svg" />
+    <None Include="Resources\apply_16x162.png" />
+    <None Include="Resources\check.svg" />
+    <None Include="Resources\actions_removecircled.svg" />
+    <None Include="Resources\redo.svg" />
+    <None Include="Resources\loadfrom_32x32.png" />
+    <None Include="Resources\printer_16x16.png" />
+    <None Include="Resources\bonote_16x16.png" />
+    <None Include="Resources\bonote_32x32.png" />
+    <None Include="Resources\newtask_16x16.png" />
+    <None Include="Resources\newtask_32x322.png" />
+    <None Include="Resources\movedown_16x16.png" />
+    <None Include="Resources\movedown_32x32.png" />
+    <None Include="Resources\moveup_16x16.png" />
+    <None Include="Resources\moveup_32x32.png" />
+    <None Include="Resources\newdatasource.svg" />
+    <None Include="Resources\reading_16x16.png" />
+    <None Include="Resources\reading_32x32.png" />
+    <None Include="Resources\barcode_32x32.png" />
+    <None Include="Resources\actions_forbid.svg" />
+    <None Include="Resources\shipment.svg" />
+    <None Include="Resources\loadfrom_16x16.png" />
+    <None Include="Resources\article_32x321.png" />
+    <None Include="Resources\movepivottable_16x16.png" />
+    <None Include="Resources\up_16x161.png" />
+    <None Include="Resources\text_32x32.png" />
+    <None Include="Resources\boproductgroup_32x321.png" />
+    <None Include="Resources\financial_32x32.png" />
+    <None Include="Resources\exporttoxls_32x32.png" />
+    <None Include="Resources\exporttoxls_16x161.png" />
+    <None Include="Resources\snapmodifytablecellstyle_16x16.png" />
+    <None Include="Resources\addnewdatasource_32x32.png" />
+    <None Include="Resources\documentmap_16x16.png" />
+    <None Include="Resources\insertheader_32x32.png" />
+    <None Include="Resources\pencolor_16x16.png" />
+    <None Include="Resources\time_16x16.png" />
+    <None Include="Resources\packing3.png" />
+    <None Include="Resources\modifytablestyle_32x32.png" />
+    <None Include="Resources\historyitem_32x321.png" />
+    <None Include="Resources\info_32x32.png" />
+    <None Include="Resources\up_32x32.png" />
+    <None Include="Resources\historyitem_32x32.png" />
+    <None Include="Resources\switchtimescalesto_32x32.png" />
+    <None Include="Resources\saveto_16x16.png" />
+    <None Include="Resources\knowledgebasearticle_32x32.png" />
+    <None Include="Resources\shopping_delivery1.svg" />
+    <None Include="Resources\forward_32x32.png" />
+    <None Include="Resources\prev_32x32.png" />
+    <None Include="Resources\next_32x32.png" />
+    <None Include="Resources\boproductgroup_32x32.png" />
+    <None Include="Resources\newtask_32x321.png" />
+    <None Include="Resources\article_32x32.png" />
+    <None Include="Resources\movepivottable_32x32.png" />
+    <None Include="Resources\refresh_32x32.png" />
+    <None Include="Resources\convert_32x32.png" />
+    <None Include="Resources\employee_32x32.png" />
+    <None Include="Resources\newtask_32x32.png" />
+    <None Include="Resources\newsales_32x32.png" />
+    <None Include="Resources\printarea.svg" />
+    <None Include="Resources\cancel.svg" />
+    <None Include="Resources\cancel_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EPPlus">
+      <Version>6.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Shell.14.0">
+      <Version>14.3.25407</Version>
+    </PackageReference>
+    <PackageReference Include="MySqlConnector">
+      <Version>2.2.5</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="SSH.NET">
+      <Version>2023.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Buffers">
+      <Version>4.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Device.Location.Portable">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Diagnostics.DiagnosticSource">
+      <Version>8.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Memory">
+      <Version>4.5.5</Version>
+    </PackageReference>
+    <PackageReference Include="System.Numerics.Vectors">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+      <Version>6.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

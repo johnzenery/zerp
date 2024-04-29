@@ -1,0 +1,2 @@
+﻿Public Class frm_warehouse_stocktransfer_cancel_dialog
+End Class
