@@ -243,11 +243,9 @@ Public Class frm_warehouse_stock_inventory
                                                     FROM (
 	                                                    SELECT pid, SUM(qty) AS total_qty
 	                                                    FROM (
-	                                                        SELECT pid, qty FROM ims_winland_tinajeros
+	                                                        SELECT pid, qty FROM ims_parsell_tinajeros
 	                                                        UNION ALL
-	                                                        SELECT pid, qty FROM ims_winland_potrero
-	                                                        UNION ALL
-	                                                        SELECT pid, qty FROM ims_winland_potrero_bldg_2
+	                                                        SELECT pid, qty FROM ims_parsell_potrero
 	                                                    ) combined_tables
 	                                                    GROUP BY pid
                                                     ) combined_tables

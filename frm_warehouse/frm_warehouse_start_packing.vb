@@ -159,7 +159,7 @@ Public Class frm_warehouse_start_packing
 
 
             'Get Stores/Warehouse
-            Using cmd = New MySqlCommand("SELECT store_id, REPLACE(store_name, 'Winland ', '') AS store_name FROM ims_stores", conn)
+            Using cmd = New MySqlCommand("SELECT store_id, REPLACE(store_name, 'Parsell ', '') AS store_name FROM ims_stores", conn)
                 Using rdr = cmd.ExecuteReader
                     Dim i = 0
                     store_list.Clear()
@@ -175,7 +175,7 @@ Public Class frm_warehouse_start_packing
             For i = 0 To linkedWarehouse.Length - 1
 
                 'Get per Store Values
-                Dim ims_storeTable = String.Concat("ims_winland_", linkedWarehouse(i).Trim.Replace(" ", "_").ToLower)
+                Dim ims_storeTable = String.Concat("ims_parsell_", linkedWarehouse(i).Trim.Replace(" ", "_").ToLower)
                 Using cmd = New MySqlCommand("SELECT ims_inventory.pid, winmodel, description, qty_per_box, masterbox_qty, store_tbl.location,
                                     (IFNULL(length, 0) * IFNULL(width, 0) * IFNULL(height, 0)) / 100 AS cbm, IFNULL(weight, 0) AS kgs
                                     FROM ims_inventory
@@ -307,7 +307,7 @@ Public Class frm_warehouse_start_packing
 
 
             'Get Stores/Warehouse
-            Using cmd = New MySqlCommand("SELECT store_id, REPLACE(store_name, 'Winland ', '') AS store_name FROM ims_stores", conn)
+            Using cmd = New MySqlCommand("SELECT store_id, REPLACE(store_name, 'Parsell ', '') AS store_name FROM ims_stores", conn)
                 Using rdr = cmd.ExecuteReader
                     Dim i = 0
                     store_list.Clear()
@@ -323,7 +323,7 @@ Public Class frm_warehouse_start_packing
             For i = 0 To linkedWarehouse.Length - 1
 
                 'Get per Store Values
-                Dim ims_storeTable = String.Concat("ims_winland_", linkedWarehouse(i).Trim.Replace(" ", "_").ToLower)
+                Dim ims_storeTable = String.Concat("ims_parsell_", linkedWarehouse(i).Trim.Replace(" ", "_").ToLower)
                 Using cmd = New MySqlCommand("SELECT ims_inventory.pid, winmodel, description, qty_per_box, masterbox_qty, store_tbl.location,
                                     (IFNULL(length, 0) * IFNULL(width, 0) * IFNULL(height, 0)) / 100 AS cbm, IFNULL(weight, 0) AS kgs
                                     FROM ims_inventory
