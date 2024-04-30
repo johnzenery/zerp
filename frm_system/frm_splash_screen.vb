@@ -3,7 +3,7 @@
 Public Class frm_splash_screen
     Sub New()
         InitializeComponent()
-        Me.labelCopyright.Text = "Copyright © 2020 - " & DateTime.Now.Year.ToString() & " Winlandene Electronics and Electrical Center" & vbCrLf _
+        Me.labelCopyright.Text = "Copyright © 2020 - " & DateTime.Now.Year.ToString() & " Parsell Company" & vbCrLf _
         & "All Rights reserved."
 
         Dim version As Version = Assembly.GetExecutingAssembly().GetName().Version
