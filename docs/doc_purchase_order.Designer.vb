@@ -491,7 +491,7 @@ Partial Public Class doc_purchase_order
         'XrPictureBox1
         '
         Me.XrPictureBox1.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter
-        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource(Global.Inventory_Management.My.Resources.Resources.Winland_Logo, True)
+        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource(Global.Inventory_Management.My.Resources.Resources.Logo_Only, True)
         Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrPictureBox1.Name = "XrPictureBox1"
         Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(100.0!, 100.0!)

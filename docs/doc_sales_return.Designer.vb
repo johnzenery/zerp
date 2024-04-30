@@ -19,7 +19,6 @@ Partial Public Class doc_sales_return
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(doc_sales_return))
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
@@ -341,7 +340,7 @@ Partial Public Class doc_sales_return
         'XrPictureBox1
         '
         Me.XrPictureBox1.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter
-        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("XrPictureBox1.ImageSource"))
+        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource(Global.Inventory_Management.My.Resources.Resources.Logo_Only, True)
         Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrPictureBox1.Name = "XrPictureBox1"
         Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(100.0!, 100.0!)

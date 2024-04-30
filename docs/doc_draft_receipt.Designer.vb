@@ -126,8 +126,6 @@ Partial Public Class doc_draft_receipt
         Me.is_vatable = New DevExpress.XtraReports.Parameters.Parameter()
         Me.withholding_tax_percentage = New DevExpress.XtraReports.Parameters.Parameter()
         Me.withholding_tax_amount = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
-        Me.XrLabel36 = New DevExpress.XtraReports.UI.XRLabel()
         Me.contact_person = New DevExpress.XtraReports.Parameters.Parameter()
         Me.store_name = New DevExpress.XtraReports.Parameters.Parameter()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -513,7 +511,7 @@ Partial Public Class doc_draft_receipt
         'XrPictureBox1
         '
         Me.XrPictureBox1.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter
-        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("XrPictureBox1.ImageSource"))
+        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource(Global.Inventory_Management.My.Resources.Resources.Logo_Only, True)
         Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrPictureBox1.Name = "XrPictureBox1"
         Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(100.0!, 100.0!)
@@ -1278,23 +1276,6 @@ Partial Public Class doc_draft_receipt
         Me.withholding_tax_amount.ValueInfo = "0"
         Me.withholding_tax_amount.Visible = False
         '
-        'PageFooter
-        '
-        Me.PageFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel36})
-        Me.PageFooter.HeightF = 23.79148!
-        Me.PageFooter.Name = "PageFooter"
-        '
-        'XrLabel36
-        '
-        Me.XrLabel36.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Italic)
-        Me.XrLabel36.LocationFloat = New DevExpress.Utils.PointFloat(0!, 5.999819!)
-        Me.XrLabel36.Multiline = True
-        Me.XrLabel36.Name = "XrLabel36"
-        Me.XrLabel36.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel36.SizeF = New System.Drawing.SizeF(287.5!, 17.79166!)
-        Me.XrLabel36.StylePriority.UseFont = False
-        Me.XrLabel36.Text = "Check our website at www.winlandstore.com"
-        '
         'contact_person
         '
         Me.contact_person.Description = "contact_person"
@@ -1309,7 +1290,7 @@ Partial Public Class doc_draft_receipt
         '
         'doc_draft_receipt
         '
-        Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.TopMargin, Me.BottomMargin, Me.Detail, Me.ReportHeader, Me.PageHeader, Me.ReportFooter, Me.PageFooter})
+        Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.TopMargin, Me.BottomMargin, Me.Detail, Me.ReportHeader, Me.PageHeader, Me.ReportFooter})
         Me.CalculatedFields.AddRange(New DevExpress.XtraReports.UI.CalculatedField() {Me.sub_total})
         Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.PrintData1})
         Me.DataMember = "invoice_data"
@@ -1420,8 +1401,6 @@ Partial Public Class doc_draft_receipt
     Friend WithEvents XrLabel42 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel32 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel31 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents PageFooter As DevExpress.XtraReports.UI.PageFooterBand
-    Friend WithEvents XrLabel36 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel33 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel35 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents contact_person As DevExpress.XtraReports.Parameters.Parameter

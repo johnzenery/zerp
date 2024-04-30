@@ -19,7 +19,6 @@ Partial Public Class doc_collection_receipt
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(doc_collection_receipt))
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
@@ -345,7 +344,7 @@ Partial Public Class doc_collection_receipt
         'XrPictureBox1
         '
         Me.XrPictureBox1.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter
-        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("XrPictureBox1.ImageSource"))
+        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource(Global.Inventory_Management.My.Resources.Resources.Logo_Only, True)
         Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrPictureBox1.Name = "XrPictureBox1"
         Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(100.0!, 100.0!)
@@ -396,11 +395,11 @@ Partial Public Class doc_collection_receipt
         '
         Me.XrLabel37.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrLabel37.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.XrLabel37.LocationFloat = New DevExpress.Utils.PointFloat(341.6667!, 71.04988!)
+        Me.XrLabel37.LocationFloat = New DevExpress.Utils.PointFloat(342.6667!, 71.04988!)
         Me.XrLabel37.Multiline = True
         Me.XrLabel37.Name = "XrLabel37"
         Me.XrLabel37.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel37.SizeF = New System.Drawing.SizeF(152.15!, 7.560097!)
+        Me.XrLabel37.SizeF = New System.Drawing.SizeF(147.5722!, 7.560097!)
         Me.XrLabel37.StylePriority.UseBorders = False
         Me.XrLabel37.StylePriority.UseFont = False
         Me.XrLabel37.StylePriority.UsePadding = False

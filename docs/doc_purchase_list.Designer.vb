@@ -23,14 +23,12 @@ Partial Public Class doc_purchase_list
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
-        Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
-        Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
-        Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
         Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
         Me.XrLabel31 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel32 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel29 = New DevExpress.XtraReports.UI.XRLabel()
@@ -53,11 +51,13 @@ Partial Public Class doc_purchase_list
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
+        Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
         Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
         Me.XrLabel35 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel18 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel28 = New DevExpress.XtraReports.UI.XRLabel()
@@ -106,26 +106,6 @@ Partial Public Class doc_purchase_list
         Me.Detail.HeightF = 25.0!
         Me.Detail.Name = "Detail"
         Me.Detail.StylePriority.UseBorders = False
-        '
-        'ReportHeader
-        '
-        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel31, Me.XrLabel32, Me.XrLabel29, Me.XrLabel30, Me.XrLabel27, Me.XrLabel26, Me.XrLabel15, Me.XrLabel14, Me.XrLabel13, Me.XrLabel12, Me.XrLabel11, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel7, Me.XrLabel6, Me.XrLabel5, Me.XrLabel4, Me.XrLabel3, Me.XrLabel2, Me.XrLabel1, Me.XrPictureBox1})
-        Me.ReportHeader.HeightF = 225.5832!
-        Me.ReportHeader.Name = "ReportHeader"
-        '
-        'PageHeader
-        '
-        Me.PageHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable1})
-        Me.PageHeader.HeightF = 35.33343!
-        Me.PageHeader.Name = "PageHeader"
-        '
-        'ReportFooter
-        '
-        Me.ReportFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel35, Me.XrLabel18, Me.XrLabel28, Me.XrLine1, Me.XrRichText1, Me.XrLabel16, Me.XrLabel23, Me.XrLabel24, Me.XrLabel25})
-        Me.ReportFooter.HeightF = 287.4706!
-        Me.ReportFooter.KeepTogether = True
-        Me.ReportFooter.Name = "ReportFooter"
-        Me.ReportFooter.PrintAtBottom = True
         '
         'XrTable2
         '
@@ -182,6 +162,12 @@ Partial Public Class doc_purchase_list
         Me.XrTableCell8.Text = "[description]"
         Me.XrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         Me.XrTableCell8.Weight = 2.9133334960937503R
+        '
+        'ReportHeader
+        '
+        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel31, Me.XrLabel32, Me.XrLabel29, Me.XrLabel30, Me.XrLabel27, Me.XrLabel26, Me.XrLabel15, Me.XrLabel14, Me.XrLabel13, Me.XrLabel12, Me.XrLabel11, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel7, Me.XrLabel6, Me.XrLabel5, Me.XrLabel4, Me.XrLabel3, Me.XrLabel2, Me.XrLabel1, Me.XrPictureBox1})
+        Me.ReportHeader.HeightF = 225.5832!
+        Me.ReportHeader.Name = "ReportHeader"
         '
         'XrLabel31
         '
@@ -424,11 +410,17 @@ Partial Public Class doc_purchase_list
         'XrPictureBox1
         '
         Me.XrPictureBox1.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter
-        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("XrPictureBox1.ImageSource"))
+        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource(Global.Inventory_Management.My.Resources.Resources.Logo_Only, True)
         Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrPictureBox1.Name = "XrPictureBox1"
         Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(100.0!, 100.0!)
         Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage
+        '
+        'PageHeader
+        '
+        Me.PageHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable1})
+        Me.PageHeader.HeightF = 35.33343!
+        Me.PageHeader.Name = "PageHeader"
         '
         'XrTable1
         '
@@ -480,6 +472,14 @@ Partial Public Class doc_purchase_list
         Me.XrTableCell4.Text = "DESCRIPTION"
         Me.XrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         Me.XrTableCell4.Weight = 2.9133334960937503R
+        '
+        'ReportFooter
+        '
+        Me.ReportFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel35, Me.XrLabel18, Me.XrLabel28, Me.XrLine1, Me.XrRichText1, Me.XrLabel16, Me.XrLabel23, Me.XrLabel24, Me.XrLabel25})
+        Me.ReportFooter.HeightF = 287.4706!
+        Me.ReportFooter.KeepTogether = True
+        Me.ReportFooter.Name = "ReportFooter"
+        Me.ReportFooter.PrintAtBottom = True
         '
         'XrLabel35
         '
@@ -722,7 +722,7 @@ Partial Public Class doc_purchase_list
         Me.Font = New System.Drawing.Font("Arial", 9.75!)
         Me.Margins = New System.Drawing.Printing.Margins(50, 50, 50, 50)
         Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() {Me.supplier, Me.contact_person, Me.delivery_addr, Me.deliver_to, Me.pid, Me.print_date, Me.total, Me.store_info, Me.prepared_by, Me.approved_by, Me.lead_time, Me.approved_date, Me.expiration_date, Me.terms, Me.pub_notes, Me.store_name})
-        Me.Version = "21.1"
+        Me.Version = "22.1"
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrRichText1, System.ComponentModel.ISupportInitialize).EndInit()

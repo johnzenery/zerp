@@ -104,7 +104,7 @@ Partial Public Class doc_return_tag
         Me.XrLabel17.SizeF = New System.Drawing.SizeF(359.9997!, 70.49254!)
         Me.XrLabel17.StylePriority.UseFont = False
         Me.XrLabel17.StylePriority.UseTextAlignment = False
-        Me.XrLabel17.Text = "Winland Electronics and Electrical Center"
+        Me.XrLabel17.Text = "Parsell Company"
         Me.XrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         Me.XrLabel17.TextTrimming = System.Drawing.StringTrimming.Word
         '

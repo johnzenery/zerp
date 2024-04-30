@@ -19,7 +19,6 @@ Partial Public Class doc_pullout_request
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(doc_pullout_request))
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
@@ -55,6 +54,7 @@ Partial Public Class doc_pullout_request
         Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
+        Me.XrLabel15 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel14 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel12 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel()
@@ -72,7 +72,6 @@ Partial Public Class doc_pullout_request
         Me.supplier = New DevExpress.XtraReports.Parameters.Parameter()
         Me.warehouse_name = New DevExpress.XtraReports.Parameters.Parameter()
         Me.comments = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.XrLabel15 = New DevExpress.XtraReports.UI.XRLabel()
         Me.pullout_request_instruction = New DevExpress.XtraReports.Parameters.Parameter()
         CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -321,7 +320,7 @@ Partial Public Class doc_pullout_request
         'XrPictureBox1
         '
         Me.XrPictureBox1.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.MiddleCenter
-        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("XrPictureBox1.ImageSource"))
+        Me.XrPictureBox1.ImageSource = New DevExpress.XtraPrinting.Drawing.ImageSource(Global.Inventory_Management.My.Resources.Resources.Logo_Only, True)
         Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrPictureBox1.Name = "XrPictureBox1"
         Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(100.0!, 100.0!)
@@ -460,6 +459,16 @@ Partial Public Class doc_pullout_request
         Me.ReportFooter.Name = "ReportFooter"
         Me.ReportFooter.PrintAtBottom = True
         '
+        'XrLabel15
+        '
+        Me.XrLabel15.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pullout_request_instruction")})
+        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(292.2784!, 25.74997!)
+        Me.XrLabel15.Multiline = True
+        Me.XrLabel15.Name = "XrLabel15"
+        Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel15.SizeF = New System.Drawing.SizeF(455.6384!, 174.334!)
+        Me.XrLabel15.Text = "XrLabel6"
+        '
         'XrLabel14
         '
         Me.XrLabel14.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold)
@@ -593,16 +602,6 @@ Partial Public Class doc_pullout_request
         Me.comments.Description = "comments"
         Me.comments.Name = "comments"
         Me.comments.Visible = False
-        '
-        'XrLabel15
-        '
-        Me.XrLabel15.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?pullout_request_instruction")})
-        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(292.2784!, 25.74997!)
-        Me.XrLabel15.Multiline = True
-        Me.XrLabel15.Name = "XrLabel15"
-        Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel15.SizeF = New System.Drawing.SizeF(455.6384!, 174.334!)
-        Me.XrLabel15.Text = "XrLabel6"
         '
         'pullout_request_instruction
         '
