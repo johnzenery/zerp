@@ -75,7 +75,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>p_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -1778,6 +1778,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <Content Include="Parsell Icon.ico" />
+    <Content Include="p_icon.ico" />
+    <None Include="Resources\p_icon.ico" />
+    <None Include="Resources\Parsell Icon.png" />
     <None Include="Resources\Logo Only.png" />
     <None Include="Resources\Parsell Logo.png" />
     <None Include="Resources\actions_deletecircled.svg" />

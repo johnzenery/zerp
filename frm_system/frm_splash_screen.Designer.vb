@@ -46,7 +46,7 @@ Partial Class frm_splash_screen
         Me.lbl_version.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.lbl_version.LineVisible = True
         Me.lbl_version.Location = New System.Drawing.Point(528, 368)
-        Me.lbl_version.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_version.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_version.Name = "lbl_version"
         Me.lbl_version.Size = New System.Drawing.Size(54, 18)
         Me.lbl_version.TabIndex = 15
@@ -58,8 +58,8 @@ Partial Class frm_splash_screen
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureEdit1.Cursor = System.Windows.Forms.Cursors.Default
         Me.PictureEdit1.EditValue = CType(resources.GetObject("PictureEdit1.EditValue"), Object)
-        Me.PictureEdit1.Location = New System.Drawing.Point(33, 71)
-        Me.PictureEdit1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureEdit1.Location = New System.Drawing.Point(47, 50)
+        Me.PictureEdit1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureEdit1.Name = "PictureEdit1"
         Me.PictureEdit1.Properties.AllowFocused = False
         Me.PictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
@@ -67,7 +67,7 @@ Partial Class frm_splash_screen
         Me.PictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.PictureEdit1.Properties.ShowMenu = False
         Me.PictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze
-        Me.PictureEdit1.Size = New System.Drawing.Size(507, 191)
+        Me.PictureEdit1.Size = New System.Drawing.Size(507, 232)
         Me.PictureEdit1.TabIndex = 14
         '
         'lbl_status
@@ -86,7 +86,7 @@ Partial Class frm_splash_screen
         Me.labelCopyright.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.labelCopyright.LineVisible = True
         Me.labelCopyright.Location = New System.Drawing.Point(20, 327)
-        Me.labelCopyright.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.labelCopyright.Margin = New System.Windows.Forms.Padding(4)
         Me.labelCopyright.Name = "labelCopyright"
         Me.labelCopyright.Size = New System.Drawing.Size(239, 36)
         Me.labelCopyright.TabIndex = 11
@@ -101,7 +101,8 @@ Partial Class frm_splash_screen
         Me.Controls.Add(Me.lbl_status)
         Me.Controls.Add(Me.PictureEdit1)
         Me.Controls.Add(Me.labelCopyright)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frm_splash_screen"
         Me.Padding = New System.Windows.Forms.Padding(1)
         Me.Text = "frm_splash_screen"

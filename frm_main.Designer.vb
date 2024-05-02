@@ -1070,7 +1070,7 @@ Partial Class frm_main
         '
         'BarStaticItem1
         '
-        Me.BarStaticItem1.Caption = "ZERP"
+        Me.BarStaticItem1.Caption = "PARSELL"
         Me.BarStaticItem1.Id = 82
         Me.BarStaticItem1.ItemAppearance.Normal.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BarStaticItem1.ItemAppearance.Normal.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Hyperlink
@@ -1146,7 +1146,6 @@ Partial Class frm_main
         Me.Controls.Add(Me.BarDockControl1)
         Me.Controls.Add(Me.ToolbarFormControl1)
         Me.IconOptions.Icon = CType(resources.GetObject("frm_main.IconOptions.Icon"), System.Drawing.Icon)
-        Me.IconOptions.ShowIcon = False
         Me.IsMdiContainer = True
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)

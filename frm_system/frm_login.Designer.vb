@@ -211,6 +211,7 @@ Partial Class frm_login
         Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.IconOptions.Icon = CType(resources.GetObject("frm_login.IconOptions.Icon"), System.Drawing.Icon)
+        Me.IconOptions.Image = Global.Inventory_Management.My.Resources.Resources.p_icon
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frm_login"
