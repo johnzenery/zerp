@@ -179,7 +179,7 @@ Public Class frm_collection_billing_statement_new
                                     amount_due, paid_amount, (amount_due - paid_amount) balance, po_reference
                                     FROM ims_orders 
                                     INNER JOIN ims_customers ON ims_customers.customer_id=ims_orders.customer
-                                    WHERE first_name=@customer_name AND (payment_status='UNPAID' OR payment_status='PARTIAL') AND deleted=0", connection)
+                                    WHERE first_name=@customer_name AND (payment_status='UNPAID' OR payment_status='PARTIAL') AND date_released IS NOT NULL AND deleted=0", connection)
                 cmd.Parameters.AddWithValue("@customer_name", cbb_customers.Text.Trim)
                 cmd.ExecuteNonQuery()
 
