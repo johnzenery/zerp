@@ -172,7 +172,7 @@ Public Class frm_warehouse_stocktransfer_receive
 
 
                 'Update Source table and Set to destination table
-                Dim cmd_deduct = New MySqlCommand("UPDATE " & source_store & " SET on_hold=on_hold-@qty WHERE pid=@pid and on_hold>=@qty", connect)
+                Dim cmd_deduct = New MySqlCommand("UPDATE " & source_store & " SET on_hold=on_hold-@qty WHERE pid=@pid", connect)
                 cmd_deduct.Parameters.AddWithValue("@pid", Nothing)
                 cmd_deduct.Parameters.AddWithValue("@qty", Nothing)
                 cmd_deduct.Prepare()
