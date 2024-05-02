@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>Inventory_Management.My.MyApplication</StartupObject>
     <RootNamespace>Inventory_Management</RootNamespace>
-    <AssemblyName>ZERP Business Solution</AssemblyName>
+    <AssemblyName>Parsell Business Solution</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -45,7 +45,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ZERP Business Solution.xml</DocumentationFile>
+    <DocumentationFile>Parsell Business Solution.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
@@ -57,7 +57,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ZERP Business Solution.xml</DocumentationFile>
+    <DocumentationFile>Parsell Business Solution.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
