@@ -57,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0A08959A85164C299BFF7480A13D63B3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0B28BBD66F777443C2CB64E0377E4406"
         "OwnerKey" = "8:_985A17C393987C316F04680B935BD0BB"
         "MsmSig" = "8:_UNDEFINED"
@@ -2063,12 +2069,6 @@
         {
         "MsmKey" = "8:_9A764B4F25DEB52310E05F0C61B637AB"
         "OwnerKey" = "8:_77B5028F595946A6B08BDF0BABCC11F4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_9CA09BDF714D4DF78928F44A7354F954"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4690,6 +4690,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -4935,6 +4943,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0A08959A85164C299BFF7480A13D63B3"
+            {
+            "SourcePath" = "8:C:\\Users\\John Zenery\\Desktop\\SVG\\p_icon.ico"
+            "TargetName" = "8:p_icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_ED5007F400214153A3B0129A62E198D1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0B28BBD66F777443C2CB64E0377E4406"
@@ -8894,26 +8922,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9CA09BDF714D4DF78928F44A7354F954"
-            {
-            "SourcePath" = "8:C:\\Users\\John Zenery\\Desktop\\SVG\\Icon.ico"
-            "TargetName" = "8:Icon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_ED5007F400214153A3B0129A62E198D1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9CF7D02571B9BC74A312488F643FF029"
             {
             "AssemblyRegister" = "3:1"
@@ -11137,7 +11145,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_35C64103663B4DB8B22904D71A42551F"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_01C0043B4A7144C88B83E7C19B826DAE"
             {
             "Name" = "8:Parsell Business Solution"
             "Arguments" = "8:"
@@ -11148,10 +11156,10 @@
             "Target" = "8:_77B5028F595946A6B08BDF0BABCC11F4"
             "Folder" = "8:_ECE098B14121448C8151895C08A126CA"
             "WorkingFolder" = "8:_ED5007F400214153A3B0129A62E198D1"
-            "Icon" = "8:_9CA09BDF714D4DF78928F44A7354F954"
+            "Icon" = "8:_0A08959A85164C299BFF7480A13D63B3"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_498F8658D6C6431EA7656DB8B40A8A76"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A0D1353AB24B4B8195D53DC682330336"
             {
             "Name" = "8:Parsell Business Solution"
             "Arguments" = "8:"
@@ -11162,7 +11170,7 @@
             "Target" = "8:_77B5028F595946A6B08BDF0BABCC11F4"
             "Folder" = "8:_EB38428642A7447FB72A1B52C3AE9201"
             "WorkingFolder" = "8:_ED5007F400214153A3B0129A62E198D1"
-            "Icon" = "8:_9CA09BDF714D4DF78928F44A7354F954"
+            "Icon" = "8:_0A08959A85164C299BFF7480A13D63B3"
             "Feature" = "8:"
             }
         }
@@ -11566,7 +11574,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_77B5028F595946A6B08BDF0BABCC11F4"
             {
-            "SourcePath" = "8:..\\..\\obj\\x64\\Debug\\Parsell Business Solution.exe"
+            "SourcePath" = "8:..\\obj\\x64\\Debug\\Parsell Business Solution.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_ED5007F400214153A3B0129A62E198D1"
