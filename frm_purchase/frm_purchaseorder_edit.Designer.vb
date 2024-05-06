@@ -130,6 +130,8 @@ Partial Class frm_purchaseorder_edit
         Me.SeparatorControl1 = New DevExpress.XtraEditors.SeparatorControl()
         Me.SeparatorControl4 = New DevExpress.XtraEditors.SeparatorControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.cbb_taxCode = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.LabelControl24 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl()
         Me.cb_ewt_tax_applied = New DevExpress.XtraEditors.CheckEdit()
         Me.cb_vatable = New DevExpress.XtraEditors.CheckEdit()
@@ -161,6 +163,7 @@ Partial Class frm_purchaseorder_edit
         CType(Me.SeparatorControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
+        CType(Me.cbb_taxCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cb_ewt_tax_applied.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cb_vatable.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cb_nonvatable.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -174,7 +177,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_noofitems.Appearance.Options.UseFont = True
         Me.lbl_noofitems.Appearance.Options.UseForeColor = True
         Me.lbl_noofitems.Location = New System.Drawing.Point(106, 746)
-        Me.lbl_noofitems.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_noofitems.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_noofitems.Name = "lbl_noofitems"
         Me.lbl_noofitems.Size = New System.Drawing.Size(9, 20)
         Me.lbl_noofitems.TabIndex = 122
@@ -188,7 +191,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl18.Appearance.Options.UseFont = True
         Me.LabelControl18.Appearance.Options.UseForeColor = True
         Me.LabelControl18.Location = New System.Drawing.Point(14, 746)
-        Me.LabelControl18.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl18.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl18.Name = "LabelControl18"
         Me.LabelControl18.Size = New System.Drawing.Size(90, 20)
         Me.LabelControl18.TabIndex = 121
@@ -201,7 +204,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_date.Appearance.Options.UseFont = True
         Me.lbl_date.Appearance.Options.UseForeColor = True
         Me.lbl_date.Location = New System.Drawing.Point(438, 54)
-        Me.lbl_date.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_date.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_date.Name = "lbl_date"
         Me.lbl_date.Size = New System.Drawing.Size(26, 20)
         Me.lbl_date.TabIndex = 120
@@ -214,7 +217,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl17.Appearance.Options.UseFont = True
         Me.LabelControl17.Appearance.Options.UseForeColor = True
         Me.LabelControl17.Location = New System.Drawing.Point(328, 54)
-        Me.LabelControl17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl17.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl17.Name = "LabelControl17"
         Me.LabelControl17.Size = New System.Drawing.Size(95, 20)
         Me.LabelControl17.TabIndex = 119
@@ -228,7 +231,7 @@ Partial Class frm_purchaseorder_edit
         Me.btn_approval.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.saveto_16x16
         Me.btn_approval.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
         Me.btn_approval.Location = New System.Drawing.Point(1402, 28)
-        Me.btn_approval.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_approval.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_approval.Name = "btn_approval"
         Me.btn_approval.Size = New System.Drawing.Size(90, 74)
         Me.btn_approval.TabIndex = 116
@@ -238,7 +241,7 @@ Partial Class frm_purchaseorder_edit
         '
         Me.txt_pub_notes.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_pub_notes.Location = New System.Drawing.Point(14, 814)
-        Me.txt_pub_notes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_pub_notes.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_pub_notes.Name = "txt_pub_notes"
         Me.txt_pub_notes.Properties.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_pub_notes.Properties.Appearance.Options.UseFont = True
@@ -253,7 +256,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl15.Appearance.Options.UseFont = True
         Me.LabelControl15.Appearance.Options.UseForeColor = True
         Me.LabelControl15.Location = New System.Drawing.Point(14, 786)
-        Me.LabelControl15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl15.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl15.Name = "LabelControl15"
         Me.LabelControl15.Size = New System.Drawing.Size(92, 20)
         Me.LabelControl15.TabIndex = 109
@@ -265,7 +268,7 @@ Partial Class frm_purchaseorder_edit
         Me.btn_active_orders.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.info_16x16
         Me.btn_active_orders.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btn_active_orders.Location = New System.Drawing.Point(1422, 110)
-        Me.btn_active_orders.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_active_orders.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_active_orders.Name = "btn_active_orders"
         Me.btn_active_orders.Size = New System.Drawing.Size(147, 31)
         Me.btn_active_orders.TabIndex = 101
@@ -280,7 +283,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_withholding_tax_percentage.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lbl_withholding_tax_percentage.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lbl_withholding_tax_percentage.Location = New System.Drawing.Point(1192, 823)
-        Me.lbl_withholding_tax_percentage.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_withholding_tax_percentage.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_withholding_tax_percentage.Name = "lbl_withholding_tax_percentage"
         Me.lbl_withholding_tax_percentage.Size = New System.Drawing.Size(85, 17)
         Me.lbl_withholding_tax_percentage.TabIndex = 100
@@ -307,7 +310,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl13.Appearance.Options.UseFont = True
         Me.LabelControl13.Appearance.Options.UseForeColor = True
         Me.LabelControl13.Location = New System.Drawing.Point(245, 110)
-        Me.LabelControl13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl13.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl13.Name = "LabelControl13"
         Me.LabelControl13.Size = New System.Drawing.Size(128, 20)
         Me.LabelControl13.TabIndex = 96
@@ -316,7 +319,7 @@ Partial Class frm_purchaseorder_edit
         'txt_lead_time
         '
         Me.txt_lead_time.Location = New System.Drawing.Point(382, 106)
-        Me.txt_lead_time.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_lead_time.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_lead_time.Name = "txt_lead_time"
         Me.txt_lead_time.Properties.Appearance.Options.UseTextOptions = True
         Me.txt_lead_time.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
@@ -327,7 +330,7 @@ Partial Class frm_purchaseorder_edit
         'txt_del_address
         '
         Me.txt_del_address.Location = New System.Drawing.Point(608, 151)
-        Me.txt_del_address.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_del_address.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_del_address.Name = "txt_del_address"
         Me.txt_del_address.Size = New System.Drawing.Size(335, 69)
         Me.txt_del_address.TabIndex = 4
@@ -340,7 +343,7 @@ Partial Class frm_purchaseorder_edit
         Me.btn_approved.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.knowledgebasearticle_32x32
         Me.btn_approved.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
         Me.btn_approved.Location = New System.Drawing.Point(1094, 28)
-        Me.btn_approved.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_approved.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_approved.Name = "btn_approved"
         Me.btn_approved.Size = New System.Drawing.Size(70, 74)
         Me.btn_approved.TabIndex = 13
@@ -354,7 +357,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl12.Appearance.Options.UseFont = True
         Me.LabelControl12.Appearance.Options.UseForeColor = True
         Me.LabelControl12.Location = New System.Drawing.Point(14, 110)
-        Me.LabelControl12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl12.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl12.Name = "LabelControl12"
         Me.LabelControl12.Size = New System.Drawing.Size(98, 20)
         Me.LabelControl12.TabIndex = 85
@@ -364,7 +367,7 @@ Partial Class frm_purchaseorder_edit
         '
         Me.txt_terms.EditValue = ""
         Me.txt_terms.Location = New System.Drawing.Point(130, 106)
-        Me.txt_terms.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_terms.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_terms.Name = "txt_terms"
         Me.txt_terms.Properties.Appearance.Options.UseTextOptions = True
         Me.txt_terms.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
@@ -382,7 +385,7 @@ Partial Class frm_purchaseorder_edit
         Me.btn_send.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.assignto_32x32
         Me.btn_send.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
         Me.btn_send.Location = New System.Drawing.Point(1248, 28)
-        Me.btn_send.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_send.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_send.Name = "btn_send"
         Me.btn_send.Size = New System.Drawing.Size(70, 74)
         Me.btn_send.TabIndex = 11
@@ -397,7 +400,7 @@ Partial Class frm_purchaseorder_edit
         Me.btn_delete.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.trash_32x32
         Me.btn_delete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
         Me.btn_delete.Location = New System.Drawing.Point(1171, 28)
-        Me.btn_delete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_delete.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(70, 74)
         Me.btn_delete.TabIndex = 12
@@ -412,7 +415,7 @@ Partial Class frm_purchaseorder_edit
         Me.btn_print.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.print_32x32
         Me.btn_print.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
         Me.btn_print.Location = New System.Drawing.Point(1325, 28)
-        Me.btn_print.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_print.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_print.Name = "btn_print"
         Me.btn_print.Size = New System.Drawing.Size(70, 74)
         Me.btn_print.TabIndex = 9
@@ -427,7 +430,7 @@ Partial Class frm_purchaseorder_edit
         Me.btn_save_draft.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.saveto_16x16
         Me.btn_save_draft.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
         Me.btn_save_draft.Location = New System.Drawing.Point(1499, 28)
-        Me.btn_save_draft.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_save_draft.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_save_draft.Name = "btn_save_draft"
         Me.btn_save_draft.Size = New System.Drawing.Size(70, 74)
         Me.btn_save_draft.TabIndex = 10
@@ -437,7 +440,7 @@ Partial Class frm_purchaseorder_edit
         '
         Me.txt_priv_notes.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_priv_notes.Location = New System.Drawing.Point(461, 814)
-        Me.txt_priv_notes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_priv_notes.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_priv_notes.Name = "txt_priv_notes"
         Me.txt_priv_notes.Properties.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_priv_notes.Properties.Appearance.Options.UseFont = True
@@ -452,7 +455,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl4.Appearance.Options.UseFont = True
         Me.LabelControl4.Appearance.Options.UseForeColor = True
         Me.LabelControl4.Location = New System.Drawing.Point(461, 786)
-        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(98, 20)
         Me.LabelControl4.TabIndex = 67
@@ -461,7 +464,7 @@ Partial Class frm_purchaseorder_edit
         'cbb_deliver
         '
         Me.cbb_deliver.Location = New System.Drawing.Point(564, 106)
-        Me.cbb_deliver.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbb_deliver.Margin = New System.Windows.Forms.Padding(4)
         Me.cbb_deliver.Name = "cbb_deliver"
         Me.cbb_deliver.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbb_deliver.Size = New System.Drawing.Size(379, 34)
@@ -471,7 +474,7 @@ Partial Class frm_purchaseorder_edit
         '
         Me.txt_discount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_discount.Location = New System.Drawing.Point(86, 7)
-        Me.txt_discount.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_discount.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_discount.Name = "txt_discount"
         Me.txt_discount.Properties.Appearance.Options.UseTextOptions = True
         Me.txt_discount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
@@ -488,7 +491,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LabelControl10.Appearance.Options.UseFont = True
         Me.LabelControl10.Location = New System.Drawing.Point(24, 15)
-        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(55, 18)
         Me.LabelControl10.TabIndex = 62
@@ -499,7 +502,7 @@ Partial Class frm_purchaseorder_edit
         Me.cbb_discount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cbb_discount.EditValue = ""
         Me.cbb_discount.Location = New System.Drawing.Point(262, 7)
-        Me.cbb_discount.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbb_discount.Margin = New System.Windows.Forms.Padding(4)
         Me.cbb_discount.Name = "cbb_discount"
         Me.cbb_discount.Properties.Appearance.Options.UseTextOptions = True
         Me.cbb_discount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
@@ -515,7 +518,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Segoe UI", 16.0!, System.Drawing.FontStyle.Bold)
         Me.LabelControl9.Appearance.Options.UseFont = True
         Me.LabelControl9.Location = New System.Drawing.Point(1192, 854)
-        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(178, 37)
         Me.LabelControl9.TabIndex = 59
@@ -524,7 +527,7 @@ Partial Class frm_purchaseorder_edit
         'cbb_supplier
         '
         Me.cbb_supplier.Location = New System.Drawing.Point(130, 148)
-        Me.cbb_supplier.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbb_supplier.Margin = New System.Windows.Forms.Padding(4)
         Me.cbb_supplier.Name = "cbb_supplier"
         Me.cbb_supplier.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbb_supplier.Size = New System.Drawing.Size(323, 34)
@@ -538,7 +541,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl1.Appearance.Options.UseFont = True
         Me.LabelControl1.Appearance.Options.UseForeColor = True
         Me.LabelControl1.Location = New System.Drawing.Point(14, 151)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(62, 20)
         Me.LabelControl1.TabIndex = 0
@@ -551,7 +554,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl6.Appearance.Options.UseFont = True
         Me.LabelControl6.Appearance.Options.UseForeColor = True
         Me.LabelControl6.Location = New System.Drawing.Point(476, 110)
-        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(70, 20)
         Me.LabelControl6.TabIndex = 49
@@ -564,7 +567,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl2.Appearance.Options.UseFont = True
         Me.LabelControl2.Appearance.Options.UseForeColor = True
         Me.LabelControl2.Location = New System.Drawing.Point(476, 151)
-        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(122, 20)
         Me.LabelControl2.TabIndex = 45
@@ -573,7 +576,7 @@ Partial Class frm_purchaseorder_edit
         'txt_contact
         '
         Me.txt_contact.Location = New System.Drawing.Point(128, 190)
-        Me.txt_contact.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_contact.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_contact.Name = "txt_contact"
         Me.txt_contact.Size = New System.Drawing.Size(323, 34)
         Me.txt_contact.TabIndex = 2
@@ -585,7 +588,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl3.Appearance.Options.UseFont = True
         Me.LabelControl3.Appearance.Options.UseForeColor = True
         Me.LabelControl3.Location = New System.Drawing.Point(14, 193)
-        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(114, 20)
         Me.LabelControl3.TabIndex = 47
@@ -615,7 +618,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
         Me.LabelControl7.Appearance.Options.UseFont = True
         Me.LabelControl7.Location = New System.Drawing.Point(14, 15)
-        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(132, 31)
         Me.LabelControl7.TabIndex = 125
@@ -626,7 +629,7 @@ Partial Class frm_purchaseorder_edit
         Me.txt_poid.Appearance.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
         Me.txt_poid.Appearance.Options.UseFont = True
         Me.txt_poid.Location = New System.Drawing.Point(154, 15)
-        Me.txt_poid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_poid.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_poid.Name = "txt_poid"
         Me.txt_poid.Size = New System.Drawing.Size(0, 31)
         Me.txt_poid.TabIndex = 126
@@ -638,7 +641,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_status.Appearance.Options.UseFont = True
         Me.lbl_status.Appearance.Options.UseForeColor = True
         Me.lbl_status.Location = New System.Drawing.Point(385, 16)
-        Me.lbl_status.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_status.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_status.Name = "lbl_status"
         Me.lbl_status.Size = New System.Drawing.Size(44, 31)
         Me.lbl_status.TabIndex = 128
@@ -651,7 +654,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl8.Appearance.Options.UseFont = True
         Me.LabelControl8.Appearance.Options.UseForeColor = True
         Me.LabelControl8.Location = New System.Drawing.Point(328, 23)
-        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(51, 20)
         Me.LabelControl8.TabIndex = 127
@@ -664,7 +667,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_created_by.Appearance.Options.UseFont = True
         Me.lbl_created_by.Appearance.Options.UseForeColor = True
         Me.lbl_created_by.Location = New System.Drawing.Point(107, 54)
-        Me.lbl_created_by.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_created_by.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_created_by.Name = "lbl_created_by"
         Me.lbl_created_by.Size = New System.Drawing.Size(26, 20)
         Me.lbl_created_by.TabIndex = 130
@@ -677,7 +680,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl19.Appearance.Options.UseFont = True
         Me.LabelControl19.Appearance.Options.UseForeColor = True
         Me.LabelControl19.Location = New System.Drawing.Point(14, 54)
-        Me.LabelControl19.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl19.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl19.Name = "LabelControl19"
         Me.LabelControl19.Size = New System.Drawing.Size(81, 20)
         Me.LabelControl19.TabIndex = 129
@@ -688,10 +691,10 @@ Partial Class frm_purchaseorder_edit
         Me.grid_purchasing.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grid_purchasing.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grid_purchasing.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_purchasing.Location = New System.Drawing.Point(14, 295)
         Me.grid_purchasing.MainView = Me.grid_purchasing_view
-        Me.grid_purchasing.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grid_purchasing.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_purchasing.Name = "grid_purchasing"
         Me.grid_purchasing.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_remove_item, Me.ce_bundle})
         Me.grid_purchasing.Size = New System.Drawing.Size(1556, 286)
@@ -957,7 +960,7 @@ Partial Class frm_purchaseorder_edit
         'cbb_search
         '
         Me.cbb_search.Location = New System.Drawing.Point(112, 252)
-        Me.cbb_search.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbb_search.Margin = New System.Windows.Forms.Padding(4)
         Me.cbb_search.Name = "cbb_search"
         Me.cbb_search.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbb_search.Size = New System.Drawing.Size(265, 34)
@@ -971,7 +974,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl5.Appearance.Options.UseFont = True
         Me.LabelControl5.Appearance.Options.UseForeColor = True
         Me.LabelControl5.Location = New System.Drawing.Point(14, 260)
-        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(91, 20)
         Me.LabelControl5.TabIndex = 134
@@ -984,7 +987,7 @@ Partial Class frm_purchaseorder_edit
         Me.btn_add.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btn_add.ImageOptions.SvgImageSize = New System.Drawing.Size(20, 20)
         Me.btn_add.Location = New System.Drawing.Point(383, 252)
-        Me.btn_add.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_add.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(57, 36)
         Me.btn_add.TabIndex = 135
@@ -999,7 +1002,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_total.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lbl_total.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lbl_total.Location = New System.Drawing.Point(16, 209)
-        Me.lbl_total.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_total.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_total.Name = "lbl_total"
         Me.lbl_total.Size = New System.Drawing.Size(194, 37)
         Me.lbl_total.TabIndex = 136
@@ -1013,7 +1016,7 @@ Partial Class frm_purchaseorder_edit
         Me.btn_import.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.up_32x32
         Me.btn_import.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
         Me.btn_import.Location = New System.Drawing.Point(1017, 28)
-        Me.btn_import.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_import.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_import.Name = "btn_import"
         Me.btn_import.Size = New System.Drawing.Size(70, 74)
         Me.btn_import.TabIndex = 137
@@ -1027,7 +1030,7 @@ Partial Class frm_purchaseorder_edit
         Me.PanelControl2.Controls.Add(Me.LabelControl10)
         Me.PanelControl2.Controls.Add(Me.txt_discount)
         Me.PanelControl2.Location = New System.Drawing.Point(1208, 588)
-        Me.PanelControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelControl2.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(362, 49)
         Me.PanelControl2.TabIndex = 139
@@ -1038,7 +1041,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl16.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LabelControl16.Appearance.Options.UseFont = True
         Me.LabelControl16.Location = New System.Drawing.Point(163, 16)
-        Me.LabelControl16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl16.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl16.Name = "LabelControl16"
         Me.LabelControl16.Size = New System.Drawing.Size(94, 18)
         Me.LabelControl16.TabIndex = 63
@@ -1053,7 +1056,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl41.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.LabelControl41.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl41.Location = New System.Drawing.Point(1192, 704)
-        Me.LabelControl41.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl41.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl41.Name = "LabelControl41"
         Me.LabelControl41.Size = New System.Drawing.Size(160, 31)
         Me.LabelControl41.TabIndex = 142
@@ -1068,7 +1071,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl37.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.LabelControl37.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl37.Location = New System.Drawing.Point(1203, 673)
-        Me.LabelControl37.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl37.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl37.Name = "LabelControl37"
         Me.LabelControl37.Size = New System.Drawing.Size(147, 21)
         Me.LabelControl37.TabIndex = 141
@@ -1083,7 +1086,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl20.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.LabelControl20.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl20.Location = New System.Drawing.Point(1190, 645)
-        Me.LabelControl20.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl20.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl20.Name = "LabelControl20"
         Me.LabelControl20.Size = New System.Drawing.Size(160, 26)
         Me.LabelControl20.TabIndex = 140
@@ -1098,7 +1101,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl43.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.LabelControl43.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl43.Location = New System.Drawing.Point(1211, 735)
-        Me.LabelControl43.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl43.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl43.Name = "LabelControl43"
         Me.LabelControl43.Size = New System.Drawing.Size(141, 18)
         Me.LabelControl43.TabIndex = 144
@@ -1113,7 +1116,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl21.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.LabelControl21.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl21.Location = New System.Drawing.Point(1211, 761)
-        Me.LabelControl21.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl21.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl21.Name = "LabelControl21"
         Me.LabelControl21.Size = New System.Drawing.Size(141, 17)
         Me.LabelControl21.TabIndex = 143
@@ -1128,7 +1131,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl42.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.LabelControl42.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl42.Location = New System.Drawing.Point(1191, 794)
-        Me.LabelControl42.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl42.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl42.Name = "LabelControl42"
         Me.LabelControl42.Size = New System.Drawing.Size(160, 20)
         Me.LabelControl42.TabIndex = 146
@@ -1143,7 +1146,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl22.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.LabelControl22.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl22.Location = New System.Drawing.Point(1279, 821)
-        Me.LabelControl22.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl22.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl22.Name = "LabelControl22"
         Me.LabelControl22.Size = New System.Drawing.Size(71, 21)
         Me.LabelControl22.TabIndex = 145
@@ -1165,7 +1168,7 @@ Partial Class frm_purchaseorder_edit
         Me.panel_computation.Controls.Add(Me.SeparatorControl4)
         Me.panel_computation.Controls.Add(Me.lbl_total)
         Me.panel_computation.Location = New System.Drawing.Point(1359, 645)
-        Me.panel_computation.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panel_computation.Margin = New System.Windows.Forms.Padding(4)
         Me.panel_computation.Name = "panel_computation"
         Me.panel_computation.Size = New System.Drawing.Size(214, 258)
         Me.panel_computation.TabIndex = 147
@@ -1179,7 +1182,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_total_purchase_due.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lbl_total_purchase_due.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lbl_total_purchase_due.Location = New System.Drawing.Point(44, 144)
-        Me.lbl_total_purchase_due.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_total_purchase_due.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_total_purchase_due.Name = "lbl_total_purchase_due"
         Me.lbl_total_purchase_due.Size = New System.Drawing.Size(160, 30)
         Me.lbl_total_purchase_due.TabIndex = 18
@@ -1194,7 +1197,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_vat_excl_sales.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lbl_vat_excl_sales.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lbl_vat_excl_sales.Location = New System.Drawing.Point(44, 85)
-        Me.lbl_vat_excl_sales.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_vat_excl_sales.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_vat_excl_sales.Name = "lbl_vat_excl_sales"
         Me.lbl_vat_excl_sales.Size = New System.Drawing.Size(160, 27)
         Me.lbl_vat_excl_sales.TabIndex = 14
@@ -1208,7 +1211,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_net_purchase.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lbl_net_purchase.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lbl_net_purchase.Location = New System.Drawing.Point(44, 62)
-        Me.lbl_net_purchase.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_net_purchase.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_net_purchase.Name = "lbl_net_purchase"
         Me.lbl_net_purchase.Size = New System.Drawing.Size(160, 27)
         Me.lbl_net_purchase.TabIndex = 12
@@ -1223,7 +1226,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_discount.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lbl_discount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lbl_discount.Location = New System.Drawing.Point(44, 27)
-        Me.lbl_discount.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_discount.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_discount.Name = "lbl_discount"
         Me.lbl_discount.Size = New System.Drawing.Size(160, 21)
         Me.lbl_discount.TabIndex = 11
@@ -1238,7 +1241,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_gross_purchase.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lbl_gross_purchase.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lbl_gross_purchase.Location = New System.Drawing.Point(44, 2)
-        Me.lbl_gross_purchase.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_gross_purchase.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_gross_purchase.Name = "lbl_gross_purchase"
         Me.lbl_gross_purchase.Size = New System.Drawing.Size(160, 25)
         Me.lbl_gross_purchase.TabIndex = 5
@@ -1253,7 +1256,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_vat_amount.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lbl_vat_amount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lbl_vat_amount.Location = New System.Drawing.Point(44, 110)
-        Me.lbl_vat_amount.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_vat_amount.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_vat_amount.Name = "lbl_vat_amount"
         Me.lbl_vat_amount.Size = New System.Drawing.Size(160, 27)
         Me.lbl_vat_amount.TabIndex = 6
@@ -1269,7 +1272,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_withholding_tax_amount.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lbl_withholding_tax_amount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lbl_withholding_tax_amount.Location = New System.Drawing.Point(44, 169)
-        Me.lbl_withholding_tax_amount.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_withholding_tax_amount.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_withholding_tax_amount.Name = "lbl_withholding_tax_amount"
         Me.lbl_withholding_tax_amount.Size = New System.Drawing.Size(160, 27)
         Me.lbl_withholding_tax_amount.TabIndex = 7
@@ -1283,7 +1286,7 @@ Partial Class frm_purchaseorder_edit
         Me.lbl_delivery_fee.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.lbl_delivery_fee.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.lbl_delivery_fee.Location = New System.Drawing.Point(44, 198)
-        Me.lbl_delivery_fee.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbl_delivery_fee.Margin = New System.Windows.Forms.Padding(4)
         Me.lbl_delivery_fee.Name = "lbl_delivery_fee"
         Me.lbl_delivery_fee.Size = New System.Drawing.Size(160, 21)
         Me.lbl_delivery_fee.TabIndex = 8
@@ -1291,7 +1294,7 @@ Partial Class frm_purchaseorder_edit
         'SeparatorControl1
         '
         Me.SeparatorControl1.Location = New System.Drawing.Point(4, 46)
-        Me.SeparatorControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SeparatorControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.SeparatorControl1.Name = "SeparatorControl1"
         Me.SeparatorControl1.Padding = New System.Windows.Forms.Padding(10, 11, 10, 11)
         Me.SeparatorControl1.Size = New System.Drawing.Size(208, 28)
@@ -1300,7 +1303,7 @@ Partial Class frm_purchaseorder_edit
         'SeparatorControl4
         '
         Me.SeparatorControl4.Location = New System.Drawing.Point(2, 119)
-        Me.SeparatorControl4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SeparatorControl4.Margin = New System.Windows.Forms.Padding(4)
         Me.SeparatorControl4.Name = "SeparatorControl4"
         Me.SeparatorControl4.Padding = New System.Windows.Forms.Padding(10, 11, 10, 11)
         Me.SeparatorControl4.Size = New System.Drawing.Size(208, 42)
@@ -1309,23 +1312,46 @@ Partial Class frm_purchaseorder_edit
         'PanelControl1
         '
         Me.PanelControl1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.PanelControl1.Controls.Add(Me.cbb_taxCode)
+        Me.PanelControl1.Controls.Add(Me.LabelControl24)
         Me.PanelControl1.Controls.Add(Me.LabelControl23)
         Me.PanelControl1.Controls.Add(Me.cb_ewt_tax_applied)
         Me.PanelControl1.Controls.Add(Me.cb_vatable)
         Me.PanelControl1.Controls.Add(Me.cb_nonvatable)
         Me.PanelControl1.Controls.Add(Me.LabelControl14)
         Me.PanelControl1.Location = New System.Drawing.Point(14, 588)
-        Me.PanelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(568, 49)
+        Me.PanelControl1.Size = New System.Drawing.Size(790, 49)
         Me.PanelControl1.TabIndex = 148
+        '
+        'cbb_taxCode
+        '
+        Me.cbb_taxCode.Location = New System.Drawing.Point(651, 8)
+        Me.cbb_taxCode.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbb_taxCode.Name = "cbb_taxCode"
+        Me.cbb_taxCode.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cbb_taxCode.Size = New System.Drawing.Size(122, 34)
+        Me.cbb_taxCode.TabIndex = 153
+        Me.cbb_taxCode.TabStop = False
+        '
+        'LabelControl24
+        '
+        Me.LabelControl24.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.LabelControl24.Appearance.Options.UseFont = True
+        Me.LabelControl24.Location = New System.Drawing.Point(571, 16)
+        Me.LabelControl24.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl24.Name = "LabelControl24"
+        Me.LabelControl24.Size = New System.Drawing.Size(69, 18)
+        Me.LabelControl24.TabIndex = 152
+        Me.LabelControl24.Text = "Tax Code:"
         '
         'LabelControl23
         '
         Me.LabelControl23.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LabelControl23.Appearance.Options.UseFont = True
         Me.LabelControl23.Location = New System.Drawing.Point(424, 16)
-        Me.LabelControl23.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl23.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl23.Name = "LabelControl23"
         Me.LabelControl23.Size = New System.Drawing.Size(37, 18)
         Me.LabelControl23.TabIndex = 151
@@ -1334,7 +1360,7 @@ Partial Class frm_purchaseorder_edit
         'cb_ewt_tax_applied
         '
         Me.cb_ewt_tax_applied.Location = New System.Drawing.Point(476, 12)
-        Me.cb_ewt_tax_applied.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cb_ewt_tax_applied.Margin = New System.Windows.Forms.Padding(4)
         Me.cb_ewt_tax_applied.Name = "cb_ewt_tax_applied"
         Me.cb_ewt_tax_applied.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.cb_ewt_tax_applied.Properties.Appearance.Options.UseFont = True
@@ -1345,7 +1371,7 @@ Partial Class frm_purchaseorder_edit
         'cb_vatable
         '
         Me.cb_vatable.Location = New System.Drawing.Point(274, 12)
-        Me.cb_vatable.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cb_vatable.Margin = New System.Windows.Forms.Padding(4)
         Me.cb_vatable.Name = "cb_vatable"
         Me.cb_vatable.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.cb_vatable.Properties.Appearance.Options.UseFont = True
@@ -1357,7 +1383,7 @@ Partial Class frm_purchaseorder_edit
         '
         Me.cb_nonvatable.EditValue = True
         Me.cb_nonvatable.Location = New System.Drawing.Point(102, 11)
-        Me.cb_nonvatable.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cb_nonvatable.Margin = New System.Windows.Forms.Padding(4)
         Me.cb_nonvatable.Name = "cb_nonvatable"
         Me.cb_nonvatable.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.cb_nonvatable.Properties.Appearance.Options.UseFont = True
@@ -1370,7 +1396,7 @@ Partial Class frm_purchaseorder_edit
         Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LabelControl14.Appearance.Options.UseFont = True
         Me.LabelControl14.Location = New System.Drawing.Point(8, 15)
-        Me.LabelControl14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl14.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl14.Name = "LabelControl14"
         Me.LabelControl14.Size = New System.Drawing.Size(70, 18)
         Me.LabelControl14.TabIndex = 63
@@ -1384,7 +1410,7 @@ Partial Class frm_purchaseorder_edit
         Me.btn_recall.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.refresh_32x32
         Me.btn_recall.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter
         Me.btn_recall.Location = New System.Drawing.Point(1171, 110)
-        Me.btn_recall.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_recall.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_recall.Name = "btn_recall"
         Me.btn_recall.Size = New System.Drawing.Size(70, 74)
         Me.btn_recall.TabIndex = 149
@@ -1399,9 +1425,9 @@ Partial Class frm_purchaseorder_edit
         Me.ProgressPanel.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.ProgressPanel.Description = "Importing Orders ..."
         Me.ProgressPanel.Location = New System.Drawing.Point(1349, 218)
-        Me.ProgressPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ProgressPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.ProgressPanel.Name = "ProgressPanel"
-        Me.ProgressPanel.Padding = New System.Windows.Forms.Padding(12, 12, 12, 12)
+        Me.ProgressPanel.Padding = New System.Windows.Forms.Padding(12)
         Me.ProgressPanel.Size = New System.Drawing.Size(220, 70)
         Me.ProgressPanel.TabIndex = 150
         Me.ProgressPanel.Text = "ProgressPanel1"
@@ -1466,7 +1492,7 @@ Partial Class frm_purchaseorder_edit
         Me.Controls.Add(Me.txt_terms)
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_send)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frm_purchaseorder_edit"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "New Purchase Order"
@@ -1496,6 +1522,7 @@ Partial Class frm_purchaseorder_edit
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
+        CType(Me.cbb_taxCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cb_ewt_tax_applied.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cb_vatable.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cb_nonvatable.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1602,4 +1629,6 @@ Partial Class frm_purchaseorder_edit
     Friend WithEvents col_unit As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents col_bundle As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents ce_bundle As Repository.RepositoryItemCheckEdit
+    Friend WithEvents LabelControl24 As LabelControl
+    Friend WithEvents cbb_taxCode As ComboBoxEdit
 End Class
