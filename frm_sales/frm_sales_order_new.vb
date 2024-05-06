@@ -1606,10 +1606,10 @@ Public Class frm_sales_order_new
                     Next
 
                     Dim query = "INSERT INTO ims_orders (customer, agent, bill_to, ship_to, quotation_ref, po_reference, order_item, target_warehouse, sales_return, applied_sales_return,
-                    discount_val, discount_type, is_vatable, is_vat_exempt, is_vat_zero, vat_zero_value, invoice_no, is_withholding_tax_applied, withholding_tax_amount, withholding_tax_percentage, delivery_fee,
+                    discount_val, discount_type, is_vatable, is_vat_exempt, is_vat_zero, vat_zero_value, invoice_no, is_withholding_tax_applied, withholding_tax_amount, withholding_tax_code, withholding_tax_percentage, delivery_fee,
                     pub_note, priv_note, status, date_ordered, payment_status, payment_type, shipping_method, amount_due, balance, trucking, terms, sales_agent, packing_requirements) 
                     VALUES (@customer_id, @agent_id, @bill_to, @ship_to, @quotation_ref, @po_reference, @order_item, (SELECT store_id FROM ims_stores WHERE store_name=@target_warehouse), @sales_return, @applied_sales_return,
-                    @discount_val, @discount_type, @is_vatable, @is_vat_exempt, @is_vat_zero, @vat_zero_value, @invoice_no, @is_withholding_tax_applied, @withholding_tax_amount, @withholding_tax_percentage, @delivery_fee,
+                    @discount_val, @discount_type, @is_vatable, @is_vat_exempt, @is_vat_zero, @vat_zero_value, @invoice_no, @is_withholding_tax_applied, @withholding_tax_amount, @withholding_tax_code, @withholding_tax_percentage, @delivery_fee,
                     @pub_note, @priv_note, @status, @date_ordered, @payment_status, @payment_type, @shipping_method, @amount_due, @balance, @trucking, @terms, @sales_agent, @packing_requirements);
                     UPDATE ims_quotations SET is_converted='1', status='Converted' WHERE quotation_id=@qid"
 
@@ -1629,6 +1629,7 @@ Public Class frm_sales_order_new
                     cmd.Parameters.AddWithValue("@discount_type", cbb_discount.Text.Trim)
                     cmd.Parameters.AddWithValue("@is_withholding_tax_applied", cb_withholding_tax_applied.Checked)
                     cmd.Parameters.AddWithValue("@withholding_tax_amount", CDec(IIf(String.IsNullOrWhiteSpace(lbl_withholding_tax_amount.Text), 0, lbl_withholding_tax_amount.Text)))
+                    cmd.Parameters.AddWithValue("@withholding_tax_code", cbb_taxCode.EditValue)
                     cmd.Parameters.AddWithValue("@withholding_tax_percentage", CDec(lbl_withholding_tax_percentage.Text.Replace("Less: EWT ", String.Empty).Replace("%", String.Empty)))
                     cmd.Parameters.AddWithValue("@delivery_fee", CDec(IIf(String.IsNullOrWhiteSpace(txt_delivery_fee.Text), 0, txt_delivery_fee.Text)))
                     cmd.Parameters.AddWithValue("@pub_note", txt_pub_notes.Text)
@@ -1726,7 +1727,7 @@ Public Class frm_sales_order_new
                 Dim query = "UPDATE ims_orders SET bill_to=@bill_to, ship_to=@ship_to, trucking=@trucking, payment_status=@payment_status,
                             order_item=@order_item, pub_note=@pub_note, priv_note=@priv_note, terms=@terms, target_warehouse=(SELECT store_id FROM ims_stores WHERE store_name=@target_warehouse),
                             is_vatable=@is_vatable, is_vat_exempt=@is_vat_exempt, is_vat_zero=@is_vat_zero, vat_zero_value=@vat_zero_value, invoice_no=@invoice_no, discount_val=@discount_val, discount_type=@discount_type,
-                            is_withholding_tax_applied=@is_withholding_tax_applied, withholding_tax_amount=@withholding_tax_amount, withholding_tax_percentage=@withholding_tax_percentage,
+                            is_withholding_tax_applied=@is_withholding_tax_applied, withholding_tax_amount=@withholding_tax_amount, withholding_tax_code=@withholding_tax_code, withholding_tax_percentage=@withholding_tax_percentage,
                             delivery_fee=@delivery_fee, amount_due=@amount_due, balance=@balance, credit_amount=@credit_amount, po_reference=@po_reference, sales_return=@sales_return, applied_sales_return=@applied_sales_return,
                             payment_type=@payment_type, payment_details=@payment_details, shipping_method=@shipping_method, status=@status, packing_requirements=@packing_requirements,
                             volume=@volume, weight=@weight WHERE order_id=@order_id"
@@ -1750,6 +1751,7 @@ Public Class frm_sales_order_new
                 cmd.Parameters.AddWithValue("@discount_type", cbb_discount.Text.Trim)
                 cmd.Parameters.AddWithValue("@is_withholding_tax_applied", cb_withholding_tax_applied.Checked)
                 cmd.Parameters.AddWithValue("@withholding_tax_amount", CDec(IIf(String.IsNullOrWhiteSpace(lbl_withholding_tax_amount.Text), 0, lbl_withholding_tax_amount.Text)))
+                cmd.Parameters.AddWithValue("@withholding_tax_code", cbb_taxCode.EditValue)
                 cmd.Parameters.AddWithValue("@withholding_tax_percentage", CDec(lbl_withholding_tax_percentage.Text.Replace("Less: EWT ", String.Empty).Replace("%", String.Empty)))
                 cmd.Parameters.AddWithValue("@amount_due", CDec(lbl_total.Text))
                 cmd.Parameters.AddWithValue("@balance", CDec(lbl_total.Text))

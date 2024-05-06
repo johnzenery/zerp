@@ -22,6 +22,7 @@ Public Class frm_purchaseorder_edit
         End If
         If cbb_supplier.Properties.Items.Count = 0 Then load_supplier()
         If cbb_deliver.Properties.Items.Count = 0 Then load_locations()
+        If cbb_taxCode.Properties.Items.Count = 0 Then LoadTaxCodes()
     End Sub
 
     Private Sub frm_purchaseorder_edit_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
@@ -43,6 +44,7 @@ Public Class frm_purchaseorder_edit
 
         'Initialize
         load_locations()
+        LoadTaxCodes()
         grid_purchasing.DataSource = Set_DataTable()
 
         Try
@@ -51,7 +53,7 @@ Public Class frm_purchaseorder_edit
 
             Dim query = "SELECT ims_suppliers.supplier, ims_purchase.contact_person, address, ims_users.first_name AS created_by, DATE_ADD(CONVERT(date_sent, DATE), INTERVAL ims_purchase.lead_time DAY) AS default_date,                                     
                             (SELECT store_name FROM ims_stores WHERE store_id=deliver_to) as deliver_to, notes, status, discount_val, discount_type, orders, ims_purchase.terms, ims_purchase.lead_time, pub_notes,
-                            is_vatable, vat_rate, is_withholding_tax_applied, withholding_tax_amount, withholding_tax_percentage 
+                            is_vatable, vat_rate, is_withholding_tax_applied, withholding_tax_code, withholding_tax_amount, withholding_tax_percentage 
                             FROM ims_purchase
                             INNER JOIN ims_users ON ims_users.usr_id=created_by
                             LEFT JOIN ims_suppliers on ims_purchase.supplier=ims_suppliers.id 
@@ -82,6 +84,7 @@ Public Class frm_purchaseorder_edit
                         txt_lead_time.Text = reader("lead_time")
                         lbl_created_by.Text = String.Concat(reader("created_by"))
 
+                        cbb_taxCode.EditValue = reader("withholding_tax_code")
                         lbl_withholding_tax_percentage.Text = FormatPercent(reader("withholding_tax_percentage") / 100)
                         lbl_withholding_tax_amount.Text = FormatCurrency(reader("withholding_tax_amount"))
                         cb_ewt_tax_applied.Checked = reader("is_withholding_tax_applied")
@@ -162,6 +165,28 @@ Public Class frm_purchaseorder_edit
         End Try
     End Sub
 
+    'Load Tax Code to ComboBox
+    Private Sub LoadTaxCodes()
+        Try
+            Using conn = New MySqlConnection(str)
+                conn.Open()
+
+                'Load Tax Codes
+                Using cmd = New MySqlCommand("SELECT * FROM ims_tax_code", conn)
+                    Using rdr = cmd.ExecuteReader
+                        While rdr.Read
+                            cbb_taxCode.Properties.Items.Add(rdr("tax_code"))
+                        End While
+                    End Using
+                End Using
+
+                conn.Close()
+            End Using
+
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical, "Error")
+        End Try
+    End Sub
     'Set up the fields
     Private Sub SetFields()
 
@@ -663,9 +688,9 @@ Public Class frm_purchaseorder_edit
                     connection.Open()
 
                     Dim cmd As MySqlCommand = New MySqlCommand("INSERT INTO ims_purchase (supplier, contact_person, address, deliver_to, orders, is_vatable, vat_rate, discount_val, discount_type,
-                                                          is_withholding_tax_applied, withholding_tax_amount, withholding_tax_percentage, total, terms, lead_time, notes, pub_notes, status, created_by, date_generated)
+                                                          is_withholding_tax_applied, withholding_tax_code, withholding_tax_amount, withholding_tax_percentage, total, terms, lead_time, notes, pub_notes, status, created_by, date_generated)
                                                         VALUES ((SELECT id FROM ims_suppliers WHERE supplier=@supplier), @contact_person, @address, (SELECT store_id FROM ims_stores WHERE store_name=@deliver_to), @orders, @is_vatable, @vat_rate, @discount_val, @discount_type,
-                                                          @is_withholding_tax_applied, @withholding_tax_amount, @withholding_tax_percentage, @total, @terms, @lead_time, @notes, @pub_notes, @status, @user_id, CURDATE())", connection)
+                                                          @is_withholding_tax_applied, @withholding_tax_code, @withholding_tax_amount, @withholding_tax_percentage, @total, @terms, @lead_time, @notes, @pub_notes, @status, @user_id, CURDATE())", connection)
                     cmd.Parameters.AddWithValue("@supplier", cbb_supplier.Text.Trim())
                     cmd.Parameters.AddWithValue("@contact_person", txt_contact.Text.Trim())
                     cmd.Parameters.AddWithValue("@address", txt_del_address.Text.Trim())
@@ -676,6 +701,7 @@ Public Class frm_purchaseorder_edit
                     cmd.Parameters.AddWithValue("@discount_val", txt_discount.Text.Trim())
                     cmd.Parameters.AddWithValue("@discount_type", IIf(cbb_discount.SelectedIndex = 0, Nothing, cbb_discount.Text.Trim))
                     cmd.Parameters.AddWithValue("@is_withholding_tax_applied", cb_ewt_tax_applied.Checked)
+                    cmd.Parameters.AddWithValue("@withholding_tax_code", cbb_taxCode.EditValue)
                     cmd.Parameters.AddWithValue("@withholding_tax_amount", CDec(lbl_withholding_tax_amount.Text))
                     cmd.Parameters.AddWithValue("@withholding_tax_percentage", CDec(lbl_withholding_tax_percentage.Text.Replace("%", String.Empty)))
                     cmd.Parameters.AddWithValue("@notes", txt_priv_notes.Text.Trim())
@@ -759,7 +785,7 @@ Public Class frm_purchaseorder_edit
                     connection.Open()
                     Dim cmd = New MySqlCommand("UPDATE ims_purchase SET contact_person=@contact_person, address=@address,deliver_to=(SELECT store_id FROM ims_stores WHERE store_name=@deliver_to), status=@status,
                                         orders=@orders, is_vatable=@is_vatable, vat_rate=@vat_rate, discount_val=@discount_val, discount_type=@discount_type, pub_notes=@pub_notes, notes=@notes, 
-                                        is_withholding_tax_applied=@is_withholding_tax_applied, withholding_tax_amount=@withholding_tax_amount, withholding_tax_percentage=@withholding_tax_percentage,
+                                        is_withholding_tax_applied=@is_withholding_tax_applied, withholding_tax_code=@withholding_tax_code, withholding_tax_amount=@withholding_tax_amount, withholding_tax_percentage=@withholding_tax_percentage,
                                         total=@total, terms=@terms, lead_time=@lead_time WHERE purchase_id=@id", connection)
                     cmd.Parameters.AddWithValue("@id", CInt(purchase_id.Replace("PO", String.Empty)))
                     cmd.Parameters.AddWithValue("@contact_person", txt_contact.Text.Trim)
@@ -771,6 +797,7 @@ Public Class frm_purchaseorder_edit
                     cmd.Parameters.AddWithValue("@discount_val", txt_discount.Text.Trim)
                     cmd.Parameters.AddWithValue("@discount_type", IIf(cbb_discount.SelectedIndex = 0, Nothing, cbb_discount.Text.Trim))
                     cmd.Parameters.AddWithValue("@is_withholding_tax_applied", cb_ewt_tax_applied.Checked)
+                    cmd.Parameters.AddWithValue("@withholding_tax_code", cbb_taxCode.EditValue)
                     cmd.Parameters.AddWithValue("@withholding_tax_amount", CDec(lbl_withholding_tax_amount.Text))
                     cmd.Parameters.AddWithValue("@withholding_tax_percentage", CDec(lbl_withholding_tax_percentage.Text.Replace("%", String.Empty)))
                     cmd.Parameters.AddWithValue("@notes", txt_priv_notes.Text.Trim)
@@ -875,7 +902,7 @@ Public Class frm_purchaseorder_edit
                     connection.Open()
                     Dim cmd = New MySqlCommand("UPDATE ims_purchase SET contact_person=@contact_person, address=@address, deliver_to=(SELECT store_id FROM ims_stores WHERE store_name=@deliver_to), status=@status,
                                         orders=@orders, is_vatable=@is_vatable, vat_rate=@vat_rate, discount_val=@discount_val, discount_type=@discount_type, pub_notes=@pub_notes, notes=@notes,
-                                        is_withholding_tax_applied=@is_withholding_tax_applied, withholding_tax_amount=@withholding_tax_amount, withholding_tax_percentage=@withholding_tax_percentage,
+                                        is_withholding_tax_applied=@is_withholding_tax_applied, withholding_tax_code=@withholding_tax_code, withholding_tax_amount=@withholding_tax_amount, withholding_tax_percentage=@withholding_tax_percentage,
                                         total=@total, terms=@terms, lead_time=@lead_time WHERE purchase_id=@id", connection)
                     cmd.Parameters.AddWithValue("@id", CInt(purchase_id.Replace("PO", String.Empty)))
                     cmd.Parameters.AddWithValue("@contact_person", txt_contact.Text.Trim)
@@ -887,6 +914,7 @@ Public Class frm_purchaseorder_edit
                     cmd.Parameters.AddWithValue("@discount_val", txt_discount.Text.Trim)
                     cmd.Parameters.AddWithValue("@discount_type", IIf(cbb_discount.SelectedIndex = 0, Nothing, cbb_discount.Text.Trim))
                     cmd.Parameters.AddWithValue("@is_withholding_tax_applied", cb_ewt_tax_applied.Checked)
+                    cmd.Parameters.AddWithValue("@withholding_tax_code", cbb_taxCode.EditValue)
                     cmd.Parameters.AddWithValue("@withholding_tax_amount", CDec(lbl_withholding_tax_amount.Text))
                     cmd.Parameters.AddWithValue("@withholding_tax_percentage", CDec(lbl_withholding_tax_percentage.Text.Replace("%", String.Empty)))
                     cmd.Parameters.AddWithValue("@notes", txt_priv_notes.Text.Trim)
@@ -1377,7 +1405,7 @@ Public Class frm_purchaseorder_edit
         Try
             Using conn = New MySqlConnection(str)
                 conn.Open()
-                Using cmd = New MySqlCommand("SELECT contact_person, terms, lead_time, tax_rate, is_with_tax 
+                Using cmd = New MySqlCommand("SELECT contact_person, terms, lead_time, tax_rate, is_with_tax, tax_atc
                                             FROM ims_suppliers 
                                             WHERE supplier=@supplier", conn)
                     cmd.Parameters.AddWithValue("@supplier", cbb_supplier.Text)
@@ -1388,6 +1416,7 @@ Public Class frm_purchaseorder_edit
                             txt_lead_time.Text = rdr("lead_time")
                             lbl_withholding_tax_percentage.Text = Decimal.Round(CDec(rdr("tax_rate")) * 100, 0) & "%"
                             cb_ewt_tax_applied.EditValue = rdr("is_with_tax")
+                            cbb_taxCode.EditValue = rdr("tax_atc")
                         End While
                     End Using
                 End Using
@@ -1521,8 +1550,11 @@ Public Class frm_purchaseorder_edit
         If cb_ewt_tax_applied.Checked = True Then
             cb_vatable.Enabled = False
             cb_vatable.Checked = True
+            cbb_taxCode.Enabled = True
         Else
             cb_vatable.Enabled = True
+            cbb_taxCode.Enabled = False
+            cbb_taxCode.SelectedIndex = -1
         End If
         ComputeTotal()
     End Sub
@@ -1560,4 +1592,21 @@ Public Class frm_purchaseorder_edit
         End If
     End Sub
 
+    Private Sub cbb_taxCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbb_taxCode.SelectedIndexChanged
+        Try
+            Using conn = New MySqlConnection(str)
+                conn.Open()
+                Using cmd = New MySqlCommand("SELECT tax_rate FROM ims_tax_code WHERE tax_code=@taxRate", conn)
+                    cmd.Parameters.AddWithValue("@taxRate", cbb_taxCode.EditValue)
+                    Dim res = cmd.ExecuteScalar
+                    lbl_withholding_tax_percentage.Text = Decimal.Round(IIf(IsDBNull(res), 0, res * 100), 0) & "%"
+                End Using
+                conn.Close()
+
+                ComputeTotal()
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical, "Error")
+        End Try
+    End Sub
 End Class
