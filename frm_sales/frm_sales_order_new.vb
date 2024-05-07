@@ -87,7 +87,7 @@ Public Class frm_sales_order_new
                             FROM (SELECT pid, brand, unit, winmodel, description, CONCAT(brand, ' ', sub_category) AS combination_name, 
                                     cost, regular_price, net_regular, dealer_price, vip_price, status, length, width, height, weight FROM ims_inventory) inv
                             LEFT JOIN ims_price_matrix ON ims_price_matrix.combination_name=inv.combination_name
-                            WHERE inv.status='Active'"
+                            WHERE (inv.status='Active' OR inv.status='Phased-out')"
 
                 'Dim query = "SELECT pid, brand, winmodel, description, " & GetAccountTypeTable() & " AS unit_price FROM ims_inventory WHERE status='Active'"
                 Dim cmd = New MySqlCommand(query, connection)
