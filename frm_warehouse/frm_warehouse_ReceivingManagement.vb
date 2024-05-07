@@ -478,7 +478,7 @@ Public Class frm_warehouse_receivingManagement
                                 Dim tbl = "ims_" & row.Item("warehouse").ToString.Trim.ToLower.Replace(" ", "_")
 
                                 'CHOOSE query based on Resolve Type
-                                If row.Item("received_resolved_type").Equals("Pullout") Then
+                                If row.Item("received_resolved_type").Equals("Pullout") Or row.Item("received_resolved_type").Equals("Reject") Then
                                     query = $"UPDATE {tbl} SET on_hold=on_hold-@qty WHERE pid=@pid"
                                 Else
                                     query = $"UPDATE {tbl} SET on_hold=on_hold-@qty, qty=qty+@qty WHERE pid=@pid"
@@ -514,6 +514,13 @@ Public Class frm_warehouse_receivingManagement
                                 End Using
 
                                 'INSERT TO rs_returns_deliveries
+                                Dim status = String.Empty
+                                Select Case row.Item("received_resolved_type")
+                                    Case "Pullout" : status = "Pending for Credit"
+                                    Case "Reject" : status = "Rejected"
+                                    Case Else : status = "Received"
+                                End Select
+
                                 Using cmd = New MySqlCommand("INSERT INTO rs_returns_deliveries
                                                 (rid, qty_received, return_action, delivery_ref, serial, remarks, credit_cost, status, received_by, received_at)
                                          VALUES (@rid, @qty_received, @return_action, @delivery_ref, @serial, @remarks, IFNULL(@credit_cost, 0.00), @status, @received_by, CURRENT_TIMESTAMP)", conn, transc)
@@ -525,7 +532,7 @@ Public Class frm_warehouse_receivingManagement
                                     cmd.Parameters.AddWithValue("@remarks", row.Item("received_remarks"))
                                     cmd.Parameters.AddWithValue("@credit_cost", row.Item("received_credit_memo_cost"))
                                     cmd.Parameters.AddWithValue("@received_by", frm_main.lbl_user_id.Text)
-                                    cmd.Parameters.AddWithValue("@status", IIf(row.Item("received_resolved_type").Equals("Pullout"), "Pending for Credit", "Received"))
+                                    cmd.Parameters.AddWithValue("@status", status)
                                     cmd.ExecuteNonQuery()
                                 End Using
                             Next

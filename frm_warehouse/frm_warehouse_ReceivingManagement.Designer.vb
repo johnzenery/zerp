@@ -29,26 +29,26 @@ Partial Class frm_warehouse_receivingManagement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim EditorButtonImageOptions1 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject3 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim EditorButtonImageOptions2 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject5 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject6 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject7 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject8 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim EditorButtonImageOptions3 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject9 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject10 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject11 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject12 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim EditorButtonImageOptions4 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject13 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject14 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject15 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject16 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions5 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject17 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject18 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject19 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject20 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions6 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject21 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject22 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject23 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject24 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions7 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject25 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject26 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject27 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject28 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions8 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject29 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject30 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject31 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject32 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.btn_view_order = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.lbl_ClicktoView_1 = New System.Windows.Forms.Label()
         Me.grid_delivery = New DevExpress.XtraGrid.GridControl()
@@ -164,8 +164,8 @@ Partial Class frm_warehouse_receivingManagement
         'btn_view_order
         '
         Me.btn_view_order.AutoHeight = False
-        EditorButtonImageOptions1.Image = Global.Inventory_Management.My.Resources.Resources.snapmodifytablecellstyle_16x16
-        Me.btn_view_order.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions1, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, SerializableAppearanceObject2, SerializableAppearanceObject3, SerializableAppearanceObject4, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions5.Image = Global.Inventory_Management.My.Resources.Resources.snapmodifytablecellstyle_16x16
+        Me.btn_view_order.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions5, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject17, SerializableAppearanceObject18, SerializableAppearanceObject19, SerializableAppearanceObject20, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.btn_view_order.LookAndFeel.UseDefaultLookAndFeel = False
         Me.btn_view_order.Name = "btn_view_order"
         Me.btn_view_order.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
@@ -271,8 +271,8 @@ Partial Class frm_warehouse_receivingManagement
         'btn_view
         '
         Me.btn_view.AutoHeight = False
-        EditorButtonImageOptions2.Image = Global.Inventory_Management.My.Resources.Resources.up_16x16
-        Me.btn_view.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions2, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject5, SerializableAppearanceObject6, SerializableAppearanceObject7, SerializableAppearanceObject8, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions6.Image = Global.Inventory_Management.My.Resources.Resources.up_16x16
+        Me.btn_view.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions6, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject21, SerializableAppearanceObject22, SerializableAppearanceObject23, SerializableAppearanceObject24, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.btn_view.LookAndFeel.UseDefaultLookAndFeel = False
         Me.btn_view.Name = "btn_view"
         Me.btn_view.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
@@ -559,8 +559,8 @@ Partial Class frm_warehouse_receivingManagement
         'btn_view_srid
         '
         Me.btn_view_srid.AutoHeight = False
-        EditorButtonImageOptions3.Image = Global.Inventory_Management.My.Resources.Resources.up_16x16
-        Me.btn_view_srid.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions3, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject9, SerializableAppearanceObject10, SerializableAppearanceObject11, SerializableAppearanceObject12, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions7.Image = Global.Inventory_Management.My.Resources.Resources.up_16x16
+        Me.btn_view_srid.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions7, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject25, SerializableAppearanceObject26, SerializableAppearanceObject27, SerializableAppearanceObject28, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.btn_view_srid.LookAndFeel.UseDefaultLookAndFeel = False
         Me.btn_view_srid.Name = "btn_view_srid"
         Me.btn_view_srid.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
@@ -716,9 +716,11 @@ Partial Class frm_warehouse_receivingManagement
         'dt_received
         '
         Me.dt_received.EditValue = Nothing
-        Me.dt_received.Location = New System.Drawing.Point(156, 163)
+        Me.dt_received.Location = New System.Drawing.Point(156, 159)
         Me.dt_received.Margin = New System.Windows.Forms.Padding(4)
         Me.dt_received.Name = "dt_received"
+        Me.dt_received.Properties.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.dt_received.Properties.Appearance.Options.UseFont = True
         Me.dt_received.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dt_received.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dt_received.Properties.DisplayFormat.FormatString = "MM/dd/yyyy"
@@ -729,9 +731,11 @@ Partial Class frm_warehouse_receivingManagement
         '
         'cbb_supplier
         '
-        Me.cbb_supplier.Location = New System.Drawing.Point(156, 79)
+        Me.cbb_supplier.Location = New System.Drawing.Point(156, 75)
         Me.cbb_supplier.Margin = New System.Windows.Forms.Padding(4)
         Me.cbb_supplier.Name = "cbb_supplier"
+        Me.cbb_supplier.Properties.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.cbb_supplier.Properties.Appearance.Options.UseFont = True
         Me.cbb_supplier.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbb_supplier.Size = New System.Drawing.Size(322, 34)
         Me.cbb_supplier.TabIndex = 31
@@ -788,9 +792,9 @@ Partial Class frm_warehouse_receivingManagement
         'btn_delete_row
         '
         Me.btn_delete_row.AutoHeight = False
-        EditorButtonImageOptions4.SvgImage = Global.Inventory_Management.My.Resources.Resources.actions_removecircled
-        EditorButtonImageOptions4.SvgImageSize = New System.Drawing.Size(25, 25)
-        Me.btn_delete_row.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions4, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject13, SerializableAppearanceObject14, SerializableAppearanceObject15, SerializableAppearanceObject16, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions8.SvgImage = Global.Inventory_Management.My.Resources.Resources.actions_removecircled
+        EditorButtonImageOptions8.SvgImageSize = New System.Drawing.Size(25, 25)
+        Me.btn_delete_row.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions8, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject29, SerializableAppearanceObject30, SerializableAppearanceObject31, SerializableAppearanceObject32, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.btn_delete_row.Name = "btn_delete_row"
         Me.btn_delete_row.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
         '
@@ -855,7 +859,7 @@ Partial Class frm_warehouse_receivingManagement
         '
         Me.cbb_resolved_type.AutoHeight = False
         Me.cbb_resolved_type.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbb_resolved_type.Items.AddRange(New Object() {"Replacement", "Repair", "Pullout"})
+        Me.cbb_resolved_type.Items.AddRange(New Object() {"Replacement", "Repair", "Pullout", "Reject"})
         Me.cbb_resolved_type.Name = "cbb_resolved_type"
         Me.cbb_resolved_type.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         '
@@ -1063,31 +1067,33 @@ Partial Class frm_warehouse_receivingManagement
         '
         'LabelControl20
         '
-        Me.LabelControl20.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl20.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.LabelControl20.Appearance.Options.UseFont = True
         Me.LabelControl20.Location = New System.Drawing.Point(27, 168)
         Me.LabelControl20.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl20.Name = "LabelControl20"
-        Me.LabelControl20.Size = New System.Drawing.Size(105, 21)
+        Me.LabelControl20.Size = New System.Drawing.Size(98, 16)
         Me.LabelControl20.TabIndex = 27
         Me.LabelControl20.Text = "*Date Received"
         '
         'txt_reference_no
         '
-        Me.txt_reference_no.Location = New System.Drawing.Point(156, 121)
+        Me.txt_reference_no.Location = New System.Drawing.Point(156, 117)
         Me.txt_reference_no.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_reference_no.Name = "txt_reference_no"
+        Me.txt_reference_no.Properties.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.txt_reference_no.Properties.Appearance.Options.UseFont = True
         Me.txt_reference_no.Size = New System.Drawing.Size(123, 34)
         Me.txt_reference_no.TabIndex = 26
         '
         'LabelControl19
         '
-        Me.LabelControl19.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl19.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.LabelControl19.Appearance.Options.UseFont = True
         Me.LabelControl19.Location = New System.Drawing.Point(27, 126)
         Me.LabelControl19.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl19.Name = "LabelControl19"
-        Me.LabelControl19.Size = New System.Drawing.Size(104, 21)
+        Me.LabelControl19.Size = New System.Drawing.Size(96, 16)
         Me.LabelControl19.TabIndex = 25
         Me.LabelControl19.Text = "*Reference No."
         '
@@ -1116,12 +1122,12 @@ Partial Class frm_warehouse_receivingManagement
         '
         'LabelControl5
         '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.LabelControl5.Appearance.Options.UseFont = True
         Me.LabelControl5.Location = New System.Drawing.Point(27, 84)
         Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(65, 21)
+        Me.LabelControl5.Size = New System.Drawing.Size(58, 16)
         Me.LabelControl5.TabIndex = 6
         Me.LabelControl5.Text = "*Supplier"
         '
