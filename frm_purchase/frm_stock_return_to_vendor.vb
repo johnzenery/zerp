@@ -27,11 +27,12 @@ Public Class frm_return_to_vendor
             Using conn = New MySqlConnection(str)
                 conn.Open()
                 Using cmd = New MySqlCommand($"SELECT rs_returns.id, qty, qty_returned, ims_inventory.winmodel, ims_inventory.supmodel, ims_inventory.description, serial, rs_returns.type, issue, 
-                                                rs_returns.status, approval_winland, rs_returns.created_at, approval_supplier, pullout_id, batch_id, ims_suppliers.supplier, comments, ims_stores.store_name
+                                                rs_returns.status, approval_winland, rs_returns.created_at, rs_returns_batch.sent_at, approval_supplier, pullout_id, rs_returns.batch_id, ims_suppliers.supplier, comments, ims_stores.store_name
                                             FROM rs_returns
                                             INNER JOIN ims_inventory ON ims_inventory.pid=rs_returns.pid
                                             LEFT JOIN ims_suppliers ON ims_suppliers.id=rs_returns.supplier_id
                                             LEFT JOIN ims_stores ON ims_stores.store_id=rs_returns.src_warehouse_id
+                                            LEFT JOIN rs_returns_batch ON rs_returns_batch.batch_id=rs_returns.batch_id
                                             WHERE { query } AND rs_returns.is_deleted='0'", conn)
                     Dim dt = New DataTable
                     Dim da = New MySqlDataAdapter(cmd)
