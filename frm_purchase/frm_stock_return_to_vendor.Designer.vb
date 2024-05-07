@@ -59,7 +59,7 @@ Partial Class frm_return_to_vendor
         Me.col_approval_supplier = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.col_pullout = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.col_batch = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.col_createdat = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.col_sent_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.col_issue = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.col_comments = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.col_action = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -159,7 +159,7 @@ Partial Class frm_return_to_vendor
         Me.grid_returns_view.Appearance.SelectedRow.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.grid_returns_view.Appearance.SelectedRow.Options.UseBackColor = True
         Me.grid_returns_view.Appearance.SelectedRow.Options.UseForeColor = True
-        Me.grid_returns_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_rid, Me.col_qty, Me.col_returned, Me.col_winmodel, Me.col_supmodel, Me.col_description, Me.col_supplier, Me.col_serial, Me.col_type, Me.col_status, Me.col_warehouse, Me.col_date_created, Me.col_approval_winland, Me.col_approval_supplier, Me.col_pullout, Me.col_batch, Me.col_createdat, Me.col_issue, Me.col_comments, Me.col_action, Me.col_print})
+        Me.grid_returns_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_rid, Me.col_qty, Me.col_returned, Me.col_winmodel, Me.col_supmodel, Me.col_description, Me.col_supplier, Me.col_serial, Me.col_type, Me.col_status, Me.col_warehouse, Me.col_date_created, Me.col_approval_winland, Me.col_approval_supplier, Me.col_pullout, Me.col_batch, Me.col_sent_at, Me.col_issue, Me.col_comments, Me.col_action, Me.col_print})
         Me.grid_returns_view.DetailHeight = 431
         Me.grid_returns_view.GridControl = Me.grid_returns
         Me.grid_returns_view.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always
@@ -359,22 +359,22 @@ Partial Class frm_return_to_vendor
         Me.col_batch.VisibleIndex = 19
         Me.col_batch.Width = 93
         '
-        'col_createdat
+        'col_sent_at
         '
-        Me.col_createdat.AppearanceCell.Options.UseTextOptions = True
-        Me.col_createdat.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.col_createdat.AppearanceHeader.Options.UseTextOptions = True
-        Me.col_createdat.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.col_createdat.Caption = "Date Sent"
-        Me.col_createdat.DisplayFormat.FormatString = "MM/dd/yyyy"
-        Me.col_createdat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.col_createdat.FieldName = "sent_at"
-        Me.col_createdat.MaxWidth = 140
-        Me.col_createdat.MinWidth = 140
-        Me.col_createdat.Name = "col_createdat"
-        Me.col_createdat.Visible = True
-        Me.col_createdat.VisibleIndex = 20
-        Me.col_createdat.Width = 140
+        Me.col_sent_at.AppearanceCell.Options.UseTextOptions = True
+        Me.col_sent_at.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_sent_at.AppearanceHeader.Options.UseTextOptions = True
+        Me.col_sent_at.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_sent_at.Caption = "Date Sent"
+        Me.col_sent_at.DisplayFormat.FormatString = "MM/dd/yyyy"
+        Me.col_sent_at.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.col_sent_at.FieldName = "sent_at"
+        Me.col_sent_at.MaxWidth = 140
+        Me.col_sent_at.MinWidth = 140
+        Me.col_sent_at.Name = "col_sent_at"
+        Me.col_sent_at.Visible = True
+        Me.col_sent_at.VisibleIndex = 20
+        Me.col_sent_at.Width = 140
         '
         'col_issue
         '
@@ -985,7 +985,7 @@ Partial Class frm_return_to_vendor
     Friend WithEvents col_type As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents col_status As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents col_pullout As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents col_createdat As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents col_sent_at As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents btn_view_order As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
     Friend WithEvents btn_new_return As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btn_pullout_request As DevExpress.XtraEditors.SimpleButton
