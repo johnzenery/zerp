@@ -203,6 +203,12 @@
     <Compile Include="docs\doc_sales_return.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="docs\doc_stock_liquidation.Designer.vb">
+      <DependentUpon>doc_stock_liquidation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="docs\doc_stock_liquidation.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="docs\doc_sub_transfer.Designer.vb">
       <DependentUpon>doc_sub_transfer.vb</DependentUpon>
     </Compile>
@@ -345,6 +351,12 @@
       <DependentUpon>frm_stock_return_delivery_logs.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_purchase\frm_stock_return_delivery_logs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_liquidation_new.Designer.vb">
+      <DependentUpon>frm_stock_return_liquidation_new.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase\frm_stock_return_liquidation_new.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_purchase\frm_stock_return_to_vendor.Designer.vb">
@@ -1045,6 +1057,9 @@
     <EmbeddedResource Include="docs\doc_sales_return.resx">
       <DependentUpon>doc_sales_return.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="docs\doc_stock_liquidation.resx">
+      <DependentUpon>doc_stock_liquidation.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="docs\doc_sub_transfer.resx">
       <DependentUpon>doc_sub_transfer.vb</DependentUpon>
     </EmbeddedResource>
@@ -1116,6 +1131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_purchase\frm_stock_return_delivery_logs.resx">
       <DependentUpon>frm_stock_return_delivery_logs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase\frm_stock_return_liquidation_new.resx">
+      <DependentUpon>frm_stock_return_liquidation_new.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_purchase\frm_stock_return_to_vendor.resx">
       <DependentUpon>frm_stock_return_to_vendor.vb</DependentUpon>
@@ -1496,7 +1514,9 @@
     <None Include="Resources\inventory.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Logo Only.png" />
     <None Include="Resources\Masterlist Format.csv" />
+    <None Include="Resources\Parsell Logo.png" />
     <None Include="Resources\report.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1777,13 +1797,10 @@
     <None Include="Resources\adddatasource.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon.ico" />
     <Content Include="Parsell Icon.ico" />
     <Content Include="p_icon.ico" />
     <None Include="Resources\p_icon.ico" />
     <None Include="Resources\Parsell Icon.png" />
-    <None Include="Resources\Logo Only.png" />
-    <None Include="Resources\Parsell Logo.png" />
     <None Include="Resources\actions_deletecircled.svg" />
     <None Include="Resources\financial_32x321.png" />
     <None Include="Resources\business_cash.svg" />
