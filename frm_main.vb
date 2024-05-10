@@ -841,6 +841,10 @@ Public Class frm_main
         Await LoadFrm(New frm_admin_approval, "frm_admin_approval_products")
     End Sub
 
+    'Approvals : Stock Liquidation
+    Private Async Sub submenu2_approvals_stock_liquidation_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles submenu2_approvals_stock_liquidation.ItemClick
+        Await LoadFrm(New frm_admin_approval, "frm_admin_approval_stock_liquidation")
+    End Sub
 End Class
 
 
