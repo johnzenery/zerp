@@ -10,6 +10,7 @@ Public Class frm_return_to_vendor
         LoadReturns(False)
         LoadPulloutRequests()
         LoadBatchPullouts()
+        LoadLiquidation()
     End Sub
 
 
@@ -93,6 +94,30 @@ Public Class frm_return_to_vendor
         End Try
     End Sub
 
+    'LOAD LIQUIDATION
+    Private Sub LoadLiquidation()
+        Try
+            Using conn = New MySqlConnection(str)
+                conn.Open()
+                Using cmd = New MySqlCommand("SELECT liquidation_id, creator.first_name AS created_by, created_at, rs_returns_liquidation.status
+                                            FROM rs_returns_liquidation
+                                            LEFT JOIN ims_users AS creator ON creator.usr_id=rs_returns_liquidation.created_by
+                                            WHERE rs_returns_liquidation.is_deleted='0'", conn)
+                    Dim dt = New DataTable
+                    Dim da = New MySqlDataAdapter(cmd)
+                    da.Fill(dt)
+                    grid_liquidation.DataSource = dt
+                End Using
+                conn.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox($"An error occured: {vbCrLf & vbCrLf & ex.Message}", vbCritical, "Error")
+        End Try
+    End Sub
+
+
+
+
     'BUTTON : NEW RETURN
     Private Async Sub btn_new_return_Click(sender As Object, e As EventArgs) Handles btn_new_return.Click
         Await frm_main.LoadFrm(New frm_stock_return_new, "frm_purchase_return_new")
@@ -122,6 +147,7 @@ Public Class frm_return_to_vendor
         LoadReturns(IIf(btn_show_completed.Text = "Show Completed", False, True))
         LoadPulloutRequests()
         LoadBatchPullouts()
+        LoadLiquidation()
     End Sub
 
     'col_action (BUTTON : ACTION)
@@ -216,8 +242,21 @@ Public Class frm_return_to_vendor
         End If
     End Sub
 
-    'SHOW DELIVERY LOGS
+    'BUTTON : SHOW RETURN TO VENDOR LOGS
     Private Async Sub btn_return_to_vendor_logs_Click(sender As Object, e As EventArgs) Handles btn_return_to_vendor_logs.Click
         Await frm_main.LoadFrm(New frm_stock_return_delivery_logs, "frm_stock_return_delivery_logs")
+    End Sub
+
+    'BUTTON : NEW LIQUIDATION
+    Private Async Sub btn_liquidate_new_Click(sender As Object, e As EventArgs) Handles btn_liquidate_new.Click
+        Await frm_main.LoadFrm(New frm_stock_return_liquidation_new, "frm_stock_return_liquidation_new")
+    End Sub
+
+    'BUTTON: VIEW LIQUIDATION
+    Private Async Sub btn_view_liquidation_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles btn_view_liquidation.ButtonClick
+        Dim lid = grid_liquidation_view.GetFocusedRowCellValue(col_liquidate_id)
+        Dim frm = New frm_stock_return_liquidation_new
+        frm.liquidation_id = lid
+        Await frm_main.LoadFrm(frm, "frm_stock_return_liquidation_new_" & lid)
     End Sub
 End Class

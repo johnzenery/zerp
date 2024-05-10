@@ -40,6 +40,11 @@ Partial Class frm_return_to_vendor
         Dim SerializableAppearanceObject14 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim SerializableAppearanceObject15 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim SerializableAppearanceObject16 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions5 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject17 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject18 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject19 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject20 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.grid_returns = New DevExpress.XtraGrid.GridControl()
         Me.grid_returns_view = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -97,10 +102,21 @@ Partial Class frm_return_to_vendor
         Me.btn_batch_open = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.tab_liquidate = New DevExpress.XtraTab.XtraTabPage()
+        Me.grid_liquidation = New DevExpress.XtraGrid.GridControl()
+        Me.grid_liquidation_view = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.col_liquidate_id = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.btn_view_liquidation = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.btn_refresh = New DevExpress.XtraEditors.SimpleButton()
         Me.btn_confirmation = New DevExpress.XtraEditors.SimpleButton()
         Me.btn_batch_pullout = New DevExpress.XtraEditors.SimpleButton()
         Me.btn_return_to_vendor_logs = New DevExpress.XtraEditors.SimpleButton()
+        Me.btn_liquidate_new = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.grid_returns, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_returns_view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_view_order, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,6 +132,10 @@ Partial Class frm_return_to_vendor
         CType(Me.grid_batch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_batch_view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_batch_open, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tab_liquidate.SuspendLayout()
+        CType(Me.grid_liquidation, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grid_liquidation_view, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_view_liquidation, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -143,7 +163,7 @@ Partial Class frm_return_to_vendor
         Me.grid_returns.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_returns.Name = "grid_returns"
         Me.grid_returns.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_view_order, Me.btn_print})
-        Me.grid_returns.Size = New System.Drawing.Size(1372, 553)
+        Me.grid_returns.Size = New System.Drawing.Size(1372, 520)
         Me.grid_returns.TabIndex = 133
         Me.grid_returns.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_returns_view})
         '
@@ -444,10 +464,11 @@ Partial Class frm_return_to_vendor
         Me.btn_new_return.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.newsales_32x32
         Me.btn_new_return.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btn_new_return.ImageOptions.ImageToTextIndent = 5
-        Me.btn_new_return.Location = New System.Drawing.Point(18, 71)
+        Me.btn_new_return.ImageOptions.SvgImageSize = New System.Drawing.Size(18, 18)
+        Me.btn_new_return.Location = New System.Drawing.Point(18, 66)
         Me.btn_new_return.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_new_return.Name = "btn_new_return"
-        Me.btn_new_return.Size = New System.Drawing.Size(187, 57)
+        Me.btn_new_return.Size = New System.Drawing.Size(187, 46)
         Me.btn_new_return.TabIndex = 134
         Me.btn_new_return.Text = "New Return"
         '
@@ -459,13 +480,14 @@ Partial Class frm_return_to_vendor
         Me.btn_pullout_request.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.btn_pullout_request.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
         Me.btn_pullout_request.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btn_pullout_request.ImageOptions.ImageToTextIndent = 5
+        Me.btn_pullout_request.ImageOptions.ImageToTextIndent = 10
         Me.btn_pullout_request.ImageOptions.SvgImage = CType(resources.GetObject("btn_pullout_request.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_pullout_request.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None
-        Me.btn_pullout_request.Location = New System.Drawing.Point(211, 71)
+        Me.btn_pullout_request.ImageOptions.SvgImageSize = New System.Drawing.Size(18, 18)
+        Me.btn_pullout_request.Location = New System.Drawing.Point(211, 66)
         Me.btn_pullout_request.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_pullout_request.Name = "btn_pullout_request"
-        Me.btn_pullout_request.Size = New System.Drawing.Size(224, 57)
+        Me.btn_pullout_request.Size = New System.Drawing.Size(224, 46)
         Me.btn_pullout_request.TabIndex = 135
         Me.btn_pullout_request.Text = "New Pull Out Request"
         '
@@ -474,13 +496,13 @@ Partial Class frm_return_to_vendor
         Me.XtraTabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.XtraTabControl1.Location = New System.Drawing.Point(-1, 146)
+        Me.XtraTabControl1.Location = New System.Drawing.Point(-1, 179)
         Me.XtraTabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.tab_returns
-        Me.XtraTabControl1.Size = New System.Drawing.Size(1382, 662)
+        Me.XtraTabControl1.Size = New System.Drawing.Size(1382, 629)
         Me.XtraTabControl1.TabIndex = 136
-        Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tab_returns, Me.tab_pullouts, Me.tab_batch})
+        Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tab_returns, Me.tab_pullouts, Me.tab_batch, Me.tab_liquidate})
         '
         'tab_returns
         '
@@ -489,7 +511,7 @@ Partial Class frm_return_to_vendor
         Me.tab_returns.Controls.Add(Me.grid_returns)
         Me.tab_returns.Margin = New System.Windows.Forms.Padding(4)
         Me.tab_returns.Name = "tab_returns"
-        Me.tab_returns.Size = New System.Drawing.Size(1380, 624)
+        Me.tab_returns.Size = New System.Drawing.Size(1380, 591)
         Me.tab_returns.Text = "Returns"
         '
         'btn_show_completed
@@ -530,7 +552,7 @@ Partial Class frm_return_to_vendor
         Me.tab_pullouts.Controls.Add(Me.LabelControl3)
         Me.tab_pullouts.Margin = New System.Windows.Forms.Padding(4)
         Me.tab_pullouts.Name = "tab_pullouts"
-        Me.tab_pullouts.Size = New System.Drawing.Size(1380, 624)
+        Me.tab_pullouts.Size = New System.Drawing.Size(1380, 591)
         Me.tab_pullouts.Text = "Pullouts Request"
         '
         'grid_pullouts
@@ -695,7 +717,7 @@ Partial Class frm_return_to_vendor
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(206, 30)
         Me.LabelControl3.TabIndex = 135
-        Me.LabelControl3.Text = "Pull Outs Request"
+        Me.LabelControl3.Text = "Pull Out Requests"
         '
         'tab_batch
         '
@@ -703,7 +725,7 @@ Partial Class frm_return_to_vendor
         Me.tab_batch.Controls.Add(Me.LabelControl4)
         Me.tab_batch.Margin = New System.Windows.Forms.Padding(4)
         Me.tab_batch.Name = "tab_batch"
-        Me.tab_batch.Size = New System.Drawing.Size(1380, 624)
+        Me.tab_batch.Size = New System.Drawing.Size(1380, 591)
         Me.tab_batch.Text = "Batch Pullout"
         '
         'grid_batch
@@ -857,6 +879,141 @@ Partial Class frm_return_to_vendor
         Me.LabelControl4.TabIndex = 136
         Me.LabelControl4.Text = "Batch Pullout"
         '
+        'tab_liquidate
+        '
+        Me.tab_liquidate.Controls.Add(Me.grid_liquidation)
+        Me.tab_liquidate.Controls.Add(Me.LabelControl5)
+        Me.tab_liquidate.Name = "tab_liquidate"
+        Me.tab_liquidate.Size = New System.Drawing.Size(1380, 591)
+        Me.tab_liquidate.Text = "Stock Liquidation"
+        '
+        'grid_liquidation
+        '
+        Me.grid_liquidation.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grid_liquidation.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
+        Me.grid_liquidation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grid_liquidation.Location = New System.Drawing.Point(4, 68)
+        Me.grid_liquidation.MainView = Me.grid_liquidation_view
+        Me.grid_liquidation.Margin = New System.Windows.Forms.Padding(4)
+        Me.grid_liquidation.Name = "grid_liquidation"
+        Me.grid_liquidation.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_view_liquidation})
+        Me.grid_liquidation.Size = New System.Drawing.Size(1372, 553)
+        Me.grid_liquidation.TabIndex = 138
+        Me.grid_liquidation.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_liquidation_view})
+        '
+        'grid_liquidation_view
+        '
+        Me.grid_liquidation_view.Appearance.HeaderPanel.BackColor = System.Drawing.Color.White
+        Me.grid_liquidation_view.Appearance.HeaderPanel.Options.UseBackColor = True
+        Me.grid_liquidation_view.Appearance.HeaderPanel.Options.UseTextOptions = True
+        Me.grid_liquidation_view.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.grid_liquidation_view.Appearance.Row.Font = New System.Drawing.Font("Tahoma", 8.25!)
+        Me.grid_liquidation_view.Appearance.Row.Options.UseFont = True
+        Me.grid_liquidation_view.Appearance.SelectedRow.BackColor = System.Drawing.Color.White
+        Me.grid_liquidation_view.Appearance.SelectedRow.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.grid_liquidation_view.Appearance.SelectedRow.Options.UseBackColor = True
+        Me.grid_liquidation_view.Appearance.SelectedRow.Options.UseForeColor = True
+        Me.grid_liquidation_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_liquidate_id, Me.GridColumn3, Me.GridColumn14, Me.GridColumn15, Me.GridColumn16})
+        Me.grid_liquidation_view.DetailHeight = 431
+        Me.grid_liquidation_view.GridControl = Me.grid_liquidation
+        Me.grid_liquidation_view.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always
+        Me.grid_liquidation_view.Name = "grid_liquidation_view"
+        Me.grid_liquidation_view.OptionsBehavior.ReadOnly = True
+        Me.grid_liquidation_view.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.grid_liquidation_view.OptionsSelection.ResetSelectionClickOutsideCheckboxSelector = True
+        '
+        'col_liquidate_id
+        '
+        Me.col_liquidate_id.AppearanceCell.Options.UseTextOptions = True
+        Me.col_liquidate_id.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_liquidate_id.AppearanceHeader.Options.UseTextOptions = True
+        Me.col_liquidate_id.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.col_liquidate_id.Caption = "SLID"
+        Me.col_liquidate_id.FieldName = "liquidation_id"
+        Me.col_liquidate_id.MaxWidth = 120
+        Me.col_liquidate_id.MinWidth = 12
+        Me.col_liquidate_id.Name = "col_liquidate_id"
+        Me.col_liquidate_id.Visible = True
+        Me.col_liquidate_id.VisibleIndex = 1
+        Me.col_liquidate_id.Width = 87
+        '
+        'GridColumn3
+        '
+        Me.GridColumn3.AppearanceCell.Options.UseTextOptions = True
+        Me.GridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.GridColumn3.Caption = "Status"
+        Me.GridColumn3.FieldName = "status"
+        Me.GridColumn3.MaxWidth = 292
+        Me.GridColumn3.MinWidth = 23
+        Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.Visible = True
+        Me.GridColumn3.VisibleIndex = 2
+        Me.GridColumn3.Width = 292
+        '
+        'GridColumn14
+        '
+        Me.GridColumn14.AppearanceCell.Options.UseTextOptions = True
+        Me.GridColumn14.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.GridColumn14.Caption = "Created By"
+        Me.GridColumn14.FieldName = "created_by"
+        Me.GridColumn14.MaxWidth = 250
+        Me.GridColumn14.MinWidth = 23
+        Me.GridColumn14.Name = "GridColumn14"
+        Me.GridColumn14.Visible = True
+        Me.GridColumn14.VisibleIndex = 3
+        Me.GridColumn14.Width = 250
+        '
+        'GridColumn15
+        '
+        Me.GridColumn15.AppearanceCell.Options.UseTextOptions = True
+        Me.GridColumn15.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.GridColumn15.AppearanceHeader.Options.UseTextOptions = True
+        Me.GridColumn15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.GridColumn15.Caption = "Created At"
+        Me.GridColumn15.DisplayFormat.FormatString = "MM/dd/yyyy"
+        Me.GridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.GridColumn15.FieldName = "created_at"
+        Me.GridColumn15.MaxWidth = 140
+        Me.GridColumn15.MinWidth = 140
+        Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.Visible = True
+        Me.GridColumn15.VisibleIndex = 4
+        Me.GridColumn15.Width = 140
+        '
+        'GridColumn16
+        '
+        Me.GridColumn16.ColumnEdit = Me.btn_view_liquidation
+        Me.GridColumn16.MaxWidth = 47
+        Me.GridColumn16.MinWidth = 23
+        Me.GridColumn16.Name = "GridColumn16"
+        Me.GridColumn16.Visible = True
+        Me.GridColumn16.VisibleIndex = 0
+        Me.GridColumn16.Width = 47
+        '
+        'btn_view_liquidation
+        '
+        Me.btn_view_liquidation.AutoHeight = False
+        EditorButtonImageOptions5.Image = Global.Inventory_Management.My.Resources.Resources.up_16x161
+        Me.btn_view_liquidation.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions5, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject17, SerializableAppearanceObject18, SerializableAppearanceObject19, SerializableAppearanceObject20, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        Me.btn_view_liquidation.LookAndFeel.UseDefaultLookAndFeel = False
+        Me.btn_view_liquidation.Name = "btn_view_liquidation"
+        Me.btn_view_liquidation.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Appearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.LabelControl5.Appearance.Options.UseFont = True
+        Me.LabelControl5.Appearance.Options.UseForeColor = True
+        Me.LabelControl5.Location = New System.Drawing.Point(14, 16)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(194, 30)
+        Me.LabelControl5.TabIndex = 137
+        Me.LabelControl5.Text = "Stock Liquidation"
+        '
         'btn_refresh
         '
         Me.btn_refresh.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -906,12 +1063,12 @@ Partial Class frm_return_to_vendor
         Me.btn_batch_pullout.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
         Me.btn_batch_pullout.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.packing
         Me.btn_batch_pullout.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btn_batch_pullout.ImageOptions.ImageToTextIndent = 5
+        Me.btn_batch_pullout.ImageOptions.ImageToTextIndent = 10
         Me.btn_batch_pullout.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None
-        Me.btn_batch_pullout.Location = New System.Drawing.Point(442, 71)
+        Me.btn_batch_pullout.Location = New System.Drawing.Point(443, 66)
         Me.btn_batch_pullout.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_batch_pullout.Name = "btn_batch_pullout"
-        Me.btn_batch_pullout.Size = New System.Drawing.Size(224, 57)
+        Me.btn_batch_pullout.Size = New System.Drawing.Size(224, 46)
         Me.btn_batch_pullout.TabIndex = 139
         Me.btn_batch_pullout.Text = "New Batch Pullout"
         '
@@ -934,11 +1091,31 @@ Partial Class frm_return_to_vendor
         Me.btn_return_to_vendor_logs.TabIndex = 140
         Me.btn_return_to_vendor_logs.Text = "Delivery Logs"
         '
+        'btn_liquidate_new
+        '
+        Me.btn_liquidate_new.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.btn_liquidate_new.Appearance.Options.UseFont = True
+        Me.btn_liquidate_new.Appearance.Options.UseTextOptions = True
+        Me.btn_liquidate_new.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.btn_liquidate_new.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
+        Me.btn_liquidate_new.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btn_liquidate_new.ImageOptions.ImageToTextIndent = 10
+        Me.btn_liquidate_new.ImageOptions.SvgImage = Global.Inventory_Management.My.Resources.Resources.ungroup
+        Me.btn_liquidate_new.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None
+        Me.btn_liquidate_new.ImageOptions.SvgImageSize = New System.Drawing.Size(18, 18)
+        Me.btn_liquidate_new.Location = New System.Drawing.Point(18, 115)
+        Me.btn_liquidate_new.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_liquidate_new.Name = "btn_liquidate_new"
+        Me.btn_liquidate_new.Size = New System.Drawing.Size(224, 46)
+        Me.btn_liquidate_new.TabIndex = 141
+        Me.btn_liquidate_new.Text = "New Stock Liquidation"
+        '
         'frm_return_to_vendor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1380, 809)
+        Me.Controls.Add(Me.btn_liquidate_new)
         Me.Controls.Add(Me.btn_return_to_vendor_logs)
         Me.Controls.Add(Me.btn_batch_pullout)
         Me.Controls.Add(Me.btn_confirmation)
@@ -968,6 +1145,11 @@ Partial Class frm_return_to_vendor
         CType(Me.grid_batch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_batch_view, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_batch_open, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tab_liquidate.ResumeLayout(False)
+        Me.tab_liquidate.PerformLayout()
+        CType(Me.grid_liquidation, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grid_liquidation_view, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_view_liquidation, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1034,4 +1216,15 @@ Partial Class frm_return_to_vendor
     Friend WithEvents btn_return_to_vendor_logs As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents col_description As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents col_date_created As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents tab_liquidate As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents grid_liquidation As DevExpress.XtraGrid.GridControl
+    Friend WithEvents grid_liquidation_view As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents col_liquidate_id As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn15 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn16 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents btn_view_liquidation As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
+    Friend WithEvents btn_liquidate_new As DevExpress.XtraEditors.SimpleButton
 End Class

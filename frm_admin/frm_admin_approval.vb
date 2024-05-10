@@ -162,6 +162,23 @@ Public Class frm_admin_approval
                 End Using
             End If
 
+            'Show Stock Liquidation
+            If Me.Tag = "frm_admin_approval_stock_liquidation" Then
+                Using conn = New MySqlConnection(str)
+                    conn.Open()
+                    Using cmd = New MySqlCommand("SELECT liquidation_id, creator.first_name AS created_by, created_at, rs_returns_liquidation.status
+                                            FROM rs_returns_liquidation
+                                            LEFT JOIN ims_users AS creator ON creator.usr_id=rs_returns_liquidation.created_by
+                                            WHERE rs_returns_liquidation.is_deleted='0' AND status='Pending for Approval'", conn)
+                        Dim dt = New DataTable
+                        Dim da = New MySqlDataAdapter(cmd)
+                        da.Fill(dt)
+                        grid_liquidation.DataSource = dt
+                    End Using
+                    conn.Close()
+                End Using
+            End If
+
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical, "Error")
         Finally
@@ -208,6 +225,9 @@ Public Class frm_admin_approval
             Case "frm_admin_approval_stock_returns"
                 XtraTabPage_pullout_requests.PageVisible = True
                 Me.Text = "Stock Returns Approval"
+            Case "frm_admin_approval_stock_liquidation"
+                XtraTabPage_stock_liquidation.PageVisible = True
+                Me.Text = "Stock Liquidation Approval"
         End Select
 
     End Sub
@@ -544,5 +564,18 @@ Public Class frm_admin_approval
         End If
     End Sub
 
+    Private Sub btn_view_liquidation_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles btn_view_liquidation.ButtonClick
+        Dim lid = grid_liquidation_view.GetFocusedRowCellValue(col_liquidate_id)
+        Dim frm = New frm_stock_return_liquidation_new
+        frm.btn_approved.Visible = True
+        frm.btn_decline.Visible = True
+        frm.btn_create.Enabled = False
+        frm.btn_print.Enabled = False
+        frm.btn_delete.Enabled = False
+        frm.liquidation_id = lid
+        If frm.ShowDialog() = DialogResult.OK Then
+            load_data()
+        End If
+    End Sub
 
 End Class

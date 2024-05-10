@@ -127,6 +127,7 @@ Partial Class frm_main
         Me.submenu2_approvals_transfer_reports = New DevExpress.XtraBars.BarButtonItem()
         Me.submenu2_approvals_reconcilations = New DevExpress.XtraBars.BarButtonItem()
         Me.submenu2_approvals_products = New DevExpress.XtraBars.BarButtonItem()
+        Me.submenu2_approvals_stock_liquidation = New DevExpress.XtraBars.BarButtonItem()
         Me.submenu2_reports = New DevExpress.XtraBars.BarButtonItem()
         Me.submenu2_product_database = New DevExpress.XtraBars.BarButtonItem()
         Me.submenu2_price_book = New DevExpress.XtraBars.BarButtonItem()
@@ -282,8 +283,8 @@ Partial Class frm_main
         Me.ToolbarFormManager2.DockControls.Add(Me.BarDockControl3)
         Me.ToolbarFormManager2.DockControls.Add(Me.BarDockControl4)
         Me.ToolbarFormManager2.Form = Me
-        Me.ToolbarFormManager2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.btn_account, Me.BarSubItem3, Me.BarSubItem4, Me.BarSubItem5, Me.BarSubItem6, Me.menu2_sales, Me.menu2_warehouse, Me.menu2_logistics, Me.menu2_collections, Me.menu2_accounting, Me.menu2_purchasing, Me.menu2_administration, Me.menu2_config, Me.submenu2_new_order, Me.submenu2_sales_orders, Me.submenu2_quotations, Me.submenu2_returns, Me.submenu2_customers, Me.submenu2_invoices, Me.submenu2_stock_management, Me.stock_management_transfer, Me.stock_management_reconcilations, Me.submenu2_customers_new, Me.submenu2_customers_registered, Me.submenu2_package_management, Me.submenu2_receiving_management, Me.submenu2_purchase_delivery_logs, Me.submenu2_inventory, Me.submenu2_new_deliveries, Me.submenu2_release_orders, Me.submenu2_dispatch_transfers, Me.submenu2_collection_orders, Me.submenu2_payment_terms, Me.submenu2_cheque_book, Me.submenu2_billing_statement, Me.submenu2_supplier_invoice, Me.submenu2_generate_payment_vouchers, Me.BarButtonItem27, Me.submenu2_forecast, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.submenu2_generated_payments, Me.submenu2_generated_vouchers, Me.submenu2_generated_cheques, Me.submenu2_generated_cash, Me.submenu2_new_purhcase, Me.submenu2_purchase_orders, Me.submenu2_stock_return_to_vendor, Me.submenu2_reports, Me.submenu2_price_book, Me.submenu2_registered_banks, Me.submenu2_user_management, Me.submenu2_warehouse, Me.submenu2_suppliers, Me.submenu2_company_information, Me.submenu2_warehouse_new, Me.submenu2_warehouse_management, Me.submenu2_suppliers_new, Me.submenu2_suppliers_management, Me.submenu2_printer, Me.BarStaticItem1, Me.SkinBarSubItem1, Me.submenu2_price_matrix, Me.submenu2_product_database, Me.menu2_catalog, Me.submenu_purchase_request, Me.stock_management_stocktransfer_logs, Me.submenu2_generate_barcode, Me.submenu2_approvals, Me.submenu2_approvals_purchase_order, Me.submenu2_approvals_stock_transfer, Me.submenu2_approvals_quotations, Me.submenu2_approvals_sales_returns, Me.submenu2_approvals_transfer_reports, Me.submenu2_approvals_reconcilations, Me.submenu2_approvals_products, Me.submenu2_generate_pricetag, Me.submenu2_discounting_matrix, Me.submenu2_approvals_stock_returns, Me.submenu2_stock_returns_releasing, Me.stock_management_returns, Me.submenu2_credit_memo})
-        Me.ToolbarFormManager2.MaxItemId = 107
+        Me.ToolbarFormManager2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.btn_account, Me.BarSubItem3, Me.BarSubItem4, Me.BarSubItem5, Me.BarSubItem6, Me.menu2_sales, Me.menu2_warehouse, Me.menu2_logistics, Me.menu2_collections, Me.menu2_accounting, Me.menu2_purchasing, Me.menu2_administration, Me.menu2_config, Me.submenu2_new_order, Me.submenu2_sales_orders, Me.submenu2_quotations, Me.submenu2_returns, Me.submenu2_customers, Me.submenu2_invoices, Me.submenu2_stock_management, Me.stock_management_transfer, Me.stock_management_reconcilations, Me.submenu2_customers_new, Me.submenu2_customers_registered, Me.submenu2_package_management, Me.submenu2_receiving_management, Me.submenu2_purchase_delivery_logs, Me.submenu2_inventory, Me.submenu2_new_deliveries, Me.submenu2_release_orders, Me.submenu2_dispatch_transfers, Me.submenu2_collection_orders, Me.submenu2_payment_terms, Me.submenu2_cheque_book, Me.submenu2_billing_statement, Me.submenu2_supplier_invoice, Me.submenu2_generate_payment_vouchers, Me.BarButtonItem27, Me.submenu2_forecast, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.submenu2_generated_payments, Me.submenu2_generated_vouchers, Me.submenu2_generated_cheques, Me.submenu2_generated_cash, Me.submenu2_new_purhcase, Me.submenu2_purchase_orders, Me.submenu2_stock_return_to_vendor, Me.submenu2_reports, Me.submenu2_price_book, Me.submenu2_registered_banks, Me.submenu2_user_management, Me.submenu2_warehouse, Me.submenu2_suppliers, Me.submenu2_company_information, Me.submenu2_warehouse_new, Me.submenu2_warehouse_management, Me.submenu2_suppliers_new, Me.submenu2_suppliers_management, Me.submenu2_printer, Me.BarStaticItem1, Me.SkinBarSubItem1, Me.submenu2_price_matrix, Me.submenu2_product_database, Me.menu2_catalog, Me.submenu_purchase_request, Me.stock_management_stocktransfer_logs, Me.submenu2_generate_barcode, Me.submenu2_approvals, Me.submenu2_approvals_purchase_order, Me.submenu2_approvals_stock_transfer, Me.submenu2_approvals_quotations, Me.submenu2_approvals_sales_returns, Me.submenu2_approvals_transfer_reports, Me.submenu2_approvals_reconcilations, Me.submenu2_approvals_products, Me.submenu2_generate_pricetag, Me.submenu2_discounting_matrix, Me.submenu2_approvals_stock_returns, Me.submenu2_stock_returns_releasing, Me.stock_management_returns, Me.submenu2_credit_memo, Me.submenu2_approvals_stock_liquidation})
+        Me.ToolbarFormManager2.MaxItemId = 108
         Me.ToolbarFormManager2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemPopupContainerEdit1, Me.RepositoryItemTextEdit1, Me.RepositoryItemPictureEdit1})
         '
         'BarDockControl1
@@ -877,7 +878,7 @@ Partial Class frm_main
         '
         Me.submenu2_approvals.Caption = "Approvals"
         Me.submenu2_approvals.Id = 93
-        Me.submenu2_approvals.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_purchase_order), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_stock_transfer), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_quotations), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_sales_returns), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_stock_returns), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_transfer_reports), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_reconcilations), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_products)})
+        Me.submenu2_approvals.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_purchase_order), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_stock_transfer), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_quotations), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_sales_returns), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_stock_returns), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_transfer_reports), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_reconcilations), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_products), New DevExpress.XtraBars.LinkPersistInfo(Me.submenu2_approvals_stock_liquidation)})
         Me.submenu2_approvals.Name = "submenu2_approvals"
         '
         'submenu2_approvals_purchase_order
@@ -934,6 +935,12 @@ Partial Class frm_main
         Me.submenu2_approvals_products.Id = 100
         Me.submenu2_approvals_products.Name = "submenu2_approvals_products"
         Me.submenu2_approvals_products.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'submenu2_approvals_stock_liquidation
+        '
+        Me.submenu2_approvals_stock_liquidation.Caption = "Stock Liquidation"
+        Me.submenu2_approvals_stock_liquidation.Id = 107
+        Me.submenu2_approvals_stock_liquidation.Name = "submenu2_approvals_stock_liquidation"
         '
         'submenu2_reports
         '
@@ -1296,4 +1303,5 @@ Partial Class frm_main
     Friend WithEvents submenu2_stock_returns_releasing As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents stock_management_returns As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents submenu2_credit_memo As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents submenu2_approvals_stock_liquidation As DevExpress.XtraBars.BarButtonItem
 End Class
