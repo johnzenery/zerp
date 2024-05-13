@@ -1799,6 +1799,7 @@
   <ItemGroup>
     <Content Include="Parsell Icon.ico" />
     <Content Include="p_icon.ico" />
+    <None Include="Resources\ungrouprows_32x32.png" />
     <None Include="Resources\p_icon.ico" />
     <None Include="Resources\Parsell Icon.png" />
     <None Include="Resources\actions_deletecircled.svg" />

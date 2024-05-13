@@ -63,13 +63,13 @@ Partial Class frm_admin_price_book
         Me.grid_pricebooks.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grid_pricebooks.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grid_pricebooks.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_pricebooks.Location = New System.Drawing.Point(13, 79)
         Me.grid_pricebooks.MainView = Me.grid_pricebooks_view
-        Me.grid_pricebooks.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grid_pricebooks.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_pricebooks.Name = "grid_pricebooks"
         Me.grid_pricebooks.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1})
-        Me.grid_pricebooks.Size = New System.Drawing.Size(1914, 745)
+        Me.grid_pricebooks.Size = New System.Drawing.Size(1495, 745)
         Me.grid_pricebooks.TabIndex = 12
         Me.grid_pricebooks.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_pricebooks_view})
         '
@@ -440,7 +440,7 @@ Partial Class frm_admin_price_book
         Me.LabelControl1.Appearance.Options.UseFont = True
         Me.LabelControl1.Appearance.Options.UseForeColor = True
         Me.LabelControl1.Location = New System.Drawing.Point(14, 15)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(159, 38)
         Me.LabelControl1.TabIndex = 20
@@ -458,8 +458,8 @@ Partial Class frm_admin_price_book
         Me.btn_find.ImageOptions.ImageToTextIndent = 5
         Me.btn_find.ImageOptions.SvgImage = Global.Inventory_Management.My.Resources.Resources.enablesearch
         Me.btn_find.ImageOptions.SvgImageSize = New System.Drawing.Size(25, 25)
-        Me.btn_find.Location = New System.Drawing.Point(2060, 15)
-        Me.btn_find.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_find.Location = New System.Drawing.Point(1641, 15)
+        Me.btn_find.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_find.Name = "btn_find"
         Me.btn_find.Size = New System.Drawing.Size(187, 57)
         Me.btn_find.TabIndex = 21
@@ -477,8 +477,8 @@ Partial Class frm_admin_price_book
         Me.btn_export.ImageOptions.ImageToTextIndent = 5
         Me.btn_export.ImageOptions.SvgImage = Global.Inventory_Management.My.Resources.Resources.exporttoxls
         Me.btn_export.ImageOptions.SvgImageSize = New System.Drawing.Size(25, 25)
-        Me.btn_export.Location = New System.Drawing.Point(1740, 15)
-        Me.btn_export.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_export.Location = New System.Drawing.Point(1321, 15)
+        Me.btn_export.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_export.Name = "btn_export"
         Me.btn_export.Size = New System.Drawing.Size(187, 57)
         Me.btn_export.TabIndex = 22
@@ -490,8 +490,8 @@ Partial Class frm_admin_price_book
         Me.btn_show_margin.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btn_show_margin.ImageOptions.SvgImage = Global.Inventory_Management.My.Resources.Resources.showcontainerheader
         Me.btn_show_margin.ImageOptions.SvgImageSize = New System.Drawing.Size(25, 25)
-        Me.btn_show_margin.Location = New System.Drawing.Point(1546, 16)
-        Me.btn_show_margin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_show_margin.Location = New System.Drawing.Point(1127, 16)
+        Me.btn_show_margin.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_show_margin.Name = "btn_show_margin"
         Me.btn_show_margin.Size = New System.Drawing.Size(187, 57)
         Me.btn_show_margin.TabIndex = 24
@@ -501,13 +501,13 @@ Partial Class frm_admin_price_book
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1940, 837)
+        Me.ClientSize = New System.Drawing.Size(1521, 837)
         Me.Controls.Add(Me.btn_show_margin)
         Me.Controls.Add(Me.btn_export)
         Me.Controls.Add(Me.btn_find)
         Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.grid_pricebooks)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frm_admin_price_book"
         Me.Text = "Price Book"
         CType(Me.grid_pricebooks, System.ComponentModel.ISupportInitialize).EndInit()

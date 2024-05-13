@@ -1098,9 +1098,9 @@ Partial Class frm_return_to_vendor
         Me.btn_liquidate_new.Appearance.Options.UseTextOptions = True
         Me.btn_liquidate_new.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.btn_liquidate_new.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center
+        Me.btn_liquidate_new.ImageOptions.Image = Global.Inventory_Management.My.Resources.Resources.ungrouprows_32x32
         Me.btn_liquidate_new.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
         Me.btn_liquidate_new.ImageOptions.ImageToTextIndent = 10
-        Me.btn_liquidate_new.ImageOptions.SvgImage = Global.Inventory_Management.My.Resources.Resources.ungroup
         Me.btn_liquidate_new.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None
         Me.btn_liquidate_new.ImageOptions.SvgImageSize = New System.Drawing.Size(18, 18)
         Me.btn_liquidate_new.Location = New System.Drawing.Point(18, 115)

@@ -20,31 +20,31 @@ Partial Class frm_sales_order_new
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim EditorButtonImageOptions1 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject3 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim EditorButtonImageOptions2 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject5 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject6 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject7 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject8 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim EditorButtonImageOptions3 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject9 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject10 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject11 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject12 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim EditorButtonImageOptions4 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject13 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject14 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject15 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject16 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim EditorButtonImageOptions5 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject17 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject18 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject19 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject20 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions41 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject161 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject162 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject163 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject164 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions42 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject165 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject166 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject167 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject168 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions45 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject177 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject178 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject179 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject180 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions43 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject169 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject170 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject171 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject172 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions44 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject173 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject174 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject175 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject176 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.grid_order = New DevExpress.XtraGrid.GridControl()
         Me.grid_order_view = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.col_qty = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -79,6 +79,23 @@ Partial Class frm_sales_order_new
         Me.btn_add = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.col_search_vol = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.col_search_weight = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.btn_refund = New DevExpress.XtraEditors.SimpleButton()
+        Me.btn_epay = New DevExpress.XtraEditors.SimpleButton()
+        Me.lbl_payment_status = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl()
+        Me.lbl_balance = New DevExpress.XtraEditors.LabelControl()
+        Me.lbl_paid_amount = New DevExpress.XtraEditors.LabelControl()
+        Me.lbl_amount_to_pay = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.txt_priv_notes = New DevExpress.XtraEditors.MemoEdit()
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
+        Me.txt_pub_notes = New DevExpress.XtraEditors.MemoEdit()
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
+        Me.cbb_warehouse = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl()
         Me.XtraTabPage3 = New DevExpress.XtraTab.XtraTabPage()
         Me.GroupControl5 = New DevExpress.XtraEditors.GroupControl()
         Me.clbc_packing_req = New DevExpress.XtraEditors.CheckedListBoxControl()
@@ -182,26 +199,11 @@ Partial Class frm_sales_order_new
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
         Me.cbb_customer = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
-        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
-        Me.btn_refund = New DevExpress.XtraEditors.SimpleButton()
-        Me.btn_epay = New DevExpress.XtraEditors.SimpleButton()
-        Me.lbl_payment_status = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl()
-        Me.lbl_balance = New DevExpress.XtraEditors.LabelControl()
-        Me.lbl_paid_amount = New DevExpress.XtraEditors.LabelControl()
-        Me.lbl_amount_to_pay = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
         Me.btn_create = New DevExpress.XtraEditors.SimpleButton()
         Me.btn_print = New DevExpress.XtraEditors.SimpleButton()
-        Me.txt_pub_notes = New DevExpress.XtraEditors.MemoEdit()
-        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
         Me.btn_delete = New DevExpress.XtraEditors.SimpleButton()
         Me.btn_unserved_list = New DevExpress.XtraEditors.SimpleButton()
         Me.txt_account_type = New DevExpress.XtraEditors.TextEdit()
-        Me.txt_priv_notes = New DevExpress.XtraEditors.MemoEdit()
-        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.lbl_orderid = New DevExpress.XtraEditors.LabelControl()
         Me.lbl_status = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl()
@@ -221,8 +223,6 @@ Partial Class frm_sales_order_new
         Me.PackingSlipToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_save = New DevExpress.XtraEditors.SimpleButton()
         Me.btn_pack = New DevExpress.XtraEditors.SimpleButton()
-        Me.cbb_warehouse = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl()
         Me.btn_import = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.grid_returns = New DevExpress.XtraGrid.GridControl()
@@ -245,6 +245,11 @@ Partial Class frm_sales_order_new
         CType(Me.grid_search, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_search_view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_add, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.txt_priv_notes.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_pub_notes.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cbb_warehouse.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage3.SuspendLayout()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl5.SuspendLayout()
@@ -299,17 +304,12 @@ Partial Class frm_sales_order_new
         CType(Me.SeparatorControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SeparatorControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbb_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl1.SuspendLayout()
-        CType(Me.txt_pub_notes.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_account_type.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_priv_notes.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbb_discount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_discount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
         Me.print_contextmenu.SuspendLayout()
-        CType(Me.cbb_warehouse.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_returns, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_returns_view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -330,7 +330,7 @@ Partial Class frm_sales_order_new
         Me.grid_order.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_order.Name = "grid_order"
         Me.grid_order.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_remove, Me.btn_unseved, Me.repo_txt_discount})
-        Me.grid_order.Size = New System.Drawing.Size(784, 551)
+        Me.grid_order.Size = New System.Drawing.Size(784, 471)
         Me.grid_order.TabIndex = 1
         Me.grid_order.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_order_view})
         '
@@ -443,9 +443,9 @@ Partial Class frm_sales_order_new
         'btn_unseved
         '
         Me.btn_unseved.AutoHeight = False
-        EditorButtonImageOptions1.SvgImage = Global.Inventory_Management.My.Resources.Resources.redo
-        EditorButtonImageOptions1.SvgImageSize = New System.Drawing.Size(20, 20)
-        Me.btn_unseved.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions1, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, SerializableAppearanceObject2, SerializableAppearanceObject3, SerializableAppearanceObject4, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions41.SvgImage = Global.Inventory_Management.My.Resources.Resources.redo
+        EditorButtonImageOptions41.SvgImageSize = New System.Drawing.Size(20, 20)
+        Me.btn_unseved.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions41, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject161, SerializableAppearanceObject162, SerializableAppearanceObject163, SerializableAppearanceObject164, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.btn_unseved.Name = "btn_unseved"
         Me.btn_unseved.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
         '
@@ -462,9 +462,9 @@ Partial Class frm_sales_order_new
         'btn_remove
         '
         Me.btn_remove.AutoHeight = False
-        EditorButtonImageOptions2.SvgImage = Global.Inventory_Management.My.Resources.Resources.actions_removecircled
-        EditorButtonImageOptions2.SvgImageSize = New System.Drawing.Size(20, 20)
-        Me.btn_remove.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions2, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject5, SerializableAppearanceObject6, SerializableAppearanceObject7, SerializableAppearanceObject8, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions42.SvgImage = Global.Inventory_Management.My.Resources.Resources.actions_removecircled
+        EditorButtonImageOptions42.SvgImageSize = New System.Drawing.Size(20, 20)
+        Me.btn_remove.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions42, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject165, SerializableAppearanceObject166, SerializableAppearanceObject167, SerializableAppearanceObject168, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.btn_remove.Name = "btn_remove"
         Me.btn_remove.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
         '
@@ -503,6 +503,8 @@ Partial Class frm_sales_order_new
         'XtraTabControl1
         '
         Me.XtraTabControl1.AllowHtmlDraw = True
+        Me.XtraTabControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.XtraTabControl1.AppearancePage.Header.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold)
         Me.XtraTabControl1.AppearancePage.Header.ForeColor = System.Drawing.Color.DimGray
         Me.XtraTabControl1.AppearancePage.Header.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
@@ -513,23 +515,32 @@ Partial Class frm_sales_order_new
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
         Me.XtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.[True]
-        Me.XtraTabControl1.Size = New System.Drawing.Size(854, 613)
+        Me.XtraTabControl1.Size = New System.Drawing.Size(855, 718)
         Me.XtraTabControl1.TabIndex = 2
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage3, Me.XtraTabPage2, Me.XtraTabPage4})
         '
         'XtraTabPage1
         '
+        Me.XtraTabPage1.AutoScroll = True
+        Me.XtraTabPage1.AutoScrollMargin = New System.Drawing.Size(0, 150)
         Me.XtraTabPage1.Controls.Add(Me.txt_search)
         Me.XtraTabPage1.Controls.Add(Me.grid_search)
+        Me.XtraTabPage1.Controls.Add(Me.GroupControl1)
+        Me.XtraTabPage1.Controls.Add(Me.txt_priv_notes)
+        Me.XtraTabPage1.Controls.Add(Me.LabelControl12)
+        Me.XtraTabPage1.Controls.Add(Me.txt_pub_notes)
+        Me.XtraTabPage1.Controls.Add(Me.LabelControl11)
+        Me.XtraTabPage1.Controls.Add(Me.cbb_warehouse)
+        Me.XtraTabPage1.Controls.Add(Me.LabelControl21)
         Me.XtraTabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(852, 575)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(853, 680)
         Me.XtraTabPage1.Text = "Search Item"
         '
         'txt_search
         '
         Me.txt_search.Client = Me.grid_search
-        Me.txt_search.Location = New System.Drawing.Point(14, 16)
+        Me.txt_search.Location = New System.Drawing.Point(14, 12)
         Me.txt_search.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_search.Name = "txt_search"
         Me.txt_search.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -542,16 +553,15 @@ Partial Class frm_sales_order_new
         '
         'grid_search
         '
-        Me.grid_search.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.grid_search.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grid_search.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
-        Me.grid_search.Location = New System.Drawing.Point(14, 63)
+        Me.grid_search.Location = New System.Drawing.Point(4, 63)
         Me.grid_search.MainView = Me.grid_search_view
         Me.grid_search.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_search.Name = "grid_search"
         Me.grid_search.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_add})
-        Me.grid_search.Size = New System.Drawing.Size(822, 503)
+        Me.grid_search.Size = New System.Drawing.Size(826, 492)
         Me.grid_search.TabIndex = 0
         Me.grid_search.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_search_view})
         '
@@ -667,9 +677,9 @@ Partial Class frm_sales_order_new
         'btn_add
         '
         Me.btn_add.AutoHeight = False
-        EditorButtonImageOptions3.SvgImage = Global.Inventory_Management.My.Resources.Resources.actions_addcircled2
-        EditorButtonImageOptions3.SvgImageSize = New System.Drawing.Size(25, 25)
-        Me.btn_add.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions3, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject9, SerializableAppearanceObject10, SerializableAppearanceObject11, SerializableAppearanceObject12, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions45.SvgImage = Global.Inventory_Management.My.Resources.Resources.actions_addcircled2
+        EditorButtonImageOptions45.SvgImageSize = New System.Drawing.Size(25, 25)
+        Me.btn_add.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions45, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject177, SerializableAppearanceObject178, SerializableAppearanceObject179, SerializableAppearanceObject180, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.btn_add.Name = "btn_add"
         Me.btn_add.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
         '
@@ -689,10 +699,224 @@ Partial Class frm_sales_order_new
         Me.col_search_weight.Name = "col_search_weight"
         Me.col_search_weight.Width = 87
         '
+        'GroupControl1
+        '
+        Me.GroupControl1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupControl1.Controls.Add(Me.btn_refund)
+        Me.GroupControl1.Controls.Add(Me.btn_epay)
+        Me.GroupControl1.Controls.Add(Me.lbl_payment_status)
+        Me.GroupControl1.Controls.Add(Me.LabelControl19)
+        Me.GroupControl1.Controls.Add(Me.lbl_balance)
+        Me.GroupControl1.Controls.Add(Me.lbl_paid_amount)
+        Me.GroupControl1.Controls.Add(Me.lbl_amount_to_pay)
+        Me.GroupControl1.Controls.Add(Me.LabelControl15)
+        Me.GroupControl1.Controls.Add(Me.LabelControl14)
+        Me.GroupControl1.Controls.Add(Me.LabelControl13)
+        Me.GroupControl1.Location = New System.Drawing.Point(533, 567)
+        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(296, 187)
+        Me.GroupControl1.TabIndex = 9
+        Me.GroupControl1.Text = "Payment Status"
+        '
+        'btn_refund
+        '
+        Me.btn_refund.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btn_refund.Appearance.Options.UseFont = True
+        Me.btn_refund.Enabled = False
+        Me.btn_refund.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btn_refund.ImageOptions.ImageToTextIndent = 10
+        Me.btn_refund.ImageOptions.SvgImageSize = New System.Drawing.Size(15, 15)
+        Me.btn_refund.Location = New System.Drawing.Point(29, 145)
+        Me.btn_refund.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_refund.Name = "btn_refund"
+        Me.btn_refund.Size = New System.Drawing.Size(119, 32)
+        Me.btn_refund.TabIndex = 27
+        Me.btn_refund.Text = "Refund"
+        '
+        'btn_epay
+        '
+        Me.btn_epay.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btn_epay.Appearance.Options.UseFont = True
+        Me.btn_epay.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
+        Me.btn_epay.ImageOptions.ImageToTextIndent = 10
+        Me.btn_epay.ImageOptions.SvgImageSize = New System.Drawing.Size(15, 15)
+        Me.btn_epay.Location = New System.Drawing.Point(155, 145)
+        Me.btn_epay.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_epay.Name = "btn_epay"
+        Me.btn_epay.Size = New System.Drawing.Size(119, 32)
+        Me.btn_epay.TabIndex = 26
+        Me.btn_epay.Text = "E-Pay Receipt"
+        '
+        'lbl_payment_status
+        '
+        Me.lbl_payment_status.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.lbl_payment_status.Appearance.Options.UseFont = True
+        Me.lbl_payment_status.Appearance.Options.UseTextOptions = True
+        Me.lbl_payment_status.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.lbl_payment_status.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
+        Me.lbl_payment_status.Location = New System.Drawing.Point(181, 39)
+        Me.lbl_payment_status.Margin = New System.Windows.Forms.Padding(4)
+        Me.lbl_payment_status.Name = "lbl_payment_status"
+        Me.lbl_payment_status.Size = New System.Drawing.Size(93, 18)
+        Me.lbl_payment_status.TabIndex = 26
+        Me.lbl_payment_status.Text = "N/A"
+        '
+        'LabelControl19
+        '
+        Me.LabelControl19.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.LabelControl19.Appearance.Options.UseFont = True
+        Me.LabelControl19.Location = New System.Drawing.Point(26, 40)
+        Me.LabelControl19.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl19.Name = "LabelControl19"
+        Me.LabelControl19.Size = New System.Drawing.Size(40, 16)
+        Me.LabelControl19.TabIndex = 25
+        Me.LabelControl19.Text = "Status"
+        '
+        'lbl_balance
+        '
+        Me.lbl_balance.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.lbl_balance.Appearance.Options.UseFont = True
+        Me.lbl_balance.Appearance.Options.UseTextOptions = True
+        Me.lbl_balance.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.lbl_balance.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
+        Me.lbl_balance.Location = New System.Drawing.Point(181, 118)
+        Me.lbl_balance.Margin = New System.Windows.Forms.Padding(4)
+        Me.lbl_balance.Name = "lbl_balance"
+        Me.lbl_balance.Size = New System.Drawing.Size(93, 18)
+        Me.lbl_balance.TabIndex = 24
+        Me.lbl_balance.Text = "₱ 0.00"
+        '
+        'lbl_paid_amount
+        '
+        Me.lbl_paid_amount.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.lbl_paid_amount.Appearance.Options.UseFont = True
+        Me.lbl_paid_amount.Appearance.Options.UseTextOptions = True
+        Me.lbl_paid_amount.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.lbl_paid_amount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
+        Me.lbl_paid_amount.Location = New System.Drawing.Point(181, 92)
+        Me.lbl_paid_amount.Margin = New System.Windows.Forms.Padding(4)
+        Me.lbl_paid_amount.Name = "lbl_paid_amount"
+        Me.lbl_paid_amount.Size = New System.Drawing.Size(93, 18)
+        Me.lbl_paid_amount.TabIndex = 23
+        Me.lbl_paid_amount.Text = "₱ 0.00"
+        '
+        'lbl_amount_to_pay
+        '
+        Me.lbl_amount_to_pay.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.lbl_amount_to_pay.Appearance.Options.UseFont = True
+        Me.lbl_amount_to_pay.Appearance.Options.UseTextOptions = True
+        Me.lbl_amount_to_pay.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.lbl_amount_to_pay.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
+        Me.lbl_amount_to_pay.Location = New System.Drawing.Point(181, 66)
+        Me.lbl_amount_to_pay.Margin = New System.Windows.Forms.Padding(4)
+        Me.lbl_amount_to_pay.Name = "lbl_amount_to_pay"
+        Me.lbl_amount_to_pay.Size = New System.Drawing.Size(93, 18)
+        Me.lbl_amount_to_pay.TabIndex = 22
+        Me.lbl_amount_to_pay.Text = "₱ 0.00"
+        '
+        'LabelControl15
+        '
+        Me.LabelControl15.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.LabelControl15.Appearance.Options.UseFont = True
+        Me.LabelControl15.Location = New System.Drawing.Point(26, 118)
+        Me.LabelControl15.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl15.Name = "LabelControl15"
+        Me.LabelControl15.Size = New System.Drawing.Size(51, 16)
+        Me.LabelControl15.TabIndex = 21
+        Me.LabelControl15.Text = "Balance"
+        '
+        'LabelControl14
+        '
+        Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.LabelControl14.Appearance.Options.UseFont = True
+        Me.LabelControl14.Location = New System.Drawing.Point(26, 92)
+        Me.LabelControl14.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl14.Name = "LabelControl14"
+        Me.LabelControl14.Size = New System.Drawing.Size(80, 16)
+        Me.LabelControl14.TabIndex = 20
+        Me.LabelControl14.Text = "Paid Amount"
+        '
+        'LabelControl13
+        '
+        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.LabelControl13.Appearance.Options.UseFont = True
+        Me.LabelControl13.Location = New System.Drawing.Point(26, 66)
+        Me.LabelControl13.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Size = New System.Drawing.Size(92, 16)
+        Me.LabelControl13.TabIndex = 19
+        Me.LabelControl13.Text = "Amount to Pay"
+        '
+        'txt_priv_notes
+        '
+        Me.txt_priv_notes.Location = New System.Drawing.Point(127, 569)
+        Me.txt_priv_notes.Margin = New System.Windows.Forms.Padding(4)
+        Me.txt_priv_notes.Name = "txt_priv_notes"
+        Me.txt_priv_notes.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_priv_notes.Properties.Appearance.Options.UseFont = True
+        Me.txt_priv_notes.Size = New System.Drawing.Size(343, 55)
+        Me.txt_priv_notes.TabIndex = 17
+        '
+        'LabelControl12
+        '
+        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.LabelControl12.Appearance.Options.UseFont = True
+        Me.LabelControl12.Location = New System.Drawing.Point(11, 578)
+        Me.LabelControl12.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(108, 16)
+        Me.LabelControl12.TabIndex = 18
+        Me.LabelControl12.Text = "Private Comment"
+        '
+        'txt_pub_notes
+        '
+        Me.txt_pub_notes.Location = New System.Drawing.Point(127, 632)
+        Me.txt_pub_notes.Margin = New System.Windows.Forms.Padding(4)
+        Me.txt_pub_notes.Name = "txt_pub_notes"
+        Me.txt_pub_notes.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_pub_notes.Properties.Appearance.Options.UseFont = True
+        Me.txt_pub_notes.Size = New System.Drawing.Size(343, 55)
+        Me.txt_pub_notes.TabIndex = 12
+        '
+        'LabelControl11
+        '
+        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.LabelControl11.Appearance.Options.UseFont = True
+        Me.LabelControl11.Location = New System.Drawing.Point(10, 639)
+        Me.LabelControl11.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(102, 16)
+        Me.LabelControl11.TabIndex = 13
+        Me.LabelControl11.Text = "Public Comment"
+        '
+        'cbb_warehouse
+        '
+        Me.cbb_warehouse.Location = New System.Drawing.Point(140, 712)
+        Me.cbb_warehouse.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbb_warehouse.Name = "cbb_warehouse"
+        Me.cbb_warehouse.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.cbb_warehouse.Properties.Appearance.Options.UseFont = True
+        Me.cbb_warehouse.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cbb_warehouse.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+        Me.cbb_warehouse.Size = New System.Drawing.Size(330, 38)
+        Me.cbb_warehouse.TabIndex = 19
+        '
+        'LabelControl21
+        '
+        Me.LabelControl21.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
+        Me.LabelControl21.Appearance.Options.UseFont = True
+        Me.LabelControl21.Location = New System.Drawing.Point(11, 724)
+        Me.LabelControl21.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl21.Name = "LabelControl21"
+        Me.LabelControl21.Size = New System.Drawing.Size(119, 16)
+        Me.LabelControl21.TabIndex = 20
+        Me.LabelControl21.Text = "Target Warehouse"
+        '
         'XtraTabPage3
         '
         Me.XtraTabPage3.AutoScroll = True
-        Me.XtraTabPage3.AutoScrollMargin = New System.Drawing.Size(0, 30)
+        Me.XtraTabPage3.AutoScrollMargin = New System.Drawing.Size(0, 150)
         Me.XtraTabPage3.Controls.Add(Me.GroupControl5)
         Me.XtraTabPage3.Controls.Add(Me.GroupControl4)
         Me.XtraTabPage3.Controls.Add(Me.GroupControl3)
@@ -706,7 +930,7 @@ Partial Class frm_sales_order_new
         Me.XtraTabPage3.Controls.Add(Me.SeparatorControl2)
         Me.XtraTabPage3.Margin = New System.Windows.Forms.Padding(4)
         Me.XtraTabPage3.Name = "XtraTabPage3"
-        Me.XtraTabPage3.Size = New System.Drawing.Size(852, 575)
+        Me.XtraTabPage3.Size = New System.Drawing.Size(853, 680)
         Me.XtraTabPage3.Text = "Order Details"
         '
         'GroupControl5
@@ -1214,7 +1438,7 @@ Partial Class frm_sales_order_new
         Me.XtraTabPage2.Controls.Add(Me.LabelControl10)
         Me.XtraTabPage2.Margin = New System.Windows.Forms.Padding(4)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(852, 575)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(852, 766)
         Me.XtraTabPage2.Text = "Customer Information"
         '
         'txt_tin_no
@@ -1222,21 +1446,21 @@ Partial Class frm_sales_order_new
         Me.txt_tin_no.Location = New System.Drawing.Point(146, 225)
         Me.txt_tin_no.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_tin_no.Name = "txt_tin_no"
-        Me.txt_tin_no.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_tin_no.Properties.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.txt_tin_no.Properties.Appearance.Options.UseFont = True
         Me.txt_tin_no.Properties.ReadOnly = True
         Me.txt_tin_no.Properties.UseReadOnlyAppearance = False
-        Me.txt_tin_no.Size = New System.Drawing.Size(251, 38)
+        Me.txt_tin_no.Size = New System.Drawing.Size(251, 34)
         Me.txt_tin_no.TabIndex = 65
         '
         'LabelControl45
         '
-        Me.LabelControl45.Appearance.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.LabelControl45.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.LabelControl45.Appearance.Options.UseFont = True
         Me.LabelControl45.Location = New System.Drawing.Point(29, 231)
         Me.LabelControl45.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl45.Name = "LabelControl45"
-        Me.LabelControl45.Size = New System.Drawing.Size(59, 23)
+        Me.LabelControl45.Size = New System.Drawing.Size(46, 16)
         Me.LabelControl45.TabIndex = 64
         Me.LabelControl45.Text = "TIN No."
         '
@@ -1276,21 +1500,21 @@ Partial Class frm_sales_order_new
         Me.txt_sales_agent.Location = New System.Drawing.Point(146, 181)
         Me.txt_sales_agent.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_sales_agent.Name = "txt_sales_agent"
-        Me.txt_sales_agent.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_sales_agent.Properties.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.txt_sales_agent.Properties.Appearance.Options.UseFont = True
         Me.txt_sales_agent.Properties.ReadOnly = True
         Me.txt_sales_agent.Properties.UseReadOnlyAppearance = False
-        Me.txt_sales_agent.Size = New System.Drawing.Size(251, 38)
+        Me.txt_sales_agent.Size = New System.Drawing.Size(251, 34)
         Me.txt_sales_agent.TabIndex = 36
         '
         'LabelControl27
         '
-        Me.LabelControl27.Appearance.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.LabelControl27.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.LabelControl27.Appearance.Options.UseFont = True
         Me.LabelControl27.Location = New System.Drawing.Point(29, 187)
         Me.LabelControl27.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl27.Name = "LabelControl27"
-        Me.LabelControl27.Size = New System.Drawing.Size(119, 23)
+        Me.LabelControl27.Size = New System.Drawing.Size(99, 16)
         Me.LabelControl27.TabIndex = 35
         Me.LabelControl27.Text = "Assigned Agent"
         '
@@ -1299,21 +1523,21 @@ Partial Class frm_sales_order_new
         Me.txt_used_credit.Location = New System.Drawing.Point(158, 395)
         Me.txt_used_credit.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_used_credit.Name = "txt_used_credit"
-        Me.txt_used_credit.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_used_credit.Properties.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.txt_used_credit.Properties.Appearance.Options.UseFont = True
         Me.txt_used_credit.Properties.ReadOnly = True
         Me.txt_used_credit.Properties.UseReadOnlyAppearance = False
-        Me.txt_used_credit.Size = New System.Drawing.Size(155, 38)
+        Me.txt_used_credit.Size = New System.Drawing.Size(155, 34)
         Me.txt_used_credit.TabIndex = 32
         '
         'LabelControl25
         '
-        Me.LabelControl25.Appearance.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.LabelControl25.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.LabelControl25.Appearance.Options.UseFont = True
         Me.LabelControl25.Location = New System.Drawing.Point(29, 401)
         Me.LabelControl25.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl25.Name = "LabelControl25"
-        Me.LabelControl25.Size = New System.Drawing.Size(89, 23)
+        Me.LabelControl25.Size = New System.Drawing.Size(74, 16)
         Me.LabelControl25.TabIndex = 31
         Me.LabelControl25.Text = "Used Credit"
         '
@@ -1322,21 +1546,21 @@ Partial Class frm_sales_order_new
         Me.txt_credit_limit.Location = New System.Drawing.Point(158, 353)
         Me.txt_credit_limit.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_credit_limit.Name = "txt_credit_limit"
-        Me.txt_credit_limit.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_credit_limit.Properties.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.txt_credit_limit.Properties.Appearance.Options.UseFont = True
         Me.txt_credit_limit.Properties.ReadOnly = True
         Me.txt_credit_limit.Properties.UseReadOnlyAppearance = False
-        Me.txt_credit_limit.Size = New System.Drawing.Size(155, 38)
+        Me.txt_credit_limit.Size = New System.Drawing.Size(155, 34)
         Me.txt_credit_limit.TabIndex = 30
         '
         'LabelControl24
         '
-        Me.LabelControl24.Appearance.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.LabelControl24.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.LabelControl24.Appearance.Options.UseFont = True
         Me.LabelControl24.Location = New System.Drawing.Point(29, 359)
         Me.LabelControl24.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl24.Name = "LabelControl24"
-        Me.LabelControl24.Size = New System.Drawing.Size(131, 23)
+        Me.LabelControl24.Size = New System.Drawing.Size(107, 16)
         Me.LabelControl24.TabIndex = 29
         Me.LabelControl24.Text = "Total Credit Limit"
         '
@@ -1345,11 +1569,11 @@ Partial Class frm_sales_order_new
         Me.txt_contact_no.Location = New System.Drawing.Point(146, 139)
         Me.txt_contact_no.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_contact_no.Name = "txt_contact_no"
-        Me.txt_contact_no.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_contact_no.Properties.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.txt_contact_no.Properties.Appearance.Options.UseFont = True
         Me.txt_contact_no.Properties.ReadOnly = True
         Me.txt_contact_no.Properties.UseReadOnlyAppearance = False
-        Me.txt_contact_no.Size = New System.Drawing.Size(251, 38)
+        Me.txt_contact_no.Size = New System.Drawing.Size(251, 34)
         Me.txt_contact_no.TabIndex = 28
         '
         'txt_customer_id
@@ -1357,21 +1581,21 @@ Partial Class frm_sales_order_new
         Me.txt_customer_id.Location = New System.Drawing.Point(146, 55)
         Me.txt_customer_id.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_customer_id.Name = "txt_customer_id"
-        Me.txt_customer_id.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_customer_id.Properties.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.txt_customer_id.Properties.Appearance.Options.UseFont = True
         Me.txt_customer_id.Properties.ReadOnly = True
         Me.txt_customer_id.Properties.UseReadOnlyAppearance = False
-        Me.txt_customer_id.Size = New System.Drawing.Size(84, 38)
+        Me.txt_customer_id.Size = New System.Drawing.Size(84, 34)
         Me.txt_customer_id.TabIndex = 27
         '
         'LabelControl23
         '
-        Me.LabelControl23.Appearance.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.LabelControl23.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.LabelControl23.Appearance.Options.UseFont = True
         Me.LabelControl23.Location = New System.Drawing.Point(29, 62)
         Me.LabelControl23.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl23.Name = "LabelControl23"
-        Me.LabelControl23.Size = New System.Drawing.Size(96, 23)
+        Me.LabelControl23.Size = New System.Drawing.Size(78, 16)
         Me.LabelControl23.TabIndex = 26
         Me.LabelControl23.Text = "Customer ID"
         '
@@ -1380,32 +1604,32 @@ Partial Class frm_sales_order_new
         Me.txt_contact_person.Location = New System.Drawing.Point(146, 97)
         Me.txt_contact_person.Margin = New System.Windows.Forms.Padding(4)
         Me.txt_contact_person.Name = "txt_contact_person"
-        Me.txt_contact_person.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_contact_person.Properties.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.txt_contact_person.Properties.Appearance.Options.UseFont = True
         Me.txt_contact_person.Properties.ReadOnly = True
         Me.txt_contact_person.Properties.UseReadOnlyAppearance = False
-        Me.txt_contact_person.Size = New System.Drawing.Size(251, 38)
+        Me.txt_contact_person.Size = New System.Drawing.Size(251, 34)
         Me.txt_contact_person.TabIndex = 25
         '
         'LabelControl22
         '
-        Me.LabelControl22.Appearance.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.LabelControl22.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.LabelControl22.Appearance.Options.UseFont = True
         Me.LabelControl22.Location = New System.Drawing.Point(29, 145)
         Me.LabelControl22.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl22.Name = "LabelControl22"
-        Me.LabelControl22.Size = New System.Drawing.Size(92, 23)
+        Me.LabelControl22.Size = New System.Drawing.Size(74, 16)
         Me.LabelControl22.TabIndex = 24
         Me.LabelControl22.Text = "Contact No."
         '
         'LabelControl10
         '
-        Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
         Me.LabelControl10.Appearance.Options.UseFont = True
         Me.LabelControl10.Location = New System.Drawing.Point(29, 103)
         Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(117, 23)
+        Me.LabelControl10.Size = New System.Drawing.Size(98, 16)
         Me.LabelControl10.TabIndex = 22
         Me.LabelControl10.Text = "Contact Person"
         '
@@ -1415,13 +1639,13 @@ Partial Class frm_sales_order_new
         Me.XtraTabPage4.Controls.Add(Me.grid_history)
         Me.XtraTabPage4.Margin = New System.Windows.Forms.Padding(4)
         Me.XtraTabPage4.Name = "XtraTabPage4"
-        Me.XtraTabPage4.Size = New System.Drawing.Size(852, 575)
+        Me.XtraTabPage4.Size = New System.Drawing.Size(853, 680)
         Me.XtraTabPage4.Text = "Order History"
         '
         'SearchControl1
         '
         Me.SearchControl1.Client = Me.grid_history
-        Me.SearchControl1.Location = New System.Drawing.Point(14, 16)
+        Me.SearchControl1.Location = New System.Drawing.Point(14, 14)
         Me.SearchControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.SearchControl1.Name = "SearchControl1"
         Me.SearchControl1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1443,7 +1667,7 @@ Partial Class frm_sales_order_new
         Me.grid_history.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_history.Name = "grid_history"
         Me.grid_history.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit2, Me.RepositoryItemButtonEdit1, Me.RepositoryItemTextEdit1})
-        Me.grid_history.Size = New System.Drawing.Size(822, 503)
+        Me.grid_history.Size = New System.Drawing.Size(823, 608)
         Me.grid_history.TabIndex = 2
         Me.grid_history.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_history_view})
         '
@@ -1546,18 +1770,18 @@ Partial Class frm_sales_order_new
         'RepositoryItemButtonEdit2
         '
         Me.RepositoryItemButtonEdit2.AutoHeight = False
-        EditorButtonImageOptions4.SvgImage = Global.Inventory_Management.My.Resources.Resources.actions_removecircled
-        EditorButtonImageOptions4.SvgImageSize = New System.Drawing.Size(20, 20)
-        Me.RepositoryItemButtonEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions4, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject13, SerializableAppearanceObject14, SerializableAppearanceObject15, SerializableAppearanceObject16, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions43.SvgImage = Global.Inventory_Management.My.Resources.Resources.actions_removecircled
+        EditorButtonImageOptions43.SvgImageSize = New System.Drawing.Size(20, 20)
+        Me.RepositoryItemButtonEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions43, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject169, SerializableAppearanceObject170, SerializableAppearanceObject171, SerializableAppearanceObject172, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.RepositoryItemButtonEdit2.Name = "RepositoryItemButtonEdit2"
         Me.RepositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
         '
         'RepositoryItemButtonEdit1
         '
         Me.RepositoryItemButtonEdit1.AutoHeight = False
-        EditorButtonImageOptions5.SvgImage = Global.Inventory_Management.My.Resources.Resources.redo
-        EditorButtonImageOptions5.SvgImageSize = New System.Drawing.Size(20, 20)
-        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions5, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject17, SerializableAppearanceObject18, SerializableAppearanceObject19, SerializableAppearanceObject20, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions44.SvgImage = Global.Inventory_Management.My.Resources.Resources.redo
+        EditorButtonImageOptions44.SvgImageSize = New System.Drawing.Size(20, 20)
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, False, EditorButtonImageOptions44, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject173, SerializableAppearanceObject174, SerializableAppearanceObject175, SerializableAppearanceObject176, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
         Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
         '
@@ -1635,7 +1859,7 @@ Partial Class frm_sales_order_new
         Me.PanelControl1.Controls.Add(Me.LabelControl2)
         Me.PanelControl1.Controls.Add(Me.LabelControl1)
         Me.PanelControl1.Controls.Add(Me.panel_computation)
-        Me.PanelControl1.Location = New System.Drawing.Point(1230, 665)
+        Me.PanelControl1.Location = New System.Drawing.Point(1230, 585)
         Me.PanelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(429, 294)
@@ -2022,154 +2246,6 @@ Partial Class frm_sales_order_new
         Me.LabelControl9.TabIndex = 7
         Me.LabelControl9.Text = "Customer Type"
         '
-        'GroupControl1
-        '
-        Me.GroupControl1.Controls.Add(Me.btn_refund)
-        Me.GroupControl1.Controls.Add(Me.btn_epay)
-        Me.GroupControl1.Controls.Add(Me.lbl_payment_status)
-        Me.GroupControl1.Controls.Add(Me.LabelControl19)
-        Me.GroupControl1.Controls.Add(Me.lbl_balance)
-        Me.GroupControl1.Controls.Add(Me.lbl_paid_amount)
-        Me.GroupControl1.Controls.Add(Me.lbl_amount_to_pay)
-        Me.GroupControl1.Controls.Add(Me.LabelControl15)
-        Me.GroupControl1.Controls.Add(Me.LabelControl14)
-        Me.GroupControl1.Controls.Add(Me.LabelControl13)
-        Me.GroupControl1.Location = New System.Drawing.Point(569, 772)
-        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(4)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(296, 187)
-        Me.GroupControl1.TabIndex = 9
-        Me.GroupControl1.Text = "Payment Status"
-        '
-        'btn_refund
-        '
-        Me.btn_refund.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btn_refund.Appearance.Options.UseFont = True
-        Me.btn_refund.Enabled = False
-        Me.btn_refund.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btn_refund.ImageOptions.ImageToTextIndent = 10
-        Me.btn_refund.ImageOptions.SvgImageSize = New System.Drawing.Size(15, 15)
-        Me.btn_refund.Location = New System.Drawing.Point(29, 145)
-        Me.btn_refund.Margin = New System.Windows.Forms.Padding(4)
-        Me.btn_refund.Name = "btn_refund"
-        Me.btn_refund.Size = New System.Drawing.Size(119, 32)
-        Me.btn_refund.TabIndex = 27
-        Me.btn_refund.Text = "Refund"
-        '
-        'btn_epay
-        '
-        Me.btn_epay.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btn_epay.Appearance.Options.UseFont = True
-        Me.btn_epay.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter
-        Me.btn_epay.ImageOptions.ImageToTextIndent = 10
-        Me.btn_epay.ImageOptions.SvgImageSize = New System.Drawing.Size(15, 15)
-        Me.btn_epay.Location = New System.Drawing.Point(155, 145)
-        Me.btn_epay.Margin = New System.Windows.Forms.Padding(4)
-        Me.btn_epay.Name = "btn_epay"
-        Me.btn_epay.Size = New System.Drawing.Size(119, 32)
-        Me.btn_epay.TabIndex = 26
-        Me.btn_epay.Text = "E-Pay Receipt"
-        '
-        'lbl_payment_status
-        '
-        Me.lbl_payment_status.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
-        Me.lbl_payment_status.Appearance.Options.UseFont = True
-        Me.lbl_payment_status.Appearance.Options.UseTextOptions = True
-        Me.lbl_payment_status.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.lbl_payment_status.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
-        Me.lbl_payment_status.Location = New System.Drawing.Point(181, 39)
-        Me.lbl_payment_status.Margin = New System.Windows.Forms.Padding(4)
-        Me.lbl_payment_status.Name = "lbl_payment_status"
-        Me.lbl_payment_status.Size = New System.Drawing.Size(93, 18)
-        Me.lbl_payment_status.TabIndex = 26
-        Me.lbl_payment_status.Text = "N/A"
-        '
-        'LabelControl19
-        '
-        Me.LabelControl19.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
-        Me.LabelControl19.Appearance.Options.UseFont = True
-        Me.LabelControl19.Location = New System.Drawing.Point(26, 40)
-        Me.LabelControl19.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl19.Name = "LabelControl19"
-        Me.LabelControl19.Size = New System.Drawing.Size(40, 16)
-        Me.LabelControl19.TabIndex = 25
-        Me.LabelControl19.Text = "Status"
-        '
-        'lbl_balance
-        '
-        Me.lbl_balance.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
-        Me.lbl_balance.Appearance.Options.UseFont = True
-        Me.lbl_balance.Appearance.Options.UseTextOptions = True
-        Me.lbl_balance.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.lbl_balance.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
-        Me.lbl_balance.Location = New System.Drawing.Point(181, 118)
-        Me.lbl_balance.Margin = New System.Windows.Forms.Padding(4)
-        Me.lbl_balance.Name = "lbl_balance"
-        Me.lbl_balance.Size = New System.Drawing.Size(93, 18)
-        Me.lbl_balance.TabIndex = 24
-        Me.lbl_balance.Text = "₱ 0.00"
-        '
-        'lbl_paid_amount
-        '
-        Me.lbl_paid_amount.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
-        Me.lbl_paid_amount.Appearance.Options.UseFont = True
-        Me.lbl_paid_amount.Appearance.Options.UseTextOptions = True
-        Me.lbl_paid_amount.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.lbl_paid_amount.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
-        Me.lbl_paid_amount.Location = New System.Drawing.Point(181, 92)
-        Me.lbl_paid_amount.Margin = New System.Windows.Forms.Padding(4)
-        Me.lbl_paid_amount.Name = "lbl_paid_amount"
-        Me.lbl_paid_amount.Size = New System.Drawing.Size(93, 18)
-        Me.lbl_paid_amount.TabIndex = 23
-        Me.lbl_paid_amount.Text = "₱ 0.00"
-        '
-        'lbl_amount_to_pay
-        '
-        Me.lbl_amount_to_pay.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
-        Me.lbl_amount_to_pay.Appearance.Options.UseFont = True
-        Me.lbl_amount_to_pay.Appearance.Options.UseTextOptions = True
-        Me.lbl_amount_to_pay.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.lbl_amount_to_pay.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
-        Me.lbl_amount_to_pay.Location = New System.Drawing.Point(181, 66)
-        Me.lbl_amount_to_pay.Margin = New System.Windows.Forms.Padding(4)
-        Me.lbl_amount_to_pay.Name = "lbl_amount_to_pay"
-        Me.lbl_amount_to_pay.Size = New System.Drawing.Size(93, 18)
-        Me.lbl_amount_to_pay.TabIndex = 22
-        Me.lbl_amount_to_pay.Text = "₱ 0.00"
-        '
-        'LabelControl15
-        '
-        Me.LabelControl15.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
-        Me.LabelControl15.Appearance.Options.UseFont = True
-        Me.LabelControl15.Location = New System.Drawing.Point(26, 118)
-        Me.LabelControl15.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl15.Name = "LabelControl15"
-        Me.LabelControl15.Size = New System.Drawing.Size(51, 16)
-        Me.LabelControl15.TabIndex = 21
-        Me.LabelControl15.Text = "Balance"
-        '
-        'LabelControl14
-        '
-        Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
-        Me.LabelControl14.Appearance.Options.UseFont = True
-        Me.LabelControl14.Location = New System.Drawing.Point(26, 92)
-        Me.LabelControl14.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl14.Name = "LabelControl14"
-        Me.LabelControl14.Size = New System.Drawing.Size(80, 16)
-        Me.LabelControl14.TabIndex = 20
-        Me.LabelControl14.Text = "Paid Amount"
-        '
-        'LabelControl13
-        '
-        Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
-        Me.LabelControl13.Appearance.Options.UseFont = True
-        Me.LabelControl13.Location = New System.Drawing.Point(26, 66)
-        Me.LabelControl13.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(92, 16)
-        Me.LabelControl13.TabIndex = 19
-        Me.LabelControl13.Text = "Amount to Pay"
-        '
         'btn_create
         '
         Me.btn_create.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -2202,27 +2278,6 @@ Partial Class frm_sales_order_new
         Me.btn_print.Size = New System.Drawing.Size(119, 32)
         Me.btn_print.TabIndex = 11
         Me.btn_print.Text = "Print"
-        '
-        'txt_pub_notes
-        '
-        Me.txt_pub_notes.Location = New System.Drawing.Point(136, 833)
-        Me.txt_pub_notes.Margin = New System.Windows.Forms.Padding(4)
-        Me.txt_pub_notes.Name = "txt_pub_notes"
-        Me.txt_pub_notes.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_pub_notes.Properties.Appearance.Options.UseFont = True
-        Me.txt_pub_notes.Size = New System.Drawing.Size(426, 55)
-        Me.txt_pub_notes.TabIndex = 12
-        '
-        'LabelControl11
-        '
-        Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
-        Me.LabelControl11.Appearance.Options.UseFont = True
-        Me.LabelControl11.Location = New System.Drawing.Point(14, 839)
-        Me.LabelControl11.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(102, 16)
-        Me.LabelControl11.TabIndex = 13
-        Me.LabelControl11.Text = "Public Comment"
         '
         'btn_delete
         '
@@ -2263,27 +2318,6 @@ Partial Class frm_sales_order_new
         Me.txt_account_type.Properties.ReadOnly = True
         Me.txt_account_type.Size = New System.Drawing.Size(134, 34)
         Me.txt_account_type.TabIndex = 21
-        '
-        'txt_priv_notes
-        '
-        Me.txt_priv_notes.Location = New System.Drawing.Point(136, 773)
-        Me.txt_priv_notes.Margin = New System.Windows.Forms.Padding(4)
-        Me.txt_priv_notes.Name = "txt_priv_notes"
-        Me.txt_priv_notes.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_priv_notes.Properties.Appearance.Options.UseFont = True
-        Me.txt_priv_notes.Size = New System.Drawing.Size(426, 55)
-        Me.txt_priv_notes.TabIndex = 17
-        '
-        'LabelControl12
-        '
-        Me.LabelControl12.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
-        Me.LabelControl12.Appearance.Options.UseFont = True
-        Me.LabelControl12.Location = New System.Drawing.Point(15, 780)
-        Me.LabelControl12.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(108, 16)
-        Me.LabelControl12.TabIndex = 18
-        Me.LabelControl12.Text = "Private Comment"
         '
         'lbl_orderid
         '
@@ -2388,7 +2422,7 @@ Partial Class frm_sales_order_new
         Me.PanelControl2.Controls.Add(Me.LabelControl20)
         Me.PanelControl2.Controls.Add(Me.txt_delivery_fee)
         Me.PanelControl2.Controls.Add(Me.LabelControl4)
-        Me.PanelControl2.Location = New System.Drawing.Point(875, 612)
+        Me.PanelControl2.Location = New System.Drawing.Point(875, 532)
         Me.PanelControl2.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(784, 46)
@@ -2513,31 +2547,6 @@ Partial Class frm_sales_order_new
         Me.btn_pack.TabIndex = 28
         Me.btn_pack.Text = "Create && Pack"
         '
-        'cbb_warehouse
-        '
-        Me.cbb_warehouse.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cbb_warehouse.Location = New System.Drawing.Point(152, 917)
-        Me.cbb_warehouse.Margin = New System.Windows.Forms.Padding(4)
-        Me.cbb_warehouse.Name = "cbb_warehouse"
-        Me.cbb_warehouse.Properties.Appearance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.cbb_warehouse.Properties.Appearance.Options.UseFont = True
-        Me.cbb_warehouse.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbb_warehouse.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-        Me.cbb_warehouse.Size = New System.Drawing.Size(330, 38)
-        Me.cbb_warehouse.TabIndex = 19
-        '
-        'LabelControl21
-        '
-        Me.LabelControl21.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.LabelControl21.Appearance.Font = New System.Drawing.Font("Arial", 8.5!)
-        Me.LabelControl21.Appearance.Options.UseFont = True
-        Me.LabelControl21.Location = New System.Drawing.Point(15, 926)
-        Me.LabelControl21.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl21.Name = "LabelControl21"
-        Me.LabelControl21.Size = New System.Drawing.Size(119, 16)
-        Me.LabelControl21.TabIndex = 20
-        Me.LabelControl21.Text = "Target Warehouse"
-        '
         'btn_import
         '
         Me.btn_import.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -2656,7 +2665,7 @@ Partial Class frm_sales_order_new
         '
         Me.GroupControl6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupControl6.Controls.Add(Me.panel_sales_returns)
-        Me.GroupControl6.Location = New System.Drawing.Point(875, 665)
+        Me.GroupControl6.Location = New System.Drawing.Point(875, 585)
         Me.GroupControl6.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupControl6.Name = "GroupControl6"
         Me.GroupControl6.Size = New System.Drawing.Size(348, 294)
@@ -2678,7 +2687,7 @@ Partial Class frm_sales_order_new
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1671, 974)
+        Me.ClientSize = New System.Drawing.Size(1671, 894)
         Me.Controls.Add(Me.GroupControl6)
         Me.Controls.Add(Me.btn_import)
         Me.Controls.Add(Me.btn_pack)
@@ -2691,14 +2700,8 @@ Partial Class frm_sales_order_new
         Me.Controls.Add(Me.LabelControl16)
         Me.Controls.Add(Me.lbl_orderid)
         Me.Controls.Add(Me.txt_account_type)
-        Me.Controls.Add(Me.LabelControl21)
-        Me.Controls.Add(Me.cbb_warehouse)
-        Me.Controls.Add(Me.LabelControl12)
-        Me.Controls.Add(Me.txt_priv_notes)
         Me.Controls.Add(Me.btn_unserved_list)
         Me.Controls.Add(Me.btn_delete)
-        Me.Controls.Add(Me.LabelControl11)
-        Me.Controls.Add(Me.txt_pub_notes)
         Me.Controls.Add(Me.btn_print)
         Me.Controls.Add(Me.btn_create)
         Me.Controls.Add(Me.LabelControl9)
@@ -2707,7 +2710,6 @@ Partial Class frm_sales_order_new
         Me.Controls.Add(Me.LabelControl7)
         Me.Controls.Add(Me.grid_order)
         Me.Controls.Add(Me.PanelControl1)
-        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.SimpleButton1)
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -2722,10 +2724,17 @@ Partial Class frm_sales_order_new
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControl1.ResumeLayout(False)
         Me.XtraTabPage1.ResumeLayout(False)
+        Me.XtraTabPage1.PerformLayout()
         CType(Me.txt_search.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_search, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_search_view, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_add, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
+        CType(Me.txt_priv_notes.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_pub_notes.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cbb_warehouse.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabPage3.ResumeLayout(False)
         Me.XtraTabPage3.PerformLayout()
         CType(Me.GroupControl5, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2786,19 +2795,13 @@ Partial Class frm_sales_order_new
         CType(Me.SeparatorControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SeparatorControl4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbb_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl1.ResumeLayout(False)
-        Me.GroupControl1.PerformLayout()
-        CType(Me.txt_pub_notes.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_account_type.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_priv_notes.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbb_discount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_discount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
         Me.print_contextmenu.ResumeLayout(False)
-        CType(Me.cbb_warehouse.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_returns, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_returns_view, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
