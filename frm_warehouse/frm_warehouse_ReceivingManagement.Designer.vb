@@ -194,7 +194,7 @@ Partial Class frm_warehouse_receivingManagement
         Me.grid_delivery.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_delivery.Name = "grid_delivery"
         Me.grid_delivery.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_view})
-        Me.grid_delivery.Size = New System.Drawing.Size(613, 871)
+        Me.grid_delivery.Size = New System.Drawing.Size(613, 682)
         Me.grid_delivery.TabIndex = 1
         Me.grid_delivery.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_delivery_view})
         '
@@ -287,7 +287,7 @@ Partial Class frm_warehouse_receivingManagement
         Me.grid_stock_transfers.MainView = Me.grid_stock_transfers_view
         Me.grid_stock_transfers.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_stock_transfers.Name = "grid_stock_transfers"
-        Me.grid_stock_transfers.Size = New System.Drawing.Size(762, 697)
+        Me.grid_stock_transfers.Size = New System.Drawing.Size(762, 682)
         Me.grid_stock_transfers.TabIndex = 13
         Me.grid_stock_transfers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_stock_transfers_view})
         '
@@ -489,7 +489,7 @@ Partial Class frm_warehouse_receivingManagement
         Me.grid_sales_returns.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_sales_returns.Name = "grid_sales_returns"
         Me.grid_sales_returns.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_view_srid})
-        Me.grid_sales_returns.Size = New System.Drawing.Size(613, 871)
+        Me.grid_sales_returns.Size = New System.Drawing.Size(613, 682)
         Me.grid_sales_returns.TabIndex = 2
         Me.grid_sales_returns.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_sales_returns_view})
         '

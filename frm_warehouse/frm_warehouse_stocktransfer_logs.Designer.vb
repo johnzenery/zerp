@@ -59,7 +59,7 @@ Partial Class frm_warehouse_stocktransfer_logs
         Me.grid_logs.MainView = Me.grid_logs_view
         Me.grid_logs.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_logs.Name = "grid_logs"
-        Me.grid_logs.Size = New System.Drawing.Size(1491, 629)
+        Me.grid_logs.Size = New System.Drawing.Size(1480, 629)
         Me.grid_logs.TabIndex = 0
         Me.grid_logs.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grid_logs_view})
         '
