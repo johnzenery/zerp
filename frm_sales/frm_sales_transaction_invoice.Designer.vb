@@ -77,12 +77,12 @@ Partial Class frm_sales_transaction_invoice
         Me.grid_deliveries.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grid_deliveries.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grid_deliveries.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_deliveries.Location = New System.Drawing.Point(3, 121)
         Me.grid_deliveries.LookAndFeel.SkinName = "WXI"
         Me.grid_deliveries.LookAndFeel.UseDefaultLookAndFeel = False
         Me.grid_deliveries.MainView = Me.grid_deliveries_view
-        Me.grid_deliveries.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grid_deliveries.Margin = New System.Windows.Forms.Padding(4)
         Me.grid_deliveries.Name = "grid_deliveries"
         Me.grid_deliveries.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btn_print})
         Me.grid_deliveries.Size = New System.Drawing.Size(1484, 770)
@@ -317,7 +317,7 @@ Partial Class frm_sales_transaction_invoice
         Me.LabelControl1.Appearance.Options.UseFont = True
         Me.LabelControl1.Appearance.Options.UseForeColor = True
         Me.LabelControl1.Location = New System.Drawing.Point(14, 15)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(163, 38)
         Me.LabelControl1.TabIndex = 139
@@ -349,6 +349,9 @@ Partial Class frm_sales_transaction_invoice
         Me.dt_end.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dt_end.Properties.DisplayFormat.FormatString = "MM/dd/yyyy"
         Me.dt_end.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.dt_end.Properties.EditFormat.FormatString = "MM/dd/yyyy"
+        Me.dt_end.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.dt_end.Properties.MaskSettings.Set("mask", "MM/dd/yyyy")
         Me.dt_end.Size = New System.Drawing.Size(154, 34)
         Me.dt_end.TabIndex = 143
         '
@@ -373,6 +376,9 @@ Partial Class frm_sales_transaction_invoice
         Me.dt_start.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dt_start.Properties.DisplayFormat.FormatString = "MM/dd/yyyy"
         Me.dt_start.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.dt_start.Properties.EditFormat.FormatString = "MM/dd/yyyy"
+        Me.dt_start.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.dt_start.Properties.MaskSettings.Set("mask", "MM/dd/yyyy")
         Me.dt_start.Size = New System.Drawing.Size(154, 34)
         Me.dt_start.TabIndex = 141
         '
@@ -399,7 +405,7 @@ Partial Class frm_sales_transaction_invoice
         Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.grid_deliveries)
         Me.IconOptions.Icon = CType(resources.GetObject("frm_sales_transaction_invoice.IconOptions.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frm_sales_transaction_invoice"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Invoice List"

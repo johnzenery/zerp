@@ -292,9 +292,15 @@ Public Class frm_sales_transaction_invoice
 
 
     '--- CONTROLS ----
+
+    'BUTTON : PRINT
     Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
         Dim orderid = grid_deliveries_view.GetFocusedRowCellValue(col_id)
         PrintInvoice(orderid)
     End Sub
 
+    'BUTTON : VIEW
+    Private Sub btn_view_Click(sender As Object, e As EventArgs) Handles btn_view.Click
+        LoadInvoices(dt_start.EditValue, dt_end.EditValue)
+    End Sub
 End Class
