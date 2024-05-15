@@ -35,11 +35,11 @@ Public Class frm_admin_supplier_add
                     cmd.Parameters.AddWithValue("@warehouse_addr", .ToTitleCase(txt_warehouseadd.Text.Trim))
                     cmd.Parameters.AddWithValue("@zip_code", txt_zipcode.Text)
                     cmd.Parameters.AddWithValue("@tin_no", txt_tin_no.Text)
-                    cmd.Parameters.AddWithValue("@bank", .ToTitleCase(txt_bank_name.EditValue.Trim))
-                    cmd.Parameters.AddWithValue("@acc_name", .ToTitleCase(txt_acc_name.Text.Trim))
+                    cmd.Parameters.AddWithValue("@bank", txt_supname.EditValue)
+                    cmd.Parameters.AddWithValue("@acc_name", txt_acc_name.EditValue)
                     cmd.Parameters.AddWithValue("@acc_no", txt_acc_no.Text)
-                    cmd.Parameters.AddWithValue("@contact_person", .ToTitleCase(txt_contact.Text.Trim))
-                    cmd.Parameters.AddWithValue("@position", .ToTitleCase(txt_position.Text.Trim))
+                    cmd.Parameters.AddWithValue("@contact_person", txt_contact.EditValue)
+                    cmd.Parameters.AddWithValue("@position", txt_position.EditValue)
                     cmd.Parameters.AddWithValue("@tel_no", txt_telephone.Text.Trim)
                     cmd.Parameters.AddWithValue("@mobile_no", txt_mobile.Text.Trim)
                     cmd.Parameters.AddWithValue("@fax_no", txt_fax.Text.Trim)
@@ -51,10 +51,12 @@ Public Class frm_admin_supplier_add
                     cmd.Parameters.AddWithValue("@tax_rate", txt_tax_rate.Text.Trim)
                 End With
 
-                cmd.ExecuteNonQuery()
+                If cmd.ExecuteNonQuery() > 0 Then
+                    MsgBox("Successfully added!", vbInformation, "Information")
+                    Me.Close()
+                End If
 
-                MsgBox("New Supplier has been added!", vbInformation + vbOKOnly, "Information")
-                Me.Close()
+                connection.Close()
             End Using
 
         Catch ex As Exception
