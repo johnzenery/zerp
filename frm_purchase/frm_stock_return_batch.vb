@@ -23,7 +23,7 @@ Public Class frm_stock_return_batch
         Try
             If conn.State = ConnectionState.Open Then conn.Close()
             conn.Open()
-            Using cmd = New MySqlCommand("SELECT id, qty, rs_returns.pid, ims_inventory.winmodel, ims_inventory.supmodel, serial, rs_returns.type, issue
+            Using cmd = New MySqlCommand("SELECT id, qty, rs_returns.pid, pullout_id, ims_inventory.winmodel, ims_inventory.supmodel, serial, rs_returns.type, issue
                                             FROM rs_returns
                                             INNER JOIN ims_inventory ON ims_inventory.pid=rs_returns.pid
                                             WHERE approval_winland='Approved' AND approval_supplier='Approved' AND rs_returns.is_deleted='0' AND rs_returns.batch_id IS NULL

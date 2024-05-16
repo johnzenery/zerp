@@ -41,6 +41,7 @@ Partial Class frm_stock_return_batch
         Me.btn_arrange = New DevExpress.XtraEditors.SimpleButton()
         Me.btn_delete = New DevExpress.XtraEditors.SimpleButton()
         Me.btn_print_slip = New DevExpress.XtraEditors.SimpleButton()
+        Me.col_pullout_id = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.cbb_warehouse.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbb_supplier.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid_returns, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -122,7 +123,7 @@ Partial Class frm_stock_return_batch
         '
         Me.grid_returns_view.Appearance.Row.Font = New System.Drawing.Font("Tahoma", 8.25!)
         Me.grid_returns_view.Appearance.Row.Options.UseFont = True
-        Me.grid_returns_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_id, Me.col_qty, Me.col_pid, Me.col_winmodel, Me.col_supmodel, Me.col_serial, Me.col_type, Me.col_issue})
+        Me.grid_returns_view.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col_pullout_id, Me.col_id, Me.col_qty, Me.col_pid, Me.col_winmodel, Me.col_supmodel, Me.col_serial, Me.col_type, Me.col_issue})
         Me.grid_returns_view.DetailHeight = 431
         Me.grid_returns_view.GridControl = Me.grid_returns
         Me.grid_returns_view.Name = "grid_returns_view"
@@ -140,7 +141,7 @@ Partial Class frm_stock_return_batch
         Me.col_id.MinWidth = 23
         Me.col_id.Name = "col_id"
         Me.col_id.Visible = True
-        Me.col_id.VisibleIndex = 1
+        Me.col_id.VisibleIndex = 2
         Me.col_id.Width = 73
         '
         'col_qty
@@ -151,7 +152,7 @@ Partial Class frm_stock_return_batch
         Me.col_qty.MinWidth = 23
         Me.col_qty.Name = "col_qty"
         Me.col_qty.Visible = True
-        Me.col_qty.VisibleIndex = 2
+        Me.col_qty.VisibleIndex = 3
         Me.col_qty.Width = 57
         '
         'col_pid
@@ -162,7 +163,7 @@ Partial Class frm_stock_return_batch
         Me.col_pid.MinWidth = 23
         Me.col_pid.Name = "col_pid"
         Me.col_pid.Visible = True
-        Me.col_pid.VisibleIndex = 3
+        Me.col_pid.VisibleIndex = 4
         Me.col_pid.Width = 80
         '
         'col_winmodel
@@ -173,7 +174,7 @@ Partial Class frm_stock_return_batch
         Me.col_winmodel.MinWidth = 23
         Me.col_winmodel.Name = "col_winmodel"
         Me.col_winmodel.Visible = True
-        Me.col_winmodel.VisibleIndex = 4
+        Me.col_winmodel.VisibleIndex = 5
         Me.col_winmodel.Width = 137
         '
         'col_supmodel
@@ -184,7 +185,7 @@ Partial Class frm_stock_return_batch
         Me.col_supmodel.MinWidth = 23
         Me.col_supmodel.Name = "col_supmodel"
         Me.col_supmodel.Visible = True
-        Me.col_supmodel.VisibleIndex = 5
+        Me.col_supmodel.VisibleIndex = 6
         Me.col_supmodel.Width = 137
         '
         'col_serial
@@ -195,7 +196,7 @@ Partial Class frm_stock_return_batch
         Me.col_serial.MinWidth = 23
         Me.col_serial.Name = "col_serial"
         Me.col_serial.Visible = True
-        Me.col_serial.VisibleIndex = 6
+        Me.col_serial.VisibleIndex = 7
         Me.col_serial.Width = 170
         '
         'col_type
@@ -206,7 +207,7 @@ Partial Class frm_stock_return_batch
         Me.col_type.MinWidth = 23
         Me.col_type.Name = "col_type"
         Me.col_type.Visible = True
-        Me.col_type.VisibleIndex = 7
+        Me.col_type.VisibleIndex = 8
         Me.col_type.Width = 112
         '
         'col_issue
@@ -216,7 +217,7 @@ Partial Class frm_stock_return_batch
         Me.col_issue.MinWidth = 23
         Me.col_issue.Name = "col_issue"
         Me.col_issue.Visible = True
-        Me.col_issue.VisibleIndex = 8
+        Me.col_issue.VisibleIndex = 9
         Me.col_issue.Width = 190
         '
         'btn_submit
@@ -323,6 +324,17 @@ Partial Class frm_stock_return_batch
         Me.btn_print_slip.TabIndex = 161
         Me.btn_print_slip.Text = "Print Slip"
         '
+        'col_pullout_id
+        '
+        Me.col_pullout_id.Caption = "Pull. ID"
+        Me.col_pullout_id.FieldName = "pullout_id"
+        Me.col_pullout_id.MaxWidth = 80
+        Me.col_pullout_id.MinWidth = 25
+        Me.col_pullout_id.Name = "col_pullout_id"
+        Me.col_pullout_id.Visible = True
+        Me.col_pullout_id.VisibleIndex = 1
+        Me.col_pullout_id.Width = 80
+        '
         'frm_stock_return_batch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
@@ -375,4 +387,5 @@ Partial Class frm_stock_return_batch
     Friend WithEvents btn_arrange As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btn_delete As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btn_print_slip As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents col_pullout_id As DevExpress.XtraGrid.Columns.GridColumn
 End Class
