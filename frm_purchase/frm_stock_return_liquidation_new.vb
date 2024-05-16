@@ -20,11 +20,24 @@ Public Class frm_stock_return_liquidation_new
     Private Sub InitGrid()
 
         Dim addtl_query As String = String.Empty
+        Dim kind As String = String.Empty
+
         If liquidation_id > 0 Then
             addtl_query = "AND liquidation_id = " & liquidation_id
             Me.Text = $"Stock Liquidation #{liquidation_id}"
+            grid_liquidation_view.OptionsSelection.MultiSelect = False
+            btn_print.Location = btn_create.Location
+            btn_create.Visible = False
         Else
             addtl_query = "AND liquidation_id IS NULL "
+            kind = "new"
+
+            lbl_status.Visible = False
+            lbl_created_by.Visible = False
+            LabelControl1.Visible = False
+            LabelControl2.Visible = False
+            btn_delete.Visible = False
+            btn_print.Visible = False
         End If
 
         Try
@@ -32,11 +45,11 @@ Public Class frm_stock_return_liquidation_new
                 conn.Open()
 
                 'GET RETURNS FROM DELIVERIES
-                Using cmd = New MySqlCommand("SELECT rs_returns_deliveries.id, rid, qty_received, rs_returns.pid, ims_inventory.winmodel, ims_inventory.description, rs_returns.cost, (qty_received * rs_returns.cost) total_cost
+                Using cmd = New MySqlCommand("SELECT rs_returns_deliveries.id, rid, qty_received, remarks, rs_returns.issue, rs_returns.pid, ims_inventory.winmodel, ims_inventory.description, rs_returns.cost, (qty_received * rs_returns.cost) total_cost
                                             FROM rs_returns_deliveries
                                             LEFT JOIN rs_returns ON rs_returns.id=rs_returns_deliveries.rid
                                             LEFT JOIN ims_inventory ON ims_inventory.pid=rs_returns.pid
-                                            WHERE rs_returns_deliveries.status='Rejected' " & addtl_query, conn)
+                                            WHERE rs_returns_deliveries.return_action='Reject' " & addtl_query, conn)
                     Dim dt = New DataTable
                     Dim da = New MySqlDataAdapter(cmd)
                     da.Fill(dt)
@@ -62,7 +75,7 @@ Public Class frm_stock_return_liquidation_new
                 conn.Close()
             End Using
 
-            ComputeTotal()
+            ComputeTotal(kind)
 
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical, "Error")
@@ -166,9 +179,9 @@ Public Class frm_stock_return_liquidation_new
                         End Using
 
                         'UPDATE RETURN TO VENDOR DELIVERIES
-                        Using cmd = New MySqlCommand("UPDATE rs_returns_deliveries SET liquidation_id=NULL, status='Rejected'
+                        Using cmd = New MySqlCommand("UPDATE rs_returns_deliveries SET liquidation_id=NULL
                                                 WHERE id=@id", conn, transc)
-                            cmd.Parameters.AddWithValue("@id", Nothing)
+                            cmd.Parameters.AddWithValue("@id", 0)
                             cmd.Prepare()
 
                             For i = 0 To grid_liquidation_view.RowCount

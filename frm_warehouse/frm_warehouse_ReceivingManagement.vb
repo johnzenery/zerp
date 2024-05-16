@@ -517,7 +517,6 @@ Public Class frm_warehouse_receivingManagement
                                 Dim status = String.Empty
                                 Select Case row.Item("received_resolved_type")
                                     Case "Pullout" : status = "Pending for Credit"
-                                    Case "Reject" : status = "Rejected"
                                     Case Else : status = "Received"
                                 End Select
 
