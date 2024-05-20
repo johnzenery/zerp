@@ -1355,7 +1355,7 @@ Namespace My.Resources
         '''</summary>
         Public ReadOnly Property Parsell_Logo() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Parsell Logo", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Parsell_Logo", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

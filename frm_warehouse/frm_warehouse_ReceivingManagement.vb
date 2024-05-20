@@ -581,7 +581,7 @@ Public Class frm_warehouse_receivingManagement
                         conn.Open()
                         Using cmd = New MySqlCommand($"SELECT qty, (qty - qty_returned) remaining_qty, rs_returns.pullout_id, batch_id, 
                                                     rs_returns.pid, ims_inventory.supmodel, ims_inventory.winmodel, ims_inventory.description, ims_inventory.unit,
-                                                    rs_returns.type, issue, serial, rs_returns.status, rs_returns_pullout.sent_at, ims_inventory.cost,
+                                                    rs_returns.type, issue, serial, rs_returns.status, approval_supplier, rs_returns_pullout.sent_at, ims_inventory.cost,
                                                     ims_suppliers.supplier, ims_stores.store_name
                                     FROM rs_returns
                                     INNER JOIN ims_inventory ON ims_inventory.pid=rs_returns.pid
@@ -597,12 +597,14 @@ Public Class frm_warehouse_receivingManagement
                                 If rdr.HasRows Then
                                     While rdr.Read
 
-                                        If Equals(rdr("status").ToString, "Completed") Then
-                                            MsgBox("This RID is already completed!", vbInformation, "Information")
-                                            Exit While
-                                        ElseIf Not (Equals(rdr("status").ToString, "Sent") Or Equals(rdr("status").ToString, "Partial")) Then
-                                            MsgBox("This RID is not yet sent.", vbInformation, "Information")
-                                            Exit While
+                                        If Not Equals(rdr("approval_supplier"), "Declined") Then
+                                            If Equals(rdr("status").ToString, "Completed") Then
+                                                MsgBox("This RID is already completed!", vbInformation, "Information")
+                                                Exit While
+                                            ElseIf Not (Equals(rdr("status").ToString, "Sent") Or Equals(rdr("status").ToString, "Partial")) Then
+                                                MsgBox("This RID is not yet sent.", vbInformation, "Information")
+                                                Exit While
+                                            End If
                                         End If
 
                                         datarow.Item("cost") = rdr("cost")
